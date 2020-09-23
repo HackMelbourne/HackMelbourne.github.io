@@ -1,0 +1,13 @@
+footer {
+    width: 100%;
+    background-color: #414141;
+}
+
+footer div {
+    padding: 5vh 0;
+    text-align: center;
+}
+
+footer div a {
+    padding: 0 1vw;
+}

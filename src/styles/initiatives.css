@@ -1,0 +1,30 @@
+header {
+    max-width: 100vw;
+    padding: 22vh 6vw 7vh 8vw;
+    background: rgb(20, 20, 20);
+    display: flex;
+}
+
+.greyBackground {
+    display: flex;
+    background-color: #414141;
+    padding: 10vh 7vw 10vh 7vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.blackBackground {
+    display: flex;
+    background-color: rgb(20, 20, 20);
+    padding: 10vh 7vw 10vh 7vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.text {
+    width: 60%;
+}
+
+h1 {
+    margin: auto;
+}

@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
+import React from "react";
+import { Route, BrowserRouter as Router } from "react-router-dom";
+import Switch from 'react-bootstrap/esm/Switch';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './screens/Home';
+import Initiatives from './screens/Initiatives';
+import Sponser from './screens/Sponser';
 
 function App() {
+
+  const hackMelbourne = 'Hack{Melbourne'
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Navbar/>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route path="/initiatives" component={Initiatives}/>
+          <Route path="/sponsors" component={Sponser}/>
+        </Switch>
+        <Footer/>
+      </Router>
     </div>
   );
 }

@@ -1,0 +1,19 @@
+.aboutUsContainer {
+    max-width: 100vw;
+    padding: 28vh 7vw 7vh 8vw;
+    background: rgb(20, 20, 20);
+    display: flex;
+    justify-content: space-around;
+}
+
+.laptop {
+    width: auto;
+}
+
+.aboutUs {
+    width: 50%;
+}
+
+.aboutUs h1 {
+    margin-bottom: 2.5vh;
+}
