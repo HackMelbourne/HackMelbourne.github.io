@@ -1,0 +1,19 @@
+.sponsorUsContainer {
+    max-width: 100%;
+    min-height: 80vh;
+    padding: 22vh 15vw 10vh 15vw;
+    background: rgb(20, 20, 20);
+    text-align: center;
+}
+
+.sponsorUsContainer h1 {
+    margin-bottom: 5vh;
+}
+
+.pushButtonDown {
+    padding-bottom: 6vh;
+}
+
+.pushButtonUp {
+    padding-top: 2vh;
+}

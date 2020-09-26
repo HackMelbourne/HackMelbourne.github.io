@@ -7,9 +7,7 @@ import EducationProgram from '../img/EducationProgram.png';
 function WhatWeDo() {
   return (
     <div className="whatWeDoContainer">
-      <div className="whatWeDoTitle">
-        <h1>What we are doing</h1>
-      </div>
+      <h1>What we are doing</h1>
       <div className="whatWeDoPrograms">
         <div className="program">
           <img src={MainHackathon}></img>

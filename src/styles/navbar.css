@@ -1,7 +1,7 @@
 .navbar{
     position: fixed;
     width: 100%;
-    min-height: 14vh;
+    min-height: 12vh;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;

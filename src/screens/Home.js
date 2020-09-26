@@ -1,4 +1,3 @@
-import '../styles/App.css';
 import React from "react";
 import AboutUs from '../components/AboutUs.js';
 import WhatWeDo from '../components/WhatWeDo';
