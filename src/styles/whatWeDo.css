@@ -9,6 +9,11 @@
     padding-bottom: 6vh;
 }
 
+.homeContent {
+    width: 70%;
+    margin: auto;
+}
+
 .whatWeDoPrograms {
     display: flex;
     justify-content: space-evenly;
@@ -16,4 +21,8 @@
 
 .program {
     text-align: center;
+}
+
+.programImg {
+    width: 15vw;
 }

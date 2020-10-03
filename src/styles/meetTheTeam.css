@@ -8,3 +8,19 @@
     text-align: center;
     color: white;
 }
+
+.teamPhotos {
+    width: 70%;
+    margin: auto;
+    margin-top: 5vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5vh 0;
+    align-items: center;
+    justify-items: center;
+}
+
+.profile {
+    width: 10vw;
+    border-radius: 50%;
+}
