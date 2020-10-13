@@ -12,14 +12,14 @@ header h1 {
 .greyBackground {
     display: flex;
     justify-content: space-around;
-    padding: 10vh 12.5vw;
+    padding: 10vh 15vw;
     background-color: #414141;
 }
 
 .blackBackground {
     display: flex;
     justify-content: space-around;
-    padding: 10vh 12.5vw;
+    padding: 10vh 15vw;
     background-color: rgb(20, 20, 20);
 }
 

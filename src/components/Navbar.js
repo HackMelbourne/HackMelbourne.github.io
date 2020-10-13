@@ -14,7 +14,7 @@ const Navbar = () => {
             <ul>
                 <li><a href="/initiatives">Initatives</a></li>
                 <li><a href="/sponsors">Sponsor Us</a></li>
-                <li><a class="highlight-button" href="#">Sign Up</a></li>
+                <li><a class="highlight-button" target="_blank" href="https://forms.gle/yBCTHgWdBj66JhUV6">Sign Up</a></li>
             </ul>
         </nav>
     </header>
