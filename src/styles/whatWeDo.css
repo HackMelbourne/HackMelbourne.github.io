@@ -21,8 +21,29 @@
 
 .program {
     text-align: center;
+    width: 30%;
+    font-size: max(18px, 1.5vw);
+    padding: 10px;
 }
 
 .programImg {
-    width: 15vw;
+    width: 10vw;
+    margin-bottom: 2vw;
+}
+
+@media only screen and (max-width: 768px) {
+    .homeContent, .whatWeDoPrograms {
+        width: 100%;
+    }
+
+    .programImg {
+        width: 15vw;
+    }
+    
+    .program {
+        width: 30%;
+        text-align: center;
+        display: block;
+        font-size: 16px;
+    }
 }
