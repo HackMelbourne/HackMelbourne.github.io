@@ -11,3 +11,9 @@ footer div {
 footer div a {
     padding: 0 1vw;
 }
+
+footer img {
+    width: min(64px, 15vw);
+    height: min(64px, 15vw);
+    padding: 10px;
+}
