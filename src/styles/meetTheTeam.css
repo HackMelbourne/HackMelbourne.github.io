@@ -11,18 +11,18 @@
 }
 
 .teamPhotos {
-    width: 70%;
+    width: 80%;
     margin: auto;
     margin-top: 5vh;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     grid-gap: 5vh 2vh;
     align-items: center;
     justify-items: center;
 }
 
 .profile {
-    max-width: 150px;
+    max-width: 180px;
     border-radius: 50%;
 }
 
@@ -37,6 +37,11 @@
         margin-bottom: 10%;
     }
 
+    .teamPhotos {
+        width: 80%;
+        grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+    }
+
 
     .teamPhotos p {
         font-size: 18px;
@@ -44,6 +49,6 @@
     }
 
     .profile {
-        width: auto-fit;
+        width: 20vw;
     }
 }

@@ -22,55 +22,55 @@ function MeetTheTeam() {
         <div className="teamPhotos">
           <div>
             <img className="profile" src={ali}></img>
-            <p>Ali Muhammad</p>
+            <p>Ali</p>
           </div>
           <div>
             <img className="profile" src={ankita}></img>
-            <p>Ankita Dhar</p>
+            <p>Ankita</p>
           </div>
           <div>
             <img className="profile" src={chris}></img>
-            <p>Christopher Lee</p>
+            <p>Christopher</p>
           </div>
           <div>
             <img className="profile" src={elaine}></img>
-            <p>Elaine Huynh</p>
+            <p>Elaine</p>
           </div>
           <div>
             <img className="profile" src={fiona}></img>
-            <p>Fiona Zhu</p>
+            <p>Fiona</p>
           </div>
           <div>
             <img className="profile" src={jeeng}></img>
-            <p>Jeeng Hao Low</p>
+            <p>Jeeng</p>
           </div>
           <div>
             <img className="profile" src={jenny}></img>
-            <p>Jenny Wang</p>
+            <p>Jenny</p>
           </div>
           <div>
             <img className="profile" src={joanne}></img>
-            <p>Joanne Ng</p>
+            <p>Joanne</p>
           </div>
           <div>
             <img className="profile" src={kye}></img>
-            <p>Kye-Ann Chong</p>
+            <p>Kye-Ann</p>
           </div>
           <div>
             <img className="profile" src={matthew}></img>
-            <p>Matthew Kwon</p>
+            <p>Matthew</p>
           </div>
           <div>
             <img className="profile" src={ryan}></img>
-            <p>Ryan Tan</p>
+            <p>Ryan</p>
           </div>
           <div>
             <img className="profile" src={serena}></img>
-            <p>Serena Wang</p>
+            <p>Serena</p>
           </div>
           <div>
             <img className="profile" src={victoria}></img>
-            <p>Victoria Mok</p>
+            <p>Victoria</p>
           </div>
         </div>
       </div>
