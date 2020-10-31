@@ -11,6 +11,7 @@
 
 .aboutUsContent {
     width: 70%;
+    max-width: 1000px;
     margin: auto;
     overflow: auto;
 }
@@ -33,24 +34,11 @@
 
 
 @media only screen and (max-width: 768px) {
+
     .aboutUsContent {
         width: 80%;
-        margin-left: auto;
-        margin-right: auto;
     }
 
-    .aboutUs p {
-        width: 100%;
-    }
-}
-
-@media only screen and (max-width: 620px) {
-    .aboutUsContent {
-        width: 80%;
-        text-align: center;
-    }
-
-    
     .aboutUs {
         width: 100%;
         margin-bottom: 5vh;
