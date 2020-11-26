@@ -29,3 +29,20 @@ a {
 .pushButtonUp {
     padding-top: 2vh;
 }
+
+
+@media only screen and (max-width: 768px) {
+
+    .sponsorUsContainer {
+        padding: 22vh 2.5vw 10vh 2.5vw;
+    }
+
+    .sponsorUsContainer h1, p, a  {
+        font-size: 1rem;
+    }
+
+    .sponsorUsContainer h3 {
+        font-size: 1rem;
+    }
+
+}
