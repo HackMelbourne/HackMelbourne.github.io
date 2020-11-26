@@ -1,7 +1,7 @@
 .whatWeDoContainer {
     max-width: 100vw;
     padding: 6vh 6vw 7vh 8vw;
-    background-color: #414141;
+    background-color: rgba(250,209,42,0.5);
 }
 
 .whatWeDoContainer h1 {

@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #414141;
+    background-color: #FAD12A;
     padding: 2vh 2vw;
     z-index: 1;
     font-weight: bold;
@@ -29,15 +29,25 @@
     text-align: center;
     padding: 0vh 1vw;
     cursor: pointer;
-    color: #ffffff;
+    color: #000000;
 }
 
 .navigation li :hover {
-    color: #FAD12A;
+    
+}
+
+.navigation a {
+    font-size: 1rem;
 }
 
 .navigation li a {
     text-decoration: none;
     color: inherit;
 }
+
+.signup-button {
+    padding: 1vh 2vw 1.5vh 2vw;
+    border: 2px solid #ffffff;
+    border-radius: 25px;
+  }
 

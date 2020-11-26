@@ -2,8 +2,20 @@
     max-width: 100%;
     min-height: 80vh;
     padding: 22vh 15vw 10vh 15vw;
-    background: rgb(20, 20, 20);
+    background: white;
     text-align: center;
+}
+
+.sponsorUsContainer h1 {
+    font-size: 3rem;
+}
+
+.sponsorUsContainer h3 {
+    font-size: 1.5rem;
+}
+
+a {
+    font-size: 1.25rem;
 }
 
 .sponsorUsContainer h1 {

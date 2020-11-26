@@ -1,13 +1,12 @@
 .meetTheTeamContainer {
     max-width: 100vw;
     padding: 10vh 6vw 7vh 8vw;
-    background-color: rgb(20, 20, 20);
+    background-color: white;
     text-align: center;
 }
 
 .meetTheTeamTitle {
     text-align: center;
-    color: white;
 }
 
 .teamPhotos {

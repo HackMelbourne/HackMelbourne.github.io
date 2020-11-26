@@ -1,7 +1,7 @@
 .aboutUsContainer {
     max-width: 100vw;
     padding: 24vh 6vw 10vh 8vw;
-    background: rgb(20, 20, 20);
+    background: white;
 }
 
 .laptop {
@@ -26,7 +26,7 @@
 }
 
 .laptopImage {
-    width: 25%;
+    width: 30%;
     float: right;
     margin-bottom: 2vh;
 }
