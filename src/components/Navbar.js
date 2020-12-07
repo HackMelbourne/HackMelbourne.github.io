@@ -14,7 +14,7 @@ const Navbar = () => {
         <nav className="navigation">
             <ul>
                 <li><a></a></li>
-                <li><a href="/initiatives">Initatives</a></li>
+                <li><a href="/initiatives">Initiatives</a></li>
                 <li><a href="/sponsors">Sponsor Us</a></li>
                 <li><a class="signup-button" target="_blank" href="https://forms.gle/yBCTHgWdBj66JhUV6">Sign Up</a></li>
             </ul>
