@@ -16,15 +16,23 @@ h2 {
 .greyBackground {
     display: flex;
     justify-content: space-around;
-    padding: 10vh 15vw;
-    background-color: rgba(250,209,42,0.66);
+    padding: 5vh 15vw;
+    background-color: white;
 }
 
 .blackBackground {
     display: flex;
     justify-content: space-around;
-    padding: 10vh 15vw;
+    padding: 5vh 15vw;
     background-color:white;
+}
+
+.greyBackground p {
+    font-size: 1.15rem;
+}
+
+.blackBackground p {
+    font-size: 1.15rem;
 }
 
 .text {
