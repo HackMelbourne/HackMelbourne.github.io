@@ -6,14 +6,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #FAD12A;
+    background-color: rgba(255, 255, 255, 0);
     padding: 2vh 2vw;
     z-index: 1;
     font-weight: bold;
   }
 
 .logo img{
-    width: 50px;
+    width: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .navigation ul {
@@ -29,11 +32,15 @@
     text-align: center;
     padding: 0vh 1vw;
     cursor: pointer;
-    color: #000000;
+    color: black;
 }
 
 .navigation li :hover {
-    
+    color: #FAD12A
+}
+
+.signup-button :hover {
+    color: #FAD12A
 }
 
 .navigation a {
@@ -47,7 +54,7 @@
 
 .signup-button {
     padding: 1vh 2vw 1.5vh 2vw;
-    border: 2px solid #ffffff;
+    border: 2px solid black;
     border-radius: 25px;
   }
 

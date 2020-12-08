@@ -9,7 +9,7 @@ function AboutUs() {
         <div className="aboutUs">
           <div>
             <div>
-              <h1>About Us</h1>
+              <h1>About HackMelbourne.</h1>
               <p>
                 We are a student organisation at the University of Melbourne dedicated to providing students from all backgrounds and experiences with a platform to develop and apply technical skills, specifically in a hackathon context. 
                 <br/><br/>

@@ -1,6 +1,6 @@
 .aboutUsContainer {
     max-width: 100vw;
-    padding: 24vh 6vw 10vh 8vw;
+    padding: 25vh 6vw 10vh 8vw;
     background: white;
 }
 
@@ -22,12 +22,14 @@
 }
 
 .aboutUs h1 {
+    font-size: 4rem;
     margin-bottom: 2.5vh;
 }
 
 .laptopImage {
     width: 30%;
     float: right;
+    margin-top: 6vh;
     margin-bottom: 2vh;
 }
 

@@ -7,23 +7,36 @@ header {
 
 header h1 {
     margin: auto;
+    margin-top: 5vh;
 }
 
 h2 {
     font-weight: bold;
+    font-size: 3rem;
+    margin-bottom: 5px;
 }
 
 .greyBackground {
     display: flex;
     justify-content: space-around;
-    padding: 5vh 15vw;
+    padding: 7vh 15vw;
     background-color: white;
+}
+
+.greyBackground h4 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.blackBackground h4 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
 }
 
 .blackBackground {
     display: flex;
     justify-content: space-around;
-    padding: 5vh 15vw;
+    padding: 7vh 15vw;
     background-color:white;
 }
 
