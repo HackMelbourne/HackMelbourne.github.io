@@ -8,20 +8,23 @@ function WhatWeDo() {
   return (
     <div className="whatWeDoContainer">
       <div className="homeContent">
-        <h1>What we are doing</h1>
+        <h1>Our Initiatives</h1>
         <div className="whatWeDoPrograms">
-          <div className="program">
+          <a className="program" href="/initiatives#melbourne-hack">
             <img className="programImg"src={MainHackathon}></img>
-            <p>HackMelbourne Hackathon</p>
-          </div>
-          <div className="program">
+            <p className="programTitle">Melbourne Hack</p>
+            <p>Melbourne Hackathon</p>
+          </a>
+          <a className="program" href="/initiatives#hackiethon">
             <img className="programImg" src={RookieHackathon}></img>
-            <p>Rookie Hackathon</p>
-          </div>
-          <div className="program">
+            <p className="programTitle">Hackiethon</p>
+            <p>Virtual Rookie Hackathon</p>
+          </a>
+          <a className="program" href="/initiatives#decoded">
             <img className="programImg" src={EducationProgram}></img>
+            <p className="programTitle">DecodED</p>
             <p>Education Program</p>
-          </div>
+          </a>
         </div>
       </div>
     </div>

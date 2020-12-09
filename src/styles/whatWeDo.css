@@ -28,6 +28,16 @@
 .programImg {
     width: 15vw;
     margin-bottom: 2vw;
+    transition: transform .5s;
+}
+
+.programImg:hover {
+    transform: scale(1.1);
+}
+
+.programTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 @media only screen and (max-width: 768px) {

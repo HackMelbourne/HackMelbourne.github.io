@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 100);
     padding: 2vh 2vw;
     z-index: 1;
     font-weight: bold;
@@ -36,11 +36,11 @@
 }
 
 .navigation li :hover {
-    color: #FAD12A
+    color: #FAD12A;
 }
 
 .signup-button :hover {
-    color: #FAD12A
+    color: #FAD12A;
 }
 
 .navigation a {
@@ -54,7 +54,7 @@
 
 .signup-button {
     padding: 1vh 2vw 1.5vh 2vw;
-    border: 2px solid black;
+    border: 2px solid;
+    color: black;
     border-radius: 25px;
-  }
-
+}

@@ -33,9 +33,3 @@ a{
 p {
   font-size: 1rem;
 }
-
-.highlight-button {
-  padding: 1vh 2vw 1.5vh 2vw;
-  border: 2px solid #FAD12A;
-  border-radius: 25px;
-}

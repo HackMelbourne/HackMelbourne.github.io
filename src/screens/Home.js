@@ -8,6 +8,7 @@ function Home() {
     <div className="App">
       <AboutUs/>
       <WhatWeDo/>
+      <MeetTheTeam/>
     </div>
   );
 }

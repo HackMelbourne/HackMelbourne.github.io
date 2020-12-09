@@ -1,7 +1,7 @@
 .sponsorUsContainer {
     max-width: 100%;
     min-height: 80vh;
-    padding: 22vh 15vw 10vh 15vw;
+    padding: 22vh 20vw 10vh 20vw;
     background: white;
     text-align: center;
 }
@@ -28,6 +28,17 @@ a {
 
 .pushButtonUp {
     padding-top: 2vh;
+}
+
+.highlight-button :hover {
+    color: #FAD12A;
+}
+
+.highlight-button {
+    padding: 1vh 2vw 1.5vh 2vw;
+    border: 2px solid;
+    color: black;
+    border-radius: 25px;
 }
 
 
