@@ -3,12 +3,16 @@ import React from "react";
 import ali from "../img/team/hm-ali.jpg";
 import ankita from "../img/team/hm-ankita.png";
 import chris from "../img/team/hm-chris.jpg";
+import deborah from "../img/team/hm-deborah.jpg";
 import elaine from "../img/team/hm-elaine.jpg";
 import fiona from "../img/team/hm-fiona.jpg";
 import jeeng from "../img/team/hm-jeeng.png";
 import jenny from "../img/team/hm-jenny.jpg";
 import joanne from "../img/team/hm-joanne.jpg";
+import keith from "../img/team/hm-keith.png";
 import kye from "../img/team/hm-kye.jpg";
+import leo from "../img/team/hm-leo.jpg";
+import ley from "../img/team/hm-ley.jpg";
 import matthew from "../img/team/hm-matthew.jpg";
 import ryan from "../img/team/hm-ryan.png";
 import serena from "../img/team/hm-serena.jpg";
@@ -33,6 +37,10 @@ function MeetTheTeam() {
             <p>Christopher</p>
           </div>
           <div>
+            <img className="profile" src={deborah}></img>
+            <p>Deborah</p>
+          </div>
+          <div>
             <img className="profile" src={elaine}></img>
             <p>Elaine</p>
           </div>
@@ -53,8 +61,20 @@ function MeetTheTeam() {
             <p>Joanne</p>
           </div>
           <div>
+            <img className="profile" src={keith}></img>
+            <p>Keith</p>
+          </div>
+          <div>
             <img className="profile" src={kye}></img>
             <p>Kye-Ann</p>
+          </div>
+          <div>
+            <img className="profile" src={leo}></img>
+            <p>Leo</p>
+          </div>
+          <div>
+            <img className="profile" src={ley}></img>
+            <p>Ley</p>
           </div>
           <div>
             <img className="profile" src={matthew}></img>

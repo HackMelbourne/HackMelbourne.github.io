@@ -49,4 +49,9 @@
     .laptopImage {
         width: 100%;
     }
+
+    .aboutUs h1 {
+        font-size: 2rem;
+        margin-bottom: 2.5vh;
+    }
 }
