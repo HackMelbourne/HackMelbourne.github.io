@@ -41,6 +41,15 @@ a {
     border-radius: 25px;
 }
 
+.teamPhoto {
+    width: 30vw;
+    margin-top: 30px;
+}
+
+a {
+    font-size: 1rem;
+}
+
 
 @media only screen and (max-width: 768px) {
 
