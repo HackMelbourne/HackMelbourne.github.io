@@ -43,6 +43,7 @@ a {
 
 .teamPhoto {
     width: 30vw;
+    min-width: 350px;
     margin-top: 30px;
 }
 

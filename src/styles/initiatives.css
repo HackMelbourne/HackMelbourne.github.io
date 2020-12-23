@@ -64,3 +64,21 @@ h2 {
 .marginBelow {
     margin-bottom: 3vh;
 }
+
+@media only screen and (max-width: 768px) {
+    .text {
+        width: 100%;
+    }
+    .blackBackground {
+        flex-direction: column-reverse;
+
+    }
+
+    .greyBackground {
+        flex-direction: column;
+    }
+
+    #melbourne-hack .image{
+        margin-top: 30px;
+    }
+}

@@ -17,7 +17,7 @@ function Initiatives() {
           <a className="to-fb-button" target="_blank" href="https://www.facebook.com/hackmelbourne">Follow updates</a>
         </div>
         <div className="image">
-          <img src={mainHackathon} style={{height: "300px", width: "300px"}} alt="Hackathon Symbol"/>
+            <img src={mainHackathon} style={{height: "300px", width: "300px"}} alt="Hackathon Symbol"/>
         </div>
       </div>
       <div className="blackBackground" id="hackiethon">
