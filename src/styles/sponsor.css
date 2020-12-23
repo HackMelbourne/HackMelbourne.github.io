@@ -55,7 +55,7 @@ a {
 @media only screen and (max-width: 768px) {
 
     .sponsorUsContainer {
-        padding: 22vh 2.5vw 10vh 2.5vw;
+        padding: 8vh 2.5vw 10vh 2.5vw;
     }
 
     .sponsorUsContainer h1, p, a {

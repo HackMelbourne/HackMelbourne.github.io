@@ -54,4 +54,8 @@
         font-size: 2rem;
         margin-bottom: 2.5vh;
     }
+
+    .aboutUsContainer {
+        padding: 8vh 6vw 10vh 8vw;
+    }
 }

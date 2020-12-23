@@ -3,6 +3,19 @@ import '../styles/navbar.css';
 import Logo from '../img/H{Logo.png';
 import Hamburger from '../img/hamburger.png'
 
+function expand() {
+  var x = document.getElementById("topnav");
+  var y = document.getElementsByClassName("signup-button");
+  if (x.className === "navigation") {
+    x.className += " responsive";
+    if (y.length > 0){
+      y[0].className = "";
+    }
+  } else {
+    x.className = "navigation";
+  }
+}
+
 const Navbar = () => {
   return (
     <header className="navbar">
@@ -11,9 +24,17 @@ const Navbar = () => {
               <img src={Logo} alt="Logo"></img>
             </a>
         </div>
-        <nav className="navigation">
+        <div class="mobileWrapper">
+          <div class="hamburger" onClick={expand}>
+            <img src={Hamburger}></img>
+          </div>
+          <a class="mobileHeader" href="/">HackMelbourne</a>
+          <div class="mlh-banner">
+            <img src={Hamburger}></img>
+          </div>
+        </div>
+        <nav className="navigation" id="topnav">
             <ul>
-                <li><a></a></li>
                 <li><a href="/initiatives">Initiatives</a></li>
                 <li><a href="/sponsors">Sponsor Us</a></li>
                 <li><a class="signup-button" target="_blank" href="https://forms.gle/yBCTHgWdBj66JhUV6">Sign Up</a></li>

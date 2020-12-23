@@ -81,4 +81,8 @@ h2 {
     #melbourne-hack .image{
         margin-top: 30px;
     }
+
+    header {
+        padding: 0;
+    }
 }
