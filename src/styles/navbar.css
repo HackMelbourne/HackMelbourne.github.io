@@ -77,14 +77,6 @@
     visibility: hidden;
 }
 
-.mobileWrapper {
-    margin: 14px 0;
-    display: flex;
-    position:static;
-    width: 100vw;
-    justify-content: space-between;
-}
-
 @media only screen and (max-width: 768px) {
     .navigation {
         display: none;
@@ -129,5 +121,13 @@
         text-align: left;
         margin: 10px 0;
         font-weight:normal;
+    }
+
+    .mobileWrapper {
+        margin: 14px 0;
+        display: flex;
+        position:static;
+        width: 100vw;
+        justify-content: space-between;
     }
 }
