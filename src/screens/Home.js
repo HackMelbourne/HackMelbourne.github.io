@@ -1,7 +1,7 @@
 import React from "react";
-import AboutUs from '../components/AboutUs.js';
-import WhatWeDo from '../components/WhatWeDo';
-import MeetTheTeam from '../components/MeetTheTeam';
+import AboutUs from '../components/Home/AboutUs.js';
+import WhatWeDo from '../components/Home/WhatWeDo';
+import MeetTheTeam from '../components/Home/MeetTheTeam';
 
 function Home() {
   return (

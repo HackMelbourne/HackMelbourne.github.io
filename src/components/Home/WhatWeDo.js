@@ -1,8 +1,8 @@
-import '../styles/whatWeDo.css';
+import '../../styles/whatWeDo.css';
 import React from "react";
-import MainHackathon from '../img/MainHackathon.png';
-import RookieHackathon from '../img/RookieHackathon.png';
-import EducationProgram from '../img/EducationProgram.png';
+import MainHackathon from '../../img/MainHackathon.png';
+import RookieHackathon from '../../img/RookieHackathon.png';
+import EducationProgram from '../../img/EducationProgram.png';
 
 function WhatWeDo() {
   return (

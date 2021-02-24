@@ -1,6 +1,6 @@
 import '../styles/sponsor.css';
 import React from "react";
-import HackMelbourne_Prospectus from '../HackMelbourne_Prospectus.pdf';
+import HackMelbourne_Prospectus from '../documents/HackMelbourne_Prospectus_2021.pdf';
 import hackmelb_team from '../img/hackmelb_team.jpg';
 
 function Sponsor() {
