@@ -19,18 +19,18 @@
 .aboutUs {
     width: 60%;
     float: left;
-}
+} 
 
 .aboutUs h1 {
-    font-size: 4rem;
+    font-size: 4vw;
     margin-bottom: 2.5vh;
 }
 
 .laptopImage {
     width: 30%;
     float: right;
-    margin-top: 6vh;
-    margin-bottom: 2vh;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 
