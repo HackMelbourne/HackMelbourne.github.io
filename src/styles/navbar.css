@@ -1,7 +1,7 @@
 .navbar{
     position: fixed;
     width: 100vw;
-    min-height: 10vh;
+    min-height: 15vh;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -39,7 +39,41 @@
     padding: 0vh 1vw;
     cursor: pointer;
     color: black;
+    display: inline-block;
 }
+
+
+
+/*ToDo: fix navbar to make it link to sponsors*/
+
+div a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+    display:inline-block;
+  }
+
+
+ul {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+ul li {display: inline-block;}
+ul li:hover ul {display: block;}
+ul li ul {
+  position: absolute;
+  width: 200px;
+  display: none;
+}
+ul li ul li { 
+  background: #555; 
+  display: block; 
+}
+ul li ul li a {display:block !important;} 
+ul li ul li:hover {background: #666;}
+
 
 .navigation li :hover {
     color: #FAD12A;

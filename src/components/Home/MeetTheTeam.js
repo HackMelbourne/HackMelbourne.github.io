@@ -45,6 +45,7 @@ function MeetTheTeam() {
           <Team avatar={jonathan} name="Jonathan"/>
           <Team avatar={keith} name="Keith"/>
           <Team avatar={kye} name="Kye"/>
+          <Team avatar={leo} name="Leo"/>
           <Team avatar={ley} name="Ley"/>
           <Team avatar={matthew} name="Matthew"/>
           <Team avatar={muskaan} name="Muskaan"/>
