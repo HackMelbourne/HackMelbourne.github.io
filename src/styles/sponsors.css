@@ -3,9 +3,10 @@
 .sponsorsContainer {
     
     min-height: 80vh;
-    padding: 10vh 2vw 1vh 2vw;
+    padding: 3vh 2vw 1vh 2vw;
     background: white;
     text-align: center;
+    /* align-content: center; */
 }
 
 .sponsorsContainer h1 {
@@ -96,8 +97,9 @@ td {
 
 
 .diamondSponsor{
-    padding-top: 5rem;
+    padding-top: 2vh;
     width: 100%;
+    margin-bottom: 8vh;
 }
 .diamondSponsor h1{
     color: var(--diamond-back);
@@ -123,8 +125,9 @@ td {
 
 
 .platinumSponsor{
-    padding-top: 5rem;
+    padding-top: 5vh;
     width: 100%;
+    margin-bottom: 8vh;
 }
 .platinumSponsor h1{
     color: var(--platinum-back);
@@ -150,8 +153,9 @@ td {
 
 
 .goldSponsor{
-    padding-top: 5rem;
+    padding-top: 5vh;
     width: 100%;
+    margin-bottom: 8vh;
 }
 .goldSponsor h1{
     color: var(--gold-back);
@@ -168,8 +172,9 @@ td {
 
 
 .silverSponsor{
-    padding-top: 5rem;
+    padding-top: 5vh;
     width: 100%;
+    margin-bottom: 8vh;
 }
 .silverSponsor h1{
     color: var(--silver-back);
@@ -182,4 +187,16 @@ td {
     /* -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 255, 0, 0.67);
     -moz-box-shadow:    0px 0px 30px 0px rgba(0, 255, 0, 0.67); */
     box-shadow:         0px 0px 30px 0px var(--silver);
+}
+
+
+
+.separator {
+    /* max-width: 75%; */
+    margin: 12vh 15% 0 15%;
+    border-radius: 5px;
+    height: 2px;
+    background-color: var(--blue);
+    box-shadow: 0px 0px 2px 0px var(--silver);
+
 }

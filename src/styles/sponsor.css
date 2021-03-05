@@ -52,6 +52,10 @@ a {
     font-size: 1rem;
 }
 
+div a {
+    color: black;
+    font-weight: bold;
+}
 
 @media only screen and (max-width: 768px) {
 

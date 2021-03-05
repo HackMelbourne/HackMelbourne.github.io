@@ -25,6 +25,7 @@ function Sponsors() {
           </table>
 
         </div>
+        <div class="separator"/>
         <div className="platinumSponsor">
           <h1>
             Platinum Tier
@@ -36,6 +37,7 @@ function Sponsors() {
           </table>
 
         </div>
+        <div class="separator"/>
         <div className="goldSponsor">
           <h1>
             Gold Tier
@@ -45,15 +47,15 @@ function Sponsors() {
                 <SponsorD link="" logo={optiver_logo} sponsorName={"Optiver"} alt="optiver"/>
               </tr>
           </table>
-          
+        
         </div>
+        <div class="separator"/>
         <div className="silverSponsor">
           <h1>
             Silver Tier
           </h1>
           <table className="sponsorTable">
             <tr>
-              <SponsorD link="" logo={bain_logo} sponsorName={"Bain & Co."} alt="bainandco"/>
               <SponsorD link="" logo={bain_logo} sponsorName={"Bain & Co."} alt="bainandco"/>
             </tr>
           </table>
@@ -81,9 +83,12 @@ function SponsorD(props) {
 function PlaceHolder(props) {
   return (
     <td>
-      <h2 className="placeHolder">
-        Be the first {props.tier} tier sponsor!
-      </h2>
+      <a href="/sponsor_us">
+        <h2 className="placeHolder">
+          Be the first {props.tier} tier sponsor!
+        </h2>
+      </a>
+      
     </td>
   )
 }
