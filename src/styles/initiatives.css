@@ -75,6 +75,13 @@ h2 {
     margin-bottom: 3vh;
 }
 
+.initiativeheader a{
+    /* max-width: 100vw; */
+    font-size: 3rem;
+    
+}
+
+
 div a {
     padding:0px;
 }

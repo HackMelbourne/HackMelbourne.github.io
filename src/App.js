@@ -16,8 +16,9 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar style = {navBar}/>
-        <Switch>
+        {/* <Navbar style = {navBar}/> */}
+        <Switch className="Switch">
+          <Navbar style = {navBar}/>
           <Route exact path="/" component={Home}/>
           <Route path="/initiatives" component={Initiatives}/>
           <Route path="/sponsors" component={Sponsor}/>

@@ -25,10 +25,14 @@ function Initiatives() {
           <img src={rookieHackathon} style={{height: "300px", width: "300px"}} alt="Hackathon Symbol"/>
         </div>
         <div className="text">
-          <h2>Hackiethon</h2>
-          <h4>April, 2021</h4>
+          <h2 className="initiativeheader">
+            <a href="https://hackiethon.hackmelb.org/">
+              Hackiethon
+            </a>
+          </h2>
+          <h4>2 - 5th of April, 2021</h4>
           <p className="marginBelow">Our rookie hackathon is tailor-made for those who little experience in hackathons, but are keen to get involved! Unlike our main hackathon, this will be held virtually and will provide valuable insights into the experience of competing in such events, and how to maximise your chances of success.  </p>
-          <a className="to-hackiethon-button" target="_blank" href="https://hackiethon.hackmelb.org">Hackiethon Website</a>
+          <a className="to-hackiethon-button" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeqMOc60jdHzhFS_rvMugnfn6XBMxD_uB69_kU4Ckx7ZyR68Q/viewform">Sign up here</a>
         </div>
       </div>
       <div className="greyBackground" id="decoded">
