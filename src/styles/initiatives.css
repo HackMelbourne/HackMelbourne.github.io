@@ -75,6 +75,10 @@ h2 {
     margin-bottom: 3vh;
 }
 
+div a {
+    padding:0px;
+}
+
 @media only screen and (max-width: 768px) {
     .text {
         width: 100%;

@@ -34,10 +34,15 @@ const Navbar = () => {
           </div>
         </div>
         <nav className="navigation" id="topnav">
-            <ul>
-                <li><a href="/initiatives">Initiatives</a></li>
-                <li><a href="/sponsors">Sponsor Us</a></li>
-                <li><a class="signup-button" target="_blank" href="https://hmmembership.getqpay.com">Sign Up</a></li>
+            <ul class="dropdown">
+                <li class="screen"><a href="/initiatives">Initiatives</a></li>
+                <li class="screen">
+                  <a href="/sponsors">Sponsors</a>
+                  <ul class="dropdown-content">
+                    <li><a href="/sponsor_us">Sponsor Us</a></li>
+                  </ul>
+                </li>
+                <li class="screen"><a class="signup-button" target="_blank" href="https://hmmembership.getqpay.com">Sign Up</a></li>
             </ul>
         </nav>
     </header>
