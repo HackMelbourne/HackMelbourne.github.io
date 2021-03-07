@@ -27,7 +27,8 @@ function Initiatives() {
         <div className="text">
           <h2>Hackiethon</h2>
           <h4>April, 2021</h4>
-          <p>Our rookie hackathon is tailor-made for those who little experience in hackathons, but are keen to get involved! Unlike our main hackathon, this will be held virtually and will provide valuable insights into the experience of competing in such events, and how to maximise your chances of success.  </p>
+          <p className="marginBelow">Our rookie hackathon is tailor-made for those who little experience in hackathons, but are keen to get involved! Unlike our main hackathon, this will be held virtually and will provide valuable insights into the experience of competing in such events, and how to maximise your chances of success.  </p>
+          <a className="to-hackiethon-button" target="_blank" href="https://hackiethon.hackmelb.org">Hackiethon Website</a>
         </div>
       </div>
       <div className="greyBackground" id="decoded">
