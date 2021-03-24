@@ -6,21 +6,21 @@ import bain_logo_inv from '../../img/sponsors/bain/bain_logo_inv.png';
 
 import optiver_logo from '../../img/sponsors/optiver/optiver_logo.png'
 
-
+import tibra_logo from '../../img/sponsors/tibra/tibra_logo.png'
 
 function Sponsors() {
   return (
     <div className="sponsorsContainer">
       <h1 className="sponsHeading">
-        Meet Our Sponsors
+        HackMelbourne 2021 Sponsors
       </h1>
         <div className="diamondSponsor">
           <h1>
-            Diamond Tier
+            Diamond Sponsors
           </h1>
           <table className="sponsorTable"> 
             <tr>
-              <PlaceHolder tier="Diamond"/>
+              <SponsorD link="" logo={tibra_logo} sponsorName={"Tibra"} alt="tibra"/>
             </tr>
           </table>
 
@@ -28,7 +28,7 @@ function Sponsors() {
         <div class="separator"/>
         <div className="platinumSponsor">
           <h1>
-            Platinum Tier
+            Platinum Sponsors
           </h1>
           <table className="sponsorTable"> 
             <tr>
@@ -40,7 +40,7 @@ function Sponsors() {
         <div class="separator"/>
         <div className="goldSponsor">
           <h1>
-            Gold Tier
+            Gold Sponsors
           </h1>
           <table className="sponsorTable"> 
               <tr>
@@ -52,7 +52,7 @@ function Sponsors() {
         <div class="separator"/>
         <div className="silverSponsor">
           <h1>
-            Silver Tier
+            Silver Sponsors
           </h1>
           <table className="sponsorTable">
             <tr>
