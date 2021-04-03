@@ -5,7 +5,7 @@ import bain_logo from '../../img/sponsors/bain/bain_logo.png';
 import bain_logo_inv from '../../img/sponsors/bain/bain_logo_inv.png';
 
 import optiver_logo from '../../img/sponsors/optiver/optiver_logo.png'
-
+import arcitecta_logo from '../../img/sponsors/arcitecta/arcitecta_logo.png'
 import tibra_logo from '../../img/sponsors/tibra/tibra_logo.png'
 
 function Sponsors() {
@@ -20,6 +20,7 @@ function Sponsors() {
           </h1>
           <table className="sponsorTable"> 
             <tr>
+              <SponsorD link="" logo={arcitecta_logo} sponsorName={"Arcitecta"} alt="arcitecta"/>
               <SponsorD link="" logo={tibra_logo} sponsorName={"Tibra"} alt="tibra"/>
             </tr>
           </table>

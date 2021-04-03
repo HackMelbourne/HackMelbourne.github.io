@@ -8,7 +8,7 @@ import HackiethonModal from '../components/EventsModal/HackiethonModal';
 function Home() {
   return (
     <div className="App">
-      <HackiethonModal/>
+      {/* <HackiethonModal/> */}
       <AboutUs/>
       <WhatWeDo/>
       <MeetTheTeam/>
