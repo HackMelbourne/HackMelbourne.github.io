@@ -20,8 +20,8 @@ function Sponsors() {
           </h1>
           <table className="sponsorTable"> 
             <tr>
-              <SponsorD link="" logo={arcitecta_logo} sponsorName={"Arcitecta"} alt="arcitecta"/>
-              <SponsorD link="" logo={tibra_logo} sponsorName={"Tibra"} alt="tibra"/>
+              <SponsorD link="https://www.arcitecta.com/" logo={arcitecta_logo} sponsorName={"Arcitecta"} alt="arcitecta"/>
+              <SponsorD link="https://www.tibra.com/" logo={tibra_logo} sponsorName={"Tibra"} alt="tibra"/>
             </tr>
           </table>
 
@@ -45,7 +45,7 @@ function Sponsors() {
           </h1>
           <table className="sponsorTable"> 
               <tr>
-                <SponsorD link="" logo={optiver_logo} sponsorName={"Optiver"} alt="optiver"/>
+                <SponsorD link="https://www.optiver.com/" logo={optiver_logo} sponsorName={"Optiver"} alt="optiver"/>
               </tr>
           </table>
         
@@ -57,7 +57,7 @@ function Sponsors() {
           </h1>
           <table className="sponsorTable">
             <tr>
-              <SponsorD link="" logo={bain_logo} sponsorName={"Bain & Co."} alt="bainandco"/>
+              <SponsorD link="https://www.bain.com/" logo={bain_logo} sponsorName={"Bain & Co."} alt="bainandco"/>
             </tr>
           </table>
 
