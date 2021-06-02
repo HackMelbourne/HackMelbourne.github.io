@@ -1,7 +1,6 @@
 @import '../colourTheme.css';
 
 .sponsorsContainer {
-    
     min-height: 80vh;
     padding: 3vh 2vw 1vh 2vw;
     background: white;
@@ -25,7 +24,7 @@
 
 table {
     border-collapse: collapse;
-    width: 100%;
+    width: 80%;
 }
 
 td {
