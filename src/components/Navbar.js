@@ -21,7 +21,7 @@ const Navbar = () => {
     <header className="navbar">
         <div className="logo">
             <a href="/">
-              <img src={Logo} alt="Logo"></img>
+              <img href="/" src={Logo} alt="Logo"></img>
             </a>
         </div>
         <div class="mobileWrapper">

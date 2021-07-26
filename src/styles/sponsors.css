@@ -1,7 +1,6 @@
 @import '../colourTheme.css';
 
 .sponsorsContainer {
-    
     min-height: 80vh;
     padding: 3vh 2vw 1vh 2vw;
     background: white;
@@ -16,6 +15,7 @@
 
 .sponsHeading {
     font-size: 3rem;
+    font-weight: bold;
 }
 
 .sponsorTable {
@@ -24,7 +24,7 @@
 
 table {
     border-collapse: collapse;
-    width: 100%;
+    width: 80%;
 }
 
 td {
@@ -101,9 +101,9 @@ td {
     width: 100%;
     margin-bottom: 8vh;
 }
-.diamondSponsor h1{
+/* .diamondSponsor h1{
     color: var(--diamond-back);
-}
+} */
 .diamondSponsor .sponsorTable .sponsLogo:hover {
     transform: scale(1.1);
     /* -webkit-border-radius: 10px;
@@ -129,9 +129,9 @@ td {
     width: 100%;
     margin-bottom: 8vh;
 }
-.platinumSponsor h1{
+/* .platinumSponsor h1{
     color: var(--platinum-back);
-}
+} */
 .platinumSponsor .sponsorTable .sponsLogo:hover {
     transform: scale(1.1);
     /* -webkit-border-radius: 10px;
@@ -157,9 +157,9 @@ td {
     width: 100%;
     margin-bottom: 8vh;
 }
-.goldSponsor h1{
+/* .goldSponsor h1{
     color: var(--gold-back);
-}
+} */
 .goldSponsor .sponsorTable .sponsLogo:hover {
     transform: scale(1.1);
     /* -webkit-border-radius: 10px;
@@ -176,9 +176,9 @@ td {
     width: 100%;
     margin-bottom: 8vh;
 }
-.silverSponsor h1{
+/* .silverSponsor h1{
     color: var(--silver-back);
-}
+} */
 .silverSponsor .sponsorTable .sponsLogo:hover {
     transform: scale(1.1);
     /* -webkit-border-radius: 10px;
@@ -193,10 +193,10 @@ td {
 
 .separator {
     /* max-width: 75%; */
-    margin: 12vh 15% 0 15%;
+    margin: 12vh 30% 0 30%;
     border-radius: 5px;
     height: 2px;
-    background-color: var(--blue);
+    background-color: black;
     box-shadow: 0px 0px 2px 0px var(--silver);
 
 }

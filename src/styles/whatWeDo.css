@@ -12,6 +12,7 @@
 .homeContent {
     width: 80%;
     margin: auto;
+    align-content: center;
 }
 
 .whatWeDoPrograms {
@@ -38,6 +39,17 @@
 .programTitle {
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+/* .header {
+    align-content: center;
+} */
+
+
+.initiativeheader a{
+    /* max-width: 100vw; */
+    font-size: 2.5rem;
+    
 }
 
 @media only screen and (max-width: 768px) {
