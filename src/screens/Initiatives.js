@@ -14,7 +14,7 @@ function Initiatives() {
           <h2>Melbourne Hack</h2>
           <h4>July, 2021</h4>
           <p className="marginBelow">The main hackathon seeks to bring together students from across the state for a weekend of intense hacking. Scheduled for Semester 2, this annual event will provide you with the opportunity to collaborate with talented individuals, meet representatives from industry-leading companies, develop your technical skills and win amazing prizes!</p>
-          <a className="to-fb-button" target="_blank" href="https://www.facebook.com/hackmelbourne">Follow updates</a>
+          <a className="to-fb-button" target="_blank" href="https://melbournehack.hackmelb.org/">Visit here!</a>
         </div>
         <div className="image">
             <img src={mainHackathon} style={{height: "300px", width: "300px"}} alt="Hackathon Symbol"/>
