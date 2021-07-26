@@ -1,26 +1,40 @@
 import '../../styles/sponsors.css';
 import React from "react";
 
-import bain_logo from '../../img/sponsors/bain/bain_logo.png';
-import bain_logo_inv from '../../img/sponsors/bain/bain_logo_inv.png';
+// Diamond
+import arcitecta_logo from '../../img/sponsors/Arcitecta/arcitecta_logo.png';
+import tibra_logo from '../../img/sponsors/Tibra/tibra_logo.png';
+import integradev_logo from '../../img/sponsors/IntegraDev/integra_dev_logo.png';
 
-import optiver_logo from '../../img/sponsors/optiver/optiver_logo.png'
+// Platinum
+import rea_group_logo from '../../img/sponsors/REA_Group/rea_group_logo.png';
 
+// Gold
+import optiver_logo from '../../img/sponsors/Optiver/optiver_logo.png';
 
+// Silver
+import bain_logo from '../../img/sponsors/Bain/bain_logo.png';
+import bain_logo_inv from '../../img/sponsors/Bain/bain_logo_inv.png';
+import csiro_logo from '../../img/sponsors/CSIRO/CSIRO_logo_black.png';
 
 function Sponsors() {
   return (
     <div className="sponsorsContainer">
       <h1 className="sponsHeading">
-        Meet Our Sponsors
+        HackMelbourne 2021 Sponsors
       </h1>
         <div className="diamondSponsor">
           <h1>
-            Diamond Tier
+            Diamond Sponsors
           </h1>
           <table className="sponsorTable"> 
             <tr>
-              <PlaceHolder tier="Diamond"/>
+              <SponsorD link="https://www.arcitecta.com/" logo={arcitecta_logo} sponsorName={"Arcitecta"} alt="arcitecta"/>
+              <SponsorD link="https://www.integradev.com.au/" logo={integradev_logo} sponsorName={"IntegraDev"} alt="integradev"/>
+              <SponsorD link="https://www.tibra.com/" logo={tibra_logo} sponsorName={"Tibra"} alt="tibra"/>
+            </tr>
+            <tr>
+
             </tr>
           </table>
 
@@ -28,11 +42,13 @@ function Sponsors() {
         <div class="separator"/>
         <div className="platinumSponsor">
           <h1>
-            Platinum Tier
+            Platinum Sponsors
           </h1>
           <table className="sponsorTable"> 
-            <tr>
-              <PlaceHolder tier="Platinum"/>
+            <tr>              
+              <SponsorD link="https://www.rea-group.com/" logo={rea_group_logo} sponsorName={"REA Group"} alt="rea_group"/>
+
+              {/* <PlaceHolder tier="Platinum"/> */}
             </tr>
           </table>
 
@@ -40,23 +56,25 @@ function Sponsors() {
         <div class="separator"/>
         <div className="goldSponsor">
           <h1>
-            Gold Tier
+            Gold Sponsors
           </h1>
           <table className="sponsorTable"> 
               <tr>
-                <SponsorD link="" logo={optiver_logo} sponsorName={"Optiver"} alt="optiver"/>
+                <SponsorD link="https://www.optiver.com/" logo={optiver_logo} sponsorName={"Optiver"} alt="optiver"/>
               </tr>
           </table>
+        
         
         </div>
         <div class="separator"/>
         <div className="silverSponsor">
           <h1>
-            Silver Tier
+            Silver Sponsors
           </h1>
           <table className="sponsorTable">
             <tr>
-              <SponsorD link="" logo={bain_logo} sponsorName={"Bain & Co."} alt="bainandco"/>
+              <SponsorD link="https://www.bain.com/" logo={bain_logo} sponsorName={"Bain & Co."} alt="bainandco"/>
+              <SponsorD link="https://www.csiro.au/en/" logo={csiro_logo} sponsorName={"CSIRO"} alt="csiro"/>
             </tr>
           </table>
 

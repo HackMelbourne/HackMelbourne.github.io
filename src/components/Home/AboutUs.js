@@ -11,9 +11,11 @@ function AboutUs() {
             <div>
               <h1>About HackMelbourne.</h1>
               <p>
-                We are a student organisation at the University of Melbourne dedicated to providing students from all backgrounds and experiences with a platform to develop and apply technical skills, specifically in a hackathon context. 
+                We are a student organisation based in Melbourne dedicated to providing students from all backgrounds and experiences with a platform to develop and apply technical skills, specifically in a hackathon context.
                 <br/><br/>
-                We’re passionate about increasing student accessibility to future opportunities within the technological sphere, fostering a love for software development and channeling innovation through our hackathons.
+                We’re passionate about increasing student accessibility to opportunities within the technological sphere, fostering a love for software development and channeling innovation through our hackathons.   
+                <br/><br/>
+                Students from all universities and schools are welcome to participate in our programs. 
               </p>
             </div>
           </div>

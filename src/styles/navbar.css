@@ -1,23 +1,26 @@
 .navbar{
     position: fixed;
-    width: 100vw;
-    min-height: 10vh;
+    width: 90vw;
+    margin: 0 5vw 0 5vw;
+    min-height: 80px;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     background-color: rgba(255, 255, 255, 100);
-    padding: 2vh 2vw;
+    padding: 3vh 10vw;
     z-index: 1;
     font-weight: bold;
-  }
+}
 
 .logo img{
     width: 80px;
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 2;
+
 }
 
 .navigation {
@@ -92,7 +95,7 @@ ul li:hover ul {display: block;}
     /* padding-left: 0px; */
     padding: 2vh 2vw 2vh 0vw;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 2;
     margin-left: -1vw;
 }
 
@@ -107,6 +110,8 @@ ul li:hover ul {display: block;}
 .dropdown {
     position: relative;
     display: inline-block;
+    z-index: 2;
+
 }
   
 
