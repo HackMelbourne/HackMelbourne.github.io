@@ -5,16 +5,13 @@ import React from "react";
 import arcitecta_logo from '../../img/sponsors/Arcitecta/arcitecta_logo.png';
 import tibra_logo from '../../img/sponsors/Tibra/tibra_logo.png';
 import integradev_logo from '../../img/sponsors/IntegraDev/integra_dev_logo.png';
-
-// Platinum
-import rea_group_logo from '../../img/sponsors/REA_Group/rea_group_logo.png';
+import integradev_logo_resized from '../../img/sponsors/IntegraDev/resized.png';
 
 // Gold
-import optiver_logo from '../../img/sponsors/Optiver/optiver_logo.png';
+import optiver_logo from '../../img/sponsors/optiver/optiver_logo.png';
 
 // Silver
-import bain_logo from '../../img/sponsors/Bain/bain_logo.png';
-import bain_logo_inv from '../../img/sponsors/Bain/bain_logo_inv.png';
+import bain_logo from '../../img/sponsors/bain/bain_logo.png';
 import csiro_logo from '../../img/sponsors/CSIRO/CSIRO_logo_black.png';
 
 function Sponsors() {
@@ -46,9 +43,7 @@ function Sponsors() {
           </h1>
           <table className="sponsorTable"> 
             <tr>              
-              <SponsorD link="https://www.rea-group.com/" logo={rea_group_logo} sponsorName={"REA Group"} alt="rea_group"/>
-
-              {/* <PlaceHolder tier="Platinum"/> */}
+              <PlaceHolder tier="Platinum"/> 
             </tr>
           </table>
 
