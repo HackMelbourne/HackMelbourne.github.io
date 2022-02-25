@@ -8,10 +8,10 @@ import integradev_logo from '../../img/sponsors/IntegraDev/integra_dev_logo.png'
 import integradev_logo_resized from '../../img/sponsors/IntegraDev/resized.png';
 
 // Gold
-import optiver_logo from '../../img/sponsors/optiver/optiver_logo.png';
+import optiver_logo from '../../img/sponsors/Optiver/optiver_logo.png';
 
 // Silver
-import bain_logo from '../../img/sponsors/bain/bain_logo.png';
+import bain_logo from '../../img/sponsors/Bain/bain_logo.png';
 import csiro_logo from '../../img/sponsors/CSIRO/CSIRO_logo_black.png';
 
 function Sponsors() {
