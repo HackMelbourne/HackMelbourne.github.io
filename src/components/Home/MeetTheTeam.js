@@ -30,13 +30,13 @@ import florence from "../../img/team/2022/Website team/hm-florence.png"
 /* Logistics Team */
 import yupin from "../../img/team/2022/Logistics team/hm-yupin.jpeg"
 import aldrich from "../../img/team/2022/Logistics team/hm-aldrich.jpg"
-// import amy from "../../img/team/2022/Logistics team/hm-amy.jpg"
+import amy from "../../img/team/2022/Logistics team/hm-amy.jpg"
 import jiahao from "../../img/team/2022/Logistics team/hm-jiahao.jpg"
 // import selena from "../../img/team/2022/Logistics team/hm-selena.jpg"
 import suren from "../../img/team/2022/Logistics team/hm-suren.jpg"
 
 /* Marketing Team */
-import whoisthis from "../../img/team/2022/Marketing team/hm-who-is-this.png"
+import arya from "../../img/team/2022/Marketing team/hm-arya.png"
 
 /* Sponsorship Team */
 // import rishabh from "../../img/team/2022/Sponsorship team/hm-rishabh.jpg"
@@ -57,14 +57,14 @@ function MeetTheTeam() {
       <div className="meetTheTeamContainer">
         <h1 className="meetTheTeamTitle">Meet the team</h1>
         <div className="teamPhotos">
-          <Team avatar={miskaan} name="Miskaan Dalmia" position="President"/>
+          <Team avatar={miskaan} name="Muskaan Dalmia" position="President"/>
           <Team avatar={aditya} name="Aditya Ajit" position="Secretary"/>
           <Team avatar={cute_pup1} name="Tanishq Chawla" position="Treasurer"/>
 
           <Team avatar={ryan} name="Ryan Samarakoon" position="Education and Website Director"/>
           <Team avatar={xinyu} name="Chuah Xin Yu" position="Education Officer"/>
           <Team avatar={daniel} name="Daniel" position="Education Officer"/>
-          <Team avatar={hoan} name="Hoan" position="Education Officer"/>
+          <Team avatar={hoan} name="Hoan Tran" position="Education Officer"/>
           <Team avatar={cute_pup2} name="Jerry Luong" position="Education Officer"/>
           <Team avatar={cute_pup6} name="Arsam Samadi" position="Website Officer"/>
           {/* <Team avatar={arsam} name="Arsam Samadi" position="Website Officer"/> */}
@@ -72,14 +72,14 @@ function MeetTheTeam() {
 
           <Team avatar={yupin} name="Gan Yu Pin" position="Logistics Director"/>
           <Team avatar={aldrich} name="Aldrich Chan" position="Logistics Officer"/>
-          <Team avatar={cute_pup3} name="Amy Ly" position="Logistics Officer"/>
+          <Team avatar={amy} name="Amy Ly" position="Logistics Officer"/>
           {/* <Team avatar={amy} name="Amy Ly" position="Logistics Officer"/> */}
           <Team avatar={jiahao} name="Jia Hao" position="Logistics Officer"/>
           <Team avatar={cute_pup4} name="Selena Lee" position="Logistics Officer"/>
           {/* <Team avatar={selena} name="Selena Lee" position="Logistics Officer"/> */}
           <Team avatar={suren} name="Suren Fernando" position="Logistics Officer"/>
 
-          <Team avatar={whoisthis} name="Who is this?" position="Marketing"/>
+          <Team avatar={arya} name="Arya" position="Marketing Director"/>
 
           <Team avatar={cute_pup5} name="Rishabh Dhawan" position="Sponsorships Director"/>
           {/* <Team avatar={rishabh} name="Rishabh Dhawan" position="Sponsorships Director"/> */}
