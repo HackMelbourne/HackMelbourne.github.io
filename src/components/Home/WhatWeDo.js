@@ -15,17 +15,17 @@ function WhatWeDo() {
         </h1>
         <div className="whatWeDoPrograms">
           <a className="program" href="/initiatives#melbourne-hack">
-            <img className="programImg"src={MainHackathon}></img>
+            <img className="programImg"src={MainHackathon} alt="An illustration of people building a website"></img>
             <p className="programTitle">Melbourne Hack</p>
             <p>Melbourne Hackathon</p>
           </a>
-          <a className="program" href="https://hackiethon.hackmelb.org/">
-            <img className="programImg" src={RookieHackathon}></img>
+          <a className="program" href="/initiatives#hackiethon">
+            <img className="programImg" src={RookieHackathon} alt="An illustraion of a person programing at a desk"></img>
             <p className="programTitle">Hackiethon</p>
             <p>Virtual Rookie Hackathon</p>
           </a>
           <a className="program" href="/initiatives#decoded">
-            <img className="programImg" src={EducationProgram}></img>
+            <img className="programImg" src={EducationProgram} alt="An illustraion of a rocket shooting up from a laptop"></img>
             <p className="programTitle">DecodED</p>
             <p>Education Program</p>
           </a>
