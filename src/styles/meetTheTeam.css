@@ -25,6 +25,11 @@
     border-radius: 50%;
 }
 
+h4, p {
+    margin: 0 !important;
+    padding: 0;
+}
+
 /* Mobile styles */
 
 @media only screen and (max-width: 768px) {
