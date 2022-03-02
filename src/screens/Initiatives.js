@@ -12,9 +12,10 @@ function Initiatives() {
       <div className="greyBackground" id="melbourne-hack">
         <div className="text">
           <h2>Melbourne Hack</h2>
-          <h4>August, 2021</h4>
-          <p className="marginBelow">The main hackathon seeks to bring together students from across the state for a weekend of intense hacking. Scheduled for Semester 2, this annual event will provide you with the opportunity to collaborate with talented individuals, meet representatives from industry-leading companies, develop your technical skills and win amazing prizes!</p>
-          <a className="to-fb-button" target="_blank" href="https://melbournehack.hackmelb.org/">Visit here!</a>
+          <h4>22nd- 24th of April, 2022</h4>
+          <h6>(with workshops from 20th - 22nd of April, 2022!)</h6>
+          <p className="marginBelow">The main hackathon seeks to bring together students from across the state for a weekend of intense hacking. Scheduled for Semester 1, this annual event will provide you with the opportunity to collaborate with talented individuals, meet representatives from industry-leading companies, develop your technical skills and win amazing prizes!</p>
+          <a className="button" target="_blank" rel="noopener noreferrer" href="https://melbournehack.hackmelb.org/">Visit here!</a>
         </div>
         <div className="image">
             <img src={mainHackathon} style={{height: "300px", width: "300px"}} alt="Hackathon Symbol"/>
@@ -26,20 +27,18 @@ function Initiatives() {
         </div>
         <div className="text">
           <h2 className="initiativeheader">
-            <a href="https://hackiethon.hackmelb.org/">
-              Hackiethon
-            </a>
+            Hackiethon
           </h2>
-          {/* <h4>2 - 5th of April, 2021</h4> */}
+          <h4>Coming Soon!</h4>
           <p className="marginBelow">Our rookie hackathon is tailor-made for those who little experience in hackathons, but are keen to get involved! Unlike our main hackathon, this will be held virtually and will provide valuable insights into the experience of competing in such events, and how to maximise your chances of success.  </p>
-          {/* <a className="to-hackiethon-button" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeqMOc60jdHzhFS_rvMugnfn6XBMxD_uB69_kU4Ckx7ZyR68Q/viewform">Sign up here</a> */}
+          <a className="button" target="_blank" rel="noopener noreferrer" href="https://hackiethon.hackmelb.org/">Visit here!</a>
         </div>
       </div>
       <div className="greyBackground" id="decoded">
         <div className="text">
           <h2>DecodED</h2>
-          {/* <h4>March, 2021 - April, 2021</h4> */}
-          <p>Our engaging education program is a 2-4 week course perfect for those with little to no experience in software development. Commencing in Semester 2 2021, the program will cover a variety of technologies that will exponentially improve your programming capabilities. With the rookie hackathon strategically scheduled at the conclusion of the program, you’ll have the chance to put your new-found skills to the test and experience the excitement of a hackathon.</p>
+          <h4>Coming Soon!</h4>
+          <p>Our engaging education program is a 2-4 week course perfect for those with little to no experience in software development. Commencing in Semester 2 2022, the program will cover a variety of technologies that will exponentially improve your programming capabilities. With the rookie hackathon strategically scheduled at the conclusion of the program, you’ll have the chance to put your new-found skills to the test and experience the excitement of a hackathon.</p>
         </div>
         <div className="image">
           <img src={educationProgram} style={{height: "300px", width: "300px"}} alt="Hackathon Symbol"/>
