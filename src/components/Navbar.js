@@ -42,7 +42,7 @@ const Navbar = () => {
                     <li><a href="/sponsor_us">Sponsor Us</a></li>
                   </ul>
                 </li>
-                <li class="screen"><a class="signup-button" target="_blank" href="https://hmmembership.getqpay.com">Sign Up</a></li>
+                {/* <li class="screen"><a class="signup-button" target="_blank" href="https://hmmembership.getqpay.com">Sign Up</a></li> */}
             </ul>
         </nav>
     </header>
