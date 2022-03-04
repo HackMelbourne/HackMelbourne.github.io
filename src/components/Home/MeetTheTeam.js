@@ -3,8 +3,8 @@ import React from "react";
 
 /* Cute Puppies */
 import cute_pup1 from "../../img/team/2022/cute-puppies/cute_pup1.jfif"
-import cute_pup2 from "../../img/team/2022/cute-puppies/cute_pup2.jfif"
-import cute_pup3 from "../../img/team/2022/cute-puppies/cute_pup3.jfif"
+// import cute_pup2 from "../../img/team/2022/cute-puppies/cute_pup2.jfif"
+// import cute_pup3 from "../../img/team/2022/cute-puppies/cute_pup3.jfif"
 import cute_pup4 from "../../img/team/2022/cute-puppies/cute_pup4.jfif"
 import cute_pup5 from "../../img/team/2022/cute-puppies/cute_pup5.png"
 import cute_pup6 from "../../img/team/2022/cute-puppies/cute_pup6.jfif"
@@ -20,7 +20,7 @@ import aditya from "../../img/team/2022/Execs/hm-aditya-a.jpg";
 import ryan from "../../img/team/2022/Education team/hm-ryan.jpg"
 import daniel from "../../img/team/2022/Education team/hm-daniel.JPG"
 import hoan from "../../img/team/2022/Education team/hm-hoan.jpg"
-// import jerry from "../../img/team/2022/Education team/hm-jerry.jpg"
+import jerry from "../../img/team/2022/Education team/hm-jerry.jpg"
 import xinyu from "../../img/team/2022/Education team/hm-xinyu.jpg"
 
 /* Website Team */
@@ -65,7 +65,7 @@ function MeetTheTeam() {
           <Team avatar={xinyu} name="Chuah Xin Yu" position="Education Officer"/>
           <Team avatar={daniel} name="Daniel" position="Education Officer"/>
           <Team avatar={hoan} name="Hoan Tran" position="Education Officer"/>
-          <Team avatar={cute_pup2} name="Jerry Luong" position="Education Officer"/>
+          <Team avatar={jerry} name="Jerry Luong" position="Education Officer"/>
           <Team avatar={cute_pup6} name="Arsam Samadi" position="Website Officer"/>
           {/* <Team avatar={arsam} name="Arsam Samadi" position="Website Officer"/> */}
           <Team avatar={florence} name="Florence Tang" position="Website Officer"/>
