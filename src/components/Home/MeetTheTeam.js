@@ -13,7 +13,7 @@ import cute_pup8 from "../../img/team/2022/cute-puppies/cute_pup8.jfif"
 /* Execs */
 import miskaan from "../../img/team/2022/Execs/hm-miskaan.jpeg";
 import aditya from "../../img/team/2022/Execs/hm-aditya-a.jpg";
-// import tanishq from "../../img/team/2022/Execs/hm-tanishq.jpg";
+import tanishq from "../../img/team/2022/Execs/hm-tanishq.jpg";
 /* Education Team */
 import ryan from "../../img/team/2022/Education team/hm-ryan.jpg"
 import daniel from "../../img/team/2022/Education team/hm-daniel.JPG"
@@ -58,7 +58,7 @@ function MeetTheTeam() {
           <div className="teamPhotos">
             <Team avatar={miskaan} name="Muskaan Dalmia" position="President"/>
             <Team avatar={aditya} name="Aditya Ajit" position="Secretary"/>
-            <Team avatar={cute_pup1} name="Tanishq Chawla" position="Treasurer"/>
+            <Team avatar={tanishq} name="Tanishq Chawla" position="Treasurer"/>
 
           <Team avatar={ryan} name="Ryan Samarakoon" position="Education and Website Director"/>
           <Team avatar={xinyu} name="Chuah Xin Yu" position="Education Officer"/>
