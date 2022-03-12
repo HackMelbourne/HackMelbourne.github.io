@@ -1,0 +1,12 @@
+# Source: https://github.com/marketplace/actions/deploy-react-app-to-github-pages
+name: GitHub Pages Deployment
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy React App to GH Pages
+        uses: tanwanimohit/deploy-react-to-ghpages@v1.0.1
