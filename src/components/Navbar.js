@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/navbar.css';
 import Logo from '../img/H{Logo.png';
 import Hamburger from '../img/hamburger.png'
+import {FaDiscord, FaEnvelope, FaFacebook, FaLinkedin} from "react-icons/fa";
 
 function expand() {
   var x = document.getElementById("topnav");
@@ -34,15 +35,27 @@ const Navbar = () => {
           </div>
         </div>
         <nav className="navigation" id="topnav">
+
             <ul class="dropdown">
+                <li>
+                    <a href="https://discord.gg/tEQ5m6ayTV" target="_blank" rel="noopener noreferrer" className="icon">
+                        <FaDiscord style={{fill: 'black'}}/>
+                    </a></li>
+                <li><a href="https://www.facebook.com/hackmelbourne" target="_blank" rel="noopener noreferrer"
+                       className="icon"><FaFacebook style={{fill: 'black'}}/></a></li>
+                <li><a href="https://www.linkedin.com/company/hackmelbourne/" target="_blank" rel="noopener noreferrer"
+                       className="icon"><FaLinkedin style={{fill: 'black'}}/></a></li>
+                <li><a href="mailto:hackmelb.team@gmail.com" className="icon"><FaEnvelope style={{fill: 'black'}}/></a>
+                </li>
                 <li class="screen"><a href="/initiatives">Initiatives</a></li>
                 <li class="screen">
-                  <a href="/sponsors">Sponsors</a>
-                  <ul class="dropdown-content">
-                    <li><a href="/sponsor_us">Sponsor Us</a></li>
-                  </ul>
+                    <a href="/sponsors">Sponsors</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/sponsor_us">Sponsor Us</a></li>
+                    </ul>
                 </li>
-                <li class="screen"><a class="signup-button" target="_blank" href="https://hmmembership.getqpay.com">Sign Up</a></li>
+
+                {/* <li class="screen"><a class="signup-button" target="_blank" href="https://hmmembership.getqpay.com">Sign Up</a></li> */}
             </ul>
         </nav>
     </header>

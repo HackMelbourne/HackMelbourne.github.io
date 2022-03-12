@@ -17,3 +17,12 @@ footer img {
     height: min(64px, 15vw);
     padding: 10px;
 }
+
+svg {
+    fill: white;
+}
+
+.icon {
+    font-size: 2em;
+    padding: 0 0.5em;
+}
