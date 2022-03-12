@@ -1,9 +1,6 @@
 import React from 'react';
 import '../styles/footer.css';
-import facebook from '../img/footerFacebook.png';
-import linkedin from '../img/footerLinkedIn.png';
-import email from '../img/footerEmail.png';
-import { FaFacebook, FaEnvelope, FaLinkedin, FaDiscord } from 'react-icons/fa'
+import {FaDiscord, FaEnvelope, FaFacebook, FaLinkedin} from 'react-icons/fa'
 
 const Footer=() => {
   return (

@@ -2,7 +2,6 @@ import '../../styles/meetTheTeam.css';
 import React from "react";
 
 /* Cute Puppies */
-import cute_pup1 from "../../img/team/2022/cute-puppies/cute_pup1.jfif"
 // import cute_pup2 from "../../img/team/2022/cute-puppies/cute_pup2.jfif"
 // import cute_pup3 from "../../img/team/2022/cute-puppies/cute_pup3.jfif"
 import cute_pup4 from "../../img/team/2022/cute-puppies/cute_pup4.jfif"
@@ -34,7 +33,6 @@ import jiahao from "../../img/team/2022/Logistics team/hm-jiahao.jpg"
 import suren from "../../img/team/2022/Logistics team/hm-suren.jpg"
 
 /* Marketing Team */
-
 /* Sponsorship Team */
 // import rishabh from "../../img/team/2022/Sponsorship team/hm-rishabh.jpg"
 import sean from "../../img/team/2022/Sponsorship team/hm-sean.jpg"
@@ -93,7 +91,7 @@ function MeetTheTeam() {
 
             {/* <Team avatar={} name=""/> */}
           </div>
-          <img src={team} style={{maxWidth: '80vw', width: 700, margin: '80px 0'}}/>
+          <img src={team} style={{maxWidth: '80vw', width: 700, margin: '80px 0'}} alt='team'/>
       </div>
     </div>
   );

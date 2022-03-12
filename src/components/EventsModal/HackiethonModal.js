@@ -1,14 +1,13 @@
 // import React from "react";
 import Modal from 'react-bootstrap/Modal';
 import {Button} from 'react-bootstrap';
-import React, { useEffect, useState } from "react";
+import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 
 function HackiethonModal() {
     const [show, setShow] = useState(true);
 
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     return (
         <>

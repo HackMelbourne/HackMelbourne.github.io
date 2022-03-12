@@ -5,7 +5,6 @@ import React from "react";
 import arcitecta_logo from '../../img/sponsors/Arcitecta/arcitecta_logo.png';
 import tibra_logo from '../../img/sponsors/Tibra/tibra_logo.png';
 import integradev_logo from '../../img/sponsors/IntegraDev/integra_dev_logo.png';
-import integradev_logo_resized from '../../img/sponsors/IntegraDev/resized.png';
 
 // Gold
 import optiver_logo from '../../img/sponsors/Optiver/optiver_logo.png';
@@ -85,7 +84,7 @@ function SponsorD(props) {
   return (
     <td>
       <a href={props.link}>
-        <img className="sponsLogo" src={props.logo}></img>
+        <img className="sponsLogo" src={props.logo} alt='logo'></img>
         <p className="sponsName">{props.sponsorName}</p>
       </a>
     </td>

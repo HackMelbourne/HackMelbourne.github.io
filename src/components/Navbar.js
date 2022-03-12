@@ -22,16 +22,16 @@ const Navbar = () => {
     <header className="navbar">
         <div className="logo">
             <a href="/">
-              <img href="/" src={Logo} alt="Logo"></img>
+              <img href="/" src={Logo} alt="Logo"/>
             </a>
         </div>
         <div class="mobileWrapper">
           <div class="hamburger" onClick={expand}>
-            <img src={Hamburger}></img>
+              <img src={Hamburger} alt='hamburger'/>
           </div>
           <a class="mobileHeader" href="/">HackMelbourne</a>
           <div class="mlh-banner">
-            <img src={Hamburger}></img>
+              <img src={Hamburger} alt='hamburger'/>
           </div>
         </div>
         <nav className="navigation" id="topnav">
