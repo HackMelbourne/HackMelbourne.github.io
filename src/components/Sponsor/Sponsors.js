@@ -2,6 +2,7 @@ import '../../styles/sponsors.css';
 import React from "react";
 
 // Diamond
+import redmarble_logo from '../../img/sponsors/RedMarble/Red_Marble.png'
 import arcitecta_logo from '../../img/sponsors/Arcitecta/arcitecta_logo.png';
 import tibra_logo from '../../img/sponsors/Tibra/tibra_logo.png';
 import integradev_logo from '../../img/sponsors/IntegraDev/integra_dev_logo.png';
@@ -25,6 +26,7 @@ function Sponsors() {
           </h1>
           <table className="sponsorTable"> 
             <tr>
+              <SponsorD link="https://redmarble.ai/" logo={redmarble_logo} sponsorName={"Red Marble"} alt="redmarble"/>
               <SponsorD link="https://www.arcitecta.com/" logo={arcitecta_logo} sponsorName={"Arcitecta"} alt="arcitecta"/>
               <SponsorD link="https://www.integradev.com.au/" logo={integradev_logo} sponsorName={"IntegraDev"} alt="integradev"/>
               <SponsorD link="https://www.tibra.com/" logo={tibra_logo} sponsorName={"Tibra"} alt="tibra"/>
