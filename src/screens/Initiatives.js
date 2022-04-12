@@ -30,7 +30,7 @@ function Initiatives() {
             Hackiethon
           </h2>
           <h4>Coming Soon!</h4>
-          <p className="marginBelow">Our rookie hackathon is tailor-made for those who little experience in hackathons, but are keen to get involved! Unlike our main hackathon, this will be held virtually and will provide valuable insights into the experience of competing in such events, and how to maximise your chances of success.  </p>
+          <p className="marginBelow">Our rookie hackathon is tailor-made for those with little experience in hackathons, but are keen to get involved! Unlike our main hackathon, this will be held virtually and will provide valuable insights into the experience of competing in such events, and how to maximise your chances of success.  </p>
           <a className="button" target="_blank" rel="noopener noreferrer" href="https://hackiethon.hackmelb.org/">Visit here!</a>
         </div>
       </div>
