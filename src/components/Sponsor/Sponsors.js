@@ -2,16 +2,18 @@ import '../../styles/sponsors.css';
 import React from "react";
 
 // Diamond
-import arcitecta_logo from '../../img/sponsors/Arcitecta/arcitecta_logo.png';
-import tibra_logo from '../../img/sponsors/Tibra/tibra_logo.png';
-import integradev_logo from '../../img/sponsors/IntegraDev/integra_dev_logo.png';
+import redmarble_logo from '../../img/sponsors/RedMarble/Red_Marble.png'
+// import arcitecta_logo from '../../img/sponsors/Arcitecta/arcitecta_logo.png';
+// import tibra_logo from '../../img/sponsors/Tibra/tibra_logo.png';
+// import integradev_logo from '../../img/sponsors/IntegraDev/integra_dev_logo.png';
 
 // Gold
 import optiver_logo from '../../img/sponsors/Optiver/optiver_logo.png';
 
 // Silver
 import bain_logo from '../../img/sponsors/Bain/bain_logo.png';
-import csiro_logo from '../../img/sponsors/CSIRO/CSIRO_logo_black.png';
+// import csiro_logo from '../../img/sponsors/CSIRO/CSIRO_logo_black.png';
+
 
 function Sponsors() {
   return (
@@ -25,9 +27,10 @@ function Sponsors() {
           </h1>
           <table className="sponsorTable"> 
             <tr>
-              <SponsorD link="https://www.arcitecta.com/" logo={arcitecta_logo} sponsorName={"Arcitecta"} alt="arcitecta"/>
-              <SponsorD link="https://www.integradev.com.au/" logo={integradev_logo} sponsorName={"IntegraDev"} alt="integradev"/>
-              <SponsorD link="https://www.tibra.com/" logo={tibra_logo} sponsorName={"Tibra"} alt="tibra"/>
+              <SponsorD link="https://redmarble.ai/" logo={redmarble_logo} sponsorName={"Red Marble"} alt="redmarble"/>
+              {/* <SponsorD link="https://www.arcitecta.com/" logo={arcitecta_logo} sponsorName={"Arcitecta"} alt="arcitecta"/> */}
+              {/* <SponsorD link="https://www.integradev.com.au/" logo={integradev_logo} sponsorName={"IntegraDev"} alt="integradev"/> */}
+              {/* <SponsorD link="https://www.tibra.com/" logo={tibra_logo} sponsorName={"Tibra"} alt="tibra"/> */}
             </tr>
             <tr>
 
@@ -42,7 +45,7 @@ function Sponsors() {
           </h1>
           <table className="sponsorTable"> 
             <tr>              
-              <PlaceHolder tier="Platinum"/> 
+                <SponsorD link="https://www.optiver.com/" logo={optiver_logo} sponsorName={"Optiver"} alt="optiver"/>
             </tr>
           </table>
 
@@ -54,11 +57,9 @@ function Sponsors() {
           </h1>
           <table className="sponsorTable"> 
               <tr>
-                <SponsorD link="https://www.optiver.com/" logo={optiver_logo} sponsorName={"Optiver"} alt="optiver"/>
+              <PlaceHolder tier="Gold"/> 
               </tr>
           </table>
-        
-        
         </div>
         <div class="separator"/>
         <div className="silverSponsor">
@@ -68,7 +69,7 @@ function Sponsors() {
           <table className="sponsorTable">
             <tr>
               <SponsorD link="https://www.bain.com/" logo={bain_logo} sponsorName={"Bain & Co."} alt="bainandco"/>
-              <SponsorD link="https://www.csiro.au/en/" logo={csiro_logo} sponsorName={"CSIRO"} alt="csiro"/>
+              {/* <SponsorD link="https://www.csiro.au/en/" logo={csiro_logo} sponsorName={"CSIRO"} alt="csiro"/> */}
             </tr>
           </table>
 
@@ -76,8 +77,6 @@ function Sponsors() {
     </div>
   );
 }
-
-
 
 
 function SponsorD(props) {
