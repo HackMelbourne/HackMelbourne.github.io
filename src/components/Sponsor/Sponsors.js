@@ -5,7 +5,7 @@ import React from "react";
 import redmarble_logo from '../../img/sponsors/RedMarble/Red_Marble.png'
 // import arcitecta_logo from '../../img/sponsors/Arcitecta/arcitecta_logo.png';
 // import tibra_logo from '../../img/sponsors/Tibra/tibra_logo.png';
-// import integradev_logo from '../../img/sponsors/IntegraDev/integra_dev_logo.png';
+import integradev_logo from '../../img/sponsors/IntegraDev/integra_dev_logo.png';
 
 // Gold
 import optiver_logo from '../../img/sponsors/Optiver/optiver_logo.png';
@@ -29,7 +29,7 @@ function Sponsors() {
             <tr>
               <SponsorD link="https://redmarble.ai/" logo={redmarble_logo} sponsorName={"Red Marble"} alt="redmarble"/>
               {/* <SponsorD link="https://www.arcitecta.com/" logo={arcitecta_logo} sponsorName={"Arcitecta"} alt="arcitecta"/> */}
-              {/* <SponsorD link="https://www.integradev.com.au/" logo={integradev_logo} sponsorName={"IntegraDev"} alt="integradev"/> */}
+              <SponsorD link="https://www.integradev.com.au/" logo={integradev_logo} sponsorName={"IntegraDev"} alt="integradev"/>
               {/* <SponsorD link="https://www.tibra.com/" logo={tibra_logo} sponsorName={"Tibra"} alt="tibra"/> */}
             </tr>
             <tr>
@@ -57,7 +57,7 @@ function Sponsors() {
           </h1>
           <table className="sponsorTable"> 
               <tr>
-              <PlaceHolder tier="Gold"/> 
+              <SponsorD link="https://www.bain.com/" logo={bain_logo} sponsorName={"Bain & Co."} alt="bainandco"/>
               </tr>
           </table>
         </div>
@@ -68,7 +68,7 @@ function Sponsors() {
           </h1>
           <table className="sponsorTable">
             <tr>
-              <SponsorD link="https://www.bain.com/" logo={bain_logo} sponsorName={"Bain & Co."} alt="bainandco"/>
+              <PlaceHolder tier="Silver"/> 
               {/* <SponsorD link="https://www.csiro.au/en/" logo={csiro_logo} sponsorName={"CSIRO"} alt="csiro"/> */}
             </tr>
           </table>
