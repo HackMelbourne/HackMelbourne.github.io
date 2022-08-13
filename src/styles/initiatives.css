@@ -53,6 +53,7 @@ h2 {
 }
 
 .button {
+    margin-top: 20px;
     padding: 1vh 2vw 1.5vh 2vw;
     border: 2px solid;
     color: black;
