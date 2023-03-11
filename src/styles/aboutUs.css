@@ -1,0 +1,61 @@
+.aboutUsContainer {
+    max-width: 100vw;
+    padding: 30vh 6vw 10vh 8vw;
+    background: white;
+}
+
+.laptop {
+    width: 100%;
+    height: auto;
+}
+
+.aboutUsContent {
+    width: 70%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: auto;
+}
+
+.aboutUs {
+    width: 60%;
+    float: left;
+} 
+
+.aboutUs h1 {
+    font-size: 4vw;
+    margin-bottom: 2.5vh;
+}
+
+.laptopImage {
+    width: 30%;
+    float: right;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+    .aboutUsContent {
+        width: 80%;
+    }
+
+    .aboutUs {
+        width: 100%;
+        margin-bottom: 5vh;
+    }
+
+    .laptopImage {
+        width: 100%;
+    }
+
+    .aboutUs h1 {
+        font-size: 2rem;
+        margin-bottom: 2.5vh;
+    }
+
+    .aboutUsContainer {
+        padding: 8vh 6vw 10vh 8vw;
+    }
+}

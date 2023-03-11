@@ -1,0 +1,74 @@
+
+.sponsorUsContainer {
+    max-width: 100%;
+    min-height: 80vh;
+    padding: 22vh 20vw 10vh 20vw;
+    background: white;
+    text-align: center;
+}
+
+.sponsorUsContainer h1 {
+    font-size: 3rem;
+}
+
+.sponsorUsContainer h3 {
+    font-size: 1.5rem;
+}
+
+a {
+    font-size: 1.25rem;
+}
+
+.sponsorUsContainer h1 {
+    margin-bottom: 5vh;
+}
+
+.pushButtonDown {
+    padding-bottom: 6vh;
+}
+
+.pushButtonUp {
+    padding-top: 2vh;
+}
+
+.highlight-button :hover {
+    color: #FAD12A;
+}
+
+.highlight-button {
+    padding: 1vh 2vw 1.5vh 2vw;
+    border: 2px solid;
+    color: black;
+    border-radius: 25px;
+}
+
+.teamPhoto {
+    width: 30vw;
+    min-width: 350px;
+    margin-top: 30px;
+}
+
+a {
+    font-size: 1rem;
+}
+
+div a {
+    color: black;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .sponsorUsContainer {
+        padding: 8vh 2.5vw 10vh 2.5vw;
+    }
+
+    .sponsorUsContainer h1, p, a {
+        font-size: 1rem;
+    }
+
+    .sponsorUsContainer h3 {
+        font-size: 1rem;
+    }
+
+}
