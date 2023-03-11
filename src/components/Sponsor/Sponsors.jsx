@@ -17,51 +17,40 @@ import bain_logo from '/img/sponsors/Bain/bain_logo.png';
 function Sponsors() {
   return (
     <div className="sponsorsContainer">
-      <h1 className="sponsHeading">HackMelbourne 2021 Sponsors</h1>
+      <h1 className="sponsHeading">HackMelbourne 2022 Sponsors</h1>
       <div className="diamondSponsor">
         <h1>Diamond Sponsors</h1>
-        <table className="sponsorTable">
-          <tr>
-            <SponsorD link="https://redmarble.ai/" logo={redmarble_logo} sponsorName={'Red Marble'} alt="redmarble" />
-            {/* <SponsorD link="https://www.arcitecta.com/" logo={arcitecta_logo} sponsorName={"Arcitecta"} alt="arcitecta"/> */}
-            <SponsorD
-              link="https://www.integradev.com.au/"
-              logo={integradev_logo}
-              sponsorName={'IntegraDev'}
-              alt="integradev"
-            />
-            {/* <SponsorD link="https://www.tibra.com/" logo={tibra_logo} sponsorName={"Tibra"} alt="tibra"/> */}
-          </tr>
-          <tr></tr>
-        </table>
+        <div className="sponsorSection">
+          <SponsorD link="https://redmarble.ai/" logo={redmarble_logo} sponsorName={'Red Marble'} alt="redmarble" />
+          <SponsorD
+            link="https://www.integradev.com.au/"
+            logo={integradev_logo}
+            sponsorName={'IntegraDev'}
+            alt="integradev"
+          />
+        </div>
       </div>
       <div className="separator" />
       <div className="platinumSponsor">
         <h1>Platinum Sponsors</h1>
-        <table className="sponsorTable">
-          <tr>
-            <SponsorD link="https://www.optiver.com/" logo={optiver_logo} sponsorName={'Optiver'} alt="optiver" />
-          </tr>
-        </table>
+        <div className="sponsorSection">
+          <SponsorD link="https://www.optiver.com/" logo={optiver_logo} sponsorName={'Optiver'} alt="optiver" />
+        </div>
       </div>
       <div className="separator" />
       <div className="goldSponsor">
         <h1>Gold Sponsors</h1>
-        <table className="sponsorTable">
-          <tr>
-            <SponsorD link="https://www.bain.com/" logo={bain_logo} sponsorName={'Bain & Co.'} alt="bainandco" />
-          </tr>
-        </table>
+        <div className="sponsorSection">
+          <SponsorD link="https://www.bain.com/" logo={bain_logo} sponsorName={'Bain & Co.'} alt="bainandco" />
+        </div>
       </div>
       <div className="separator" />
       <div className="silverSponsor">
         <h1>Silver Sponsors</h1>
-        <table className="sponsorTable">
-          <tr>
-            <PlaceHolder tier="Silver" />
-            {/* <SponsorD link="https://www.csiro.au/en/" logo={csiro_logo} sponsorName={"CSIRO"} alt="csiro"/> */}
-          </tr>
-        </table>
+        <div className="sponsorSection">
+          <PlaceHolder tier="Silver" />
+          {/* <SponsorD link="https://www.csiro.au/en/" logo={csiro_logo} sponsorName={"CSIRO"} alt="csiro"/> */}
+        </div>
       </div>
     </div>
   );
@@ -69,22 +58,18 @@ function Sponsors() {
 
 function SponsorD(props) {
   return (
-    <td>
-      <a href={props.link}>
-        <img className="sponsLogo" src={props.logo} alt="logo"></img>
-        <p className="sponsName">{props.sponsorName}</p>
-      </a>
-    </td>
+    <a href={props.link}>
+      <img className="sponsLogo" src={props.logo} alt="logo"></img>
+      <p className="sponsName">{props.sponsorName}</p>
+    </a>
   );
 }
 
 function PlaceHolder(props) {
   return (
-    <td>
-      <a href="/sponsor_us">
-        <h2 className="placeHolder">Be the first {props.tier} tier sponsor!</h2>
-      </a>
-    </td>
+    <a href="/sponsor_us">
+      <h2 className="placeHolder">Be the first {props.tier} tier sponsor!</h2>
+    </a>
   );
 }
 

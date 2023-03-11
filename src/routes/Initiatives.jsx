@@ -6,8 +6,7 @@ import educationProgram from '/img/EducationProgram.png';
 
 function Initiatives() {
   return (
-    <div>
-      <header></header>
+    <div className="App">
       <div className="greyBackground" id="melbourne-hack">
         <div className="text">
           <h2>Melbourne Hack</h2>
@@ -52,7 +51,7 @@ function Initiatives() {
             Our engaging education program is a 2-4 week course perfect for those with little to no experience in
             software development. Commencing in Semester 2 2022, the program will cover a variety of technologies that
             will exponentially improve your programming capabilities. With the rookie hackathon strategically scheduled
-            at the conclusion of the program, you’ll have the chance to put your new-found skills to the test and
+            at the conclusion of the program, you'll have the chance to put your new-found skills to the test and
             experience the excitement of a hackathon.
           </p>
         </div>

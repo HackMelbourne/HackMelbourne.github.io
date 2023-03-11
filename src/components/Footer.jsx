@@ -19,7 +19,7 @@ const Footer = () => {
           className="icon">
           <FaLinkedin />
         </a>
-        <a href="mailto:hackmelb.team@gmail.com" className="icon">
+        <a href={`mailto:${SPONSORSHIP_EMAIL}`} className="icon">
           <FaEnvelope />
         </a>
       </div>

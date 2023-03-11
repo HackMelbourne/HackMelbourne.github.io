@@ -67,3 +67,17 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.App {
+  margin-top: 20vh;
+  align-items: center;
+  width: 100vw;
+}
+
+@media only screen and (max-width: 768px) {
+  .App {
+    margin-top: 1vh;
+    align-items: center;
+    width: 100vw;
+  }
+}

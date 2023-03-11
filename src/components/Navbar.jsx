@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/navbar.css';
 import Logo from '/img/H{Logo.png';
-import Hamburger from '/img/hamburger.png';
 import { FaDiscord, FaEnvelope, FaFacebook, FaLinkedin, FaBars } from 'react-icons/fa';
+import { SPONSORSHIP_EMAIL } from '../constants';
 
 function expand() {
   var x = document.getElementById('topnav');
@@ -57,7 +57,7 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="mailto:hackmelb.team@gmail.com" className="icon">
+              <a href={`mailto:${SPONSORSHIP_EMAIL}`} className="icon">
                 <FaEnvelope />
               </a>
             </li>
@@ -68,11 +68,6 @@ const Navbar = () => {
           </li>
           <li className="screen">
             <a href="/sponsors">Sponsors</a>
-            <ul className="dropdown-content">
-              <li>
-                <a href="/sponsor_us">Sponsor Us</a>
-              </li>
-            </ul>
           </li>
         </ul>
       </nav>

@@ -189,3 +189,11 @@ td {
   background-color: black;
   box-shadow: 0px 0px 2px 0px var(--silver);
 }
+
+.sponsorSection {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
