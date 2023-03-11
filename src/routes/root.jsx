@@ -1,7 +1,7 @@
 import React from 'react';
-import AboutUs from './components/Home/AboutUs';
-import WhatWeDo from './components/Home/WhatWeDo';
-import MeetTheTeam from './components/Home/MeetTheTeam';
+import AboutUs from '../components/Home/AboutUs';
+import WhatWeDo from '../components/Home/WhatWeDo';
+import MeetTheTeam from '../components/Home/MeetTheTeam';
 
 function App() {
   return (

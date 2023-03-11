@@ -35,7 +35,7 @@ function Sponsors() {
           <tr></tr>
         </table>
       </div>
-      <div class="separator" />
+      <div className="separator" />
       <div className="platinumSponsor">
         <h1>Platinum Sponsors</h1>
         <table className="sponsorTable">
@@ -44,7 +44,7 @@ function Sponsors() {
           </tr>
         </table>
       </div>
-      <div class="separator" />
+      <div className="separator" />
       <div className="goldSponsor">
         <h1>Gold Sponsors</h1>
         <table className="sponsorTable">
@@ -53,7 +53,7 @@ function Sponsors() {
           </tr>
         </table>
       </div>
-      <div class="separator" />
+      <div className="separator" />
       <div className="silverSponsor">
         <h1>Silver Sponsors</h1>
         <table className="sponsorTable">

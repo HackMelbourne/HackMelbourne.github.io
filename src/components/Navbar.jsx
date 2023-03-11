@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/navbar.css';
 import Logo from '/img/H{Logo.png';
 import Hamburger from '/img/hamburger.png';
-import { FaDiscord, FaEnvelope, FaFacebook, FaLinkedin } from 'react-icons/fa';
+import { FaDiscord, FaEnvelope, FaFacebook, FaLinkedin, FaBars } from 'react-icons/fa';
 
 function expand() {
   var x = document.getElementById('topnav');
@@ -20,61 +20,60 @@ function expand() {
 const Navbar = () => {
   return (
     <header className="navbar">
-      <div className="logo">
-        <a href="/">
-          <img href="/" src={Logo} alt="Logo" />
-        </a>
-      </div>
-      <div class="mobileWrapper">
-        <div class="hamburger" onClick={expand}>
-          <img src={Hamburger} alt="hamburger" />
-        </div>
-        <a class="mobileHeader" href="/">
+      <div className="mobileWrapper">
+        <FaBars onClick={expand} className="hamburger" />
+        <a className="mobileHeader" href="/">
+          <img href="/" src={Logo} alt="Logo" className="logoMobile" />
           HackMelbourne
         </a>
-        <div class="mlh-banner">
-          <img src={Hamburger} alt="hamburger" />
-        </div>
       </div>
       <nav className="navigation" id="topnav">
-        <ul class="dropdown">
-          <li>
-            <a href="https://discord.gg/tEQ5m6ayTV" target="_blank" rel="noopener noreferrer" className="icon">
-              <FaDiscord style={{ fill: 'black' }} />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/hackmelbourne" target="_blank" rel="noopener noreferrer" className="icon">
-              <FaFacebook style={{ fill: 'black' }} />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/company/hackmelbourne/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="icon">
-              <FaLinkedin style={{ fill: 'black' }} />
-            </a>
-          </li>
-          <li>
-            <a href="mailto:hackmelb.team@gmail.com" className="icon">
-              <FaEnvelope style={{ fill: 'black' }} />
-            </a>
-          </li>
-          <li class="screen">
+        <a href="/" className="logo">
+          <img href="/" src={Logo} alt="Logo" />
+        </a>
+        <ul className="dropdown">
+          <div className="navIconLinks">
+            <li>
+              <a href="https://discord.gg/tEQ5m6ayTV" target="_blank" rel="noopener noreferrer" className="icon">
+                <FaDiscord />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/hackmelbourne"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="icon">
+                <FaFacebook />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/company/hackmelbourne/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="icon">
+                <FaLinkedin />
+              </a>
+            </li>
+            <li>
+              <a href="mailto:hackmelb.team@gmail.com" className="icon">
+                <FaEnvelope />
+              </a>
+            </li>
+          </div>
+
+          <li className="screen">
             <a href="/initiatives">Initiatives</a>
           </li>
-          <li class="screen">
+          <li className="screen">
             <a href="/sponsors">Sponsors</a>
-            <ul class="dropdown-content">
+            <ul className="dropdown-content">
               <li>
                 <a href="/sponsor_us">Sponsor Us</a>
               </li>
             </ul>
           </li>
-
-          {/* <li class="screen"><a class="signup-button" target="_blank" href="https://hmmembership.getqpay.com">Sign Up</a></li> */}
         </ul>
       </nav>
     </header>

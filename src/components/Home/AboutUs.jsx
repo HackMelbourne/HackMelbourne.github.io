@@ -16,7 +16,7 @@ function AboutUs() {
                 context.
                 <br />
                 <br />
-                We’re passionate about increasing student accessibility to opportunities within the technological
+                We're passionate about increasing student accessibility to opportunities within the technological
                 sphere, fostering a love for software development and channeling innovation through our hackathons.
                 <br />
                 <br />
