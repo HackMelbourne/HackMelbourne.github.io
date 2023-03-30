@@ -1,104 +1,94 @@
-header {
-    max-width: 100vw;
-    padding: 14vh 6vw 4vh 6vw;
-    background: white;
-    display: flex;
-}
-
 header h1 {
-    margin: auto;
-    margin-top: 5vh;
+  margin: auto;
+  margin-top: 5vh;
 }
 
 h2 {
-    font-weight: bold;
-    font-size: 3rem;
-    margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 5px;
 }
 
 .greyBackground {
-    display: flex;
-    justify-content: space-around;
-    padding: 7vh 15vw;
-    background-color: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 7vh 15vw;
+  background-color: white;
 }
 
 .greyBackground h4 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
 }
 
 .blackBackground h4 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
 }
 
 .blackBackground {
-    display: flex;
-    justify-content: space-around;
-    padding: 7vh 15vw;
-    background-color:white;
+  display: flex;
+  justify-content: space-around;
+  padding: 7vh 15vw;
+  background-color: white;
 }
 
 .greyBackground p {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .blackBackground p {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .text {
-    width: 60%;
+  width: 60%;
 }
 
 .button {
-    margin-top: 20px;
-    padding: 1vh 2vw 1.5vh 2vw;
-    border: 2px solid;
-    color: black;
-    border-radius: 25px;
-    font-size: 1rem;
-    font-weight: bold;
+  margin-top: 20px;
+  padding: 1vh 2vw 1.5vh 2vw;
+  border: 2px solid;
+  color: black;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
-
 
 .marginBelow {
-    margin-bottom: 3vh;
+  margin-bottom: 3vh;
 }
 
-.initiativeheader a{
-    /* max-width: 100vw; */
-    font-size: 3rem;
+.initiativeheader a {
+  /* max-width: 100vw; */
+  font-size: 3rem;
 }
-
 
 div a {
-    padding:0px;
+  padding: 0px;
 }
 
 @media only screen and (max-width: 768px) {
-    .text {
-        width: 100%;
-    }
-    .blackBackground {
-        flex-direction: column-reverse;
+  .text {
+    width: 100%;
+  }
+  .blackBackground {
+    flex-direction: column-reverse;
+  }
 
-    }
+  .greyBackground {
+    flex-direction: column;
+  }
 
-    .greyBackground {
-        flex-direction: column;
-    }
+  #melbourne-hack .image {
+    margin-top: 30px;
+  }
 
-    #melbourne-hack .image{
-        margin-top: 30px;
-    }
-
-    header {
-        padding: 0;
-    }
+  header {
+    padding: 0;
+  }
 }
