@@ -6,6 +6,7 @@ import './index.css';
 import Initiatives from './routes/Initiatives';
 import Sponsor from './routes/Sponsor';
 import Navbar from './components/Navbar';
+import MelbourneHack2023 from './hackathonWebsites/MelbourneHack/2023';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: '/sponsors',
     element: <Sponsor />,
+  },
+  {
+    path: '/melbournehack',
+    element: <MelbourneHack2023 />,
   },
 ]);
 
