@@ -8,6 +8,8 @@ import Sponsor from './routes/Sponsor';
 import Navbar from './components/Navbar';
 import MelbourneHack2023 from './hackathonWebsites/MelbourneHack/2023';
 
+const dontShowNavbarPathnames = ['/melbournehack'];
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -29,7 +31,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Navbar />
+    {dontShowNavbarPathnames.includes(window.location.pathname) ? null : <Navbar />}
     <RouterProvider router={router} />
   </React.StrictMode>,
 );
