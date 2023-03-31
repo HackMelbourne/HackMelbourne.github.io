@@ -32,6 +32,9 @@ const MelbourneHack2023 = () => {
         <div style={TextStyle}>
           <Text />
         </div>
+        <div>
+
+        </div>
       </div>
     </div>
   );
