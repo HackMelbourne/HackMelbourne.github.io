@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Globe from './Globe';
 import Header from './Header';
 import Text from './Text';
 import './index.css';
 
 const MelbourneHack2023 = () => {
+  useEffect(() => {
+    // Set Body Background Color to #0b0e10
+    document.body.style.backgroundColor = '#0b0e10';
+  }, []);
+
   // Set flex-basis to 50% for both items
   const itemStyle = {
     flexBasis: '50%',
@@ -22,7 +27,7 @@ const MelbourneHack2023 = () => {
   };
 
   return (
-    <div>
+    <div id="melbourne-hack-2023">
       MelbourneHack2023
       <Header />
       <div className="globeAndTextContainer">
@@ -32,9 +37,7 @@ const MelbourneHack2023 = () => {
         <div style={TextStyle}>
           <Text />
         </div>
-        <div>
-
-        </div>
+        <div></div>
       </div>
     </div>
   );
