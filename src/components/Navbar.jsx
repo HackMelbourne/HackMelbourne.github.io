@@ -3,6 +3,7 @@ import '../styles/navbar.css';
 import Logo from '/img/H{Logo.png';
 import { FaDiscord, FaEnvelope, FaFacebook, FaLinkedin, FaBars } from 'react-icons/fa';
 import { SPONSORSHIP_EMAIL } from '../constants';
+import { Link } from 'react-router-dom';
 
 function expand() {
   var x = document.getElementById('topnav');
@@ -64,10 +65,10 @@ const Navbar = () => {
           </div>
 
           <li className="screen">
-            <a href="/initiatives">Initiatives</a>
+            <Link to="/initiatives">Initiatives</Link>
           </li>
           <li className="screen">
-            <a href="/sponsors">Sponsors</a>
+            <Link to="/sponsors">Sponsors</Link>
           </li>
         </ul>
       </nav>
