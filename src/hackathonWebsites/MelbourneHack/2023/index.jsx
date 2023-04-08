@@ -9,6 +9,10 @@ import useFavicon from '../../../hooks/useFavicon.js';
 const MelbourneHack2023 = () => {
   // Set the favicon
   useFavicon(newIcon);
+  useEffect(() => {
+    // Set Body Background Color to #0b0e10
+    document.body.style.backgroundColor = '#0b0e10';
+  }, []);
 
   // Set flex-basis to 50% for both items
   const itemStyle = {
@@ -27,7 +31,8 @@ const MelbourneHack2023 = () => {
   };
 
   return (
-    <div>
+    <div id="melbourne-hack-2023">
+      MelbourneHack2023
       <Header />
       <div className="globeAndTextContainer">
         <div style={GlobeStyle}>
