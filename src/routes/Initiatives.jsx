@@ -39,9 +39,6 @@ function Initiatives() {
             involved! Unlike our main hackathon, this will be held virtually and will provide valuable insights into the
             experience of competing in such events, and how to maximise your chances of success.{' '}
           </p>
-          <a className="button" target="_blank" rel="noopener noreferrer" href="https://hackiethon.hackmelb.org/">
-            Visit here!
-          </a>
         </div>
       </div>
       <div className="greyBackground" id="decoded">

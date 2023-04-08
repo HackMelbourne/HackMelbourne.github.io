@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/navbar.css';
 import Logo from '/img/H{Logo.png';
 import { FaDiscord, FaEnvelope, FaFacebook, FaLinkedin, FaBars } from 'react-icons/fa';
-import { SPONSORSHIP_EMAIL } from '../constants';
+import { DISCORD_LINK, FACEBOOK_LINK, LINKEDIN_LINK, SPONSORSHIP_EMAIL } from '../constants';
 import { Link } from 'react-router-dom';
 
 function expand() {
@@ -35,25 +35,17 @@ const Navbar = () => {
         <ul className="dropdown">
           <div className="navIconLinks">
             <li>
-              <a href="https://discord.gg/tEQ5m6ayTV" target="_blank" rel="noopener noreferrer" className="icon">
+              <a href={DISCORD_LINK} target="_blank" rel="noopener noreferrer" className="icon">
                 <FaDiscord />
               </a>
             </li>
             <li>
-              <a
-                href="https://www.facebook.com/hackmelbourne"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="icon">
+              <a href={FACEBOOK_LINK} target="_blank" rel="noopener noreferrer" className="icon">
                 <FaFacebook />
               </a>
             </li>
             <li>
-              <a
-                href="https://www.linkedin.com/company/hackmelbourne/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="icon">
+              <a href={LINKEDIN_LINK} target="_blank" rel="noopener noreferrer" className="icon">
                 <FaLinkedin />
               </a>
             </li>
