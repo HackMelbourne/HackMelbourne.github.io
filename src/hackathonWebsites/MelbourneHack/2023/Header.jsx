@@ -9,14 +9,14 @@ const Header = () => {
         <div className="logo">
           <img src={logo} alt="Logo" id="melbournehack2023-logo" />
         </div>
-        <ul>
+        {/* <ul>
           <li>
             <a href="#">About Us</a>
           </li>
           <li>
             <a href="#">Schedule</a>
           </li>
-        </ul>
+        </ul> */}
       </nav>
     </>
   );
