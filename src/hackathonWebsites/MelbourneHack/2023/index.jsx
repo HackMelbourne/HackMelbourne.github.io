@@ -3,8 +3,12 @@ import Globe from './Globe';
 import Header from './Header';
 import Text from './Text';
 import './index.css';
+import newIcon from '/three_boxs.ico';
+import useFavicon from '../../../hooks/useFavicon.js';
 
 const MelbourneHack2023 = () => {
+  // Set the favicon
+  useFavicon(newIcon);
   useEffect(() => {
     // Set Body Background Color to #0b0e10
     document.body.style.backgroundColor = '#0b0e10';
