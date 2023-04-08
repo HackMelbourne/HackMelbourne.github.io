@@ -6,7 +6,30 @@ import './index.css';
 import newIcon from '/three_boxs.ico';
 import useFavicon from '../../../hooks/useFavicon.js';
 
+import styled from "styled-components";
+import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
+import { Earth } from '../../../components/earth';
+import './globe.css';
+
+const CanvasContainer = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
 const MelbourneHack2023 = () => {
+  /*
+    return (
+        <CanvasContainer>
+        <Canvas>
+            <Suspense fallback={null}>
+                <Earth/>
+            </Suspense>
+        </Canvas>
+        </CanvasContainer>
+    );
+  */
+  
   // Set the favicon
   useFavicon(newIcon);
   useEffect(() => {
@@ -46,5 +69,6 @@ const MelbourneHack2023 = () => {
     </div>
   );
 };
+
 
 export default MelbourneHack2023;
