@@ -3,11 +3,11 @@
   padding: 26px 27px;
 }
 
-#melbournehack2023-logo {
-  width: 136px;
-  height: 129px;
+#melbournehack2023-new-logo {
+  width: 200px;
+  /* height: 129px;
   border-radius: 136px 129px;
-  box-shadow: 0 0 2rem 2rem #222222;
+  box-shadow: 0 0 2rem 2rem #222222; */
 }
 
 #melbournehack2023-nav ul {
