@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './routes/root';
-import { Routes, Route, HashRouter } from 'react-router-dom';
+import { Routes, Route, HashRouter, Navigate } from 'react-router-dom';
 import './index.css';
 import Initiatives from './routes/Initiatives';
 import Sponsor from './routes/Sponsor';
@@ -20,13 +20,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/initiatives" element={<Initiatives />} />
           <Route path="/sponsors" element={<Sponsor />} />
           <Route path="/melbournehack" element={<MelbourneHack2023 />} />
-          <Route path="/hackathon" element={<MelbourneHack2023 />} />
-
-          {/* Using path="*"" means "match anything", so this route
-                acts like a catch-all for URLs that we don't have explicit
-                routes for. */}
-          {/* TODO create a NoMatch error page */}
-          {/* <Route path="*" element={<NoMatch />} /> */}
+          <Route path="/hackathon" element={<Navigate to="/melbournehack" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
     </HashRouter>
