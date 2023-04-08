@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import { Outlet } from 'react-router';
 
-const dontShowNavbarPathnames = ['/melbournehack'];
+const dontShowNavbarPathnames = ['/melbournehack', '/hackathon'];
 
 const Root = () => {
   return (
