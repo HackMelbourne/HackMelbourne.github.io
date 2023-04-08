@@ -1,35 +1,18 @@
 import React, { useEffect } from 'react';
-import Globe from './Globe';
 import Header from './Header';
 import Text from './Text';
 import './index.css';
 import newIcon from '/three_boxs.ico';
 import useFavicon from '../../../hooks/useFavicon.js';
 
-import styled from "styled-components";
-import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
-import { Earth } from '../../../components/earth';
+import styled from 'styled-components';
+import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
+import { Globe } from './Globe';
 import './globe.css';
-
-const CanvasContainer = styled.div`
-  width: 100%;
-  height: 100%;
-`;
+import './stars.css';
 
 const MelbourneHack2023 = () => {
-  /*
-    return (
-        <CanvasContainer>
-        <Canvas>
-            <Suspense fallback={null}>
-                <Earth/>
-            </Suspense>
-        </Canvas>
-        </CanvasContainer>
-    );
-  */
-  
   // Set the favicon
   useFavicon(newIcon);
   useEffect(() => {
@@ -47,6 +30,7 @@ const MelbourneHack2023 = () => {
   const GlobeStyle = {
     ...itemStyle,
     paddingRight: '1rem',
+    height: '50vh',
   };
   const TextStyle = {
     ...itemStyle,
@@ -54,12 +38,22 @@ const MelbourneHack2023 = () => {
   };
 
   return (
-    <div id="melbourne-hack-2023">
-      MelbourneHack2023
+    <div id="melbournehack2023">
+      <div id="stars-group-1"></div>
+      <div id="stars-group-2"></div>
+      <div id="stars-group-3"></div>
+      <div id="stars-group-4"></div>
+      <div id="stars-group-5"></div>
+      <div id="stars-group-6"></div>
+
       <Header />
       <div className="globeAndTextContainer">
         <div style={GlobeStyle}>
-          <Globe />
+          <Canvas>
+            <Suspense fallback={null}>
+              <Globe />
+            </Suspense>
+          </Canvas>
         </div>
         <div style={TextStyle}>
           <Text />
@@ -69,6 +63,5 @@ const MelbourneHack2023 = () => {
     </div>
   );
 };
-
 
 export default MelbourneHack2023;

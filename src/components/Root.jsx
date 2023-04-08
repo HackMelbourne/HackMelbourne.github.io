@@ -5,9 +5,13 @@ import { Outlet } from 'react-router';
 const dontShowNavbarPathnames = ['/melbournehack'];
 
 const Root = () => {
+  console.log(window.location.pathname);
   return (
     <>
-      {dontShowNavbarPathnames.includes(window.location.pathname) ? null : <Navbar />}
+      {window.location.pathname.includes(dontShowNavbarPathnames) ||
+      window.location.hash.includes(dontShowNavbarPathnames) ? null : (
+        <Navbar />
+      )}
       <Outlet />
     </>
   );

@@ -5,7 +5,13 @@
 * Bold font-weight: 700
 */
 
-#melbourne-hack-2023 {
+#melbournehack2023 {
   color: #ffffff;
   font-family: 'Inter', sans-serif;
+  background-color: black;
 }
+
+body {
+  background: #000;
+}
+

@@ -12,7 +12,14 @@ const Text = () => {
         with like-minded individuals, mentors, and industry experts, students can participate in workshops, enjoy free
         food and snacks.
       </div>
-      <button>Join Now!</button>
+      <button>
+        <a
+          className=""
+          href="https://scented-noodle-4c2.notion.site/Participants-Handbook-38985d7de2624e15aef203fcdad8063b"
+          target="_blank">
+          Join Now!
+        </a>
+      </button>
     </div>
   );
 };

@@ -5,9 +5,9 @@ import logo from '/img/HackMelbourne2023_logo.png';
 const Header = () => {
   return (
     <>
-      <nav>
+      <nav id="melbournehack2023-nav">
         <div className="logo">
-          <img src={logo} alt="Logo" />
+          <img src={logo} alt="Logo" id="melbournehack2023-logo" />
         </div>
         <ul>
           <li>
