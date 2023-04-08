@@ -20,6 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/initiatives" element={<Initiatives />} />
           <Route path="/sponsors" element={<Sponsor />} />
           <Route path="/melbournehack" element={<MelbourneHack2023 />} />
+          <Route path="/hackathon" element={<MelbourneHack2023 />} />
 
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
