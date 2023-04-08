@@ -1,0 +1,27 @@
+#melbournehack2023-nav {
+  display: flex;
+  padding: 26px 27px;
+}
+
+#melbournehack2023-logo {
+  width: 136px;
+  height: 129px;
+  border-radius: 136px 129px;
+  box-shadow: 0 0 2rem 2rem #222222;
+}
+
+#melbournehack2023-nav ul {
+  list-style-type: none;
+}
+
+#melbournehack2023-nav li {
+  float: left;
+}
+
+#melbournehack2023-nav li a {
+  color: white;
+  text-align: left;
+  padding: 1rem 1.5rem;
+  font-size: 25px;
+  font-weight: 700;
+}

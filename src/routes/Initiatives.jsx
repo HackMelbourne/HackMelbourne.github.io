@@ -3,6 +3,7 @@ import React from 'react';
 import mainHackathon from '/img/MainHackathon.png';
 import rookieHackathon from '/img/RookieHackathon.png';
 import educationProgram from '/img/EducationProgram.png';
+import { Link } from 'react-router-dom';
 
 function Initiatives() {
   return (
@@ -10,17 +11,17 @@ function Initiatives() {
       <div className="greyBackground" id="melbourne-hack">
         <div className="text">
           <h2>Melbourne Hack</h2>
-          <h4>22nd - 24th of April, 2022</h4>
-          <h6>(with workshops from 20th - 22nd of April, 2022!)</h6>
+          <h4>21st - 23rd of April, 2023</h4>
+          <h6>(with workshops from 20th - 21nd of April, 2023!)</h6>
           <p className="marginBelow">
             The main hackathon seeks to bring together students from across the state for a weekend of intense hacking.
             Scheduled for Semester 1, this annual event will provide you with the opportunity to collaborate with
             talented individuals, meet representatives from industry-leading companies, develop your technical skills
             and win amazing prizes!
           </p>
-          <a className="button" target="_blank" rel="noopener noreferrer" href="https://melbournehack.hackmelb.org/">
+          <Link to="/melbournehack" className="button">
             Visit here!
-          </a>
+          </Link>
         </div>
         <div className="image">
           <img src={mainHackathon} style={{ height: '300px', width: '300px' }} alt="Hackathon Symbol" />

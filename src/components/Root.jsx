@@ -7,7 +7,10 @@ const dontShowNavbarPathnames = ['/melbournehack'];
 const Root = () => {
   return (
     <>
-      {dontShowNavbarPathnames.includes(window.location.pathname) ? null : <Navbar />}
+      {window.location.pathname.includes(dontShowNavbarPathnames) ||
+      window.location.hash.includes(dontShowNavbarPathnames) ? null : (
+        <Navbar />
+      )}
       <Outlet />
     </>
   );

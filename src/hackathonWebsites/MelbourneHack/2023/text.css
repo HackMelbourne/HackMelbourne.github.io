@@ -1,0 +1,37 @@
+/* 'Make the Change' text */
+.subHeader {
+  font-weight: 700;
+  font-size: 5rem;
+}
+
+.blurbText {
+  font-weight: 100;
+}
+
+/* Responsive container with 2 columns that are side by side on desktop and stacked on mobile */
+.globeAndTextContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  max-width: '1200px';
+  margin: 0 10%;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+@media (max-width: 768px) {
+  .globeAndTextContainer {
+    flex-direction: column-reverse;
+  }
+  .textContainer {
+    text-align: center;
+  }
+}
+
+button {
+  background-color: #62d0d3;
+  margin: 1rem auto;
+  display: block;
+}
