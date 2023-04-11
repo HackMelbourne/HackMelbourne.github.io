@@ -11,6 +11,7 @@ import { Suspense } from 'react';
 import { Globe } from './Globe';
 import './globe.css';
 import './stars.css';
+import { Footer } from './Footer';
 
 const MelbourneHack2023 = () => {
   // Set the favicon
@@ -60,6 +61,8 @@ const MelbourneHack2023 = () => {
         </div>
         <div></div>
       </div>
+
+      <Footer />
     </div>
   );
 };
