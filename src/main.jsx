@@ -7,7 +7,7 @@ import Initiatives from './routes/Initiatives';
 import Sponsor from './routes/Sponsor';
 
 import MelbourneHack2023 from './hackathonWebsites/MelbourneHack/2023';
-import Root from './components/Root';
+import Layout from './components/Layout';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
      */}
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Root />}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<App />} />
           <Route path="/initiatives" element={<Initiatives />} />
           <Route path="/sponsors" element={<Sponsor />} />

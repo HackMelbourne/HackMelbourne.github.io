@@ -1,6 +1,7 @@
 .navbar {
   position: fixed;
   width: 100vw;
+  height: 15vh;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
