@@ -11,8 +11,8 @@ function Initiatives() {
       <div className="greyBackground" id="melbourne-hack">
         <div className="text">
           <h2>Melbourne Hack</h2>
-          <h4>21st - 23rd of April, 2023</h4>
-          <h6>(with workshops from 20th - 21nd of April, 2023!)</h6>
+          <h4>5th - 7th of May, 2023</h4>
+          <h6>(with workshops from 4th - 5th of May, 2023!)</h6>
           <p className="marginBelow">
             The main hackathon seeks to bring together students from across the state for a weekend of intense hacking.
             Scheduled for Semester 1, this annual event will provide you with the opportunity to collaborate with
