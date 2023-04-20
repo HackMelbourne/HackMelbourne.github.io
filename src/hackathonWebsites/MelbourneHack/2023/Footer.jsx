@@ -2,13 +2,17 @@ import React from 'react';
 import "./footer.css";
 import { FaDiscord, FaEnvelope, FaFacebook, FaLinkedin, FaBars } from 'react-icons/fa';
 import { DISCORD_LINK, FACEBOOK_LINK, LINKEDIN_LINK, SPONSORSHIP_EMAIL } from '../../../constants';
+import Logo from '/img/H{Logo.png';
 
 
 export function Footer() {
   return (
     <footer>
-        <div className='FootLogo'>
-            <p>Melbourne Hack 2023</p>
+        <div className='FootLogoDiv'>
+            <a className = "FooterLogo" href="/">
+                <img href="/" src={Logo} alt="Logo" className="logoMobile" />
+            </a>
+            <span className="FooterText">Melbourne Hack 2023</span>
         </div>
        
 
@@ -31,7 +35,7 @@ export function Footer() {
                 </a>
             </li>
 
-            <li>
+            <li className='lastIcon'>
                 <a href={FACEBOOK_LINK} target="_blank" rel="noopener noreferrer" className="icon">
                 <FaFacebook />
                 </a>
