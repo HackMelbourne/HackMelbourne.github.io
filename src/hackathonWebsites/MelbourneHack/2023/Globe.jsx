@@ -35,11 +35,11 @@ export function Globe(props) {
       <ambientLight intensity={1} />
       {/* <Stars radius={300} depth={60} count={20000} factor={7} saturation={0} fade={true} /> */}
       <mesh ref={cloudsRef} position={[0, 0, 0]}>
-        <sphereGeometry args={[3, 64, 64]} />
+        <sphereGeometry args={[3, 100, 100]} />
         <meshPhongMaterial map={cloudsMap} opacity={0.4} depthWrite={true} transparent={true} side={THREE.DoubleSide} />
       </mesh>
       <mesh ref={earthRef} position={[0, 0, 0]}>
-        <sphereGeometry args={[3, 64, 64]} />
+        <sphereGeometry args={[3, 100, 100]} />
         <meshPhongMaterial specularMap={specularMap} />
         <meshStandardMaterial map={colorMap} normalMap={normalMap} />
         <OrbitControls enableZoom={false} enablePan={false} enableRotate={true} position={[0, 0, 0]} />

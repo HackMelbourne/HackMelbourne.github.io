@@ -31,7 +31,7 @@ const MelbourneHack2023 = () => {
   const GlobeStyle = {
     ...itemStyle,
     paddingRight: '1rem',
-    height: '50vh',
+    height: '70vh',
   };
   const TextStyle = {
     ...itemStyle,
