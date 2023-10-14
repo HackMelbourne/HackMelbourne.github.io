@@ -97,12 +97,18 @@ function MeetTheTeam() {
   );
 }
 
-function Team(props) {
+interface Props {
+  avatar: string;
+  name: string;
+  position: string;
+}
+
+function Team({ avatar, name, position }: Props) {
   return (
     <div>
-      <img className="profile" src={props.avatar} alt=""></img>
-      <h4>{props.name}</h4>
-      <p>{props.position}</p>
+      <img className="profile" src={avatar} alt=""></img>
+      <h4>{name}</h4>
+      <p>{position}</p>
     </div>
   );
 }
