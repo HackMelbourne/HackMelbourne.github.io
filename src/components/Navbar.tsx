@@ -6,8 +6,14 @@ import { DISCORD_LINK, FACEBOOK_LINK, LINKEDIN_LINK, SPONSORSHIP_EMAIL } from '.
 import { Link } from 'react-router-dom';
 
 function expand() {
+  // Don't use get element by id use ref() instead
   var x = document.getElementById('topnav');
   var y = document.getElementsByClassName('signup-button');
+
+  if (x == null) {
+    return;
+  }
+
   if (x.className === 'navigation') {
     x.className += ' responsive';
     if (y.length > 0) {
@@ -23,15 +29,15 @@ const Navbar = () => {
     <header className="navbar">
       <div className="mobileWrapper">
         <FaBars onClick={expand} className="hamburger" />
-        <a className="mobileHeader" href="/">
-          <img href="/" src={Logo} alt="Logo" className="logoMobile" />
+        <Link className="mobileHeader" to={'/'}>
+          <img src={Logo} alt="Logo" className="logoMobile" />
           HackMelbourne
-        </a>
+        </Link>
       </div>
       <nav className="navigation" id="topnav">
-        <a href="/" className="logo">
-          <img href="/" src={Logo} alt="Logo" />
-        </a>
+        <Link to={'/'} className="logo">
+          <img src={Logo} alt="Logo" />
+        </Link>
         <ul className="dropdown">
           <div className="navIconLinks">
             <li>

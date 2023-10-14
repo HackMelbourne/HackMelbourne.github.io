@@ -56,19 +56,27 @@ function Sponsors() {
   );
 }
 
-function SponsorD(props) {
+interface Props {
+  link?: string;
+  alt?: string;
+  logo?: string;
+  sponsorName?: string;
+  tier?: string;
+}
+
+function SponsorD({ link, logo, sponsorName, alt }: Props) {
   return (
-    <a href={props.link}>
-      <img className="sponsLogo" src={props.logo} alt="logo"></img>
-      <p className="sponsName">{props.sponsorName}</p>
+    <a href={link}>
+      <img className="sponsLogo" src={logo} alt="logo"></img>
+      <p className="sponsName">{sponsorName}</p>
     </a>
   );
 }
 
-function PlaceHolder(props) {
+function PlaceHolder({ tier }: Props) {
   return (
     <a href="/sponsor_us">
-      <h2 className="placeHolder">Be the first {props.tier} tier sponsor!</h2>
+      <h2 className="placeHolder">Be the first {tier} tier sponsor!</h2>
     </a>
   );
 }
