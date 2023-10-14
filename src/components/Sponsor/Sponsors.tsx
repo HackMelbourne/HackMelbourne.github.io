@@ -67,7 +67,7 @@ interface Props {
 function SponsorD({ link, logo, sponsorName, alt }: Props) {
   return (
     <a href={link}>
-      <img className="sponsLogo" src={logo} alt="logo"></img>
+      <img className="sponsLogo" src={logo} alt={alt}></img>
       <p className="sponsName">{sponsorName}</p>
     </a>
   );
