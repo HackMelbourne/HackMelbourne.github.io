@@ -1,0 +1,62 @@
+body {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+footer {
+    background-color: black;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.FootIconLinks {
+    padding-left: 5px;
+}
+
+.FootIconLinks li {
+    display: inline-block;
+    padding-right: 30px;
+    color: white;
+}
+
+.FootIconLinks .lastIcon {
+    padding-right: 0px;
+}
+
+.FootIconLinks a {
+    color: white;
+}
+
+.FootLogoDiv{
+    padding-bottom: 0%;
+
+}
+
+.FootLogoDiv .FooterLogo {
+    display: inline-block; 
+    width: 50px; 
+    padding-right: 0px;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    
+}
+
+.FootLogoDiv .FooterText {
+    display: inline-block; 
+    vertical-align: middle; 
+    font-size: 16px; 
+    margin-left: 10px;
+    padding-bottom: 40px;
+}
+
+
+.FootLogoDiv .FooterLogo img {
+    width: 50px; 
+    height: 50px;
+    margin-right: 10px;
+}
