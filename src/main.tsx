@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Root from './routes/Root';
+
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 
 // Styles (outdated)
@@ -10,14 +10,20 @@ import './index.css';
 import Initiatives from './routes/Initiatives';
 import Sponsor from './routes/Sponsor';
 import Layout from './components/Layout';
+import Root from './routes/Root';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Root />}>
-      <Route path="dashboard" element={<Dashboard />} />
-      {/* ... etc. */}
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Root />} />
+      <Route path="initiatives" element={<Initiatives />} />
+      <Route path="sponsors" element={<Sponsor />} />
     </Route>,
   ),
 );
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<React.StrictMode></React.StrictMode>);
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>,
+);
