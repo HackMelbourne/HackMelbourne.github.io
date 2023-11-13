@@ -10,7 +10,7 @@ import './index.css';
 import Initiatives from './routes/Initiatives';
 import Sponsor from './routes/Sponsor';
 import Layout from './components/Layout';
-import Root from './routes/Roots';
+import Root from './routes/Root';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
