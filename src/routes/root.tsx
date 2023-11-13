@@ -3,7 +3,7 @@ import AboutUs from '../components/Home/AboutUs';
 import WhatWeDo from '../components/Home/WhatWeDo';
 import MeetTheTeam from '../components/Home/MeetTheTeam';
 
-function App() {
+function Root() {
   return (
     <div className="App">
       <AboutUs />
@@ -13,4 +13,4 @@ function App() {
   );
 }
 
-export default App;
+export default Root;
