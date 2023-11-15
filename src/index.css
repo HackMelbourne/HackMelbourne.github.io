@@ -57,12 +57,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.App {
-  margin-top: 15vh;
-  align-items: center;
-  width: 100vw;
-}
-
 @media only screen and (max-width: 768px) {
   .App {
     margin-top: 1vh;
