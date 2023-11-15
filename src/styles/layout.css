@@ -1,9 +1,9 @@
 .bg-circles{
     position: absolute;
-    top: 100px;
+    margin-top: 100px;
 }
 
-.bg-circles > li:nth-child(1) {
+.bg-circles > :nth-child(1) {
     width: 200px;
     height: 200px;
     background-color: red;
