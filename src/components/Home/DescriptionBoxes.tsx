@@ -28,7 +28,7 @@ export default function DescriptionBoxes() {
 
         <div className="flex flex-col h-[30%] md:flex-row md:justify-between md:w-4/5 md:self-start">
             <div className="border h-1/2 md:w-1/2 md:h-full" />
-            <div className="h-1/2 md:h-full md:w-1/2 flex flex-col gap-2 justify-center align-center md:ml-10 md:mr-5">
+            <div className="h-1/2 md:h-full md:w-3/4 flex flex-col gap-2 justify-center align-center md:ml-10 md:mr-5">
                 <div id="EventTitle5" className="text-2xl md:text-3xl font-bold text-[#F3B52A]">
                 Event<span className=""> Title</span>
                 </div>
