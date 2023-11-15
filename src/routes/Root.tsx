@@ -25,7 +25,7 @@ function Root() {
   ];
 
   return (
-    <div className="App">
+    <div className=" w-screen max-w-full">
       <AboutUs />
       <WhatWeDo />
       <DescriptionBoxes events={events} />

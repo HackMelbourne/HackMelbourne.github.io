@@ -5,6 +5,6 @@ import { DISCORD_LINK, FACEBOOK_LINK, LINKEDIN_LINK, SPONSORSHIP_EMAIL } from '.
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  return <nav className=" w-screen mx-4">hi</nav>;
+  return <nav className="max-w-full">hi</nav>;
 };
 export default Navbar;

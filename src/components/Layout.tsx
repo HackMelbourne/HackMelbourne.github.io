@@ -21,17 +21,15 @@ const Layout = () => {
   }, [location]);
 
   return (
-    <>
-      <div className="w-screen max-w-full bg-neutral-950">
-        {isShowNavbar ? <Navbar /> : null}
-        <Outlet />
-        {/* I dont know why bg-circles is showing infront of Outlet and can't fix it */}
-        {/* <ul className="bg-circles">
+    <div className="w-screen max-w-full bg-neutral-950">
+      {isShowNavbar ? <Navbar /> : null}
+      <Outlet />
+      {/* I dont know why bg-circles is showing infront of Outlet and can't fix it */}
+      {/* <ul className="bg-circles">
           <li></li>
           <li></li>
         </ul> */}
-      </div>
-    </>
+    </div>
   );
 };
 
