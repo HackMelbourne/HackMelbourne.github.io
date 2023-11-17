@@ -1,7 +1,7 @@
 // Edit span tags to white after bg change to black
 interface Event {
   title: string;
-  description: string
+  description: string;
 }
 
 interface DescriptionBoxesProps {
@@ -9,7 +9,6 @@ interface DescriptionBoxesProps {
 }
 
 function DescriptionBoxes({ events }: DescriptionBoxesProps) {
-
   // Ensure exactly three events
   if (events.length !== 3) {
     console.error('DescriptionBoxes component expects exactly three events.');
@@ -18,7 +17,6 @@ function DescriptionBoxes({ events }: DescriptionBoxesProps) {
 
   return (
     <div className="flex flex-col h-[140vh] lg:h-[100vh] max-w-[1100px] justify-between w-[80%] m-auto">
-
       {/* First Event */}
       <div className="flex flex-col h-[30%] lg:flex-row lg:justify-between lg:self-start lg:gap-16">
         <div className="border border-gray-200 h-1/2 lg:w-1/2 lg:h-full" />
@@ -38,7 +36,7 @@ function DescriptionBoxes({ events }: DescriptionBoxesProps) {
           </div>
           <div className="text-sm">{events[1].description}</div>
         </div>
-        <div className="order-1 lg:order-2 border h-1/2 lg:w-1/2 lg:h-full"/>
+        <div className="order-1 lg:order-2 border h-1/2 lg:w-1/2 lg:h-full" />
       </div>
 
       {/* Third Event */}
@@ -51,7 +49,6 @@ function DescriptionBoxes({ events }: DescriptionBoxesProps) {
           <div className="text-sm">{events[2].description}</div>
         </div>
       </div>
-
     </div>
   );
 }
