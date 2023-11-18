@@ -1,24 +1,40 @@
-import hoodie from '/img/hoodie.png';
+interface BannerInfo {
+    img: string;
+    title: string;
+    desc: string;
+    button: string;
+}
 
-function BannerStandard() {
+function BannerStandard({img,title,desc,button}: BannerInfo) {
     return (
-        <div className="flex w-[339px] md:w-[1100px] h-[780px] md:h-[504px] flex-col md:flex-row-reverse md:justify-between items-center gap-2.5 md:gap-0 text-[#FFFFFF]">
+        <div className="flex w-3/4 min-w-[200px] max-w-[440px] md:w-4/5 md:min-w-[825px] md:max-w-[1100px] md:h-[505px]
+        flex-col md:flex-row-reverse md:justify-between items-center gap-2.5 md:gap-0 text-[#FFFFFF] bg-black">
             
-            <div className="shrink-0 w-[339px] md:w-[441px] h-[486px] md:h-[504px] self-stretch">
-                <img src={hoodie}/>
+            <div className="md:w-[440px] md:h-[505px] shrink-0 self-stretch">
+                <img src={img}/>
             </div>
 
-            <div className="flex flex-col w-[339px] md:w-[539px] items-center md:items-start gap-5 self-stretch md:self-auto">
+            <div className="flex flex-col items-center md:items-start gap-5 self-stretch md:self-auto">
+                
                 <div>
-                    <p id="hoodie-title" className="self-stretch md:self-auto text-center md:text-left text-4xl md:text-5xl font-bold">HackMelbourne 2023 Exclusive Hoodie</p>
+                    <p id="hoodie-title" className="self-stretch md:self-auto text-center md:text-left text-4xl md:text-5xl font-bold">
+                        {title}
+                    </p>
                 </div>
-                <div id="hoodie-desc" className="md:w-[425px]">
-                    <p className="self-stretch md:self-auto text-center md:text-left text-base font-medium">Remember the amazing year of 2023 and our achievements.</p>
+                
+                <div id="hoodie-desc" className="md:w-3/4">
+                    <p className="self-stretch md:self-auto text-center md:text-left text-base font-medium">
+                        {desc}
+                    </p>
                 </div>
-                <div id="hoodie-button" className="flex w-[120px] h-[44px] py-2.5 px-[15px] justify-center items-center 
-                gap-2.5 rounded-[5px] bg-[#F3B52A] bg-opacity-40 border-[#F3B52A] border-[1px]">
-                    <p className="text-base font-bold">See details</p>
+                
+                <div id="hoodie-button" className="flex w-[120px] h-[45px] py-2.5 px-[15px] justify-center items-center gap-2.5
+                rounded-[5px] bg-[#F3B52A] bg-opacity-40 border-[#F3B52A] border-[1px]">
+                    <p className="text-base font-bold">
+                        {button}
+                    </p>
                 </div>
+            
             </div>
         
         </div>
