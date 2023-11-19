@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const colors = require('tailwindcss/colors');
+const defaultFont = require('tailwindcss/defaultTheme');
 
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -15,6 +16,11 @@ export default {
       yellow: '#F3B52A',
       primary: '#F3B52A',
     },
+
+    fontFamily: {
+      sans: ['Poppins'],
+    },
+
     extend: {},
   },
   plugins: [],
