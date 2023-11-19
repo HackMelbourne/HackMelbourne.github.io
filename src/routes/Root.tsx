@@ -25,11 +25,8 @@ function Root() {
   ];
 
   return (
-    <div className=" w-screen max-w-full">
-      <AboutUs />
-      <WhatWeDo />
+    <div className="w-screen max-w-full">
       <DescriptionBoxes events={events} />
-      <MeetTheTeam />
     </div>
   );
 }
