@@ -13,6 +13,7 @@ export default {
       blue: colors.sky,
       red: colors.red,
       yellow: '#F3B52A',
+      primary: '#F3B52A',
     },
     extend: {},
   },
