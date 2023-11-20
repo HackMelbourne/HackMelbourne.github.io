@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/footer.css';
 import { FaDiscord, FaEnvelope, FaFacebook, FaLinkedin } from 'react-icons/fa';
 import { DISCORD_LINK, FACEBOOK_LINK, LINKEDIN_LINK, SPONSORSHIP_EMAIL } from '../constants';
 

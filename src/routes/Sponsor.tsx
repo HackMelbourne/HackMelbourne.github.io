@@ -1,4 +1,3 @@
-import '../styles/sponsor.css';
 import React from 'react';
 import Sponsors from '../components/Sponsor/Sponsors';
 import SponsorUs from '../components/Sponsor/SponsorUs';
