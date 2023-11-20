@@ -1,76 +1,36 @@
 import React from 'react';
-import '../styles/navbar.css';
-import Logo from '/img/H{Logo.png';
-import { FaDiscord, FaEnvelope, FaFacebook, FaLinkedin, FaBars } from 'react-icons/fa';
-import { DISCORD_LINK, FACEBOOK_LINK, LINKEDIN_LINK, SPONSORSHIP_EMAIL } from '../constants';
+import MenuIcon from '@mui/icons-material/Menu';
+
+// Styles
+import '../styles/gradients.css';
+
+// Images
+// Change image to remove the bottom text
+import HM_White_Transparent from '/img/HM_White_Transparent.png';
 import { Link } from 'react-router-dom';
-
-function expand() {
-  // Don't use get element by id use ref() instead
-  var x = document.getElementById('topnav');
-  var y = document.getElementsByClassName('signup-button');
-
-  if (x == null) {
-    return;
-  }
-
-  if (x.className === 'navigation') {
-    x.className += ' responsive';
-    if (y.length > 0) {
-      y[0].className = '';
-    }
-  } else {
-    x.className = 'navigation';
-  }
-}
 
 const Navbar = () => {
   return (
-    <header className="navbar">
-      <div className="mobileWrapper">
-        <FaBars onClick={expand} className="hamburger" />
-        <Link className="mobileHeader" to={'/'}>
-          <img src={Logo} alt="Logo" className="logoMobile" />
+    <nav className="w-screen max-w-full flex justify-center fixed px-8 pt-8">
+      <div className="grow rounded-md bg-white/20 backdrop-blur-sm gradient-border flex justify-between items-center px-5 py-3">
+        <Link to="/" className="flex items-center justify-start gap-2 font-bold">
+          <img src={HM_White_Transparent} className="h-8 w-8"></img>
           HackMelbourne
         </Link>
-      </div>
-      <nav className="navigation" id="topnav">
-        <Link to={'/'} className="logo">
-          <img src={Logo} alt="Logo" />
-        </Link>
-        <ul className="dropdown">
-          <div className="navIconLinks">
-            <li>
-              <a href={DISCORD_LINK} target="_blank" rel="noopener noreferrer" className="icon">
-                <FaDiscord />
-              </a>
-            </li>
-            <li>
-              <a href={FACEBOOK_LINK} target="_blank" rel="noopener noreferrer" className="icon">
-                <FaFacebook />
-              </a>
-            </li>
-            <li>
-              <a href={LINKEDIN_LINK} target="_blank" rel="noopener noreferrer" className="icon">
-                <FaLinkedin />
-              </a>
-            </li>
-            <li>
-              <a href={`mailto:${SPONSORSHIP_EMAIL}`} className="icon">
-                <FaEnvelope />
-              </a>
-            </li>
-          </div>
+        {/* MOBILE */}
+        {/* Add link to modal popup */}
+        <button className=" md:hidden">
+          <MenuIcon />
+        </button>
 
-          <li className="screen">
-            <Link to="/initiatives">Initiatives</Link>
-          </li>
-          <li className="screen">
-            <Link to="/sponsors">Sponsors</Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+        {/* DESKTOP */}
+        <div className="hidden md:flex justify-end gap-6 items-center">
+          <Link to="/index">About us</Link>
+          <Link to="/index">Events</Link>
+          <Link to="/index">Sponsors</Link>
+        </div>
+      </div>
+    </nav>
   );
 };
 export default Navbar;

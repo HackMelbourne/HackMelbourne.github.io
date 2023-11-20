@@ -1,4 +1,3 @@
-import '../../styles/sponsor.css';
 import React from 'react';
 import hackmelb_team from '/img/hackmelb_team1.jpg';
 import HackMelbourne_Prospectus from '/documents/HackMelbourne_2023_Prospectus.pdf';

@@ -1,4 +1,3 @@
-import '../../styles/whatWeDo.css';
 import React from 'react';
 import MainHackathon from '/img/MainHackathon.png';
 import RookieHackathon from '/img/RookieHackathon.png';

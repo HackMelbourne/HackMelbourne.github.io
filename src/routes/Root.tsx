@@ -6,21 +6,23 @@ import DescriptionBoxes from '../components/Home/DescriptionBoxes';
 import BannerStandard from '../components/Home/BannerStandard';
 
 function Root() {
-
   // Temp event values
   const events = [
     {
       title: 'First Event Title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
     },
     {
       title: 'Second Event Title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
     },
     {
       title: 'Third Event Title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
-    }
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+    },
   ];
 
   const hoodie_img = '/img/hoodie.png'; // should change
@@ -31,9 +33,7 @@ function Root() {
 
 
   return (
-    <div className="App">
-      <AboutUs />
-      <WhatWeDo />
+    <div className="w-screen max-w-full">
       <DescriptionBoxes events={events} /> 
       <BannerStandard
         img={hoodie_img}
@@ -42,7 +42,6 @@ function Root() {
         button={hoodie_button}
         link={hoodie_link}
       />
-      <MeetTheTeam />
     </div>
   );
 }

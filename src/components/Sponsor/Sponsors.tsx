@@ -1,4 +1,3 @@
-import '../../styles/sponsors.css';
 import React from 'react';
 
 // Diamond

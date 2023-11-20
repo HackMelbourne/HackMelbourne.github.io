@@ -1,4 +1,3 @@
-import '../styles/initiatives.css';
 import React from 'react';
 import mainHackathon from '/img/MainHackathon.png';
 import rookieHackathon from '/img/RookieHackathon.png';
