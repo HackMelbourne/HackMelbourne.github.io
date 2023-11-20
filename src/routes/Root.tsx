@@ -1,7 +1,7 @@
 import React from 'react';
-import AboutUs from '../components/Home/AboutUs';
-import WhatWeDo from '../components/Home/WhatWeDo';
-import MeetTheTeam from '../components/Home/MeetTheTeam';
+
+// Component Imports
+import HeroBanner from '../components/Home/HeroBanner';
 import DescriptionBoxes from '../components/Home/DescriptionBoxes';
 import BannerStandard from '../components/Home/BannerStandard';
 
@@ -29,12 +29,12 @@ function Root() {
   const hoodie_title = 'HackMelbourne 2023 Exclusive Hoodie';
   const hoodie_desc = 'Remember the amazing year of 2023 and our achievements.';
   const hoodie_button = 'See details';
-  const hoodie_link = 'https://www.amazon.com.au' // lol idk where the link is
-
+  const hoodie_link = 'https://www.amazon.com.au'; // lol idk where the link is
 
   return (
-    <div className="w-screen max-w-full">
-      <DescriptionBoxes events={events} /> 
+    <div className="w-screen max-w-full pt-28">
+      <HeroBanner />
+      <DescriptionBoxes events={events} />
       <BannerStandard
         img={hoodie_img}
         title={hoodie_title}
