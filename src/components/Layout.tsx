@@ -29,6 +29,7 @@ const Layout = () => {
         <ul className="w-screen max-w-full bg-circles -z-10 overflow-x-clip">
           <li></li>
           <li className="hidden md:block"></li>
+          <li></li>
         </ul>
       </div>
       <div className="w-screen max-w-full h-screen fixed top-0 bg-neutral-950 -z-20"></div>

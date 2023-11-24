@@ -24,3 +24,21 @@
   filter: blur(150px);
   background-color: rgba(244, 235, 151, 0.15);
 }
+
+.bg-circles > :nth-child(3) {
+  width: 900px;
+  height: 900px;
+  right: -200px;
+  top: 120vh;
+  filter: blur(150px);
+  background-color: rgba(151, 244, 239, 0.1);
+}
+
+.bg-circles > :nth-child(4) {
+  width: 900px;
+  height: 900px;
+  left: -200px;
+  top: 220vh;
+  filter: blur(150px);
+  background-color: rgba(151, 244, 239, 0.1);
+}
