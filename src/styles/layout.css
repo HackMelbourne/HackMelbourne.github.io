@@ -9,16 +9,12 @@
 }
 
 .bg-circles > :nth-child(1) {
-  width: 800px;
-  height: 800px;
   left: -30%;
   filter: blur(150px);
   background-color: rgba(151, 244, 239, 0.1);
 }
 
 .bg-circles > :nth-child(2) {
-  width: 700px;
-  height: 700px;
   right: -300px;
   top: -200px;
   filter: blur(150px);
@@ -26,19 +22,8 @@
 }
 
 .bg-circles > :nth-child(3) {
-  width: 900px;
-  height: 900px;
   right: -200px;
   top: 120vh;
-  filter: blur(150px);
-  background-color: rgba(151, 244, 239, 0.1);
-}
-
-.bg-circles > :nth-child(4) {
-  width: 900px;
-  height: 900px;
-  left: -200px;
-  top: 220vh;
   filter: blur(150px);
   background-color: rgba(151, 244, 239, 0.1);
 }
