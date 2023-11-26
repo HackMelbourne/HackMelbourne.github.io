@@ -1,10 +1,29 @@
-.bg-circles{
-    position: absolute;
-    margin-top: 100px;
+.bg-circles {
+  position: absolute;
+  top: 0;
+}
+
+.bg-circles li {
+  border-radius: 50%;
+  position: absolute;
 }
 
 .bg-circles > :nth-child(1) {
-    width: 200px;
-    height: 200px;
-    background-color: red;
+  left: -30%;
+  filter: blur(150px);
+  background-color: rgba(151, 244, 239, 0.1);
+}
+
+.bg-circles > :nth-child(2) {
+  right: -300px;
+  top: -200px;
+  filter: blur(150px);
+  background-color: rgba(244, 235, 151, 0.15);
+}
+
+.bg-circles > :nth-child(3) {
+  right: -200px;
+  top: 120vh;
+  filter: blur(150px);
+  background-color: rgba(151, 244, 239, 0.1);
 }

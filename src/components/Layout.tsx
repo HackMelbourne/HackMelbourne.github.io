@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from '../components/Navbar';
 import { Outlet, useLocation } from 'react-router';
 
+// Components
+import Navbar from '../components/Navbar';
+
+// Styles
 import '../styles/layout.css';
 
 // Pathnames here will not have a navbar
@@ -21,15 +24,21 @@ const Layout = () => {
   }, [location]);
 
   return (
-    <div className="w-screen max-w-full bg-neutral-950">
-      {isShowNavbar ? <Navbar /> : null}
-      <Outlet />
-      {/* I dont know why bg-circles is showing infront of Outlet and can't fix it */}
-      {/* <ul className="bg-circles">
-          <li></li>
-          <li></li>
-        </ul> */}
-    </div>
+    <>
+      {' '}
+      <div className="w-screen max-w-full">
+        {isShowNavbar ? <Navbar /> : null}
+        <Outlet />
+
+        {/* Background colours */}
+        <ul className="w-screen max-w-full bg-circles -z-10 overflow-x-clip">
+          <li className="w-[600px] h-[600px] md:w-[800px] md:h-[800px]"></li>
+          <li className="md:w-[700px] md:h-[700px] hidden md:block"></li>
+          <li className="w-[700px] h-[700px] md:w-[900px] md:h-[900px]"></li>
+        </ul>
+      </div>
+      <div className="w-screen max-w-full h-screen fixed top-0 bg-neutral-950 -z-20"></div>
+    </>
   );
 };
 
