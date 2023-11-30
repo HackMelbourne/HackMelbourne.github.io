@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../styles/aboutUs.css';
 import laptop from '/img/laptop.png';
 
 function AboutUs() {

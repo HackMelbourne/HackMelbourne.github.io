@@ -1,4 +1,3 @@
-import '../../styles/meetTheTeam.css';
 import React from 'react';
 
 /* Cute Puppies */
