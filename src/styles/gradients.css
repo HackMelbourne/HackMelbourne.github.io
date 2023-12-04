@@ -6,13 +6,24 @@
 }
 
 .join-team-gradient-border {
-  border-right: 1px solid rgba(255, 255, 255, 0);
-  border-bottom: 1px solid rgba(255, 255, 255, 0);
-  border-left: 1px solid rgba(255, 255, 255, 0);
-  background: radial-gradient(
-    141.93% 109.93% at 49.96% 0%,
-    rgba(88, 153, 245, 0) 36.98%,
-    rgba(137, 184, 250, 0.32) 75%,
-    rgba(195, 220, 255, 0.5) 100%
-  );
+  background:
+    radial-gradient(
+      141.93% 109.93% at 49.96% 0%,
+      rgba(88, 153, 245, 0.00) 36.98%, rgba(137, 184, 250, 0.32) 75%, rgba(195, 220, 255, 0.50) 100%
+    ) padding-box,
+    radial-gradient(
+      141.93% 109.93% at 49.96% 0%,
+      rgba(88, 153, 245, 0.00) 36.98%, rgba(137, 184, 250, 0.32) 75%, rgba(255, 255, 255, 0.5) 100%
+    ) border-box;
+  
+  border: 2px solid transparent; 
+  border-right: 4px solid rgba(255, 255, 255, 0);
+  border-bottom: 4px solid rgba(255, 255, 255, 0);
+  border-left: 4px solid rgba(255, 255, 255, 0);
 }
+
+
+
+
+
+
