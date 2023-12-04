@@ -4,6 +4,7 @@ import React from 'react';
 import HeroBanner from '../components/Home/HeroBanner';
 import DescriptionBoxes from '../components/Home/DescriptionBoxes';
 import BannerStandard from '../components/Home/BannerStandard';
+import JoinTheTeam from '../components/Home/JoinTheTeam';
 
 function Root() {
   // Temp event values
@@ -42,6 +43,7 @@ function Root() {
         button={hoodie_button}
         link={hoodie_link}
       />
+      <JoinTheTeam />
     </div>
   );
 }
