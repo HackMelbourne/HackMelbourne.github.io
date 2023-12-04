@@ -5,14 +5,18 @@
   border: 2px solid transparent;
 }
 
+/* Creates a gradient border by overlaying 3 gradients on top of each other*/
 .join-team-gradient-border {
-  border-right: 1px solid rgba(255, 255, 255, 0);
-  border-bottom: 1px solid rgba(255, 255, 255, 0);
-  border-left: 1px solid rgba(255, 255, 255, 0);
-  background: radial-gradient(
-    141.93% 109.93% at 49.96% 0%,
-    rgba(88, 153, 245, 0) 36.98%,
-    rgba(137, 184, 250, 0.32) 75%,
-    rgba(195, 220, 255, 0.5) 100%
-  );
+  background:
+    radial-gradient(
+        141.93% 109.93% at 49.96% 0%,
+        rgba(88, 153, 245, 0) 36.98%,
+        rgba(137, 184, 250, 0.32) 75%,
+        rgba(195, 220, 255, 0.5) 100%
+      )
+      padding-box,
+    linear-gradient(to right, rgb(10 10 10), rgb(10 10 10)) padding-box,
+    /* This gradient is to just fill in the background color */
+      linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 80%) border-box; /* This gradient is for the border */
+  border: 1px solid transparent;
 }
