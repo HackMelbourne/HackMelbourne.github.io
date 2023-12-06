@@ -36,8 +36,8 @@ const Navbar = () => {
       </nav>
 
       {/* MOBILE */}
-      <nav id="popup" className="hidden flex w-screen h-screen py-2.5 px-5 z-50 justify-center items-center fixed bg-black">
-        <div className="flex flex-col min-w-[350px] w-full justify-between items-center self-stretch rounded-xl border-2 border-[#3580C5]">
+      <nav id="popup" className="hidden flex w-screen h-screen p-2.5 z-50 justify-center items-center fixed bg-black">
+        <div className="flex flex-col min-w-[350px] w-full mx-2.5 justify-between items-center self-stretch rounded-xl border-2 border-white">
           
           <div className="flex flex-col min-h-[350px] h-5/6 justify-center items-center gap-5">
             <img src={HM_White_Transparent} className="h-20 w-20"/>
