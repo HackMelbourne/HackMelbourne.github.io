@@ -5,18 +5,21 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 
 import './index.css';
 
-// Pages
-import Initiatives from './routes/Initiatives';
-import Sponsor from './routes/Sponsor';
 import Layout from './components/Layout';
+
+// Pages
+import Events from './routes/Events';
+import Sponsor from './routes/Sponsor';
+import About from './routes/About';
 import Root from './routes/Root';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Root />} />
-      <Route path="initiatives" element={<Initiatives />} />
-      <Route path="sponsors" element={<Sponsor />} />
+      <Route path="about" element={<About />} />
+      <Route path="events" element={<Events />} />
+      <Route path="sponsor" element={<Sponsor />} />
     </Route>,
   ),
 );
