@@ -28,9 +28,9 @@ const Navbar = () => {
 
           {/* DESKTOP */}
           <div className="hidden md:flex justify-end gap-6 items-center">
-            <Link to="/index">About us</Link>
-            <Link to="/index">Events</Link>
-            <Link to="/index">Sponsors</Link>
+            <Link to="/about">About us</Link>
+            <Link to="/events">Events</Link>
+            <Link to="/sponsor">Sponsors</Link>
           </div>
         </div>
       </nav>
