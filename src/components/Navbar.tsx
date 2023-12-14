@@ -16,7 +16,7 @@ const ShowPopup = () => {
 const Navbar = () => {
   return (
     <div className="flex justify-center">
-      <nav className="w-full max-w-[800px] fixed pt-8 z-40 px-8">
+      <nav className="w-screen max-w-[800px] fixed pt-8 z-40 px-8">
         <div className="max-w-[800px] grow rounded-md bg-white/20 backdrop-blur-md border flex justify-between items-center px-5 py-3">
           <Link to="/" className="flex items-center justify-start gap-2 font-bold">
             <img src={HM_White_Transparent} className="h-8 w-8"></img>
