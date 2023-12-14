@@ -23,11 +23,35 @@ const Layout = () => {
     setIsShowNavbar(!isHidden);
   }, [location]);
 
+  const nav = {
+    clubname: 'HackMelbourne',
+    home: 'Home',
+    home_link: '/',
+    about: 'About Us',
+    about_link: '/about',
+    events: 'Events',
+    events_link: '/events',
+    sponsors: 'Sponsors',
+    sponsors_link: '/sponsor',
+    back: 'Back',
+  }
+
   return (
     <>
       {' '}
       <div className="w-screen max-w-full">
-        {isShowNavbar ? <Navbar /> : null}
+        {isShowNavbar ? <Navbar 
+          clubname={nav.clubname}
+          home={nav.home}
+          home_link={nav.home_link}
+          about={nav.about}
+          about_link={nav.about_link}
+          events={nav.events}
+          events_link={nav.events_link}
+          sponsors={nav.sponsors}
+          sponsors_link={nav.sponsors_link}
+          back={nav.back}
+        /> : null}
         <Outlet />
 
         {/* Background colours */}

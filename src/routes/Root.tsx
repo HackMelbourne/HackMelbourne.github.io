@@ -7,6 +7,13 @@ import BannerStandard from '../components/Home/BannerStandard';
 import JoinTheTeam from '../components/Home/JoinTheTeam';
 
 function Root() {
+  const hero = {
+    firstname: 'HACK',
+    lastname: 'MELB',
+    year: '2023',
+    action: 'Buy Hoodies',
+  };
+
   // Temp event values
   const events = [
     {
@@ -26,24 +33,49 @@ function Root() {
     },
   ];
 
-  const hoodie_img = '/img/hoodie.png'; // should change
-  const hoodie_title = 'HackMelbourne 2023 Exclusive Hoodie';
-  const hoodie_desc = 'Remember the amazing year of 2023 and our achievements.';
-  const hoodie_button = 'See details';
-  const hoodie_link = 'https://www.amazon.com.au'; // lol idk where the link is
+  const hoodie = {
+    img: '/img/hoodie.png',
+    title: 'HackMelbourne 2023 Exclusive Hoodie',
+    desc: 'Remember the amazing year of 2023 and our achievements.',
+    button: 'See details',
+    link: 'https://www.google.com.au',
+  }
+
+  const jointeam = {
+    title_start: 'Join the ',
+    first_name: 'Hack',
+    last_name: 'Melbourne',
+    title_end: 'team for 2024',
+    desc_start: 'Be make an impact on our future and learn some',
+    desc_end: 'more skills along the way!',
+    action: 'Apply Now',
+  }
 
   return (
     <div className="w-screen max-w-full pt-28">
-      <HeroBanner />
+      <HeroBanner 
+        firstname={hero.firstname}
+        lastname={hero.lastname}
+        year={hero.year}
+        action={hero.action}
+      />
       <DescriptionBoxes events={events} />
       <BannerStandard
-        img={hoodie_img}
-        title={hoodie_title}
-        desc={hoodie_desc}
-        button={hoodie_button}
-        link={hoodie_link}
+        img={hoodie.img}
+        title={hoodie.title}
+        desc={hoodie.desc}
+        button={hoodie.button}
+        link={hoodie.link}
       />
-      <JoinTheTeam />
+      <JoinTheTeam 
+        title_start={jointeam.title_start}
+        first_name={jointeam.first_name}
+        last_name={jointeam.last_name}
+        title_end={jointeam.title_end}
+        desc_start={jointeam.desc_start}
+        desc_end={jointeam.desc_end}
+        action={jointeam.action}
+      />
     </div>
   );
 }
