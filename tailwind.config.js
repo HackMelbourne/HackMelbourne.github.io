@@ -18,7 +18,7 @@ export default {
     },
 
     fontFamily: {
-      sans: ['Open Sauce One', 'Poppins', ...defaultTheme.fontFamily.sans],
+      sans: ['Poppins', ...defaultTheme.fontFamily.sans],
     },
 
     extend: {},
