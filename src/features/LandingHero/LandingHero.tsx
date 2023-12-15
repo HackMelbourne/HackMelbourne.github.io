@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import '../../styles/HeroBanner.css';
+import './LandingHero.css';
 
 const HeroBanner = () => {
   return (

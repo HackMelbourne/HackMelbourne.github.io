@@ -5,7 +5,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 
 import './index.css';
 
-import Layout from './components/Layout';
+import Layout from './layouts/Layout';
 
 // Pages
 import Events from './routes/Events';
