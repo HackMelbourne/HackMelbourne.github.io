@@ -36,21 +36,17 @@ function Root() {
     desc: 'Remember the amazing year of 2023 and our achievements.',
     button: 'See details',
     link: 'https://www.google.com.au',
-  }
+  };
 
   const jointeam = {
     title: ['Join the ', 'Hack', 'Melbourne', 'team for 2024'],
     desc: ['Be make an impact on our future and learn some', 'more skills along the way!'],
     button: 'Apply Now',
-  }
+  };
 
   return (
     <div className="w-screen max-w-full pt-28">
-      <HeroBanner 
-        clubname={hero.clubname}
-        year={hero.year}
-        button={hero.button}
-      />
+      <HeroBanner clubname={hero.clubname} year={hero.year} button={hero.button} />
       <DescriptionBoxes events={events} />
       <BannerStandard
         img={hoodie.img}
@@ -59,11 +55,7 @@ function Root() {
         button={hoodie.button}
         link={hoodie.link}
       />
-      <JoinTheTeam 
-        title={jointeam.title}
-        desc={jointeam.desc}
-        button={jointeam.button}
-      />
+      <JoinTheTeam title={jointeam.title} desc={jointeam.desc} button={jointeam.button} />
     </div>
   );
 }
