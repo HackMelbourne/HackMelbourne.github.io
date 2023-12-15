@@ -1,10 +1,8 @@
-import React from 'react';
-
 // Component Imports
-import HeroBanner from '../components/Home/HeroBanner';
-import DescriptionBoxes from '../components/Home/DescriptionBoxes';
-import BannerStandard from '../components/Home/BannerStandard';
-import JoinTheTeam from '../components/Home/JoinTheTeam';
+import HeroBanner from '../features/LandingHero/LandingHero';
+import DescriptionBoxes from '../features/DescriptionBoxes/DescriptionBoxes';
+import BannerStandard from '../features/BannerStandard/BannerStandard';
+import JoinTheTeam from '../features/JoinTheTeam/JoinTheTeam';
 
 function Root() {
   const hero = {

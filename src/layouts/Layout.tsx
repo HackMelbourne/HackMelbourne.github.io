@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router';
 
 // Components
-import Navbar from '../components/Navbar';
+import Navbar from './Navbar';
 
 // Styles
 import '../styles/layout.css';
