@@ -8,10 +8,9 @@ import JoinTheTeam from '../components/Home/JoinTheTeam';
 
 function Root() {
   const hero = {
-    firstname: 'HACK',
-    lastname: 'MELB',
+    clubname: ['HACK', 'MELB'],
     year: '2023',
-    action: 'Buy Hoodies',
+    button: 'Buy Hoodies',
   };
 
   // Temp event values
@@ -42,22 +41,17 @@ function Root() {
   }
 
   const jointeam = {
-    title_start: 'Join the ',
-    first_name: 'Hack',
-    last_name: 'Melbourne',
-    title_end: 'team for 2024',
-    desc_start: 'Be make an impact on our future and learn some',
-    desc_end: 'more skills along the way!',
-    action: 'Apply Now',
+    title: ['Join the ', 'Hack', 'Melbourne', 'team for 2024'],
+    desc: ['Be make an impact on our future and learn some', 'more skills along the way!'],
+    button: 'Apply Now',
   }
 
   return (
     <div className="w-screen max-w-full pt-28">
       <HeroBanner 
-        firstname={hero.firstname}
-        lastname={hero.lastname}
+        clubname={hero.clubname}
         year={hero.year}
-        action={hero.action}
+        button={hero.button}
       />
       <DescriptionBoxes events={events} />
       <BannerStandard
@@ -68,13 +62,9 @@ function Root() {
         link={hoodie.link}
       />
       <JoinTheTeam 
-        title_start={jointeam.title_start}
-        first_name={jointeam.first_name}
-        last_name={jointeam.last_name}
-        title_end={jointeam.title_end}
-        desc_start={jointeam.desc_start}
-        desc_end={jointeam.desc_end}
-        action={jointeam.action}
+        title={jointeam.title}
+        desc={jointeam.desc}
+        button={jointeam.button}
       />
     </div>
   );

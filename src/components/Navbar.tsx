@@ -11,22 +11,16 @@ import { Link } from 'react-router-dom';
 
 interface Nav {
   clubname: string;
-  home: string;
-  home_link: string;
-  about: string;
-  about_link: string;
-  events: string;
-  events_link: string;
-  sponsors: string;
-  sponsors_link: string;
-  back: string;
+  pages: string[];
+  links: string[];
+  exit: string;
 }
 
 const ShowPopup = () => {
   document.getElementById('popup')?.classList.toggle('hidden');
 };
 
-const Navbar = ({ clubname, home, home_link, about, about_link, events, events_link, sponsors, sponsors_link, back }: Nav) => {
+const Navbar = ({ clubname, pages, links, exit }: Nav) => {
   return (
     <div className="flex justify-center">
       <nav className="w-screen max-w-[800px] fixed pt-8 z-40 px-8">
@@ -41,9 +35,9 @@ const Navbar = ({ clubname, home, home_link, about, about_link, events, events_l
 
           {/* DESKTOP */}
           <div className="hidden md:flex justify-end gap-6 items-center">
-            <Link to={about_link}>{about}</Link>
-            <Link to={events_link}>{events}</Link>
-            <Link to={sponsors_link}>{sponsors}</Link>
+            <Link to={links[1]}>{pages[1]}</Link>
+            <Link to={links[2]}>{pages[2]}</Link>
+            <Link to={links[3]}>{pages[3]}</Link>
           </div>
         </div>
       </nav>
@@ -55,22 +49,22 @@ const Navbar = ({ clubname, home, home_link, about, about_link, events, events_l
         <div className="flex flex-col min-w-[350px] w-full mx-2.5 justify-between items-center self-stretch rounded-xl border-2 border-white">
           <div className="flex flex-col min-h-[350px] h-5/6 justify-center items-center gap-5">
             <img src={HM_White_Transparent} className="h-20 w-20" />
-            <Link to={home_link} className="text-[32px] font-bold">
-              {home}
+            <Link to={links[0]} className="text-[32px] font-bold">
+              {pages[0]}
             </Link>
-            <Link to={about_link} className="text-[32px] font-bold">
-              {about}
+            <Link to={links[1]} className="text-[32px] font-bold">
+              {pages[1]}
             </Link>
-            <Link to={events_link} className="text-[32px] font-bold">
-              {events}
+            <Link to={links[2]} className="text-[32px] font-bold">
+              {pages[2]}
             </Link>
-            <Link to={sponsors_link} className="text-[32px] font-bold">
-              {sponsors}
+            <Link to={links[3]} className="text-[32px] font-bold">
+              {pages[3]}
             </Link>
           </div>
           <div className="flex w-10 pt-5 pb-10 justify-between items-center">
             <button className="text-xl font-medium underline" onClick={ShowPopup}>
-              {back}
+              {exit}
             </button>
           </div>
         </div>

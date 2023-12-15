@@ -25,15 +25,9 @@ const Layout = () => {
 
   const nav = {
     clubname: 'HackMelbourne',
-    home: 'Home',
-    home_link: '/',
-    about: 'About Us',
-    about_link: '/about',
-    events: 'Events',
-    events_link: '/events',
-    sponsors: 'Sponsors',
-    sponsors_link: '/sponsor',
-    back: 'Back',
+    pages: ['Home', 'About Us', 'Events', 'Sponsors'],
+    links: ['/', '/about', '/events', '/sponsor'],
+    exit: 'Back',
   }
 
   return (
@@ -42,15 +36,9 @@ const Layout = () => {
       <div className="w-screen max-w-full">
         {isShowNavbar ? <Navbar 
           clubname={nav.clubname}
-          home={nav.home}
-          home_link={nav.home_link}
-          about={nav.about}
-          about_link={nav.about_link}
-          events={nav.events}
-          events_link={nav.events_link}
-          sponsors={nav.sponsors}
-          sponsors_link={nav.sponsors_link}
-          back={nav.back}
+          pages={nav.pages}
+          links={nav.links}
+          exit={nav.exit}
         /> : null}
         <Outlet />
 
