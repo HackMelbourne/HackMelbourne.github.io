@@ -2,12 +2,11 @@ import '../../styles/gradients.css';
 
 const JoinTheTeam = () => {
   return (
-    <div className="join-team-gradient-border flex flex-col min-h-[40vh] rounded-sm md:rounded-[20px] md:min-h-[60vh] max-w-[1100px] w-[100%] md:w-[80%] m-auto items-center justify-center gap-3 md:gap-6">      
+    <div className="join-team-gradient-border flex flex-col min-h-[40vh] rounded-sm md:rounded-[20px] md:min-h-[60vh] max-w-[1100px] w-[100%] md:w-[80%] m-auto mt-40 items-center justify-center gap-3 md:gap-6">      
       <div className="text-center text-2xl md:text-5xl font-bold text-white ">
         Join the <span className="text-primary">Hack</span>
         Melbourne
-      </div>
-      <div className="text-2xl md:text-5xl font-bold text-white">
+        <br/>
         team for 2024
       </div>
       <div className="text-sm text-center">
