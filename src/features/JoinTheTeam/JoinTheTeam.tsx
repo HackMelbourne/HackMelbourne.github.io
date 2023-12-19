@@ -1,7 +1,15 @@
+import { MeshWobbleMaterial } from '@react-three/drei';
 import '../../styles/gradients.css';
 import { motion } from 'framer-motion';
 
-const JoinTheTeam = () => {
+
+interface JoinTheTeam {
+  title: string[];
+  desc: string[];
+  button: string;
+}
+        
+const JoinTheTeam = ({ title, desc, button }: JoinTheTeam) => {
   // Animation settings
   const container = {
     hidden: {},
@@ -34,19 +42,20 @@ const JoinTheTeam = () => {
       initial="hidden"
       whileInView="show">
       <motion.div className="text-center text-2xl md:text-5xl font-bold text-white max-w-2xl" variants={item}>
-        Join the <span className="text-primary">Hack</span>Melbourne team for 2024
+        {title[0]} <span className="text-primary">{title[1]}</span>{title[2]}
       </motion.div>
       <motion.div className="text-sm text-center" variants={item}>
-        Be make an impact on our future and learn some
+        {desc[0]}
         <br />
-        more skills along the way!
+        {desc[1]}
       </motion.div>
+
       {/* Copied button styling from BannerStandard for now */}
       <motion.div
         className="text-sm flex w-[120px] h-[45px] py-2.5 px-[15px] justify-center items-center gap-2.5
           rounded-[5px] bg-primary bg-opacity-40 border-primary border-[1px]"
         variants={item}>
-        Apply Now
+        {button}
       </motion.div>
     </motion.div>
   );
