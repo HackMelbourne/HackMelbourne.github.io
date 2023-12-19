@@ -3,7 +3,13 @@ import { motion } from 'framer-motion';
 
 import './LandingHero.css';
 
-const HeroBanner = () => {
+interface Hero {
+  clubname: string[];
+  year: string;
+  button: string;
+}
+
+const HeroBanner = ({ clubname, year, button }: Hero) => {
   return (
     <div className="max-w-[1100px] grid grid-cols-1 m-auto items-center">
       <div className="z-10 col-start-1 row-start-1 flex flex-col items-center">
@@ -13,9 +19,9 @@ const HeroBanner = () => {
           transition={{ delay: 0.4, duration: 0.8, ease: 'anticipate', type: 'tween' }}
           viewport={{ once: true }}
           className="text-center font-black text-7xl md:text-9xl">
-          <div>HACK</div>
-          <div>MELB</div>
-          <div>2023</div>
+          <div>{clubname[0]}</div>
+          <div>{clubname[1]}</div>
+          <div>{year}</div>
         </motion.div>
         <motion.a
           initial={{ opacity: 0, y: 40 }}
@@ -23,7 +29,7 @@ const HeroBanner = () => {
           transition={{ delay: 1 }}
           href="https://www.google.com"
           className="mt-4 px-6 py-3 rounded-md bg-blue-600/20 border border-blue-500 font-semibold">
-          Buy Hoodies
+          {button}
         </motion.a>
       </div>
       <motion.div
@@ -32,9 +38,9 @@ const HeroBanner = () => {
         transition={{ duration: 1.2, ease: 'anticipate', type: 'tween' }}
         viewport={{ once: true }}
         className="col-start-1 row-start-1 text-center font-black text-9xl md:text-[15rem] text-outline text-transparent select-none">
-        <div>HACK</div>
-        <div>MELB</div>
-        <div>2023</div>
+        <div>{clubname[0]}</div>
+        <div>{clubname[1]}</div>
+        <div>{year}</div>
       </motion.div>
     </div>
   );
