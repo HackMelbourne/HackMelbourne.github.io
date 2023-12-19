@@ -39,7 +39,7 @@ function Root() {
   };
 
   const jointeam = {
-    title: ['Join the ', 'Hack', 'Melbourne', 'team for 2024'],
+    title: ['Join the ', 'Hack', 'Melbourne team for 2024'],
     desc: ['Be make an impact on our future and learn some', 'more skills along the way!'],
     button: 'Apply Now',
   };
