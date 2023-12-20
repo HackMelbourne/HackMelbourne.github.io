@@ -36,7 +36,7 @@ const JoinTheTeam = ({ title, desc, button }: JoinTheTeam) => {
 
   return (
     <motion.div
-      className="join-team-gradient-border flex flex-col min-h-[40vh] rounded-sm md:rounded-[20px] md:min-h-[60vh] max-w-[1100px] w-[100%] md:w-[80%] m-auto items-center justify-center gap-3 md:gap-6"
+      className="join-team-gradient-border md:border-[1px] md:border-transparent flex flex-col min-h-[40vh] rounded-[20px] md:min-h-[60vh] max-w-[1100px] w-[100%] md:w-[80%] m-auto mt-40 items-center justify-center gap-3 md:gap-6"
       variants={container}
       viewport={{ amount: 0.8, once: true }}
       initial="hidden"

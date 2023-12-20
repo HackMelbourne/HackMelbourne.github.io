@@ -18,5 +18,4 @@
     linear-gradient(to right, rgb(10 10 10), rgb(10 10 10)) padding-box,
     /* This gradient is to just fill in the background color */
       linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 80%) border-box; /* This gradient is for the border */
-  border: 1px solid transparent;
 }
