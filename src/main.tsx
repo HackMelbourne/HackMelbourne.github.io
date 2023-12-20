@@ -13,12 +13,19 @@ import Sponsor from './routes/Sponsor';
 import About from './routes/About';
 import Root from './routes/Root';
 
+const pageInfo = {
+  title: "Events / Initiatives",
+  description: `Throughout the year, HackMelbourne offers many opportunities for both
+  complete beginners and seasoned veterans to display their teamwork, coding
+  and leadership skills.`
+}
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Root />} />
       <Route path="about" element={<About />} />
-      <Route path="events" element={<Events />} />
+      <Route path="events" element={<Events pageTitle={pageInfo.title} pageDescription={pageInfo.description} />} />
       <Route path="sponsor" element={<Sponsor />} />
     </Route>,
   ),
