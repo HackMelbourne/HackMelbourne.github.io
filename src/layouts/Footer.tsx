@@ -1,8 +1,28 @@
 import React from 'react';
-import { FaDiscord, FaEnvelope, FaFacebook, FaLinkedin } from 'react-icons/fa';
-import { DISCORD_LINK, FACEBOOK_LINK, LINKEDIN_LINK, SPONSORSHIP_EMAIL } from '../constants';
+import { Link } from 'react-router-dom';
+import { IconType } from 'react-icons';
 
-const Footer = () => {
+interface FooterLink {
+  name: string;
+  link: string;
+}
+
+interface FooterSection {
+  title: string;
+  links: FooterLink[];
+}
+
+interface FooterIcon {
+  name: string;
+  icon: IconType;
+  link: string;
+}
+
+interface FooterData {
+  links: FooterSection[];
+  icons: FooterIcon[];
+}
+
   return (
     <footer>
       <div>
