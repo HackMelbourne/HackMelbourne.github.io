@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router';
+import { FaDiscord, FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa';
+import { DISCORD_LINK, FACEBOOK_LINK, LINKEDIN_LINK, INSTAGRAM_LINK, SPONSORSHIP_EMAIL } from '../constants';
 
 // Components
 import Navbar from './Navbar';
@@ -35,6 +37,41 @@ const Layout = () => {
     links: ['/', '/about', '/events', '/sponsor'],
     exit: 'Back',
   }
+
+  const footer = {
+    links: [
+      {
+        title: 'Organisation',
+        links: [
+          { name: 'Join Committee', link: '#' },
+          { name: 'UMSU', link: '#' },
+          { name: 'Contact Us', link: '#' },
+        ],
+      },
+      {
+        title: 'Legal',
+        links: [
+          { name: 'Privacy Policy', link: '#' },
+          { name: 'Terms and Conditions', link: '#' },
+        ],
+      },
+      {
+        title: 'Resources',
+        links: [
+          { name: 'Past Events', link: '#' },
+          { name: 'GitHub', link: '#' },
+          { name: 'Design Guidelines', link: '#' },
+        ],
+      },
+    ],
+    icons: [
+      { name: 'Facebook', icon: FaFacebook , link: FACEBOOK_LINK},
+      { name: 'Instagram', icon: FaInstagram , link: INSTAGRAM_LINK},
+      { name: 'Discord', icon: FaDiscord , link: DISCORD_LINK},
+      { name: 'LinkedIn', icon: FaLinkedin , link: LINKEDIN_LINK},
+      { name: 'Email', icon: FaEnvelope , link: SPONSORSHIP_EMAIL},
+    ],
+  };
 
   return (
     <>
