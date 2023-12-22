@@ -76,7 +76,7 @@ const Layout = () => {
   return (
     <>
       {' '}
-      <div className="w-screen max-w-full">
+      <div className="w-screen max-w-full overflow-x-clip">
         {isShowNavbar ? <Navbar
           clubname={nav.clubname}
           pages={nav.pages}

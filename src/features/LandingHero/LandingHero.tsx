@@ -37,7 +37,7 @@ const HeroBanner = ({ clubname, year, button }: Hero) => {
         whileInView={{ opacity: 1, letterSpacing: '0px', textIndent: '0px' }}
         transition={{ duration: 1.2, ease: 'anticipate', type: 'tween' }}
         viewport={{ once: true }}
-        className="col-start-1 row-start-1 text-center font-black text-9xl md:text-[15rem] text-outline text-transparent select-none">
+        className="col-start-1 row-start-1 text-center font-black text-9xl md:text-[15rem] text-outline text-transparent select-none truncate">
         <div>{clubname[0]}</div>
         <div>{clubname[1]}</div>
         <div>{year}</div>
