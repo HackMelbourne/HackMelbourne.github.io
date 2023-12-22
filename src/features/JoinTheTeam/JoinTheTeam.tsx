@@ -2,13 +2,12 @@ import { MeshWobbleMaterial } from '@react-three/drei';
 import '../../styles/gradients.css';
 import { motion } from 'framer-motion';
 
-
 interface JoinTheTeam {
   title: string[];
   desc: string[];
   button: string;
 }
-        
+
 const JoinTheTeam = ({ title, desc, button }: JoinTheTeam) => {
   // Animation settings
   const container = {
@@ -41,10 +40,11 @@ const JoinTheTeam = ({ title, desc, button }: JoinTheTeam) => {
       viewport={{ amount: 0.8, once: true }}
       initial="hidden"
       whileInView="show">
-      <motion.div className="text-center text-2xl md:text-5xl font-bold text-white max-w-2xl" variants={item}>
-        {title[0]} <span className="text-primary">{title[1]}</span>{title[2]}
+      <motion.div className="text-center text-2xl md:text-5xl font-bold text-white max-w-2xl px-2" variants={item}>
+        {title[0]} <span className="text-primary">{title[1]}</span>
+        {title[2]}
       </motion.div>
-      <motion.div className="text-sm text-center" variants={item}>
+      <motion.div className="text-sm text-center px-2" variants={item}>
         {desc[0]}
         <br />
         {desc[1]}
