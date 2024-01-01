@@ -13,10 +13,10 @@ interface EventItemProps {
 const EventItem = ({ name, date, brief, description, bgImage, frontImage, link }: EventItemProps) => {
 
   return (
-    <div className="rounded-[10px] mx-auto w-4/5 max-w-[800px] mb-10 min-h-[200px]">
+    <div className="rounded-[10px] mx-auto w-4/5 max-w-[800px] my-20 min-h-[200px]">
       <div className="h-[30vw] bg-cover bg-center rounded-[10px]" style={{ backgroundImage: `url(${bgImage})` }}></div>
       <div className="flex">
-        <div className="w-[40%] px-10">
+        <div className="w-[40%] p-4">
           <img
             className="h-[120%] -mt-[25%] rounded-[10px] object-cover w-full"
             src={frontImage}
@@ -30,7 +30,7 @@ const EventItem = ({ name, date, brief, description, bgImage, frontImage, link }
               <p className="font-bold text-xs">{date}</p>
               <p className="text-gray-600 text-xs">{brief}</p>
             </div>
-            <p className="text-sm text-gray-600 overflow-y-hidden max-h-[40%] min-h-[40%] h-[10vh] truncate">{description}</p>
+            <p className="text-sm text-gray-600 overflow-y-hidden min-h-[40%] mb-2">{description}</p>
           </div>
           <a href={link} className="w-[30%] text-center inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">
             Visit here
