@@ -46,6 +46,7 @@ const Events = () => {
 
   return (
     <div className="w-screen max-w-full pt-28">
+      <TitleHero pageTitle={pageInfo.title} pageDescription={pageInfo.description} />
       {eventsData.map((event, index) => (
         <EventItem key={index} {...event} />
       ))}
