@@ -18,7 +18,7 @@ const EventItem = ({ name, date, brief, description, bgImage, frontImage, link }
       <div className="flex">
         <div className="w-[40%] p-4">
           <img
-            className="h-[120%] -mt-[25%] rounded-[10px] object-cover w-full"
+            className="h-[120%] relative -top-[20%] rounded-[10px] object-cover w-full"
             src={frontImage}
             alt={name}
           />
