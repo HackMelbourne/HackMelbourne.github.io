@@ -1,6 +1,8 @@
 import "../styles/Events.css"
 import TitleHero from "../features/TitleHero/TitleHero";
 import EventItem from "../features/EventItem/EventItem";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const Events = () => {
 
@@ -44,9 +46,23 @@ const Events = () => {
     }
   ];
 
+  // Animations
+  const scrollRef = useRef(null)
+
+  let { scrollYProgress } = useScroll(
+    {
+      container: scrollRef
+    }
+  );
+  let y = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
+
   return (
     <div className="w-screen max-w-full">
-      <TitleHero pageTitle={pageInfo.title} pageDescription={pageInfo.description} />
+      <motion.section
+        ref={scrollRef}
+        style={{ y: y }}>
+        <TitleHero pageTitle={pageInfo.title} pageDescription={pageInfo.description} />
+      </motion.section>
       <section>
         {eventsData.map((event, index) => (
           <EventItem key={index} {...event} />
