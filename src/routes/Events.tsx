@@ -45,13 +45,15 @@ const Events = () => {
   ];
 
   return (
-    <div className="w-screen max-w-full pt-28">
+    <div className="w-screen max-w-full">
       <TitleHero pageTitle={pageInfo.title} pageDescription={pageInfo.description} />
-      {eventsData.map((event, index) => (
-        <EventItem key={index} {...event} />
-      ))}
+      <section>
+        {eventsData.map((event, index) => (
+          <EventItem key={index} {...event} />
+        ))}
+      </section>
     </div>
   );
- };
+};
 
- export default Events;
+export default Events;
