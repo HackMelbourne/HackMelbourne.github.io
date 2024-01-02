@@ -1,6 +1,7 @@
-import { MeshWobbleMaterial } from '@react-three/drei';
 import '../../styles/gradients.css';
 import { motion } from 'framer-motion';
+import HMButton from '../../assets/button/HMButton';
+import { Link } from 'react-router-dom';
 
 interface JoinTheTeam {
   title: string[];
@@ -50,12 +51,11 @@ const JoinTheTeam = ({ title, desc, button }: JoinTheTeam) => {
         {desc[1]}
       </motion.div>
 
-      {/* Copied button styling from BannerStandard for now */}
-      <motion.div
-        className="text-sm flex w-[120px] h-[45px] py-2.5 px-[15px] justify-center items-center gap-2.5
-          rounded-[5px] bg-primary bg-opacity-40 border-primary border-[1px]"
-        variants={item}>
-        {button}
+      <motion.div variants={item}>
+        {' '}
+        <Link to={'/'}>
+          <HMButton text={button} color="primary" style="border"></HMButton>
+        </Link>
       </motion.div>
     </motion.div>
   );

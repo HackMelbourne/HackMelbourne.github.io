@@ -7,7 +7,7 @@ interface Props {
 
 const HMButton = ({ text, color, style, span }: Props) => {
   if (style == null) {
-    style = 'filled';
+    style = 'border';
   }
 
   let key = {
@@ -38,7 +38,7 @@ const HMButton = ({ text, color, style, span }: Props) => {
     <div
       className={`flex justify-center px-6 py-3 rounded-md ${key[style][color]} ${
         span ? 'w-full' : 'w-fit'
-      } font-semibold`}>
+      } font-medium`}>
       {text}
     </div>
   );
