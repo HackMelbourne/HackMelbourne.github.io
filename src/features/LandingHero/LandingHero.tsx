@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import './LandingHero.css';
+import HMButton from '../../assets/button/HMButton';
 
 interface Hero {
   clubname: string[];
@@ -28,8 +29,8 @@ const HeroBanner = ({ clubname, year, button }: Hero) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
           href="https://www.google.com"
-          className="mt-4 px-6 py-3 rounded-md bg-blue-600/20 border border-blue-500 font-semibold">
-          {button}
+          className="mt-4">
+          <HMButton text={button} color="primary" style="border" />
         </motion.a>
       </div>
       <motion.div
