@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+import HMButton from '../../assets/button/HMButton';
+
 interface BannerInfo {
   img: string;
   title: string;
@@ -60,12 +62,8 @@ function BannerStandard({ img, title, desc, button, link }: BannerInfo) {
         </motion.div>
 
         <motion.div variants={item} custom={-1}>
-          <Link
-            to={link}
-            id="hoodie-button"
-            className="flex w-[120px] h-[45px] py-2.5 px-[15px] justify-center items-center gap-2.5
-                rounded-[5px] bg-[#F3B52A] bg-opacity-40 border-[#F3B52A] border-[1px]">
-            <p className="text-base font-bold">{button}</p>
+          <Link to={link} id="hoodie-button">
+            <HMButton text={button} color="secondary" style="border"></HMButton>
           </Link>
         </motion.div>
       </div>
