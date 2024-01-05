@@ -33,9 +33,9 @@ const Layout = () => {
 
   const nav = {
     clubname: 'HackMelbourne',
+    logo: '/img/HM_White_Transparent.png',
     pages: ['Home', 'About Us', 'Events', 'Sponsors'],
     links: ['/', '/about', '/events', '/sponsor'],
-    exit: 'Back',
   }
 
   const footer = {
@@ -79,9 +79,9 @@ const Layout = () => {
       <div className="w-screen max-w-full overflow-x-clip">
         {isShowNavbar ? <Navbar
           clubname={nav.clubname}
+          logo={nav.logo}
           pages={nav.pages}
           links={nav.links}
-          exit={nav.exit}
         /> : null}
         <Outlet />
         {isShowFooter ? <Footer
