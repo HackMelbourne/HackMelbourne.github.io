@@ -1,5 +1,6 @@
 import React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 // Styles
 import '../styles/gradients.css';
@@ -25,7 +26,7 @@ const Navbar = ({ clubname, logo, pages, links }: Nav) => {
     <div className="flex justify-center">
       <nav className="w-screen max-w-[800px] fixed pt-8 z-40 px-8">
         <div className="max-w-[800px] grow rounded-md bg-white/20 backdrop-blur-md border flex justify-between items-center px-5 py-3">
-          <Link to="/" className="flex items-center justify-start gap-2 font-bold">
+          <Link to={links[0]} className="flex items-center justify-start gap-2 font-bold">
             <img src={logo} className="h-8 w-8"></img>
             {clubname}
           </Link>
@@ -48,14 +49,16 @@ const Navbar = ({ clubname, logo, pages, links }: Nav) => {
         className="hidden flex fixed w-screen h-screen p-2.5 z-50 bg-neutral-950">
         <div className="flex flex-col min-w-[350px] w-full mx-2.5 rounded-xl border-2 border-white">
           
-          <div className="flex flex-col w-[100%] items-end">
-            <button onClick={ShowPopup}>
-              <img className="w-6 mt-2.5 mr-2.5 text-white" src={close_button}></img>
+          <div className="flex w-[100%] justify-between items-center">
+            <Link to={links[0]}>
+              <img src={logo} className="h-14 w-14 ml-5 mt-5" />
+            </Link>
+            <button className="mr-5 mt-5" onClick={ShowPopup}>
+              <CloseIcon fontSize="large"/>
             </button>
           </div>
 
           <div className="flex flex-col h-5/6 justify-center items-center gap-5">
-            <img src={logo} className="h-20 w-20" />
             <Link to={links[0]} className="text-[32px] font-bold">
               {pages[0]}
             </Link>
