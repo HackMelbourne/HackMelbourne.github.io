@@ -55,7 +55,7 @@ const Events = () => {
     offset: ['start start', 'end start'],
   });
 
-  let y = useTransform(scrollYProgress, [0, 1], ['0%', '70%']);
+  let y = useTransform(scrollYProgress, [0, 1], ['0%', '80%']);
   let opacityValue = useTransform(scrollYProgress, [0, 0.8], ['100%', '0%']);
   let scaleValue = useTransform(scrollYProgress, [0, 0.8], ['1', '0.9']);
 
