@@ -1,21 +1,23 @@
-import "../styles/Events.css"
-import TitleHero from "../features/TitleHero/TitleHero";
-import EventItem from "../features/EventItem/EventItem";
+import '../styles/Events.css';
+import TitleHero from '../features/TitleHero/TitleHero';
+import EventItem from '../features/EventItem/EventItem';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 const Events = () => {
-
   const pageInfo = {
-    title: "Events / Initiatives",
+    title: 'Events / Initiatives',
     description: `Throughout the year, HackMelbourne offers many opportunities for both
     complete beginners and seasoned veterans to display their teamwork, coding
-    and leadership skills.`
-  }
+    and leadership skills.`,
+  };
   const eventsData = [
     {
       name: 'Melbourne Hack Event 1',
       date: '5th - 7th of May, 2024',
       brief: '(with workshops from 4th - 5th of May, 2024!)',
-      description: 'The main hackathon seeks to bring together students from across the state for a weekend of intense hacking. Scheduled for Semester 1, this annual event will provide you with the opportunity to collaborate with talented individuals, meet representatives from industry-leading companies, develop your technical skills and win amazing prizes!',
+      description:
+        'The main hackathon seeks to bring together students from across the state for a weekend of intense hacking. Scheduled for Semester 1, this annual event will provide you with the opportunity to collaborate with talented individuals, meet representatives from industry-leading companies, develop your technical skills and win amazing prizes!',
       bgImage: 'https://source.unsplash.com/random?event',
       frontImage: 'https://source.unsplash.com/random?event_',
       link: 'https://www.google.com.au',
@@ -24,7 +26,8 @@ const Events = () => {
       name: 'Melbourne Hack Event 2',
       date: '2024-01-01',
       brief: '(with workshops from 4th - 5th of May, 2024!)',
-      description: 'The main hackathon seeks to bring together students from across the state for a weekend of intense hacking. Scheduled for Semester 1, this annual event will provide you with the opportunity to collaborate with talented individuals, meet representatives from industry-leading companies, develop your technical skills and win amazing prizes!',
+      description:
+        'The main hackathon seeks to bring together students from across the state for a weekend of intense hacking. Scheduled for Semester 1, this annual event will provide you with the opportunity to collaborate with talented individuals, meet representatives from industry-leading companies, develop your technical skills and win amazing prizes!',
       bgImage: 'https://source.unsplash.com/random?event__',
       frontImage: 'https://source.unsplash.com/random?event___',
       link: 'https://www.google.com.au',
@@ -41,17 +44,33 @@ const Events = () => {
       bgImage: 'https://source.unsplash.com/random?event____',
       frontImage: 'https://source.unsplash.com/random?event_____',
       link: 'https://www.google.com.au',
-    }
+    },
   ];
 
+  // Animations
+  const scrollRef = useRef(null);
+
+  let { scrollYProgress } = useScroll({
+    target: scrollRef,
+    offset: ['start start', 'end start'],
+  });
+
+  let y = useTransform(scrollYProgress, [0, 1], ['0%', '80%']);
+  let opacityValue = useTransform(scrollYProgress, [0, 0.8], ['100%', '0%']);
+  let scaleValue = useTransform(scrollYProgress, [0, 0.8], ['1', '0.9']);
+
   return (
-    <div className="w-screen max-w-full pt-28">
-      <TitleHero pageTitle={pageInfo.title} pageDescription={pageInfo.description} />
-      {eventsData.map((event, index) => (
-        <EventItem key={index} {...event} />
-      ))}
+    <div className="w-screen max-w-full">
+      <motion.section ref={scrollRef} style={{ y, opacity: opacityValue, scale: scaleValue }}>
+        <TitleHero pageTitle={pageInfo.title} pageDescription={pageInfo.description} />
+      </motion.section>
+      <section className="z-10 relative">
+        {eventsData.map((event, index) => (
+          <EventItem key={index} {...event} />
+        ))}
+      </section>
     </div>
   );
- };
+};
 
- export default Events;
+export default Events;
