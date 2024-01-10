@@ -4,6 +4,11 @@ import DescriptionBoxes from '../features/DescriptionBoxes/DescriptionBoxes';
 import BannerStandard from '../features/BannerStandard/BannerStandard';
 import JoinTheTeam from '../features/JoinTheTeam/JoinTheTeam';
 
+// Event Image Imports
+import DecodEdImage from '../assets/images/DecodED-2022/DecodED.png'
+import HackiethonImage from '../assets/images/Hackiethon-2022/Hackiethon2.png'
+import MelbHackImage from '../assets/images/MelbourneHack-2023/MelbourneHack.png'
+
 function Root() {
   const hero = {
     clubname: ['HACK', 'MELB'],
@@ -14,19 +19,22 @@ function Root() {
   // Temp event values
   const events = [
     {
-      title: 'First Event Title',
+      title: 'Hackiethon',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+        'Our rookie hackathon is tailor-made for those with little experience in hackathons, but are keen to get involved! Unlike our main hackathon, this will be held virtually and will provide valuable insights into the experience of competing in such events, and how to maximise your chances of success.',
+      image: HackiethonImage
     },
     {
-      title: 'Second Event Title',
+      title: 'Melbourne Hack',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+        `The main hackathon seeks to bring together students from across the state for a weekend of intense hacking. Scheduled for Semester 1, this annual event will provide you with the opportunity to collaborate with talented individuals, meet representatives from industry-leading companies, develop your technical skills and win amazing prizes!`,
+      image: MelbHackImage
     },
     {
-      title: 'Third Event Title',
+      title: 'DecodED',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+        "Our engaging education program is a 2-4 week course perfect for those with little to no experience in software development. Commencing in Semester 2 2022, the program will cover a variety of technologies that will exponentially improve your programming capabilities. With the rookie hackathon strategically scheduled at the conclusion of the program, you'll have the chance to put your new-found skills to the test and experience the excitement of a hackathon.",
+      image: DecodEdImage
     },
   ];
 
