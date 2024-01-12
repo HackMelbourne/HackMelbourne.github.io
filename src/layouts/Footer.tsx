@@ -48,7 +48,7 @@ const Footer = ({ links, icons }: FooterData) => {
               <ul>
                 {section.links.map((link) => (
                   <li key={link.name}>
-                    <Link to={link.link} className="hover:underline">
+                    <Link to={link.link} className="hover:underline" onClick={() => window.scrollTo({top: 0})}>
                       {link.name}
                     </Link>
                   </li>
