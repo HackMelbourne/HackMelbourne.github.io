@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 interface Event {
   title: string;
   description: string;
+  image: string;
 }
 
 interface DescriptionBoxesProps {
@@ -46,7 +47,7 @@ function DescriptionBoxes({ events }: DescriptionBoxesProps) {
     <div className=" mt-8 flex flex-col h-[140vh] lg:h-[100vh] max-w-[1100px] justify-between w-[80%] m-auto">
       {/* First Event */}
       <div className="flex flex-col h-[30%] lg:flex-row lg:justify-between lg:self-start lg:gap-16">
-        <div className="border border-gray-200 h-1/2 lg:w-1/2 lg:h-full" />
+        <img src={events[0].image} className="object-cover border border-gray-200 h-1/2 lg:w-1/2 lg:h-full" />
         <motion.div
           className="h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-4 justify-center align-center"
           variants={container}
@@ -77,12 +78,12 @@ function DescriptionBoxes({ events }: DescriptionBoxesProps) {
             {events[1].description}
           </motion.div>
         </motion.div>
-        <div className="order-1 lg:order-2 border h-1/2 lg:w-1/2 lg:h-full" />
+        <img src={events[1].image} className="object-cover order-1 lg:order-2 border h-1/2 lg:w-1/2 lg:h-full" />
       </div>
 
       {/* Third Event */}
       <div className="flex flex-col h-[30%] lg:flex-row lg:justify-between lg:w-4/5 lg:self-start lg:gap-16">
-        <div className="border h-1/2 lg:w-1/2 lg:h-full" />
+        <img src={events[2].image} className="object-cover border h-1/2 lg:w-1/2 lg:h-full" />
         <motion.div
           className="h-1/2 lg:h-full lg:w-3/4 flex flex-col gap-4 justify-center align-center"
           variants={container}

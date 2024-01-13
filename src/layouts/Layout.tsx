@@ -51,8 +51,8 @@ const Layout = () => {
       {
         title: 'Legal',
         links: [
-          { name: 'Privacy Policy', link: '#' },
-          { name: 'Terms and Conditions', link: '#' },
+          { name: 'Privacy Policy', link: '/privacy' },
+          { name: 'Terms and Conditions', link: '/terms' },
         ],
       },
       {
