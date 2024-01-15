@@ -5,9 +5,12 @@ import BannerStandard from '../features/BannerStandard/BannerStandard';
 import JoinTheTeam from '../features/JoinTheTeam/JoinTheTeam';
 
 // Event Image Imports
-import DecodEdImage from '../assets/images/DecodED-2022/DecodED.png'
-import HackiethonImage from '../assets/images/Hackiethon-2022/Hackiethon2.png'
-import MelbHackImage from '../assets/images/MelbourneHack-2023/MelbourneHack.png'
+import DecodEdImage from '../assets/images/DecodED-2022/DecodED.png';
+import HackiethonImage from '../assets/images/Hackiethon-2022/Hackiethon2.png';
+import MelbHackImage from '../assets/images/MelbourneHack-2023/MelbourneHack.png';
+
+// Hoodie Imports
+import HoodieBack from '../assets/images/Hoodie-2023/HM_Hoodie_Back.png';
 
 function Root() {
   const hero = {
@@ -22,24 +25,23 @@ function Root() {
       title: 'Hackiethon',
       description:
         'Our rookie hackathon is tailor-made for those with little experience in hackathons, but are keen to get involved! Unlike our main hackathon, this will be held virtually and will provide valuable insights into the experience of competing in such events, and how to maximise your chances of success.',
-      image: HackiethonImage
+      image: HackiethonImage,
     },
     {
       title: 'Melbourne Hack',
-      description:
-        `The main hackathon seeks to bring together students from across the state for a weekend of intense hacking. Scheduled for Semester 1, this annual event will provide you with the opportunity to collaborate with talented individuals, meet representatives from industry-leading companies, develop your technical skills and win amazing prizes!`,
-      image: MelbHackImage
+      description: `The main hackathon seeks to bring together students from across the state for a weekend of intense hacking. Scheduled for Semester 1, this annual event will provide you with the opportunity to collaborate with talented individuals, meet representatives from industry-leading companies, develop your technical skills and win amazing prizes!`,
+      image: MelbHackImage,
     },
     {
       title: 'DecodED',
       description:
         "Our engaging education program is a 2-4 week course perfect for those with little to no experience in software development. Commencing in Semester 2 2022, the program will cover a variety of technologies that will exponentially improve your programming capabilities. With the rookie hackathon strategically scheduled at the conclusion of the program, you'll have the chance to put your new-found skills to the test and experience the excitement of a hackathon.",
-      image: DecodEdImage
+      image: DecodEdImage,
     },
   ];
 
   const hoodie = {
-    img: '/img/hoodie.png',
+    img: HoodieBack,
     title: 'HackMelbourne 2023 Exclusive Hoodie',
     desc: 'Remember the amazing year of 2023 and our achievements.',
     button: 'See details',

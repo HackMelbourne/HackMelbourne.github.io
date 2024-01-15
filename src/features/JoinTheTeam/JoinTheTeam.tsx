@@ -52,10 +52,12 @@ const JoinTheTeam = ({ title, desc, button }: JoinTheTeam) => {
       </motion.div>
 
       <motion.div variants={item}>
-        {' '}
-        <Link to={'/'}>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSc_Cu4yD6Du6LWXD4itRBALJ0elsou0LN56xKPveT3HvrlBmw/viewform"
+          target="_blank"
+          rel="noopener noreferrer">
           <HMButton text={button} color="primary" style="border"></HMButton>
-        </Link>
+        </a>
       </motion.div>
     </motion.div>
   );
