@@ -39,16 +39,16 @@ const Footer = ({ links, icons }: FooterData) => {
 
         {/* Link sections */}
         <div className="flex justify-between flex-col md:flex-row md:gap-8">
-          <div className="p-4 md:w-[42%] justify-center grid md:justify-start">
-            <img title="HackMelbourne Logo" src={HM_White_Transparent} className="md:h-10 md:w-10 h-20 w-20" />
+          <div className="p-4 justify-center grid md:justify-start">
+            <img title="HackMelbourne Logo" src={HM_White_Transparent} className="h-20 w-20" />
           </div>
           {links.map((section) => (
             <div key={section.title} className="flex flex-col mb-8 p-2 text-center md:text-left md:w-1/3">
-              <h3 className="font-bold mb-2">{section.title}</h3>
+              <h3 className="font-bold mb-3">{section.title}</h3>
               <ul>
                 {section.links.map((link) => (
-                  <li key={link.name}>
-                    <Link to={link.link} className="hover:underline">
+                  <li key={link.name} className=" mb-1">
+                    <Link to={link.link} className="hover:underline" onClick={() => window.scrollTo({top: 0})}>
                       {link.name}
                     </Link>
                   </li>

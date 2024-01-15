@@ -12,6 +12,8 @@ import Events from './routes/Events';
 import Sponsor from './routes/Sponsor';
 import About from './routes/About';
 import Root from './routes/Root';
+import Privacy from './routes/Privacy';
+import Terms from './routes/Terms';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,6 +22,8 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="events" element={<Events />} />
       <Route path="sponsor" element={<Sponsor />} />
+      <Route path="privacy" element={<Privacy />} />
+      <Route path="terms" element={<Terms />} />
     </Route>,
   ),
 );
