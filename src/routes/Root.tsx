@@ -35,7 +35,7 @@ function Root() {
     {
       title: 'DecodED',
       description:
-        "Our engaging education program is a 2-4 week course perfect for those with little to no experience in software development. Commencing in Semester 2 2022, the program will cover a variety of technologies that will exponentially improve your programming capabilities. With the rookie hackathon strategically scheduled at the conclusion of the program, you'll have the chance to put your new-found skills to the test and experience the excitement of a hackathon.",
+        "Our engaging education program is a 2-4 week course perfect for those with little to no experience in software development. The program will cover a variety of technologies that will exponentially improve your programming capabilities. With the rookie hackathon strategically scheduled at the conclusion of the program, you'll have the chance to put your new-found skills to the test and experience the excitement of a hackathon.",
       image: DecodEdImage,
     },
   ];
