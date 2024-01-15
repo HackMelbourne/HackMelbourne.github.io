@@ -58,7 +58,7 @@ const Navbar = ({ clubname, logo, pages, links }: Nav) => {
         <nav
           id="popup"
           className="flex fixed w-screen h-screen p-2.5 z-50 bg-neutral-950">
-          <div className="flex flex-col min-w-[350px] w-full mx-2.5 rounded-xl border-2 border-white">
+          <div className="flex flex-col w-full mx-2.5 rounded-xl border-2 border-white">
 
             <div className="flex w-[100%] justify-between items-center">
               <Link to={links[0]} onClick={handleLinkClick}>
