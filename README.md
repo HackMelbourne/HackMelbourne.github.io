@@ -1,3 +1,5 @@
+<img alt="HMGithubBanner" src="https://github.com/HackMelbourne/HackMelbourne.github.io/assets/30622247/d4a1d2f3-5ff4-4d9c-b38b-744b1584541f">
+
 HackMelbourne is a club that aims to serve free hackathons to students, making it easier for begginers to enter the hackathon space with low barriers to entry and a fun and encouraging environment. This website is ont of the platforms we use to distribute information and content to our club members.
 
 Anyone is welcome to assist us and work on the website no matter how small the contribution. If you wish to have a larger role with the website you can apply for subcommittee on our website.
