@@ -12,8 +12,8 @@ import Sponsor from './routes/Sponsor';
 import Layout from './components/Layout';
 import Root from './routes/Root';
 
-import ReactGA from 'react-ga';
-// Initialize React Ga with your tracking ID
+import ReactGA from 'react-ga4';
+
 ReactGA.initialize('G-BCJY191MCE');
 
 const router = createBrowserRouter(
