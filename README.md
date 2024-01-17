@@ -2,7 +2,7 @@ HackMelbourne is a club that aims to serve free hackathons to students, making i
 
 Anyone is welcome to assist us and work on the website no matter how small the contribution. If you wish to have a larger role with the website you can apply for subcommittee on our website.
 
-## Getting Startsd
+## Getting Started
 1. Clone the repository
 2. Once you've cloned the repo, run `npm install` to install all of the node_modules
     ```
