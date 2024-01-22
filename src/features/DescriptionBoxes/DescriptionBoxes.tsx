@@ -49,7 +49,7 @@ function DescriptionBoxes({ events }: DescriptionBoxesProps) {
       <div className="flex flex-col h-[30%] justify-center lg:flex-row lg:justify-between lg:self-start lg:gap-16">
         <img src={events[0].image} className="object-cover border border-gray-200 h-1/3 lg:w-1/2 lg:h-full rounded-sm" />
         <motion.div
-          className="min-h-1/4 lg:h-full lg:w-1/2 flex flex-col mt-2 lg:gap-4 lg:justify-center justify-between align-center"
+          className="min-h-1/4 lg:h-full lg:w-1/2 flex flex-col lg:gap-4 lg:justify-center justify-between align-center"
           variants={container}
           viewport={{ amount: 'all', once: true }}
           initial="hidden"
@@ -66,7 +66,7 @@ function DescriptionBoxes({ events }: DescriptionBoxesProps) {
       {/* Second Event */}
       <div className="flex flex-col h-[30%]  justify-center lg:h-[20%] lg:flex-row lg:justify-between lg:w-4/5 lg:self-end lg:gap-16">
         <motion.div
-          className="order-2 lg:order-1 min-h-3/4 mt-2 lg:h-full lg:w-1/2 flex flex-col lg:gap-4 lg:justify-center justify-between align-center"
+          className="order-2 lg:order-1 min-h-3/4  lg:h-full lg:w-1/2 flex flex-col lg:gap-4 lg:justify-center justify-between align-center"
           variants={container}
           viewport={{ amount: 'all', once: true }}
           initial="hidden"
@@ -85,7 +85,7 @@ function DescriptionBoxes({ events }: DescriptionBoxesProps) {
       <div className="flex flex-col h-[30%] justify-center lg:flex-row lg:justify-between lg:w-4/5 lg:self-start lg:gap-16">
         <img src={events[2].image} className="object-cover border h-1/3 lg:w-1/2 lg:h-full rounded-sm" />
         <motion.div
-          className="min-h-3/4 lg:h-full lg:w-3/4 mt-2 flex flex-col lg:gap-4 lg:justify-center justify-between align-center"
+          className="min-h-3/4 lg:h-full lg:w-3/4 flex flex-col lg:gap-4 lg:justify-center justify-between align-center"
           variants={container}
           viewport={{ amount: 'all', once: true }}
           initial="hidden"
