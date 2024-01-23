@@ -4,11 +4,9 @@ interface SponsorTitleProps {
 
 const SponsorTitle = ({ title } : SponsorTitleProps) => {
   return (
-    <div className="justify-center mt-28">
-      <h2 className="text-4xl font-extrabold mb-10">
-        {title}
-      </h2>
-    </div>
+    <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">
+      {title}
+    </h2>
   )
 }
 
