@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { IconType } from 'react-icons';
 import HM_White_Transparent from '/img/HM_White_Transparent.png';
 
+import DynamicLink from '../assets/DynamicLink/DynamicLink';
+
 interface FooterLink {
   name: string;
   link: string;
@@ -31,9 +33,9 @@ const Footer = ({ links, icons }: FooterData) => {
         {/* Social icons */}
         <div className="flex grow flex-row md:w-1/3 w-100 mb-4 md:mb-8 justify-between">
           {icons.map((icon) => (
-            <a key={icon.name} href={icon.link} target="_blank" rel="noopener noreferrer" className="icon p-3">
+            <DynamicLink className="p-3" key={icon.name} link={icon.link}>
               <icon.icon className="h-7 w-7 md:h-10" />
-            </a>
+            </DynamicLink>
           ))}
         </div>
 
@@ -48,9 +50,9 @@ const Footer = ({ links, icons }: FooterData) => {
               <ul>
                 {section.links.map((link) => (
                   <li key={link.name} className=" mb-1">
-                    <Link to={link.link} className="hover:underline" onClick={() => window.scrollTo({top: 0})}>
+                    <DynamicLink className="hover:underline" key={link.name} link={link.link}>
                       {link.name}
-                    </Link>
+                    </DynamicLink>
                   </li>
                 ))}
               </ul>
