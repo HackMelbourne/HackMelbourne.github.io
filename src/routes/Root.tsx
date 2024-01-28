@@ -12,11 +12,23 @@ import MelbHackImage from '../assets/images/MelbourneHack-2023/MelbourneHack.png
 // Hoodie Imports
 import HoodieBack from '../assets/images/Hoodie-2023/HM_Hoodie_Back.png';
 
+// Constants
+import { UMSU_LINK } from '../constants';
+
 function Root() {
   const hero = {
     clubname: ['HACK', 'MELB'],
     year: '2023',
-    button: 'Buy Hoodies',
+    button: [
+      {
+        name: 'Grab Hoodie',
+        link: '#',
+      },
+      {
+        name: 'Join Club',
+        link: UMSU_LINK,
+      },
+    ],
   };
 
   // Temp event values
@@ -56,7 +68,7 @@ function Root() {
 
   return (
     <div className="w-screen max-w-full pt-28">
-      <HeroBanner clubname={hero.clubname} year={hero.year} button={hero.button} />
+      <HeroBanner clubname={hero.clubname} year={hero.year} buttons={hero.button} />
       <DescriptionBoxes events={events} />
       <BannerStandard
         img={hoodie.img}
