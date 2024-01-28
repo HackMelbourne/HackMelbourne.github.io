@@ -30,6 +30,150 @@ const About = () => {
           ],
         },
       ],
+    },
+    {
+      teamName: 'Website Team',
+      description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. ',
+      bgColor: 'rgba(42,122,243,0.05)',
+      borderColor: 'rgba(42,122,243,50%)',
+      members: [
+        {
+          name: 'Daniel Park',
+          role: 'President',
+          about: `I'm a little strong and can copy a lot of peoples movements.`,
+          imageUrl: 'https://via.placeholder.com/150',
+          links: [
+            { url: 'https://www.linkedin.com/in/Daniel', icon: FaLinkedin },
+            { url: 'https://twitter.com/Daniel', icon: FaTwitter },
+          ],
+        },
+        {
+          name: 'Daniel Park',
+          role: 'Vice-President',
+          about: `I'm a little strong and can copy a lot of peoples movements.`,
+          imageUrl: 'https://via.placeholder.com/150',
+          links: [
+            { url: 'https://www.linkedin.com/in/Daniel', icon: FaLinkedin },
+            { url: 'https://twitter.com/Daniel', icon: FaTwitter },
+          ],
+        },
+        {
+          name: 'Jane Smith',
+          role: 'Vice President',
+          about: 'Innovating and inspiring our teams.',
+          imageUrl: 'https://via.placeholder.com/150',
+          links: [
+            { url: 'https://www.facebook.com/janesmith', icon: FaFacebook },
+            { url: 'https://www.instagram.com/janesmith', icon: FaInstagram },
+          ],
+        },
+      ],
+    },
+    {
+      teamName: 'Logistics Team',
+      description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. ',
+      bgColor: 'rgba(64,243,42,0.05)',
+      borderColor: 'rgba(64,243,42,50%)',
+      members: [
+        {
+          name: 'Daniel Park',
+          role: 'President',
+          about: `I'm a little strong and can copy a lot of peoples movements.`,
+          imageUrl: 'https://via.placeholder.com/150',
+          links: [
+            { url: 'https://www.linkedin.com/in/Daniel', icon: FaLinkedin },
+            { url: 'https://twitter.com/Daniel', icon: FaTwitter },
+          ],
+        },
+        {
+          name: 'Daniel Park',
+          role: 'Vice-President',
+          about: `I'm a little strong and can copy a lot of peoples movements.`,
+          imageUrl: 'https://via.placeholder.com/150',
+          links: [
+            { url: 'https://www.linkedin.com/in/Daniel', icon: FaLinkedin },
+            { url: 'https://twitter.com/Daniel', icon: FaTwitter },
+          ],
+        },
+        {
+          name: 'Daniel Park',
+          role: 'Vice-President',
+          about: `I'm a little strong and can copy a lot of peoples movements.`,
+          imageUrl: 'https://via.placeholder.com/150',
+          links: [
+            { url: 'https://www.linkedin.com/in/Daniel', icon: FaLinkedin },
+            { url: 'https://twitter.com/Daniel', icon: FaTwitter },
+          ],
+        },
+        {
+          name: 'Jane Smith',
+          role: 'Vice President',
+          about: 'Innovating and inspiring our teams.',
+          imageUrl: 'https://via.placeholder.com/150',
+          links: [
+            { url: 'https://www.facebook.com/janesmith', icon: FaFacebook },
+            { url: 'https://www.instagram.com/janesmith', icon: FaInstagram },
+          ],
+        },
+      ],
+    },
+    {
+      teamName: 'Logistics Team',
+      description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. ',
+      bgColor: 'rgba(243,181,42,0.05)',
+      borderColor: 'rgba(243,181,42,.5)',
+      members: [
+        {
+          name: 'Daniel Park',
+          role: 'President',
+          about: `I'm a little strong and can copy a lot of peoples movements.`,
+          imageUrl: 'https://via.placeholder.com/150',
+          links: [
+            { url: 'https://www.linkedin.com/in/Daniel', icon: FaLinkedin },
+            { url: 'https://twitter.com/Daniel', icon: FaTwitter },
+          ],
+        },
+        {
+          name: 'Daniel Park',
+          role: 'Vice-President',
+          about: `I'm a little strong and can copy a lot of peoples movements.`,
+          imageUrl: 'https://via.placeholder.com/150',
+          links: [
+            { url: 'https://www.linkedin.com/in/Daniel', icon: FaLinkedin },
+            { url: 'https://twitter.com/Daniel', icon: FaTwitter },
+          ],
+        },
+        {
+          name: 'Daniel Park',
+          role: 'Vice-President',
+          about: `I'm a little strong and can copy a lot of peoples movements.`,
+          imageUrl: 'https://via.placeholder.com/150',
+          links: [
+            { url: 'https://www.linkedin.com/in/Daniel', icon: FaLinkedin },
+            { url: 'https://twitter.com/Daniel', icon: FaTwitter },
+          ],
+        },
+        {
+          name: 'Daniel Park',
+          role: 'Vice-President',
+          about: `I'm a little strong and can copy a lot of peoples movements.`,
+          imageUrl: 'https://via.placeholder.com/150',
+          links: [
+            { url: 'https://www.linkedin.com/in/Daniel', icon: FaLinkedin },
+            { url: 'https://twitter.com/Daniel', icon: FaTwitter },
+          ],
+        },
+        {
+          name: 'Jane Smith',
+          role: 'Vice President',
+          about: 'Innovating and inspiring our teams.',
+          imageUrl: 'https://via.placeholder.com/150',
+          links: [
+            { url: 'https://www.facebook.com/janesmith', icon: FaFacebook },
+            { url: 'https://www.instagram.com/janesmith', icon: FaInstagram },
+          ],
+        },
+      ],
     },];
 
 
