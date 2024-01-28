@@ -23,7 +23,7 @@ const HMButton = ({ text, color, style, span }: Props) => {
       secondary: ['bg-blue-600/20 border-blue-500 border'],
       alert: ['bg-red-600/20 border-red-500 border'],
       success: ['bg-green-600/20 border-green-500 border'],
-      neutral: ['bg-neutral-600/20 border-neutral-500 border'],
+      neutral: ['bg-neutral-400/30 border-neutral-300 border'],
     },
     underline: {
       primary: ['text-yellow-500 underline'],
