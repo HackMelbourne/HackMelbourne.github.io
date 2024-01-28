@@ -18,7 +18,7 @@ const DynamicLink = ({ link, className, children }: Props) => {
   } else {
     // Internal Link
     return (
-      <Link to={link} onClick={() => window.scrollTo({ top: 0 })} className={className}>
+      <Link to={link} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className={className}>
         {children}
       </Link>
     );

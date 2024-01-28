@@ -32,7 +32,9 @@ const Footer = ({ links, icons }: FooterData) => {
     <div className="flex justify-center">
       <footer className="w-screen max-w-[1100px] p-3 px-8 my-20 flex flex-col items-center">
         <div className=" mb-12">
-          <img title="HackMelbourne Logo" src={HM_White_Transparent} className="w-28" />
+          <DynamicLink link="#">
+            <img title="HackMelbourne Logo" src={HM_White_Transparent} className="w-28" />
+          </DynamicLink>
         </div>
 
         {/* Social icons */}

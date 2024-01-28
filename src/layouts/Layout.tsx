@@ -83,7 +83,6 @@ const Layout = () => {
 
   return (
     <>
-      {' '}
       <div className="w-screen max-w-full overflow-x-clip">
         {isShowNavbar ? <Navbar clubname={nav.clubname} logo={nav.logo} pages={nav.pages} links={nav.links} /> : null}
         <Outlet />
