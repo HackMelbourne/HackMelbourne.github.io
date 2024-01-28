@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 interface Props {
   text: string;
   color: 'primary' | 'secondary' | 'alert' | 'success' | 'neutral';
@@ -35,12 +37,14 @@ const HMButton = ({ text, color, style, span }: Props) => {
   };
 
   return (
-    <div
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
       className={`flex justify-center px-6 py-3 rounded-md ${key[style][color]} ${
         span ? 'w-full' : 'w-fit'
       } font-medium`}>
       {text}
-    </div>
+    </motion.div>
   );
 };
 
