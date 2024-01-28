@@ -37,7 +37,7 @@ const HeroBanner = ({ clubname, year, buttons }: Hero) => {
           transition={{ delay: 1 }}
           className="flex gap-8 z-50">
           {buttons.map((Button, index) => (
-            <DynamicLink link={Button.link}>
+            <DynamicLink link={Button.link} key={index}>
               <HMButton text={Button.name} color={index == 0 ? 'primary' : 'neutral'} style="border" />
             </DynamicLink>
           ))}

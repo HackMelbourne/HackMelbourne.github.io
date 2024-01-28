@@ -45,7 +45,7 @@ const Navbar = ({ clubname, logo, pages, links }: Nav) => {
           {/* DESKTOP */}
           <div className="hidden md:flex justify-end gap-6 items-center">
             {pages.map((page, index) => (
-              <Link to={links[index]} onClick={handleLinkClick}>
+              <Link key={index} to={links[index]} onClick={handleLinkClick}>
                 {page}
               </Link>
             ))}
@@ -68,7 +68,7 @@ const Navbar = ({ clubname, logo, pages, links }: Nav) => {
 
             <div className="flex flex-col h-5/6 justify-center items-center gap-5">
               {pages.map((page, index) => (
-                <Link to={links[index]} className="text-[32px] font-bold" onClick={handleLinkClick}>
+                <Link key={index} to={links[index]} className="text-[32px] font-bold" onClick={handleLinkClick}>
                   {page}
                 </Link>
               ))}
