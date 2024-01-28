@@ -42,11 +42,11 @@ const TeamComponent = ({ teamName, description, bgColor, borderColor, members }:
                         <img src={member.imageUrl} alt={member.name} className="w-full h-auto rounded" />
                         <p className="text-sm">{member.role}</p>
                         <h3 className="text-xl font-semibold">{member.name}</h3>
-                        <p className="text-sm">{member.about}</p>
+                        <p className="text-sm mb-auto">{member.about}</p>
                         <div className="flex space-x-2 mt-2">
                             {member.links.map((link, linkIndex) => (
-                                <a key={linkIndex} href={link.url} className="text-blue-500 hover:underline">
-                                    <link.icon />
+                                <a key={linkIndex} href={link.url} target="_blank" rel="noopener noreferrer" className="icon p-3 text-blue-500 hover:underline">
+                                    <link.icon className="h-4 w-4 md:h-7" />
                                 </a>
                             ))}
                         </div>
