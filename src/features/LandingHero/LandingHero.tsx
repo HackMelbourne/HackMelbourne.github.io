@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import './LandingHero.css';
-import HMButton from '../../assets/button/HMButton';
+import HMButton from '../../components/Button/HMButton';
 
 interface Hero {
   clubname: string[];
