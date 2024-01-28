@@ -33,7 +33,7 @@ const Navbar = ({ clubname, logo, pages, links }: Nav) => {
   return (
     <div className="flex justify-center">
       <nav className="w-screen max-w-[800px] fixed pt-8 z-40 px-8">
-        <div className="max-w-[800px] grow rounded-md bg-white/20 backdrop-blur-md border flex justify-between items-center px-5 py-3">
+        <div className="max-w-[800px] grow rounded-md bg-black/20 backdrop-blur-md border flex justify-between items-center px-5 py-3">
           <Link to={links[0]} className="flex items-center justify-start gap-2 font-bold" onClick={handleLinkClick}>
             <img src={logo} className="h-8 w-8"></img>
             {clubname}
@@ -45,7 +45,11 @@ const Navbar = ({ clubname, logo, pages, links }: Nav) => {
           {/* DESKTOP */}
           <div className="hidden md:flex justify-end gap-6 items-center">
             {pages.map((page, index) => (
-              <Link key={index} to={links[index]} onClick={handleLinkClick}>
+              <Link
+                key={index}
+                to={links[index]}
+                onClick={handleLinkClick}
+                className=" hover:underline hover:text-primary">
                 {page}
               </Link>
             ))}
