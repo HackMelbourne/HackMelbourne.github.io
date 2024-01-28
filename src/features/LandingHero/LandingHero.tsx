@@ -35,7 +35,7 @@ const HeroBanner = ({ clubname, year, buttons }: Hero) => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
-          className="flex gap-8 z-50">
+          className="flex pt-4 gap-4 md:gap-8 z-50">
           {buttons.map((Button, index) => (
             <DynamicLink link={Button.link} key={index}>
               <HMButton text={Button.name} color={index == 0 ? 'primary' : 'neutral'} style="border" />
