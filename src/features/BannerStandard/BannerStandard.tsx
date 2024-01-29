@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import HMButton from '../../assets/button/HMButton';
+import HMButton from '../../components/Button/HMButton';
 
 interface BannerInfo {
   img: string;
