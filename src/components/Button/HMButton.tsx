@@ -32,7 +32,7 @@ const HMButton = ({ text, color, style, span }: Props) => {
       secondary: ['text-blue-500 underline'],
       alert: ['text-red-500 underline'],
       success: ['text-green-500 underline'],
-      neutral: ['text-neutral-500 underline'],
+      neutral: ['text-neutral-300 underline'],
     },
   };
 
