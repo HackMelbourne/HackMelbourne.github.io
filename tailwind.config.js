@@ -26,7 +26,7 @@ export default {
         800: '#aa7f1d',
         900: '#866417',
       },
-      primary: colors.yellow[600],
+      primary: colors.yellow[500],
     },
 
     fontFamily: {

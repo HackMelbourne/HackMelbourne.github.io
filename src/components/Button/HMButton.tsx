@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 interface Props {
   text: string;
   color: 'primary' | 'secondary' | 'alert' | 'success' | 'neutral';
@@ -23,7 +25,7 @@ const HMButton = ({ text, color, style, span }: Props) => {
       secondary: ['bg-blue-600/20 border-blue-500 border'],
       alert: ['bg-red-600/20 border-red-500 border'],
       success: ['bg-green-600/20 border-green-500 border'],
-      neutral: ['bg-neutral-600/20 border-neutral-500 border'],
+      neutral: ['bg-neutral-400/30 border-neutral-300 border'],
     },
     underline: {
       primary: ['text-yellow-500 underline'],
@@ -35,12 +37,14 @@ const HMButton = ({ text, color, style, span }: Props) => {
   };
 
   return (
-    <div
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
       className={`flex justify-center px-6 py-3 rounded-md ${key[style][color]} ${
         span ? 'w-full' : 'w-fit'
       } font-medium`}>
       {text}
-    </div>
+    </motion.div>
   );
 };
 

@@ -2,15 +2,22 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import './LandingHero.css';
-import HMButton from '../../assets/button/HMButton';
+import HMButton from '../../components/Button/HMButton';
+import { Button } from '@mui/material';
+import DynamicLink from '../../components/DynamicLink/DynamicLink';
 
 interface Hero {
   clubname: string[];
   year: string;
-  button: string;
+  buttons: Button[];
 }
 
-const HeroBanner = ({ clubname, year, button }: Hero) => {
+interface Button {
+  name: string;
+  link: string;
+}
+
+const HeroBanner = ({ clubname, year, buttons }: Hero) => {
   return (
     <div className="max-w-[1100px] grid grid-cols-1 m-auto items-center">
       <div className="z-10 col-start-1 row-start-1 flex flex-col items-center">
@@ -24,14 +31,17 @@ const HeroBanner = ({ clubname, year, button }: Hero) => {
           <div>{clubname[1]}</div>
           <div>{year}</div>
         </motion.div>
-        <motion.a
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
-          href="https://www.google.com"
-          className="mt-4">
-          <HMButton text={button} color="primary" style="border" />
-        </motion.a>
+          className="flex pt-4 gap-4 md:gap-8 z-50">
+          {buttons.map((Button, index) => (
+            <DynamicLink link={Button.link} key={index}>
+              <HMButton text={Button.name} color={index == 0 ? 'primary' : 'neutral'} style="border" />
+            </DynamicLink>
+          ))}
+        </motion.div>
       </div>
       <motion.div
         initial={{ opacity: 0, letterSpacing: '20rem', textIndent: '20rem' }}
