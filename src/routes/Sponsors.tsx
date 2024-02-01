@@ -84,7 +84,7 @@ const Sponsors = () => {
       <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">
         {sponsorTitles[0]}
       </h2>
-      <div className="grid grid-rows-1 gap-6 w-[350px] md:w-7/12 md:max-w-[800px] m-auto bg-white">
+      <div className="grid grid-rows-1 gap-6 w-[350px] md:w-7/12 md:max-w-[800px] m-auto">
         {platinumInfo.map((plat) => (
           <Sponsor {...plat} />
         ))}
@@ -102,7 +102,7 @@ const Sponsors = () => {
       <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">
         {sponsorTitles[3]}
       </h2>
-      <div className="grid grid-rows-3 lg:grid-rows-1 lg:grid-cols-3 w-max h-max m-auto border border-[#E5E5E5] rounded-xl overflow-hidden">
+      <div className="grid grid-rows-3 lg:grid-rows-1 lg:grid-cols-3 w-max h-max m-auto border border-white rounded-xl overflow-hidden">
         {silverInfo.map((silver) => (
           <Sponsor {...silver} />
         ))}
@@ -111,7 +111,7 @@ const Sponsors = () => {
       <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">
         {sponsorTitles[3]}
       </h2>
-      <div className="grid grid-rows-3 lg:grid-rows-1 lg:grid-cols-3 w-max m-auto border border-[#E5E5E5] rounded-xl overflow-hidden">
+      <div className="grid grid-rows-3 lg:grid-rows-1 lg:grid-cols-3 w-max m-auto border border-white rounded-xl overflow-hidden">
         {communityInfo.map((comm) => (
           <Sponsor {...comm} />
         ))}
