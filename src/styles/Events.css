@@ -1,0 +1,12 @@
+@media (max-width: 768px) {
+    .stroke-width {
+        -webkit-text-stroke-width: 1px;
+    }
+}
+   
+@media (min-width: 769px) {
+    .stroke-width {
+        -webkit-text-stroke-width: 2px;
+    }
+}
+   
