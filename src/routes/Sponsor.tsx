@@ -5,6 +5,7 @@ import SilverSponsor from "../features/Sponsors/SilverSponsors";
 import CommunitySponsor from "../features/Sponsors/CommunitySponsor";
 import CallToAction from "../features/CallToAction/CallToAction";
 
+
 const Sponsor = () => {
   const sponsorTitles = [
     {title: 'Platinum Supporters'},
@@ -112,7 +113,6 @@ const Sponsor = () => {
           <CommunitySponsor {...comm} />
         ))}
       </div>
-
       <CallToAction title={sponsorCTA.title} desc={sponsorCTA.desc} button={sponsorCTA.button} link={sponsorCTA.link}/>
     </div>
   );
