@@ -8,7 +8,7 @@ const TitleHero = ({ pageTitle, pageDescription }: PageHeader) => {
     <div className="grid grid-cols-1 grid-rows-1 items-center md:mt-10">
       {/* Background */}
       <div
-        className="col-start-1 row-start-1 absolute -left-1/3 -z-10 stroke-width text-9xl font-black md:text-[256px] overflow-hidden whitespace-nowrap"
+        className="col-start-1 row-start-1 absolute -z-10 stroke-width text-9xl font-black md:text-[256px] overflow-hidden whitespace-nowrap"
         style={{
           color: 'transparent',
           WebkitTextStrokeColor: '#767676',
