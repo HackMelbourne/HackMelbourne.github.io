@@ -31,7 +31,7 @@ const Sponsor = ({ tier, image, sponsor, desc, button, website }: SponsorProps) 
           <img src={image} className="w-[400px] h-[150px] rounded-xl" />
           <h3 className="text-4xl font-extrabold text-center">{sponsor}</h3>
           <p className="max-w-[340px] h-24 text-center text-base font-medium">{desc}</p>
-    
+
           <DynamicLink link={website!}>
             <HMButton text={button!} color="neutral" style="underline"></HMButton>
           </DynamicLink>
@@ -40,37 +40,37 @@ const Sponsor = ({ tier, image, sponsor, desc, button, website }: SponsorProps) 
     case 'Silver':
       return (
         <div className="flex flex-col">
-          <div className="w-[350px] h-[0.2px] bg-white">          
+          <div className="w-[350px] h-[0.2px] bg-white">
           </div>
           <div className="flex">
-            <div className="w-[0.2px] bg-white">          
+            <div className="w-[0.2px] bg-white">
             </div>
             <div className="flex flex-col items-center gap-6 w-[350px] m-auto px-7 py-8 bg-black box-border">
               <img src={image} className="w-[300px] h-[100px] rounded-xl" />
               <p className="max-w-[340px] text-center text-base font-medium">{desc}</p>
             </div>
-            <div className="w-[0.2px] bg-white">          
+            <div className="w-[0.2px] bg-white">
             </div>
           </div>
-          <div className="w-[350px] h-[0.2px] bg-white">         
+          <div className="w-[350px] h-[0.2px] bg-white">
           </div>
         </div>
       );
     case 'Community':
       return (
         <div className="flex flex-col">
-          <div className="w-[350px] h-[0.2px] bg-white">          
+          <div className="w-[350px] h-[0.2px] bg-white">
           </div>
           <div className="flex">
-            <div className="w-[0.2px] bg-white">          
+            <div className="w-[0.2px] bg-white">
             </div>
             <div className="flex flex-col items-center w-[350px] m-auto px-7 py-8 bg-black box-border">
               <img src={image} className="w-[300px] h-[100px] rounded-xl" />
             </div>
-            <div className="w-[0.2px] bg-white">          
+            <div className="w-[0.2px] bg-white">
             </div>
           </div>
-          <div className="w-[350px] h-[0.2px] bg-white">         
+          <div className="w-[350px] h-[0.2px] bg-white">
           </div>
         </div>
       );
