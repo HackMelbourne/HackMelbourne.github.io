@@ -2,7 +2,7 @@
 import HeroBanner from '../features/LandingHero/LandingHero';
 import DescriptionBoxes from '../features/DescriptionBoxes/DescriptionBoxes';
 import BannerStandard from '../features/BannerStandard/BannerStandard';
-import JoinTheTeam from '../features/JoinTheTeam/JoinTheTeam';
+import CallToAction from '../features/CallToAction/CallToAction';
 
 // Event Image Imports
 import DecodEdImage from '../assets/images/DecodED-2022/DecodED.png';
@@ -64,6 +64,7 @@ function Root() {
     title: ['Join the ', 'Hack', 'Melbourne team for 2024'],
     desc: ['We make an impact on our future and learn some', 'more skills along the way!'],
     button: 'Apply Now',
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSc_Cu4yD6Du6LWXD4itRBALJ0elsou0LN56xKPveT3HvrlBmw/viewform'
   };
 
   return (
@@ -77,7 +78,7 @@ function Root() {
         button={hoodie.button}
         link={hoodie.link}
       />
-      <JoinTheTeam title={jointeam.title} desc={jointeam.desc} button={jointeam.button} />
+      <CallToAction title={jointeam.title} desc={jointeam.desc} button={jointeam.button} link={jointeam.link}/>
     </div>
   );
 }
