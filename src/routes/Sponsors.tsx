@@ -1,5 +1,6 @@
 import CallToAction from '../features/CallToAction/CallToAction';
 import Sponsor from '../features/Sponsors/Sponsor';
+import SponsorsEmpty from '../features/SponsorsEmpty/SponsorsEmpty';
 
 interface SponsorProps {
   tier: string;
@@ -94,60 +95,62 @@ const Sponsors = () => {
   return (
     <div className="w-screen max-w-full">
       {/* Platinum */}
-      {platinumInfo.length > 0 ? (
-        <section>
-          <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">{sponsorTitles[0]}</h2>
+
+      <section>
+        <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">{sponsorTitles[0]}</h2>
+        {platinumInfo.length > 0 ? (
           <div className="grid grid-rows-1 gap-6 w-[350px] md:w-7/12 md:max-w-[800px] m-auto">
             {platinumInfo.map((plat) => (
               <Sponsor {...plat} />
             ))}
           </div>
-        </section>
-      ) : (
-        ''
-      )}
+        ) : (
+          <SponsorsEmpty tier="platinum" button="Learn more" link="/"></SponsorsEmpty>
+        )}
+      </section>
 
       {/* Gold */}
-      {goldInfo.length > 0 ? (
-        <section>
-          <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">{sponsorTitles[1]}</h2>
+
+      <section>
+        <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">{sponsorTitles[1]}</h2>
+        {goldInfo.length > 0 ? (
           <div className="grid grid-rows-1 md:grid-cols-2 gap-5 w-[350px] md:w-11/12 md:max-w-[1020px] m-auto">
             {goldInfo.map((gold) => (
               <Sponsor {...gold} />
             ))}
           </div>
-        </section>
-      ) : (
-        ''
-      )}
+        ) : (
+          <SponsorsEmpty tier="platinum" button="Learn more" link="/"></SponsorsEmpty>
+        )}
+      </section>
 
       {/* Silver */}
-      {silverInfo.length > 0 ? (
-        <section>
-          <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">{sponsorTitles[3]}</h2>
+      <section>
+        <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">{sponsorTitles[2]}</h2>
+        {silverInfo.length > 0 ? (
           <div className="grid grid-rows-3 lg:grid-rows-1 lg:grid-cols-3 w-max h-max m-auto border border-white rounded-xl overflow-hidden">
             {silverInfo.map((silver) => (
               <Sponsor {...silver} />
             ))}
           </div>
-        </section>
-      ) : (
-        ''
-      )}
+        ) : (
+          <SponsorsEmpty tier="platinum" button="Learn more" link="/"></SponsorsEmpty>
+        )}
+      </section>
 
       {/* Community */}
-      {communityInfo.length > 0 ? (
-        <section>
-          <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">{sponsorTitles[3]}</h2>
+      <section>
+        <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">{sponsorTitles[3]}</h2>
+        {communityInfo.length > 0 ? (
           <div className="grid grid-rows-3 lg:grid-rows-1 lg:grid-cols-3 w-max m-auto border border-white rounded-xl overflow-hidden">
             {communityInfo.map((comm) => (
               <Sponsor {...comm} />
             ))}
           </div>
-        </section>
-      ) : (
-        ''
-      )}
+        ) : (
+          <SponsorsEmpty tier="platinum" button="Learn more" link="/"></SponsorsEmpty>
+        )}
+      </section>
 
       <CallToAction title={sponsorCTA.title} desc={sponsorCTA.desc} button={sponsorCTA.button} link={sponsorCTA.link} />
     </div>
