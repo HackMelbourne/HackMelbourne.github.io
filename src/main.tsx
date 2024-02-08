@@ -9,7 +9,7 @@ import Layout from './layouts/Layout';
 
 // Pages
 import Events from './routes/Events';
-import Sponsor from './routes/Sponsor';
+import Sponsors from './routes/Sponsors';
 import About from './routes/About';
 import Root from './routes/Root';
 import Privacy from './routes/Privacy';
@@ -21,7 +21,7 @@ const router = createBrowserRouter(
       <Route index element={<Root />} />
       <Route path="about" element={<About />} />
       <Route path="events" element={<Events />} />
-      <Route path="sponsor" element={<Sponsor />} />
+      <Route path="sponsor" element={<Sponsors />} />
       <Route path="privacy" element={<Privacy />} />
       <Route path="terms" element={<Terms />} />
     </Route>,
