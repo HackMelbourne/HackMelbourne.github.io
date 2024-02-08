@@ -4,6 +4,14 @@ import EventItem from '../features/EventItem/EventItem';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
+// Event Image Imports
+import DecodEdImage from '../assets/images/DecodED-2022/DecodED.png';
+import DecodEdImage2 from '../assets/images/DecodED-2022/DecodED2.png';
+import HackiethonImage from '../assets/images/Hackiethon-2022/Hackiethon.png';
+import HackiethonImage2 from '../assets/images/Hackiethon-2022/Hackiethon2.png';
+import MelbHackImage from '../assets/images/MelbourneHack-2023/MelbourneHack.png';
+import MelbHackImage2 from '../assets/images/MelbourneHack-2023/MelbourneHack2.png';
+
 const Events = () => {
   const pageInfo = {
     title: 'Events / Initiatives',
@@ -13,36 +21,33 @@ const Events = () => {
   };
   const eventsData = [
     {
-      name: 'Melbourne Hack Event 1',
-      date: '5th - 7th of May, 2024',
-      brief: '(with workshops from 4th - 5th of May, 2024!)',
+      name: 'Melbourne Hack',
+      date: 'TBD, 2024',
+      brief: '(with workshops from TBD, 2024!)',
       description:
-        'The main hackathon seeks to bring together students from across the state for a weekend of intense hacking. Scheduled for Semester 1, this annual event will provide you with the opportunity to collaborate with talented individuals, meet representatives from industry-leading companies, develop your technical skills and win amazing prizes!',
-      bgImage: 'https://source.unsplash.com/random?event',
-      frontImage: 'https://source.unsplash.com/random?event_',
+        `The main hackathon seeks to bring together students from across the state for a weekend of intense hacking. Scheduled for Semester 1, this annual event will provide you with the opportunity to collaborate with talented individuals, meet representatives from industry-leading companies, develop your technical skills and win amazing prizes!`,
+      bgImage: MelbHackImage,
+      frontImage: MelbHackImage2,
       link: 'https://www.google.com.au',
     },
     {
-      name: 'Melbourne Hack Event 2',
-      date: '2024-01-01',
-      brief: '(with workshops from 4th - 5th of May, 2024!)',
+      name: 'DecodED',
+      date: 'TBD, 2024',
+      brief: '(with workshops from TBD, 2024!)',
       description:
-        'The main hackathon seeks to bring together students from across the state for a weekend of intense hacking. Scheduled for Semester 1, this annual event will provide you with the opportunity to collaborate with talented individuals, meet representatives from industry-leading companies, develop your technical skills and win amazing prizes!',
-      bgImage: 'https://source.unsplash.com/random?event__',
-      frontImage: 'https://source.unsplash.com/random?event___',
+        "Our engaging education program is a 2-4 week course perfect for those with little to no experience in software development. The program will cover a variety of technologies that will exponentially improve your programming capabilities. With the rookie hackathon strategically scheduled at the conclusion of the program, you'll have the chance to put your new-found skills to the test and experience the excitement of a hackathon.",
+      bgImage: DecodEdImage,
+      frontImage: DecodEdImage2,
       link: 'https://www.google.com.au',
     },
     {
-      name: 'Melbourne Hack Event 3',
-      date: '17th - 20th of Feb, 2024',
-      brief: '(with workshops from 17th - 20th of Feb, 2024!)',
-      description: `Embark on an exhilarating journey of innovation and discovery at our premier hackathon, uniting students from every corner of the state for an unforgettable weekend of coding, creativity, and collaboration. Scheduled in the vibrant atmosphere of Semester 1, this annual extravaganza is more than just a competition; it's a unique platform to forge connections, exchange ideas, and dive deep into the world of technology.
-
-      As you immerse yourself in this intense hacking marathon, you'll have the rare chance to work alongside some of the brightest minds in the field. It's an opportunity to push boundaries, challenge your limits, and transform your innovative ideas into reality. Engage with industry leaders, gain insights from experts, and expand your network in an environment brimming with enthusiasm and intellectual energy.
-
-      But that's not all - our hackathon is also a battleground for creativity and skill, where you can showcase your technical prowess. With a plethora of amazing prizes waiting to be claimed, it's your chance to shine and get recognized for your talents. Whether you're a seasoned coder or just starting, this event promises to be a thrilling adventure in learning, growth, and fun. Gear up for an experience that will not only test your skills but also inspire you to new heights in the world of technology!`,
-      bgImage: 'https://source.unsplash.com/random?event____',
-      frontImage: 'https://source.unsplash.com/random?event_____',
+      name: 'Hackiethon',
+      date: 'TBD, 2024',
+      brief: '(with workshops from TBD, 2024!)',
+      description: 
+        'Our rookie hackathon is tailor-made for those with little experience in hackathons, but are keen to get involved! Unlike our main hackathon, this will be held virtually and will provide valuable insights into the experience of competing in such events, and how to maximise your chances of success.',
+      bgImage: HackiethonImage2,
+      frontImage: HackiethonImage,
       link: 'https://www.google.com.au',
     },
   ];
