@@ -21,11 +21,20 @@ const Events = () => {
   };
   const eventsData = [
     {
-      name: 'Melbourne Hack',
+      name: 'Hackiethon',
       date: 'TBD, 2024',
       brief: '(with workshops from TBD, 2024!)',
       description:
-        `The main hackathon seeks to bring together students from across the state for a weekend of intense hacking. Scheduled for Semester 1, this annual event will provide you with the opportunity to collaborate with talented individuals, meet representatives from industry-leading companies, develop your technical skills and win amazing prizes!`,
+        'Our rookie hackathon is tailor-made for inexperienced but eager individuals! Unlike our main hackathon, it comes with valuable insights into the experience of competing and finding success in such events.',
+      bgImage: HackiethonImage2,
+      frontImage: HackiethonImage,
+      link: 'https://www.google.com.au',
+    },
+    {
+      name: 'Melbourne Hack',
+      date: 'TBD, 2024',
+      brief: '(with workshops from TBD, 2024!)',
+      description: `Melbourne Hack, our main competition, brings together students from across the state for a weekend of intense hacking. Scheduled for Semester 1, this annual event provides the opportunity to collaborate with talented peers, connect with industry-leading companies, develop strong technical skills, and win amazing prizes!`,
       bgImage: MelbHackImage,
       frontImage: MelbHackImage2,
       link: 'https://www.google.com.au',
@@ -35,19 +44,9 @@ const Events = () => {
       date: 'TBD, 2024',
       brief: '(with workshops from TBD, 2024!)',
       description:
-        "Our engaging education program is a 2-4 week course perfect for those with little to no experience in software development. The program will cover a variety of technologies that will exponentially improve your programming capabilities. With the rookie hackathon strategically scheduled at the conclusion of the program, you'll have the chance to put your new-found skills to the test and experience the excitement of a hackathon.",
+        "Our engaging education program is a 2-4 week course for those with little to no experience in software development. Commencing in Semester 2, it hosts a variety of workshops aiming to improve attendees' programming capabilities. With Hackiethon taking place right after the conclusion of the program, attendees will have the chance to utilise their new-found skills to the test!",
       bgImage: DecodEdImage,
       frontImage: DecodEdImage2,
-      link: 'https://www.google.com.au',
-    },
-    {
-      name: 'Hackiethon',
-      date: 'TBD, 2024',
-      brief: '(with workshops from TBD, 2024!)',
-      description: 
-        'Our rookie hackathon is tailor-made for those with little experience in hackathons, but are keen to get involved! Unlike our main hackathon, this will be held virtually and will provide valuable insights into the experience of competing in such events, and how to maximise your chances of success.',
-      bgImage: HackiethonImage2,
-      frontImage: HackiethonImage,
       link: 'https://www.google.com.au',
     },
   ];
