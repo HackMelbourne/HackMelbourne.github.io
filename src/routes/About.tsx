@@ -4,7 +4,7 @@ import TitleHero from '../features/TitleHero/TitleHero';
 
 const About = () => {
   const pageInfo = {
-    title: 'About HackMelbourne',
+    title: 'About Us',
     description: `Throughout the year, HackMelbourne offers many opportunities for both complete beginners and seasoned veterans to display their teamwork, coding and leadership skills.`,
   };
 
