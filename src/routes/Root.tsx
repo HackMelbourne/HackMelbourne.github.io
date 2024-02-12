@@ -21,8 +21,8 @@ function Root() {
     year: '2023',
     button: [
       {
-        name: 'Grab Hoodie',
-        link: '#',
+        name: 'Coming Soon',
+        link: '',
       },
       {
         name: 'Join Club',

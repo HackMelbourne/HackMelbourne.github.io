@@ -14,8 +14,8 @@ const HMButton = ({ text, color, style, span, link }: Props) => {
     style = 'border';
   }
 
-  if (link == null) {
-    link = '/';
+  if (link == '') {
+    style = 'disabled';
   }
 
   let key = {
