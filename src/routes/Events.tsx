@@ -28,7 +28,7 @@ const Events = () => {
         'Our rookie hackathon is tailor-made for inexperienced but eager individuals! Unlike our main hackathon, it comes with valuable insights into the experience of competing and finding success in such events.',
       bgImage: HackiethonImage2,
       frontImage: HackiethonImage,
-      link: 'https://www.google.com.au',
+      link: '',
     },
     {
       name: 'Melbourne Hack',
@@ -37,7 +37,7 @@ const Events = () => {
       description: `Melbourne Hack, our main competition, brings together students from across the state for a weekend of intense hacking. Scheduled for Semester 1, this annual event provides the opportunity to collaborate with talented peers, connect with industry-leading companies, develop strong technical skills, and win amazing prizes!`,
       bgImage: MelbHackImage,
       frontImage: MelbHackImage2,
-      link: 'https://www.google.com.au',
+      link: '',
     },
     {
       name: 'DecodED',
@@ -47,7 +47,7 @@ const Events = () => {
         "Our engaging education program is a 2-4 week course for those with little to no experience in software development. Commencing in Semester 2, it hosts a variety of workshops aiming to improve attendees' programming capabilities. With Hackiethon taking place right after the conclusion of the program, attendees will have the chance to utilise their new-found skills to the test!",
       bgImage: DecodEdImage,
       frontImage: DecodEdImage2,
-      link: 'https://www.google.com.au',
+      link: '',
     },
   ];
 

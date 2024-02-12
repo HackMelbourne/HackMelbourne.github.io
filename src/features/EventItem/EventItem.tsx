@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import HMButton from '../../components/Button/HMButton';
+import DisabledButton from '../../components/Button/DisabledButton';
 import DynamicLink from '../../components/DynamicLink/DynamicLink';
 
 interface EventItemProps {
@@ -45,7 +45,7 @@ const EventItem = ({ name, date, brief, description, bgImage, frontImage, link }
           </div>
           <div className="hidden md:block">
             <DynamicLink link={link}>
-              <HMButton text="Visit Here" color="primary"></HMButton>
+              <DisabledButton text="Visit Here" color="neutral"></DisabledButton>
             </DynamicLink>
           </div>
         </motion.div>
@@ -59,7 +59,7 @@ const EventItem = ({ name, date, brief, description, bgImage, frontImage, link }
         <p className="md:hidden block text-sm overflow-y-hidden min-h-[40%] mb-2">{description}</p>
         <div className=" md:hidden">
           <DynamicLink link={link}>
-            <HMButton text="Visit Here" color="primary"></HMButton>
+            <DisabledButton text="Visit Here" color="primary"></DisabledButton>
           </DynamicLink>
         </div>
       </motion.div>
