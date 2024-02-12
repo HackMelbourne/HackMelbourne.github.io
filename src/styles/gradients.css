@@ -1,0 +1,21 @@
+.gradient-border {
+  background:
+    linear-gradient(#262626, #262626) padding-box,
+    linear-gradient(to right, #3580c5, #69d974) border-box;
+  border: 2px solid transparent;
+}
+
+/* Creates a gradient border by overlaying 3 gradients on top of each other*/
+.join-team-gradient-border {
+  background:
+    radial-gradient(
+        141.93% 109.93% at 49.96% 0%,
+        rgba(88, 153, 245, 0) 36.98%,
+        rgba(137, 184, 250, 0.32) 75%,
+        rgba(195, 220, 255, 0.5) 100%
+      )
+      padding-box,
+    linear-gradient(to right, rgb(10 10 10), rgb(10 10 10)) padding-box,
+    /* This gradient is to just fill in the background color */
+      linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 80%) border-box; /* This gradient is for the border */
+}

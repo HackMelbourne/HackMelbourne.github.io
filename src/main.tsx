@@ -3,25 +3,27 @@ import ReactDOM from 'react-dom/client';
 
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 
-// Styles (outdated)
 import './index.css';
 
+import Layout from './layouts/Layout';
+
 // Pages
-import Initiatives from './routes/Initiatives';
-import Sponsor from './routes/Sponsor';
-import Layout from './components/Layout';
+import Events from './routes/Events';
+import Sponsors from './routes/Sponsors';
+import About from './routes/About';
 import Root from './routes/Root';
-
-import ReactGA from 'react-ga4';
-
-ReactGA.initialize('G-BCJY191MCE');
+import Privacy from './routes/Privacy';
+import Terms from './routes/Terms';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Root />} />
-      <Route path="initiatives" element={<Initiatives />} />
-      <Route path="sponsors" element={<Sponsor />} />
+      <Route path="about" element={<About />} />
+      <Route path="events" element={<Events />} />
+      <Route path="sponsor" element={<Sponsors />} />
+      <Route path="privacy" element={<Privacy />} />
+      <Route path="terms" element={<Terms />} />
     </Route>,
   ),
 );
