@@ -39,7 +39,7 @@ const TeamComponent = ({ teamName, description, bgColor, borderColor, members }:
               // https://stackoverflow.com/a/46278350/13298307
             }}>
             <div
-              className="top-0 left-0 w-[16vmax] h-[16vmax] rounded-[100rem] bg-cover bg-center m-4"
+              className="top-0 left-0 w-32 h-32 rounded-[100rem] bg-cover bg-center m-4"
               style={{ backgroundImage: `url(${member.imageUrl})` }}></div>
             <p className="text-sm">{member.role}</p>
             <h3 className="text-xl-lg md:text-sm font-semibold m-1">{member.name}</h3>
@@ -51,8 +51,8 @@ const TeamComponent = ({ teamName, description, bgColor, borderColor, members }:
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="icon p-3 text-blue-500 hover:underline">
-                  <link.icon className="h-4 w-4 md:h-7" />
+                  className="icon p-3 text-neutral-100 hover:underline">
+                  <link.icon className="h-8 w-8" />
                 </a>
               ))}
             </div>
