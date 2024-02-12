@@ -2,6 +2,9 @@ import TeamComponent from '../features/TeamComponent/TeamComponent';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import TitleHero from '../features/TitleHero/TitleHero';
 
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+
 const About = () => {
   const pageInfo = {
     title: 'About Us',
@@ -187,10 +190,25 @@ const About = () => {
     },
   ];
 
+  // Animations
+  const scrollRef = useRef(null);
+
+  let { scrollYProgress } = useScroll({
+    target: scrollRef,
+    offset: ['start start', 'end start'],
+  });
+
+  let y = useTransform(scrollYProgress, [0, 1], ['0%', '80%']);
+  let opacityValue = useTransform(scrollYProgress, [0, 0.7], ['100%', '0%']);
+  let scaleValue = useTransform(scrollYProgress, [0, 0.8], ['1', '0.9']);
+
   return (
     <div>
-      <TitleHero pageTitle={pageInfo.title} pageDescription={pageInfo.description}></TitleHero>
-      <section className="z-10 relative">
+      <motion.section ref={scrollRef} style={{ y, opacity: opacityValue, scale: scaleValue }}>
+        <TitleHero pageTitle={pageInfo.title} pageDescription={pageInfo.description}></TitleHero>
+      </motion.section>
+
+      <section className="z-10 relative md:pt-12">
         {teamsData.map((team, index) => (
           <TeamComponent key={index} {...team} />
         ))}

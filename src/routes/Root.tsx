@@ -36,19 +36,18 @@ function Root() {
     {
       title: 'Hackiethon',
       description:
-        'Our rookie hackathon is tailor-made for those with little experience in hackathons, but are keen to get involved! Unlike our main hackathon, this will be held virtually and will provide valuable insights into the experience of competing in such events, and how to maximise your chances of success.',
+        'Our rookie hackathon is tailor-made for inexperienced but eager individuals! \n Unlike our main hackathon, it comes with valuable insights into the experience of competing and finding success in such events.',
       image: HackiethonImage,
     },
     {
       title: 'Melbourne Hack',
-      description: 
-        `The main hackathon seeks to bring together students from across the state for a weekend of intense hacking. Scheduled for Semester 1, this annual event will provide you with the opportunity to collaborate with talented individuals, meet representatives from industry-leading companies, develop your technical skills and win amazing prizes!`,
+      description: `Our main competition, brings together students from across the state for a weekend of intense hacking. Scheduled for Semester 1, this annual event provides the opportunity to collaborate with talented peers, connect with industry-leading companies, develop strong technical skills, and win amazing prizes!`,
       image: MelbHackImage,
     },
     {
       title: 'DecodED',
       description:
-        "Our engaging education program is a 2-4 week course perfect for those with little to no experience in software development. The program will cover a variety of technologies that will exponentially improve your programming capabilities. With the rookie hackathon strategically scheduled at the conclusion of the program, you'll have the chance to put your new-found skills to the test and experience the excitement of a hackathon.",
+        "Our education program is a 2-4 week course for those with little to no experience in software development. Commencing in Semester 2, it hosts a variety of workshops aiming to improve attendees' programming capabilities. With Hackiethon taking place right after the conclusion of the program, attendees will have the chance to utilise their new-found skills to the test!",
       image: DecodEdImage,
     },
   ];
@@ -65,7 +64,7 @@ function Root() {
     title: ['Join the ', 'Hack', 'Melbourne team for 2024'],
     desc: ['We make an impact on our future and learn some', 'more skills along the way!'],
     button: 'Apply Now',
-    link: 'https://docs.google.com/forms/d/e/1FAIpQLSc_Cu4yD6Du6LWXD4itRBALJ0elsou0LN56xKPveT3HvrlBmw/viewform'
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSc_Cu4yD6Du6LWXD4itRBALJ0elsou0LN56xKPveT3HvrlBmw/viewform',
   };
 
   return (
@@ -79,7 +78,7 @@ function Root() {
         button={hoodie.button}
         link={hoodie.link}
       />
-      <CallToAction title={jointeam.title} desc={jointeam.desc} button={jointeam.button} link={jointeam.link}/>
+      <CallToAction title={jointeam.title} desc={jointeam.desc} button={jointeam.button} link={jointeam.link} />
     </div>
   );
 }

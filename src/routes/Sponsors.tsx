@@ -4,6 +4,9 @@ import Sponsor from '../features/Sponsors/Sponsor';
 import SponsorsEmpty from '../features/SponsorsEmpty/SponsorsEmpty';
 import TitleHero from '../features/TitleHero/TitleHero';
 
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+
 interface SponsorProps {
   tier: string;
   image: string;
@@ -101,9 +104,23 @@ const Sponsors = () => {
     link: '',
   };
 
+  // Animations
+  const scrollRef = useRef(null);
+
+  let { scrollYProgress } = useScroll({
+    target: scrollRef,
+    offset: ['start start', 'end start'],
+  });
+
+  let y = useTransform(scrollYProgress, [0, 1], ['0%', '80%']);
+  let opacityValue = useTransform(scrollYProgress, [0, 0.7], ['100%', '0%']);
+  let scaleValue = useTransform(scrollYProgress, [0, 0.8], ['1', '0.9']);
+
   return (
     <div className="w-screen max-w-full">
-      <TitleHero pageTitle={heroInfo.title} pageDescription={heroInfo.body}></TitleHero>
+      <motion.section ref={scrollRef} style={{ y, opacity: opacityValue, scale: scaleValue }}>
+        <TitleHero pageTitle={heroInfo.title} pageDescription={heroInfo.body}></TitleHero>
+      </motion.section>
 
       {/* Platinum */}
 
