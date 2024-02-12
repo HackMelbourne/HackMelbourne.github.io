@@ -1,5 +1,5 @@
 import TeamComponent from '../features/TeamComponent/TeamComponent';
-import { FaFacebook, FaEnvelope, FaInstagram, FaLinkedin, FaTwitter, FaGlobe } from 'react-icons/fa';
+import { FaFacebook, FaEnvelope, FaInstagram, FaLinkedin, FaTwitter, FaGlobe, FaGamepad } from 'react-icons/fa';
 import TitleHero from '../features/TitleHero/TitleHero';
 
 const About = () => {
@@ -11,18 +11,18 @@ const About = () => {
   const teamsData = [
     {
       teamName: 'Executive Team',
-      description:
-        'comprising experts in technology, business, and marketing, aims to foster innovation and collaboration, ensuring a supportive environment for learning, networking, and groundbreaking solution development.',
+      description: 'These guys are the big bosses and pull all the strings behind the scenes organising stuff',
       bgColor: 'rgba(231,52,41,0.05)',
       borderColor: 'rgba(231,52,41,.5)',
       members: [
         {
           name: 'Eric Lang',
           role: 'President',
-          about: `I am Viet, weigh 70kg and like eating. Also play my [game](https://whosthefaker.ericlang.online).`,
+          about: `I am Viet, weigh 70kg and like eating. Also play my game`,
           imageUrl: './img/team/2024/hm-eric-l.jpg',
           links: [
             { url: 'https://www.linkedin.com/in/eric-lang-71b7ab237/', icon: FaLinkedin },
+            { url: 'https://whosthefaker.ericlang.online', icon: FaGamepad },
           ],
         },
         {
@@ -30,9 +30,7 @@ const About = () => {
           role: 'Secretary',
           about: 'Peanut butter',
           imageUrl: './img/team/2024/hm-tyana-t.jpg',
-          links: [
-            { url: 'https://linkedin.com/in/tyanatsai', icon: FaLinkedin },
-          ],
+          links: [{ url: 'https://linkedin.com/in/tyanatsai', icon: FaLinkedin }],
         },
         {
           name: 'Lachlan Lam',
@@ -45,8 +43,7 @@ const About = () => {
     },
     {
       teamName: 'Website Team',
-      description:
-        'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. ',
+      description: "Like we made this entire website and isn't that cool?",
       bgColor: 'rgba(42,122,243,0.05)',
       borderColor: 'rgba(42,122,243,50%)',
       members: [
@@ -75,24 +72,20 @@ const About = () => {
           role: 'Officer',
           about: `[object Object]`,
           imageUrl: './img/team/2024/hm-victor.jpg',
-          links: [
-            { url: 'https://www.linkedin.com/in/victoryoshida02/', icon: FaLinkedin },
-          ],
+          links: [{ url: 'https://www.linkedin.com/in/victoryoshida02/', icon: FaLinkedin }],
         },
         {
           name: 'Natalie',
           role: 'Officer',
           about: `I am a comp sci major and take good care of my hygiene`,
           imageUrl: './img/team/2024/hm-natalie-l.jpg',
-          links: [
-            { url: 'https://www.linkedin.com/in/natalie-l-a66272275/', icon: FaLinkedin },
-          ],
+          links: [{ url: 'https://www.linkedin.com/in/natalie-l-a66272275/', icon: FaLinkedin }],
         },
       ],
     },
     {
       teamName: 'Education Team',
-      description: 'Dedicated to enhancing learning and development.',
+      description: 'These guys are making sure you know whats happening during our big events and hackathons',
       bgColor: 'rgba(64,243,42,0.05)',
       borderColor: 'rgba(64,243,42,50%)',
       members: [
@@ -100,7 +93,7 @@ const About = () => {
           name: 'Edbert Liu',
           role: 'Officer',
           about: "I'm loud and obnoxious, I like music that rhymes",
-          imageUrl: 'https://via.placeholder.com/150',
+          imageUrl: './img/team/2024/hm-edbert-l.jpg',
           links: [],
         },
         {
@@ -112,6 +105,95 @@ const About = () => {
             { url: 'https://www.linkedin.com/in/dhruv-chaturvedi-6b1137292', icon: FaLinkedin },
             { url: 'mailto:dhruvajayc@student.unimelb.edu.au', icon: FaEnvelope },
           ],
+        },
+      ],
+    },
+    {
+      teamName: 'Marketing Team',
+      description: 'If your here the marketing team is doing a great job',
+      bgColor: 'rgba(64,243,42,0.05)',
+      borderColor: 'rgba(64,243,42,50%)',
+      members: [
+        {
+          name: 'Jerrilyn Looi',
+          role: 'Director',
+          about: "Hi, I'm Jerri! I do coding and love music!",
+          imageUrl: './img/team/2024/hm-jerrilyn-l.jpg',
+          links: [{ url: 'https://www.linkedin.com/in/jerrilynlooi2003', icon: FaLinkedin }],
+        },
+        {
+          name: 'Loren wilson',
+          role: 'Officer',
+          about: 'I’m a UX and Graphic Design student at the University of Melbourne.',
+          imageUrl: './img/team/2024/hm-loren-wilson.jpeg',
+          links: [{ url: 'www.linkedin.com/in/loren-wilson003', icon: FaLinkedin }],
+        },
+      ],
+    },
+    {
+      teamName: 'Logistics Team',
+      description: 'These guys make the hackathons and make sure everything goes well.',
+      bgColor: 'rgba(64,243,42,0.05)',
+      borderColor: 'rgba(64,243,42,50%)',
+      members: [
+        {
+          name: 'Demetrius Elchinou Gobardja',
+          role: 'Director',
+          about: 'Majors in Data science. Enjoys dogs. Owns 6',
+          imageUrl: './img/team/2024/hm-el-c.jpeg',
+          links: [{ url: 'https://www.instagram.com/elchinou_/', icon: FaInstagram }],
+        },
+        {
+          name: 'Kenneth Lim',
+          role: 'Officer',
+          about: 'Always striving to learn and improve... and addicted to TFT',
+          imageUrl: './img/team/2024/hm-kenneth-l.jpg',
+          links: [{ url: 'https://www.instagram.com/ken._lim/', icon: FaInstagram }],
+        },
+      ],
+    },
+    {
+      teamName: 'Student Engagment Team',
+      description:
+        'These people manage the social events and are also in charge of the recruitment process so be nice to them :)',
+      bgColor: 'rgba(64,243,42,0.05)',
+      borderColor: 'rgba(64,243,42,50%)',
+      members: [
+        {
+          name: 'Jessica Le',
+          role: 'Director',
+          about: 'CS student who loves animated animals',
+          imageUrl: './img/team/2024/hm-jessica-l.png',
+          links: [{ url: 'https://www.linkedin.com/in/jessica-le-79265927b', icon: FaLinkedin }],
+        },
+        {
+          name: 'Ashley Zhang',
+          role: 'Officer',
+          about: 'I’m Ash! Final year Computing & Software Systems Student',
+          imageUrl: './img/team/2024/hm-ash.jpeg',
+          links: [],
+        },
+        {
+          name: 'Taj Dhillon',
+          role: 'Officer',
+          about: 'hi i will dye my hair every colour of the rainbow maybe',
+          imageUrl: './img/team/2024/hm-tajvir-d.jpeg',
+          links: [],
+        },
+      ],
+    },
+    {
+      teamName: 'Sponsorships Team',
+      description: 'These people get us funding so that everything else is possible',
+      bgColor: 'rgba(64,243,42,0.05)',
+      borderColor: 'rgba(64,243,42,50%)',
+      members: [
+        {
+          name: 'Barry Meng',
+          role: 'Director',
+          about: 'Hello, I’m a penguin that does things like surf the interweb',
+          imageUrl: './img/team/2024/hm-barry-m.jpeg',
+          links: [{ url: 'https://www.instagram.com/bazzacipher/', icon: FaInstagram }],
         },
       ],
     },
