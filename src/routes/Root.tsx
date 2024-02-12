@@ -57,7 +57,7 @@ function Root() {
     title: 'HackMelbourne 2023 Exclusive Hoodie',
     desc: 'Remember the amazing year of 2023 and our achievements.',
     button: 'See details',
-    link: 'https://www.google.com.au',
+    link: '',
   };
 
   const jointeam = {

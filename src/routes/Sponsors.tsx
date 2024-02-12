@@ -1,20 +1,13 @@
 import { Title } from '@mui/icons-material';
 import CallToAction from '../features/CallToAction/CallToAction';
-import Sponsor from '../features/Sponsors/Sponsor';
+import Sponsor from '../features/SponsorsFeature/Sponsor';
 import SponsorsEmpty from '../features/SponsorsEmpty/SponsorsEmpty';
 import TitleHero from '../features/TitleHero/TitleHero';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
-interface SponsorProps {
-  tier: string;
-  image: string;
-  sponsor?: string;
-  desc?: string;
-  button?: string;
-  website?: string;
-}
+import SponsorProps from '../features/SponsorsFeature/SponsorProps';
 
 const Sponsors = () => {
   const sponsorTitles = ['Platinum Supporters', 'Gold Supporters', 'Silver Supporters', 'Community Supporters'];
@@ -133,7 +126,7 @@ const Sponsors = () => {
             ))}
           </div>
         ) : (
-          <SponsorsEmpty tier="platinum" button="Learn more" link="/"></SponsorsEmpty>
+          <SponsorsEmpty tier="platinum" button="Learn more" link={sponsorCTA.link}></SponsorsEmpty>
         )}
       </section>
 
@@ -148,7 +141,7 @@ const Sponsors = () => {
             ))}
           </div>
         ) : (
-          <SponsorsEmpty tier="platinum" button="Learn more" link="/"></SponsorsEmpty>
+          <SponsorsEmpty tier="gold" button="Learn more" link={sponsorCTA.link}></SponsorsEmpty>
         )}
       </section>
 
@@ -162,7 +155,7 @@ const Sponsors = () => {
             ))}
           </div>
         ) : (
-          <SponsorsEmpty tier="platinum" button="Learn more" link="/"></SponsorsEmpty>
+          <SponsorsEmpty tier="silver" button="Learn more" link={sponsorCTA.link}></SponsorsEmpty>
         )}
       </section>
 
@@ -176,7 +169,7 @@ const Sponsors = () => {
             ))}
           </div>
         ) : (
-          <SponsorsEmpty tier="platinum" button="Learn more" link="/"></SponsorsEmpty>
+          <SponsorsEmpty tier="community" button="Learn more" link={sponsorCTA.link}></SponsorsEmpty>
         )}
       </section>
 

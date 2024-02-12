@@ -1,15 +1,21 @@
 import { motion } from 'framer-motion';
+import DynamicLink from '../DynamicLink/DynamicLink';
 
 interface Props {
   text: string;
   color: 'primary' | 'secondary' | 'alert' | 'success' | 'neutral';
-  style?: 'filled' | 'border' | 'underline';
+  style?: 'filled' | 'border' | 'underline' | 'disabled';
   span?: boolean;
+  link: string;
 }
 
-const HMButton = ({ text, color, style, span }: Props) => {
+const HMButton = ({ text, color, style, span, link }: Props) => {
   if (style == null) {
     style = 'border';
+  }
+
+  if (link == null) {
+    link = '/';
   }
 
   let key = {
@@ -36,15 +42,28 @@ const HMButton = ({ text, color, style, span }: Props) => {
     },
   };
 
+  if (style == 'disabled') {
+    return (
+      <div
+        className={`flex justify-center px-6 py-3 rounded-md bg-neutral-400/30 border-neutral-400 border text-neutral-400 ${
+          span ? 'w-full' : 'w-fit'
+        } font-medium`}>
+        {text}
+      </div>
+    );
+  }
+
   return (
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      className={`flex justify-center px-6 py-3 rounded-md ${key[style][color]} ${
-        span ? 'w-full' : 'w-fit'
-      } font-medium`}>
-      {text}
-    </motion.div>
+    <DynamicLink link={link}>
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className={`flex justify-center px-6 py-3 rounded-md ${key[style][color]} ${
+          span ? 'w-full' : 'w-fit'
+        } font-medium`}>
+        {text}
+      </motion.div>
+    </DynamicLink>
   );
 };
 

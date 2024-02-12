@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import HMButton from '../../components/Button/HMButton';
 import DynamicLink from '../../components/DynamicLink/DynamicLink';
+import HMButton from '../../components/Button/HMButton';
 
 interface EventItemProps {
   name: string;
@@ -15,6 +15,14 @@ interface EventItemProps {
 }
 
 const EventItem = ({ name, date, brief, description, bgImage, frontImage, link }: EventItemProps) => {
+  let linkText: string;
+
+  if (!link) {
+    linkText = 'Coming soon';
+  } else {
+    linkText = 'Learn more';
+  }
+
   return (
     <div className="rounded-[10px] mx-auto w-4/5 max-w-[800px] my-20 min-h-[200px]">
       {/* small screen heading */}
@@ -44,9 +52,7 @@ const EventItem = ({ name, date, brief, description, bgImage, frontImage, link }
             <p className="text-sm overflow-y-hidden min-h-[40%] mb-2 hidden md:block">{description}</p>
           </div>
           <div className="hidden md:block">
-            <DynamicLink link={link}>
-              <HMButton text="Visit Here" color="primary"></HMButton>
-            </DynamicLink>
+            <HMButton text={linkText} color="primary" style="disabled" link={link}></HMButton>
           </div>
         </motion.div>
       </div>
@@ -58,9 +64,7 @@ const EventItem = ({ name, date, brief, description, bgImage, frontImage, link }
         whileInView={{ opacity: 1, y: 0 }}>
         <p className="md:hidden block text-sm overflow-y-hidden min-h-[40%] mb-2">{description}</p>
         <div className=" md:hidden">
-          <DynamicLink link={link}>
-            <HMButton text="Visit Here" color="primary"></HMButton>
-          </DynamicLink>
+          <HMButton text={linkText} color="primary" link={link}></HMButton>
         </div>
       </motion.div>
     </div>

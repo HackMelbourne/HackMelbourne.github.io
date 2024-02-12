@@ -62,9 +62,7 @@ function BannerStandard({ img, title, desc, button, link }: BannerInfo) {
         </motion.div>
 
         <motion.div variants={item} custom={-1}>
-          <Link to={link} id="hoodie-button">
-            <HMButton text={button} color="secondary" style="border"></HMButton>
-          </Link>
+          <HMButton text={button} color="neutral" style="border" link={link}></HMButton>
         </motion.div>
       </div>
     </motion.div>

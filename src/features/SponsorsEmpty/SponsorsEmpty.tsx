@@ -13,9 +13,8 @@ const SponsorsEmpty = ({ tier, button, link }: SponsorsEmptyProps) => {
       <p>
         It looks like we don’t have any {tier} supporters right now :( Be the first {tier} supporter today!
       </p>
-      <DynamicLink link={link}>
-        <HMButton text={button} color="primary"></HMButton>
-      </DynamicLink>
+
+      <HMButton text={button} color="primary" link={link}></HMButton>
     </div>
   );
 };
