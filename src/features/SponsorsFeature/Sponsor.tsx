@@ -2,14 +2,7 @@ import HMButton from '../../components/Button/HMButton';
 import { Link } from 'react-router-dom';
 import DynamicLink from '../../components/DynamicLink/DynamicLink';
 
-interface SponsorProps {
-  tier: string;
-  image: string;
-  sponsor?: string;
-  desc?: string;
-  button?: string;
-  website: string;
-}
+import SponsorProps from './SponsorProps';
 
 const Sponsor = ({ tier, image, sponsor, desc, button, website }: SponsorProps) => {
   switch (tier) {
@@ -28,7 +21,6 @@ const Sponsor = ({ tier, image, sponsor, desc, button, website }: SponsorProps) 
           <img src={image} className="w-[400px] h-[150px] rounded-xl" />
           <h3 className="text-4xl font-extrabold text-center">{sponsor}</h3>
           <p className="max-w-[340px] h-24 text-center text-base font-medium">{desc}</p>
-
           <HMButton text={button!} color="neutral" style="underline" link={website}></HMButton>
         </div>
       );

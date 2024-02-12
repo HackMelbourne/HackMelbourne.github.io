@@ -14,6 +14,10 @@ const HMButton = ({ text, color, style, span, link }: Props) => {
     style = 'border';
   }
 
+  if (link == null) {
+    link = '/';
+  }
+
   let key = {
     filled: {
       primary: ['bg-yellow-500'],
