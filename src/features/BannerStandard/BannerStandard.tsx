@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import DisabledButton from '../../components/Button/DisabledButton';
+import HMButton from '../../components/Button/HMButton';
 
 interface BannerInfo {
   img: string;
@@ -62,9 +62,7 @@ function BannerStandard({ img, title, desc, button, link }: BannerInfo) {
         </motion.div>
 
         <motion.div variants={item} custom={-1}>
-          <Link to={link} id="hoodie-button">
-            <DisabledButton text={button} color="neutral" style="border"></DisabledButton>
-          </Link>
+          <HMButton text={button} color="neutral" style="border" link={link}></HMButton>
         </motion.div>
       </div>
     </motion.div>

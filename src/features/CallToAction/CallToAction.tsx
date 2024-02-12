@@ -52,12 +52,7 @@ const CallToAction = ({ title, desc, button, link }: CallToAction) => {
       </motion.div>
 
       <motion.div variants={item}>
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer">
-          <HMButton text={button} color="primary" style="border"></HMButton>
-        </a>
+        <HMButton text={button} color="primary" style="border" link={link}></HMButton>
       </motion.div>
     </motion.div>
   );

@@ -8,7 +8,7 @@ interface SponsorProps {
   sponsor?: string;
   desc?: string;
   button?: string;
-  website?: string;
+  website: string;
 }
 
 const Sponsor = ({ tier, image, sponsor, desc, button, website }: SponsorProps) => {
@@ -19,9 +19,7 @@ const Sponsor = ({ tier, image, sponsor, desc, button, website }: SponsorProps) 
           <img src={image} className="w-[400px] md:w-10/12 h-[200px] mb-2.5 rounded-xl" />
           <h3 className="text-5xl font-extrabold text-center">{sponsor}</h3>
           <p className="max-w-[400px] text-center text-base font-medium">{desc}</p>
-          <Link to={website!}>
-            <HMButton text={button!} color="secondary" style="border"></HMButton>
-          </Link>
+          <HMButton text={button!} color="secondary" style="border" link={website}></HMButton>
         </div>
       );
     case 'Gold':
@@ -31,9 +29,7 @@ const Sponsor = ({ tier, image, sponsor, desc, button, website }: SponsorProps) 
           <h3 className="text-4xl font-extrabold text-center">{sponsor}</h3>
           <p className="max-w-[340px] h-24 text-center text-base font-medium">{desc}</p>
 
-          <DynamicLink link={website!}>
-            <HMButton text={button!} color="neutral" style="underline"></HMButton>
-          </DynamicLink>
+          <HMButton text={button!} color="neutral" style="underline" link={website}></HMButton>
         </div>
       );
     case 'Silver':
