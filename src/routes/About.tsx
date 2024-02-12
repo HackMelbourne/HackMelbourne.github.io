@@ -114,8 +114,8 @@ const About = () => {
     {
       teamName: 'Marketing Team',
       description: 'If your here the marketing team is doing a great job',
-      bgColor: 'rgba(64,243,42,0.05)',
-      borderColor: 'rgba(64,243,42,50%)',
+      bgColor: 'rgba(231,52,41,0.05)',
+      borderColor: 'rgba(231,52,41,.5)',
       members: [
         {
           name: 'Jerrilyn Looi',
@@ -136,8 +136,8 @@ const About = () => {
     {
       teamName: 'Logistics Team',
       description: 'These guys make the hackathons and make sure everything goes well.',
-      bgColor: 'rgba(64,243,42,0.05)',
-      borderColor: 'rgba(64,243,42,50%)',
+      bgColor: 'rgba(42,122,243,0.05)',
+      borderColor: 'rgba(42,122,243,50%)',
       members: [
         {
           name: 'Demetrius Elchinou Gobardja',
@@ -188,8 +188,8 @@ const About = () => {
     {
       teamName: 'Sponsorships Team',
       description: 'These people get us funding so that everything else is possible',
-      bgColor: 'rgba(64,243,42,0.05)',
-      borderColor: 'rgba(64,243,42,50%)',
+      bgColor: 'rgba(231,52,41,0.05)',
+      borderColor: 'rgba(231,52,41,.5)',
       members: [
         {
           name: 'Barry Meng',
