@@ -113,7 +113,7 @@ const About = () => {
     },
     {
       teamName: 'Marketing Team',
-      description: 'If your here the marketing team is doing a great job',
+      description: 'If you\'re here, the marketing team is doing a great job',
       bgColor: 'rgba(231,52,41,0.05)',
       borderColor: 'rgba(231,52,41,.5)',
       members: [
