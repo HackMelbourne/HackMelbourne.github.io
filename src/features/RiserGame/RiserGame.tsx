@@ -1,15 +1,23 @@
 import React, { useEffect, useState } from 'react'
+import { setRiserGameData } from '../../services/firestoreServices'
+import { RiserGameModel, RiserUserInfo } from './RiserGame.model'
 
-const RiserGame = () => {
+const RiserGame = (riserUserInfo: RiserUserInfo) => {
     const GAMEATTEMPTS = 3
     const GAMEGOAL = 2024
+
+    const [result, setResult] = useState<number[]>([])
+    let userGameData: RiserGameModel = {
+        userInfo: riserUserInfo,
+        gameData: result,
+    }
 
     const [isActive, setIsActive] = useState(false);
     const [time, setTime] = useState(0);
     const [attempts, setAttempts] = useState(0);
 
-    let result: number[] = [];
 
+    // Timer Function
     useEffect(() => {
         let interval: NodeJS.Timeout;
 
@@ -31,11 +39,13 @@ const RiserGame = () => {
         }
     }, [isActive])
 
+    // Timer start
     const handleStart = () => {
         setTime(0);
         setIsActive(true);
     }
 
+    // Timer end
     const handleEnd = () => {
         setIsActive(false);
         setAttempts(attempts + 1);
@@ -44,10 +54,23 @@ const RiserGame = () => {
             alert("Oops! You went over 2024! Your score is disqualified")
             result.push(0);
         } else {
-            result.push(time);
+            let tempResult = result
+            tempResult.push(time)
+            setResult(tempResult);
+            console.log(result)
+        }
+
+        // When game is finished
+        if (attempts == GAMEATTEMPTS - 1) {
+            alert("Sent Data")
+            userGameData.gameData = result;
+            console.log(userGameData);
+
+            setRiserGameData(userGameData)
         }
     }
 
+    // Button press
     const btnPress = () => {
         if (attempts < GAMEATTEMPTS) {
             if (isActive) {
