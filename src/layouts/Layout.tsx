@@ -7,6 +7,7 @@ import {
   LINKEDIN_LINK,
   INSTAGRAM_LINK,
   SPONSORSHIP_EMAIL,
+  SECRETARY_EMAIL,
   UMSU_LINK,
   GITHUB_LINK,
 } from '../constants';
@@ -77,7 +78,7 @@ const Layout = () => {
       { name: 'Instagram', icon: FaInstagram, link: INSTAGRAM_LINK },
       { name: 'Discord', icon: FaDiscord, link: DISCORD_LINK },
       { name: 'LinkedIn', icon: FaLinkedin, link: LINKEDIN_LINK },
-      { name: 'Email', icon: FaEnvelope, link: SPONSORSHIP_EMAIL },
+      { name: 'Email', icon: FaEnvelope, link: `mailto:${SECRETARY_EMAIL}` },
     ],
   };
 
