@@ -1,16 +1,15 @@
-import { db } from "../firebase";
-import { addDoc, collection, doc, setDoc } from "firebase/firestore"
+import { functions } from '../firebase';
+
+import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
+import { httpsCallable } from 'firebase/functions';
 
 // Model imports
-import { RiserGameModel } from "../features/RiserGame/RiserGame.model";
+import { RiserGameModel } from '../features/RiserGame/RiserGame.model';
 
 export async function setRiserGameData(data: RiserGameModel) {
-    try {
-        await addDoc(collection(db, "RiserGame"), data)
-        console.log("sent")
-        return (true);
-    } catch (e) {
-        console.log(e)
-        return (false)
-    }
+  const addMessage = httpsCallable(functions, 'helloWorld');
+  addMessage(data).then((result) => {
+    console.log('Successful');
+    return result;
+  });
 }

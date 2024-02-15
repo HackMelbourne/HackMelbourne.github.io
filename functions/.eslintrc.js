@@ -27,5 +27,6 @@ module.exports = {
     indent: ["error", 2],
     "object-curly-spacing": ["warn", "always"],
     "quote-props": ["warn"],
+    "linebreak-style": ["warn", "windows"],
   },
 };
