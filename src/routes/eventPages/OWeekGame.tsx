@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 import { setRiserGameData } from '../../services/firestoreServices';
 import { RiserGameModel, RiserUserInput } from './RiserGame.model';
 
-const RiserGame = ({ name, email, studentID, HMMember }: RiserUserInput) => {
+const OWeekGame = () => {
+  const navigate = useNavigate();
+  let data: RiserUserInput = useLocation().state;
+
+  console.log(useLocation().state);
   const GAMEATTEMPTS = 3;
   const GAMEGOAL = 2024;
 
   const [result, setResult] = useState<number[]>([]);
 
   let userGameData: RiserGameModel = {
-    name: name,
-    email: email,
-    studentID: studentID,
-    HMMember: HMMember,
+    name: data.name,
+    email: data.email,
+    studentID: data.studentID,
+    HMMember: data.HMMember,
     gameData: result,
   };
 
@@ -26,13 +33,13 @@ const RiserGame = ({ name, email, studentID, HMMember }: RiserUserInput) => {
 
     if (isActive === true) {
       // Random number between 1.0 to 2.0
-      // Not sure if this is working
-      const timeGap = 1 + (Math.floor(Math.random() * 4) / 10 - 0.15);
-      console.log(timeGap);
+      // Does not work
+      // const timeGap = 1 + (Math.floor(Math.random() * 4) / 10 - 0.15);
+      // console.log(timeGap);
 
       interval = setInterval(() => {
         setTime((time) => time + 1);
-      }, timeGap);
+      }, 1);
     } else {
       clearInterval(interval!);
     }
@@ -65,11 +72,12 @@ const RiserGame = ({ name, email, studentID, HMMember }: RiserUserInput) => {
 
     // When game is finished
     if (attempts == GAMEATTEMPTS - 1) {
-      alert('Sent Data');
       userGameData.gameData = result;
       console.log(userGameData);
 
-      setRiserGameData(userGameData);
+      // Need to make sure setRiserGameData comes back before navigate
+      const setGameData = setRiserGameData(userGameData);
+      navigate('/O-Week/complete', { state: { key: 'value' } });
     }
   };
 
@@ -117,4 +125,4 @@ const RiserGame = ({ name, email, studentID, HMMember }: RiserUserInput) => {
   );
 };
 
-export default RiserGame;
+export default OWeekGame;
