@@ -7,9 +7,20 @@ import { httpsCallable } from 'firebase/functions';
 import { RiserGameModel } from '../features/RiserGame/RiserGame.model';
 
 export async function setRiserGameData(data: RiserGameModel) {
-  const addMessage = httpsCallable(functions, 'setRiserData');
-  addMessage({ ...data }).then((result) => {
-    console.log('Successful');
-    return result;
-  });
+  const setData = httpsCallable(functions, 'setRiserData');
+  console.log({ ...data });
+  try {
+    setData({
+      name: data.name,
+      email: data.email,
+      studentID: data.studentID,
+      HMMember: data.HMMember,
+      gameData: data.gameData,
+    }).then((result) => {
+      console.log('Successful');
+      return result;
+    });
+  } catch (e) {
+    console.log(e);
+  }
 }

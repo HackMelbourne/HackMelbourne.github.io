@@ -6,12 +6,12 @@
  *
  * See a full list of supported triggers at https://firebase.google.com/docs/functions
  */
-import { onRequest } from 'firebase-functions/v2/https';
+const { onCall } = require("firebase-functions/v2/https");
 
-import { setGlobalOptions } from 'firebase-functions/v2';
+const { setGlobalOptions } = require("firebase-functions/v2");
 
-import { initializeApp } from 'firebase-admin/app';
-import { getFirestore } from 'firebase-admin/firestore';
+const { initializeApp } = require("firebase-admin/app");
+const { getFirestore } = require("firebase-admin/firestore");
 
 initializeApp();
 
@@ -21,19 +21,17 @@ setGlobalOptions({ maxInstances: 10 });
 // Start writing functions
 // https://firebase.google.com/docs/functions/typescript
 
-export const setRiserData = onRequest(
-  { cors: [/hack\.Melbourne$/, /.*hackmelbourne\.netlify\.app.*/] },
-  async (req, res) => {
-    const result = {
-      name: req.query.name,
-      email: req.query.email,
-      studentID: req.query.studentID,
-      HMMember: req.query.HMMember,
-      gameData: req.query.gameData,
-    };
+exports.setRiserData = onCall(async (req) => {
+  console.log(req.data.name);
+  const result = {
+    name: req.data.name,
+    email: req.data.email,
+    studentID: req.data.studentID,
+    HMMember: req.data.HMMember,
+    gameData: req.data.gameData,
+  };
 
-    const writeResult = await getFirestore().collection('riserData').add(result);
+  const writeResult = await getFirestore().collection("riserData").add(result);
 
-    res.json({ result: `Message with ID: ${writeResult.id} added` });
-  },
-);
+  return { text: "hi" };
+});
