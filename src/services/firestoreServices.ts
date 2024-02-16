@@ -4,7 +4,7 @@ import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
 import { httpsCallable } from 'firebase/functions';
 
 // Model imports
-import { RiserGameModel } from '../features/RiserGame/RiserGame.model';
+import { RiserGameModel } from '../routes/eventPages/RiserGame.model';
 
 export async function setRiserGameData(data: RiserGameModel) {
   const setData = httpsCallable(functions, 'setRiserData');
@@ -23,4 +23,8 @@ export async function setRiserGameData(data: RiserGameModel) {
   } catch (e) {
     console.log(e);
   }
+}
+
+export async function getRiserLeaderboard() {
+  return [];
 }

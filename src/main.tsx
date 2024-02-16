@@ -18,6 +18,7 @@ import Terms from './routes/Terms';
 //Event Pages
 import OWeek from './routes/eventPages/OWeek';
 import OWeekGame from './routes/eventPages/OWeekGame';
+import GameComplete from './routes/eventPages/GameComplete';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,6 +31,7 @@ const router = createBrowserRouter(
       <Route path="terms" element={<Terms />} />
       <Route path="O-Week" element={<OWeek />}></Route>
       <Route path="O-Week/playGame" element={<OWeekGame></OWeekGame>}></Route>
+      <Route path="O-Week/complete" element={<GameComplete></GameComplete>}></Route>
     </Route>,
   ),
 );

@@ -5,9 +5,10 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
-import { RiserUserInput } from '../../features/RiserGame/RiserGame.model';
+import { RiserUserInput } from './RiserGame.model';
 
 import Ranking from '../../features/Leaderboard/Ranking';
+import { Leaderboard } from '@mui/icons-material';
 
 const theme = createTheme({
   palette: {
@@ -195,12 +196,7 @@ export default function RiserGame() {
         </FormControl>
       </form>
 
-      <h2 className="text-4xl text-center font-bold mb-10">Leaderboard</h2>
-      <div className="flex flex-col gap-6">
-        {leaderboard.map((entry) => (
-          <Ranking {...entry} />
-        ))}
-      </div>
+      <Leaderboard></Leaderboard>
     </div>
   );
 }
