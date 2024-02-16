@@ -21,7 +21,7 @@ setGlobalOptions({ maxInstances: 10 });
 // Start writing functions
 // https://firebase.google.com/docs/functions/typescript
 
-exports.setRiserData = onCall(async (req) => {
+exports.setRiserData = onCall(async (req: any) => {
   console.log(req.data.name);
   const result = {
     name: req.data.name,
@@ -31,7 +31,7 @@ exports.setRiserData = onCall(async (req) => {
     gameData: req.data.gameData,
   };
 
-  const writeResult = await getFirestore().collection("riserData").add(result);
+  await getFirestore().collection("riserData").add(result);
 
   return { text: "hi" };
 });
