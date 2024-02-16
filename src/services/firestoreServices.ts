@@ -7,8 +7,8 @@ import { httpsCallable } from 'firebase/functions';
 import { RiserGameModel } from '../features/RiserGame/RiserGame.model';
 
 export async function setRiserGameData(data: RiserGameModel) {
-  const addMessage = httpsCallable(functions, 'helloWorld');
-  addMessage(data).then((result) => {
+  const addMessage = httpsCallable(functions, 'setRiserData');
+  addMessage({ ...data }).then((result) => {
     console.log('Successful');
     return result;
   });

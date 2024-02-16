@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { setRiserGameData } from '../../services/firestoreServices';
-import { RiserGameModel, RiserUserInfo } from './RiserGame.model';
+import { RiserGameModel, RiserUserInput } from './RiserGame.model';
 
-const RiserGame = (riserUserInfo: RiserUserInfo) => {
+const RiserGame = ({ name, email, studentID, HMMember }: RiserUserInput) => {
   const GAMEATTEMPTS = 3;
   const GAMEGOAL = 2024;
 
   const [result, setResult] = useState<number[]>([]);
 
   let userGameData: RiserGameModel = {
-    userInfo: riserUserInfo,
+    name: name,
+    email: email,
+    studentID: studentID,
+    HMMember: HMMember,
     gameData: result,
   };
 

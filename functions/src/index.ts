@@ -6,13 +6,12 @@
  *
  * See a full list of supported triggers at https://firebase.google.com/docs/functions
  */
-import { onCall } from "firebase-functions/v2/https";
-import { onRequest } from "firebase-functions/v2/https";
+import { onRequest } from 'firebase-functions/v2/https';
 
-import { setGlobalOptions } from "firebase-functions/v2";
+import { setGlobalOptions } from 'firebase-functions/v2';
 
-import { initializeApp } from "firebase-admin/app";
-import { getFirestore } from "firebase-admin/firestore";
+import { initializeApp } from 'firebase-admin/app';
+import { getFirestore } from 'firebase-admin/firestore';
 
 initializeApp();
 
@@ -22,17 +21,18 @@ setGlobalOptions({ maxInstances: 10 });
 // Start writing functions
 // https://firebase.google.com/docs/functions/typescript
 
-export const helloWorld = onRequest(
-  { cors: [/hack\.melbourne$/, "flutter.com"] },
+export const setRiserData = onRequest(
+  { cors: [/hack\.Melbourne$/, /.*hackmelbourne\.netlify\.app.*/] },
   async (req, res) => {
     const result = {
-      userInfo: req.query.userInfo,
+      name: req.query.name,
+      email: req.query.email,
+      studentID: req.query.studentID,
+      HMMember: req.query.HMMember,
       gameData: req.query.gameData,
     };
 
-    const writeResult = await getFirestore()
-      .collection("riserData")
-      .add(result);
+    const writeResult = await getFirestore().collection('riserData').add(result);
 
     res.json({ result: `Message with ID: ${writeResult.id} added` });
   },

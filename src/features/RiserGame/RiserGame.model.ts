@@ -1,9 +1,12 @@
 export interface RiserGameModel {
-  userInfo: RiserUserInfo;
+  name: string;
+  email: string;
+  studentID?: string;
+  HMMember: boolean;
   gameData: number[];
 }
 
-export interface RiserUserInfo {
+export interface RiserUserInput {
   name: string;
   email: string;
   studentID?: string;
