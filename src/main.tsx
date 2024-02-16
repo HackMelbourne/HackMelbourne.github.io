@@ -17,6 +17,7 @@ import Terms from './routes/Terms';
 
 //Event Pages
 import OWeek from './routes/eventPages/OWeek';
+import RiserGame from './routes/eventPages/RiserGame';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,7 +28,7 @@ const router = createBrowserRouter(
       <Route path="sponsor" element={<Sponsors />} />
       <Route path="privacy" element={<Privacy />} />
       <Route path="terms" element={<Terms />} />
-      <Route path="O-Week" element={<OWeek />} />
+      <Route path="O-Week" element={<RiserGame />} />
     </Route>,
   ),
 );
