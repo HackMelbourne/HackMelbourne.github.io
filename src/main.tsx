@@ -16,6 +16,7 @@ import Privacy from './routes/Privacy';
 import Terms from './routes/Terms';
 
 //Event Pages
+import OWeek from './routes/eventPages/OWeek';
 import RiserGame from './routes/eventPages/RiserGame';
 
 const router = createBrowserRouter(

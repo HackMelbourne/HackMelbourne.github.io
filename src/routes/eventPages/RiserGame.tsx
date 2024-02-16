@@ -4,6 +4,7 @@ import TitleHero from '../../features/TitleHero/TitleHero';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import Ranking from '../../features/Leaderboard/Ranking';
 
 const theme = createTheme({
   palette: {
@@ -13,7 +14,7 @@ const theme = createTheme({
     secondary: {
       main: '#5899F5',
     },
-  }
+  },
 });
 
 const SubmitButton = styled(Button)({
@@ -54,6 +55,19 @@ export default function RiserGame() {
     title: 'O-Week Riser',
     description: `Test your skill and luck at our riser game where you just need to hit the button at the right time. Win big prizes`,
   };
+
+  const leaderboard = [
+    {
+      rank: 1,
+      name: 'First Last',
+      score: 7999,
+    },
+    {
+      rank: 2,
+      name: 'First Last',
+      score: 7999,
+    },
+  ];
 
   // Animations
   const scrollRef = useRef(null);
@@ -102,9 +116,9 @@ export default function RiserGame() {
                 color="primary"
                 label="First Name"
                 InputLabelProps={{
-                  sx: { color: "white", "&.Mui-focused": { color: "white" } },
+                  sx: { color: 'white', '&.Mui-focused': { color: 'white' } },
                 }}
-                sx={{ input: { color: "white" } }}
+                sx={{ input: { color: 'white' } }}
                 focused
               />
               <TextField
@@ -115,9 +129,9 @@ export default function RiserGame() {
                 color="primary"
                 label="Last Name"
                 InputLabelProps={{
-                  sx: { color: "white", "&.Mui-focused": { color: "white" } },
+                  sx: { color: 'white', '&.Mui-focused': { color: 'white' } },
                 }}
-                sx={{ input: { color: "white" } }}
+                sx={{ input: { color: 'white' } }}
                 focused
               />
               <TextField
@@ -128,9 +142,9 @@ export default function RiserGame() {
                 color="primary"
                 label="Email"
                 InputLabelProps={{
-                  sx: { color: "white", "&.Mui-focused": { color: "white" } },
+                  sx: { color: 'white', '&.Mui-focused': { color: 'white' } },
                 }}
-                sx={{ input: { color: "white" } }}
+                sx={{ input: { color: 'white' } }}
                 focused
               />
               <TextField
@@ -141,22 +155,35 @@ export default function RiserGame() {
                 color="primary"
                 label="Student ID"
                 InputLabelProps={{
-                  sx: { color: "white", "&.Mui-focused": { color: "white" } },
+                  sx: { color: 'white', '&.Mui-focused': { color: 'white' } },
                 }}
-                sx={{ input: { color: "white" } }}
+                sx={{ input: { color: 'white' } }}
                 focused
               />
               <FormControlLabel
-                control={<Checkbox checked={isMember} onChange={(e) => setIsMember(e.target.checked)} sx={{color: 'white'}}/>}
+                control={
+                  <Checkbox
+                    checked={isMember}
+                    onChange={(e) => setIsMember(e.target.checked)}
+                    sx={{ color: 'white' }}
+                  />
+                }
                 label="HackMelbourne Member"
               />
-              <SubmitButton type="submit" variant="outlined" color="secondary" sx={{marginTop:"2em"}}>
+              <SubmitButton type="submit" variant="outlined" color="secondary" sx={{ marginTop: '2em' }}>
                 Submit
               </SubmitButton>
             </ThemeProvider>
           </div>
         </FormControl>
       </form>
+
+      <h2 className="text-4xl text-center font-bold mb-10">Leaderboard</h2>
+      <div className="flex flex-col gap-6">
+        {leaderboard.map((entry) => (
+          <Ranking {...entry} />
+        ))}
+      </div>
     </div>
   );
 }
