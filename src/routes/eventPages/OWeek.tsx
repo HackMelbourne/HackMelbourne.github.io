@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
+import { RegExpMatcher, englishDataset, englishRecommendedTransformers } from 'obscenity';
 import { RiserUserInput } from './RiserGame.model';
 
 import Ranking from '../../features/Leaderboard/Ranking';
@@ -96,23 +97,40 @@ export default function RiserGame() {
   // Handle form submission
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log({
+    const inputs = {
       firstName,
       lastName,
       email,
-      studentId,
-      isMember,
-    });
-    // Input Validation
-
-    const validInput: RiserUserInput = {
-      name: firstName + lastName,
-      email: email,
-      studentID: studentId,
-      HMMember: isMember,
-    };
-
-    navigate('/O-Week/playGame', { state: { ...validInput } });
+      studentId
+    }
+    const matcher = new RegExpMatcher({ ...englishDataset.build(), ...englishRecommendedTransformers });
+    
+    // Inputs length check
+    if (Object.values(inputs).filter(input => input.length > 0).length < 4){
+      alert("Please fill in all of the details")
+    }
+    // Profanity check
+    else if (matcher.hasMatch(firstName) || matcher.hasMatch(lastName) || matcher.hasMatch(email)){
+      alert("Profanity detected, please delete any inappropriate text.")
+    }
+    // Email Check
+    else if (!email.match(/^[a-zA-Z0-9._%+-]+@student\.unimelb\.edu\.au$/)){
+      alert("Invalid email, please enter your student email.")
+    }
+    // Student ID Check
+    else if (!studentId.match(/^\d{6}$/)){
+      alert("Invalid student ID, please recheck you have entered it correctly.")
+    }
+    // Pass 
+    else{
+      const validInput: RiserUserInput = {
+        name: firstName + lastName,
+        email: email,
+        studentID: studentId,
+        HMMember: isMember,
+      };
+      navigate('/O-Week/playGame', { state: { ...validInput } });
+    }
   };
 
   return (
