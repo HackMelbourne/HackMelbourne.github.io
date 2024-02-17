@@ -1,32 +1,28 @@
 module.exports = {
-  root: true,
   env: {
     es6: true,
     node: true,
   },
-  extends: [
-    "eslint:recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:import/typescript",
-    "google",
-    "plugin:@typescript-eslint/recommended",
-  ],
-  parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: ["tsconfig.json", "tsconfig.dev.json"],
-    sourceType: "module",
+    ecmaVersion: 2018,
   },
-  ignorePatterns: [
-    "/lib/**/*", // Ignore built files.
-  ],
-  plugins: ["@typescript-eslint", "import"],
+  extends: ["eslint:recommended", "google"],
   rules: {
-    quotes: ["warn", "double"],
-    "import/no-unresolved": 0,
-    indent: ["error", 2],
+    "no-restricted-globals": ["error", "name", "length"],
+    "prefer-arrow-callback": "error",
+    quotes: ["warn", "double", { allowTemplateLiterals: true }],
     "object-curly-spacing": ["warn", "always"],
-    "quote-props": ["warn"],
-    "linebreak-style": ["warn", "windows"],
+    "@typescript-eslint/no-var-requires": 0,
+    "quote-props": ["warn", "as-needed"],
   },
+  overrides: [
+    {
+      files: ["**/*.spec.*"],
+      env: {
+        mocha: true,
+      },
+      rules: {},
+    },
+  ],
+  globals: {},
 };
