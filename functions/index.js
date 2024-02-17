@@ -21,7 +21,7 @@ setGlobalOptions({ maxInstances: 10 });
 // Start writing functions
 // https://firebase.google.com/docs/functions/typescript
 
-exports.setRiserData = onCall(async (req: any) => {
+exports.setRiserData = onCall(async (req) => {
   console.log(req.data.name);
   const result = {
     name: req.data.name,
