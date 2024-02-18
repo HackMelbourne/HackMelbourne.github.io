@@ -1,13 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-import { setRiserGameData } from '../../services/firestoreServices';
-import { RiserGameModel, RiserUserInput } from './RiserGame.model';
+import { setRiserGameData } from "../../services/firestoreServices";
+import { RiserGameModel, RiserUserInput } from "./RiserGame.model";
 
 const OWeekGame = () => {
   const navigate = useNavigate();
   let data: RiserUserInput = useLocation().state;
+
+  // If data is empty
+  useEffect(() => {
+    console.log(data);
+    if (data == null) {
+      navigate("/O-Week");
+      console.log("boohoo");
+    }
+  }, []);
 
   const GAMEATTEMPTS = 3;
   const GAMEGOAL = 2024;
@@ -60,7 +69,7 @@ const OWeekGame = () => {
     setAttempts(attempts + 1);
 
     if (time > GAMEGOAL) {
-      alert('Oops! You went over 2024! Your score is disqualified');
+      alert("Oops! You went over 2024! Your score is disqualified");
       result.push(0);
     } else {
       let tempResult = result;
@@ -76,7 +85,7 @@ const OWeekGame = () => {
 
       // Need to make sure setRiserGameData comes back before navigate
       setRiserGameData(userGameData).then((value) => {
-        console.log('posted');
+        console.log("posted");
 
         // Change this when backend returns values
         const tempValue = {
@@ -84,7 +93,7 @@ const OWeekGame = () => {
           ranking: 65,
         };
 
-        navigate('/O-Week/complete', { state: { ...tempValue } });
+        navigate("/O-Week/complete", { state: { ...tempValue } });
       });
     }
   };
@@ -98,16 +107,16 @@ const OWeekGame = () => {
         handleStart();
       }
     } else {
-      alert('You have used all your attempts');
+      alert("You have used all your attempts");
     }
   };
 
   //Generating Attempts
   const attemptStyle = (id: number) => {
     if (id <= attempts) {
-      return ' bg-yellow-500';
+      return " bg-yellow-500";
     } else {
-      return 'bg-transparent';
+      return "bg-transparent";
     }
   };
 

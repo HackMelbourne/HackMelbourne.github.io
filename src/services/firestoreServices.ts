@@ -1,13 +1,13 @@
-import { functions } from '../firebase';
+import { functions } from "../firebase";
 
-import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
-import { httpsCallable } from 'firebase/functions';
+import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { httpsCallable } from "firebase/functions";
 
 // Model imports
-import { RiserGameModel, RiserOutputData } from '../routes/eventPages/RiserGame.model';
+import { RiserGameModel, RiserOutputData } from "../routes/eventPages/RiserGame.model";
 
 export async function setRiserGameData(data: RiserGameModel) {
-  const setData = httpsCallable(functions, 'setRiserData');
+  const setData = httpsCallable(functions, "setRiserData");
   try {
     return setData({
       name: data.name,
@@ -16,12 +16,12 @@ export async function setRiserGameData(data: RiserGameModel) {
       HMMember: data.HMMember,
       gameData: data.gameData,
     }).then((result) => {
-      console.log('Successful');
+      console.log("Successful");
       return result;
     });
   } catch (e) {
     console.log(e);
-    alert('Oops something went wrong try again');
+    alert("Oops something went wrong try again");
   }
 }
 

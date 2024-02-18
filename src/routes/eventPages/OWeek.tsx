@@ -1,57 +1,57 @@
-import React, { useState } from 'react';
-import { Button, TextField, FormControl, Checkbox, FormLabel, FormControlLabel } from '@mui/material';
-import TitleHero from '../../features/TitleHero/TitleHero';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
-import { useNavigate } from 'react-router-dom';
-import { RiserUserInput } from './RiserGame.model';
+import React, { useState } from "react";
+import { Button, TextField, FormControl, Checkbox, FormLabel, FormControlLabel } from "@mui/material";
+import TitleHero from "../../features/TitleHero/TitleHero";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
+import { RiserUserInput } from "./RiserGame.model";
 
-import Ranking from '../../features/Leaderboard/Ranking';
-import { Leaderboard } from '@mui/icons-material';
+import Ranking from "../../features/Leaderboard/Ranking";
+import { Leaderboard } from "@mui/icons-material";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#F3B52A',
+      main: "#F3B52A",
     },
     secondary: {
-      main: '#5899F5',
+      main: "#5899F5",
     },
   },
 });
 
 // I dont think this is optimal but we are in a slight rush
 const SubmitButton = styled(Button)({
-  boxShadow: 'none',
-  color: 'white',
-  fontWeight: 'bold',
-  textTransform: 'none',
-  padding: '6px 12px',
-  border: '2px solid',
+  boxShadow: "none",
+  color: "white",
+  fontWeight: "bold",
+  textTransform: "none",
+  padding: "6px 12px",
+  border: "2px solid",
   lineHeight: 1.5,
-  borderColor: '#5899F5',
-  backgroundColor: 'rgba(9,  31,  62,  0.5)',
-  '&:hover': {
-    padding: '6px 12px',
-    border: '2px solid',
+  borderColor: "#5899F5",
+  backgroundColor: "rgba(9,  31,  62,  0.5)",
+  "&:hover": {
+    padding: "6px 12px",
+    border: "2px solid",
     lineHeight: 1.5,
-    borderColor: '#5899F5',
-    backgroundColor: 'rgba(9,  31,  62,  0.5)',
+    borderColor: "#5899F5",
+    backgroundColor: "rgba(9,  31,  62,  0.5)",
   },
-  '&:active': {
-    padding: '6px 12px',
-    border: '2px solid',
+  "&:active": {
+    padding: "6px 12px",
+    border: "2px solid",
     lineHeight: 1.5,
-    borderColor: '#5899F5',
-    backgroundColor: 'rgba(9,  31,  62,  0.5)',
+    borderColor: "#5899F5",
+    backgroundColor: "rgba(9,  31,  62,  0.5)",
   },
-  '&:focus': {
-    padding: '6px 12px',
-    border: '2px solid',
+  "&:focus": {
+    padding: "6px 12px",
+    border: "2px solid",
     lineHeight: 1.5,
-    borderColor: '#5899F5',
-    backgroundColor: 'rgba(9,  31,  62,  0.5)',
+    borderColor: "#5899F5",
+    backgroundColor: "rgba(9,  31,  62,  0.5)",
   },
 });
 
@@ -59,19 +59,19 @@ export default function RiserGame() {
   const navigate = useNavigate();
 
   const pageInfo = {
-    title: 'O-Week Riser',
+    title: "O-Week Riser",
     description: `Test your skill and luck at our riser game where you just need to hit the button at the right time. Win big prizes`,
   };
 
   const leaderboard = [
     {
       rank: 1,
-      name: 'First Last',
+      name: "First Last",
       score: 7999,
     },
     {
       rank: 2,
-      name: 'First Last',
+      name: "First Last",
       score: 7999,
     },
   ];
@@ -80,17 +80,17 @@ export default function RiserGame() {
   const scrollRef = useRef(null);
   let { scrollYProgress } = useScroll({
     target: scrollRef,
-    offset: ['start start', 'end start'],
+    offset: ["start start", "end start"],
   });
-  let y = useTransform(scrollYProgress, [0, 1], ['0%', '80%']);
-  let opacityValue = useTransform(scrollYProgress, [0, 0.6], ['100%', '0%']);
-  let scaleValue = useTransform(scrollYProgress, [0, 0.9], ['1', '0.9']);
+  let y = useTransform(scrollYProgress, [0, 1], ["0%", "80%"]);
+  let opacityValue = useTransform(scrollYProgress, [0, 0.6], ["100%", "0%"]);
+  let scaleValue = useTransform(scrollYProgress, [0, 0.9], ["1", "0.9"]);
 
   // Form Field Values
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [studentId, setStudentId] = useState('');
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [studentId, setStudentId] = useState("");
   const [isMember, setIsMember] = useState(false);
 
   // Handle form submission
@@ -112,7 +112,7 @@ export default function RiserGame() {
       HMMember: isMember,
     };
 
-    navigate('/O-Week/playGame', { state: { ...validInput } });
+    navigate("/O-Week/playGame", { state: { ...validInput } });
   };
 
   return (
@@ -134,9 +134,9 @@ export default function RiserGame() {
                 color="primary"
                 label="First Name"
                 InputLabelProps={{
-                  sx: { color: 'white', '&.Mui-focused': { color: 'white' } },
+                  sx: { color: "white", "&.Mui-focused": { color: "white" } },
                 }}
-                sx={{ input: { color: 'white' } }}
+                sx={{ input: { color: "white" } }}
                 focused
               />
               <TextField
@@ -147,9 +147,9 @@ export default function RiserGame() {
                 color="primary"
                 label="Last Name"
                 InputLabelProps={{
-                  sx: { color: 'white', '&.Mui-focused': { color: 'white' } },
+                  sx: { color: "white", "&.Mui-focused": { color: "white" } },
                 }}
-                sx={{ input: { color: 'white' } }}
+                sx={{ input: { color: "white" } }}
                 focused
               />
               <TextField
@@ -160,9 +160,9 @@ export default function RiserGame() {
                 color="primary"
                 label="Email"
                 InputLabelProps={{
-                  sx: { color: 'white', '&.Mui-focused': { color: 'white' } },
+                  sx: { color: "white", "&.Mui-focused": { color: "white" } },
                 }}
-                sx={{ input: { color: 'white' } }}
+                sx={{ input: { color: "white" } }}
                 focused
               />
               <TextField
@@ -173,9 +173,9 @@ export default function RiserGame() {
                 color="primary"
                 label="Student ID"
                 InputLabelProps={{
-                  sx: { color: 'white', '&.Mui-focused': { color: 'white' } },
+                  sx: { color: "white", "&.Mui-focused": { color: "white" } },
                 }}
-                sx={{ input: { color: 'white' } }}
+                sx={{ input: { color: "white" } }}
                 focused
               />
               <FormControlLabel
@@ -183,12 +183,12 @@ export default function RiserGame() {
                   <Checkbox
                     checked={isMember}
                     onChange={(e) => setIsMember(e.target.checked)}
-                    sx={{ color: 'white' }}
+                    sx={{ color: "white" }}
                   />
                 }
                 label="HackMelbourne Member"
               />
-              <SubmitButton type="submit" variant="outlined" color="secondary" sx={{ marginTop: '2em' }}>
+              <SubmitButton type="submit" variant="outlined" color="secondary" sx={{ marginTop: "2em" }}>
                 Submit
               </SubmitButton>
             </ThemeProvider>
