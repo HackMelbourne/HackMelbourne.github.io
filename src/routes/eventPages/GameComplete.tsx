@@ -31,13 +31,14 @@ const GameComplete = () => {
         <h1 className="text-8xl font-bold text-center">{score}</h1>
         <p className="text-xl font-semibold">Your Highscore</p>
       </div>
-      <div className="flex flex-col p-8 px-8 bg-blue-600/10 border border-blue-600 rounded-md max-w-sm gap-4">
+      <div className="flex flex-col items-center p-8 px-8 bg-blue-600/10 border border-blue-600 rounded-md max-w-sm gap-4">
         <h3 className="text-xl font-semibold text-center">Submitted!</h3>
         <p className="text-center">
           Thanks for playing our game! If you are interested in HM and what we do, you can join our club for free with
           the link below!
         </p>
         <HMButton link={UMSU_LINK} text="Join HM" color="primary" span={true}></HMButton>
+        <HMButton link="/O-Week" text="Back to start" color="neutral" style="underline"></HMButton>
       </div>
       <RiserLeaderboard></RiserLeaderboard>
     </div>
