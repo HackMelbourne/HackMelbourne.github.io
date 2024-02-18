@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Ranking from './Ranking';
 import { getRiserLeaderboard } from '../../services/firestoreServices';
 
-const Leaderboord = () => {
+const RiserLeaderboard = () => {
   // Will likely need to do some async stuff here
   const leaderboardList = getRiserLeaderboard();
 
@@ -19,4 +19,4 @@ const Leaderboord = () => {
   );
 };
 
-export default Leaderboord;
+export default RiserLeaderboard;
