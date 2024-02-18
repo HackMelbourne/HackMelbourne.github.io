@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Button, TextField, FormControl, Checkbox, FormLabel, FormControlLabel } from '@mui/material';
+import { Button, TextField, FormControl, Checkbox, FormControlLabel } from '@mui/material';
 import TitleHero from '../../features/TitleHero/TitleHero';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import { RiserUserInput } from './RiserGame.model';
+import Filter from 'bad-words';
 
 import Ranking from '../../features/Leaderboard/Ranking';
 import { Leaderboard } from '@mui/icons-material';
@@ -96,23 +97,39 @@ export default function RiserGame() {
   // Handle form submission
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log({
+    const inputs = {
       firstName,
       lastName,
-      email,
-      studentId,
-      isMember,
-    });
-    // Input Validation
-
-    const validInput: RiserUserInput = {
-      name: firstName + lastName,
-      email: email,
-      studentID: studentId,
-      HMMember: isMember,
-    };
-
-    navigate('/O-Week/playGame', { state: { ...validInput } });
+      email
+    }
+    const fullName = firstName+lastName
+    const filter = new Filter()
+    // Inputs length check
+    if (Object.values(inputs).filter(input => input.length > 0).length < 3){
+      alert("Please fill in all required details")
+    }
+    // Profanity check
+    else if (filter.isProfane(fullName) || filter.isProfane(email)){
+      alert("Profanity detected, please delete any inappropriate text.")
+    }
+    // Email Check
+    else if (!email.match(/\S+@\S+\.\S+/)){
+      alert("Invalid email, please enter a valid email.")
+    }
+    // Student ID Check
+    else if (!studentId.match(/^\d{7}$/) && studentId.length > 0){
+      alert("Invalid student ID, please recheck you have entered it correctly.")
+    }
+    // Pass 
+    else{
+      const validInput: RiserUserInput = {
+        name: fullName,
+        email: email,
+        studentID: studentId === "" ? "0000000" : studentId,
+        HMMember: isMember,
+      };
+      navigate('/O-Week/playGame', { state: { ...validInput } });
+    }
   };
 
   return (
