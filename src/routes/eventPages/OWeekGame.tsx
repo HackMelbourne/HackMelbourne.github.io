@@ -9,7 +9,6 @@ const OWeekGame = () => {
   const navigate = useNavigate();
   let data: RiserUserInput = useLocation().state;
 
-  console.log(useLocation().state);
   const GAMEATTEMPTS = 3;
   const GAMEGOAL = 2024;
 
@@ -76,8 +75,17 @@ const OWeekGame = () => {
       console.log(userGameData);
 
       // Need to make sure setRiserGameData comes back before navigate
-      const setGameData = setRiserGameData(userGameData);
-      navigate('/O-Week/complete', { state: { key: 'value' } });
+      setRiserGameData(userGameData).then((value) => {
+        console.log('posted');
+
+        // Change this when backend returns values
+        const tempValue = {
+          score: 1986,
+          ranking: 65,
+        };
+
+        navigate('/O-Week/complete', { state: { ...tempValue } });
+      });
     }
   };
 

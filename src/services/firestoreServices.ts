@@ -4,13 +4,12 @@ import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
 import { httpsCallable } from 'firebase/functions';
 
 // Model imports
-import { RiserGameModel } from '../routes/eventPages/RiserGame.model';
+import { RiserGameModel, RiserOutputData } from '../routes/eventPages/RiserGame.model';
 
 export async function setRiserGameData(data: RiserGameModel) {
   const setData = httpsCallable(functions, 'setRiserData');
-  console.log({ ...data });
   try {
-    setData({
+    return setData({
       name: data.name,
       email: data.email,
       studentID: data.studentID,
@@ -22,6 +21,7 @@ export async function setRiserGameData(data: RiserGameModel) {
     });
   } catch (e) {
     console.log(e);
+    alert('Oops something went wrong try again');
   }
 }
 

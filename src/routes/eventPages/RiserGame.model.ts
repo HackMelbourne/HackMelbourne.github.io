@@ -12,3 +12,8 @@ export interface RiserUserInput {
   studentID?: string;
   HMMember: boolean;
 }
+
+export interface RiserOutputData {
+  score: number;
+  ranking: number;
+}
