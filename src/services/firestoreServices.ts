@@ -1,6 +1,6 @@
 // Firebase imports
 import { db, auth } from "../firebase";
-import { signInAnonymously } from 'firebase/auth';
+import { getAuth, signInAnonymously } from "firebase/auth";
 import { collection, addDoc, getDocs, limit, orderBy, query } from 'firebase/firestore';
 
 import { useState, useEffect } from "react";
@@ -13,17 +13,20 @@ import { Leaderboard } from "@mui/icons-material";
 export async function setRiserGameData(data: RiserGameModel) {
   try {
     // Ensure the user is anonymously signed in
-    await signInAnonymously(auth);
+    const auth = getAuth();
+    signInAnonymously(auth)
+      .then(() => {
+        const preparedData = {...data,
+          highestScore: Math.max(...data.gameData),
+          submissionTime: new Date(),
+        };
 
-    const preparedData = {...data,
-      highestScore: Math.max(...data.gameData),
-      submissionTime: new Date(),
-    };
+        return addDoc(collection(db, "riserData"), preparedData);
+      })
+      .catch((error) => {
+        console.log(error)
+      });
 
-    // Directly add data to Firestore
-    const docRef = await addDoc(collection(db, "riserData"), preparedData);
-    console.log("Document written with ID: ", docRef.id);
-    return { success: true, id: docRef.id };
   } catch (e) {
     console.error("Error adding document: ", e);
     throw new Error("Failed to set Riser game data");
