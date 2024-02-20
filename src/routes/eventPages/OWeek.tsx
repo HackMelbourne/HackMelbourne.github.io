@@ -12,6 +12,7 @@ import RiserLeaderboard from "../../features/Leaderboard/RiserLeaderboard";
 import { Info, Leaderboard, MoreHoriz, Refresh, SportsScore } from "@mui/icons-material";
 import { isUniqueEmail } from "../../services/firestoreServices";
 import { FaTrophy } from "react-icons/fa";
+import cleanEmail from "../../services/cleanEmails";
 
 const theme = createTheme({
   palette: {
@@ -124,10 +125,11 @@ export default function RiserGame() {
         "Invalid student ID, please recheck you have entered it correctly. If you don't have a studentID leave it blank",
       );
     } else {
+      const sanitisedEmail: string = cleanEmail(email);
       // Pass
       const validInput: RiserUserInput = {
         name: fullName,
-        email: email,
+        email: sanitisedEmail,
         studentID: studentId === "" ? "0000000" : studentId,
         HMMember: isMember,
       };
