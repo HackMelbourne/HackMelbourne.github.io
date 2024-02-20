@@ -9,23 +9,37 @@ import { useState, useEffect } from "react";
 import { RiserGameModel, RiserOutputData, RankEntry } from "../routes/eventPages/RiserGame.model";
 import { Leaderboard } from "@mui/icons-material";
 
+async function calculateRanking(newScore: Number) {
+  const scoresRef = collection(db, "riserData");
+  const snapshot = await getDocs(scoresRef);
+  const scores = snapshot.docs.map(doc => doc.data().highestScore);
+
+  // Include the new score in the calculation
+  scores.push(newScore);
+  scores.sort((a, b) => b - a); // Sort scores in descending order
+
+  // Find the ranking of the new score
+  const ranking = scores.indexOf(newScore) + 1; // Convert index to ranking
+  return ranking;
+}
 
 export async function setRiserGameData(data: RiserGameModel) {
   try {
+    const highestScore = Math.max(...data.gameData);
+    const validHighestScore = highestScore <= 2024 ? highestScore : 0;
+
     const preparedData = {...data,
-      highestScore: Math.max(...data.gameData),
+      highestScore: validHighestScore,
       submissionTime: new Date(),
     };
 
-    return addDoc(collection(db, "riserData"), preparedData);
-    // // Ensure the user is anonymously signed in
-    // const auth = getAuth();
-    // signInAnonymously(auth)
-    //   .then(() => {
-    //   })
-    //   .catch((error) => {
-    //     console.log(error)
-    //   });
+
+    const docRef = await addDoc(collection(db, "riserData"), preparedData);
+    console.log("Document added with ID:", docRef.id);
+
+    // Calculate and return the ranking
+    const ranking = await calculateRanking(validHighestScore);
+    return { docId: docRef.id, ranking };
 
   } catch (e) {
     console.error("Error adding document: ", e);
