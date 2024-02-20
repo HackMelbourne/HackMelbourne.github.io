@@ -17,3 +17,9 @@ export interface RiserOutputData {
   score: number;
   ranking: number;
 }
+
+export interface RankEntry {
+  name: string;
+  score: number;
+  id: string;
+}

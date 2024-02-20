@@ -1,19 +1,30 @@
-import React, { useEffect } from 'react';
-import Ranking from './Ranking';
-import { getRiserLeaderboard } from '../../services/firestoreServices';
+import React, { useEffect, useState } from "react";
+import Ranking from "./Ranking";
+import { getRiserLeaderboard } from "../../services/firestoreServices";
+import { RankEntry } from "../../routes/eventPages/RiserGame.model";
 
 const RiserLeaderboard = () => {
   // Will likely need to do some async stuff here
-  const leaderboardList = getRiserLeaderboard();
+  const [leaderboardList, setLeaderboardList] = useState<RankEntry[]>([]);
+
+  // Code runs when component mounts
+  useEffect(() => {
+    getRiserLeaderboard().then((result: RankEntry[]) => {
+      setLeaderboardList(result);
+    });
+
+    console.log(leaderboardList);
+  }, []);
 
   return (
     <section>
       <h2 className="text-4xl text-center font-bold mb-10">Leaderboard</h2>
       <div className="flex flex-col gap-6">
-        {/* Will need to update this */}
-        {/* {leaderboardList.map((entry) => (
-          <Ranking {...entry} />
-        ))} */}
+        {leaderboardList.length > 0 &&
+          leaderboardList.map((entry: RankEntry, i: number) => {
+            const { name, score, id } = entry;
+            return <Ranking rank={i + 1} name={name} score={score} />;
+          })}
       </div>
     </section>
   );
