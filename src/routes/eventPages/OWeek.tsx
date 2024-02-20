@@ -8,9 +8,9 @@ import { useNavigate } from "react-router-dom";
 import { RiserUserInput } from "./RiserGame.model";
 import Filter from "bad-words";
 
-
 import RiserLeaderboard from "../../features/Leaderboard/RiserLeaderboard";
 import { Info, Leaderboard, MoreHoriz, Refresh, SportsScore } from "@mui/icons-material";
+import { isUniqueStudentID } from "../../services/firestoreServices";
 
 const theme = createTheme({
   palette: {
@@ -103,7 +103,7 @@ export default function RiserGame() {
       lastName,
       email,
     };
-    const fullName = firstName + lastName;
+    const fullName = firstName + " " + lastName;
     const filter = new Filter();
     // Inputs length check
     if (Object.values(inputs).filter((input) => input.length > 0).length < 3) {
@@ -122,16 +122,28 @@ export default function RiserGame() {
       alert(
         "Invalid student ID, please recheck you have entered it correctly. If you don't have a studentID leave it blank",
       );
-    }
-    // Pass
-    else {
+    } else {
+      // Pass
       const validInput: RiserUserInput = {
         name: fullName,
         email: email,
         studentID: studentId === "" ? "0000000" : studentId,
         HMMember: isMember,
       };
-      navigate("/O-Week/playGame", { state: { ...validInput } });
+
+      if (studentId != "0000000") {
+        isUniqueStudentID(validInput.studentID)
+          .then(() => {
+            navigate("/O-Week/playGame", { state: { ...validInput } });
+          })
+          .catch((e) => {
+            console.log(e);
+            navigate("/O-Week");
+            alert("Error: Student ID is already been used. If this is a mistake please contact our staff");
+          });
+      } else {
+        navigate("/O-Week/playGame", { state: { ...validInput } });
+      }
     }
   };
 

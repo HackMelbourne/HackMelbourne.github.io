@@ -1,7 +1,7 @@
 // Firebase imports
 import { db, auth } from "../firebase";
 import { getAuth, signInAnonymously } from "firebase/auth";
-import { collection, addDoc, getDocs, limit, orderBy, query } from "firebase/firestore";
+import { collection, addDoc, getDocs, getDoc, limit, orderBy, query, setDoc, doc } from "firebase/firestore";
 
 import { useState, useEffect } from "react";
 
@@ -30,8 +30,16 @@ export async function setRiserGameData(data: RiserGameModel): Promise<RiserOutpu
 
     const preparedData = { ...data, highestScore: validHighestScore, submissionTime: new Date() };
 
-    const docRef = await addDoc(collection(db, "riserData"), preparedData);
-    console.log("Document added with ID:", docRef.id);
+    // Setting the data
+    if (data.studentID != "0000000") {
+      // Checking if the document already exists
+      const docRef = doc(db, "riserData", `${data.studentID}`);
+      await isUniqueStudentID(data.studentID);
+
+      await setDoc(doc(db, "riserData", `${data.studentID}`), preparedData);
+    } else {
+      await addDoc(collection(db, "riserData"), preparedData);
+    }
 
     // Calculate and return the ranking
     const ranking = await calculateRanking(validHighestScore);
@@ -40,6 +48,17 @@ export async function setRiserGameData(data: RiserGameModel): Promise<RiserOutpu
     console.error("Error adding document: ", e);
     throw new Error("Failed to set Riser game data");
   }
+}
+
+export async function isUniqueStudentID(id: string): Promise<boolean> {
+  const docRef = doc(db, "riserData", `${id}`);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    throw new Error("Student ID is has already been used");
+  }
+
+  return true;
 }
 
 export async function getRiserLeaderboard(): Promise<RankEntry[]> {
