@@ -139,7 +139,7 @@ export default function RiserGame() {
       </motion.section>
 
       <section className="flex flex-col items-center px-16 gap-6">
-        <h2 className="font-bold text-xl">How to play</h2>
+        <h2 className="font-bold text-2xl text-yellow-500">How to play</h2>
         <SportsScore fontSize="large" />
         <p>The goal of the game is to get as close to 2024 without going over</p>
         <MoreHoriz fontSize="large" />
