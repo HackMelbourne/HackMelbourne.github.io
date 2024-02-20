@@ -85,7 +85,7 @@ const OWeekGame = () => {
 
       // Need to make sure setRiserGameData comes back before navigate
       setRiserGameData(userGameData).then((value) => {
-        console.log("posted");
+        console.log("posted",value);
 
         // Change this when backend returns values
         const tempValue = {
