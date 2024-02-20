@@ -11,6 +11,7 @@ import Filter from "bad-words";
 import RiserLeaderboard from "../../features/Leaderboard/RiserLeaderboard";
 import { Info, Leaderboard, MoreHoriz, Refresh, SportsScore } from "@mui/icons-material";
 import { isUniqueStudentID } from "../../services/firestoreServices";
+import { FaTrophy } from "react-icons/fa";
 
 const theme = createTheme({
   palette: {
@@ -62,7 +63,7 @@ export default function RiserGame() {
 
   const pageInfo = {
     title: "O-Week Riser",
-    description: `Test your skill and luck at our riser game where you just need to hit the button at the right time. Win big prizes`,
+    description: `Test your skill and luck at our riser game where you just need to hit the button at the right time.`,
   };
 
   const leaderboard = [
@@ -162,7 +163,20 @@ export default function RiserGame() {
         <Refresh fontSize="large" />
         <p>Press the button to start and press it again to stop</p>
         <Info fontSize="large" />
-        <p>Note: anyone can play but only UniMelb students can win prizes</p>
+        <p>
+          Note: anyone can play but only UniMelb students can win prizes. To be eligible for a prize you must enter your
+          own studentID. We will then email you the prize if you win
+        </p>
+      </section>
+
+      <section className="flex flex-col items-center px-16 gap-6">
+        <FaTrophy size="3em" />
+        <h2 className="font-bold text-2xl text-yellow-500">Prizes</h2>
+
+        <p>First Place : $40</p>
+        <p>Second Place : $20</p>
+        <p>Third Place : $10</p>
+        <p>Additional Prizes : Mystery Merch</p>
       </section>
 
       <form onSubmit={handleSubmit}>
