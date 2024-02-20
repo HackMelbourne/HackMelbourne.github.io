@@ -1,19 +1,7 @@
-import { functions, db, auth } from "../firebase";
-
-import {
-  addDoc,
-  collection,
-  doc,
-  setDoc,
-  query,
-  orderBy,
-  limit,
-  onSnapshot,
-  getDoc,
-  getDocs,
-} from "firebase/firestore";
-import { httpsCallable } from "firebase/functions";
+// Firebase imports
+import { db, auth } from "../firebase";
 import { signInAnonymously } from 'firebase/auth';
+import { collection, addDoc, getDocs, limit, orderBy, query } from 'firebase/firestore';
 
 import { useState, useEffect } from "react";
 
@@ -21,35 +9,27 @@ import { useState, useEffect } from "react";
 import { RiserGameModel, RiserOutputData, RankEntry } from "../routes/eventPages/RiserGame.model";
 import { Leaderboard } from "@mui/icons-material";
 
+
 export async function setRiserGameData(data: RiserGameModel) {
   try {
     // Ensure the user is anonymously signed in
-    const userCredential = await signInAnonymously(auth);
-    console.log(`User signed in anonymously as ${userCredential.user.uid}`);
+    await signInAnonymously(auth);
 
-    // Calculate the highest score from the gameData scores
-    const highestScore = Math.max(...data.gameData);
-    const submissionTime = new Date(); // Current time for submission
-
-    const preparedData = {
-      name: data.name,
-      email: data.email,
-      studentID: data.studentID,
-      HMMember: data.HMMember,
-      gameData: data.gameData,
-      highestScore: highestScore,
-      submissionTime: submissionTime,
+    const preparedData = {...data,
+      highestScore: Math.max(...data.gameData),
+      submissionTime: new Date(),
     };
 
-    const setData = httpsCallable(functions, "setRiserData");
-    const result = await setData(preparedData);
-    console.log("Successful", result.data);
-    return result.data;
+    // Directly add data to Firestore
+    const docRef = await addDoc(collection(db, "riserData"), preparedData);
+    console.log("Document written with ID: ", docRef.id);
+    return { success: true, id: docRef.id };
   } catch (e) {
-    console.error("Error in setRiserGameData:", e);
+    console.error("Error adding document: ", e);
     throw new Error("Failed to set Riser game data");
   }
 }
+
 
 export async function getRiserLeaderboard(): Promise<RankEntry[]> {
   const leaderboardRef = collection(db, "testRiserData");
