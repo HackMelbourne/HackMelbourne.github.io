@@ -8,11 +8,11 @@ import { useState, useEffect } from "react";
 // Model imports
 import { RiserGameModel, RiserOutputData } from "../routes/eventPages/RiserGame.model";
 
-type RankList = {
+interface Rank {
   name: string,
   score: number,
   id: string,
-}[];
+}
 
 export async function setRiserGameData(data: RiserGameModel) {
   const setData = httpsCallable(functions, "setRiserData");
@@ -34,33 +34,34 @@ export async function setRiserGameData(data: RiserGameModel) {
 }
 
 export function getRiserLeaderboard() {
-  const [rankings, setRankings] = useState<RankList>([]);
-  const leaderboardRef = collection(db, "riserData");
+  const [rankings, setRankings] = useState<Rank[]>([]);
+  const leaderboardRef = collection(db, "leaderboard-test");
 
   const getRankings = async () => {
+    let unsubscribe : any;
     try {
-      const unsubscribe = onSnapshot(query(
+      unsubscribe = onSnapshot(query(
         leaderboardRef,
-        orderBy("gameData"),
+        orderBy("score"),
         orderBy("createdOn"),
         limit(20)),
         (querySnapshot) => {
-          const ranks = querySnapshot.docs.map((doc) => {
-            return {
+          let ranks : Rank[] = [];
+          querySnapshot.forEach((doc) => {
+            ranks.push({
               name: doc.data().name,
-              score: doc.data().gameData,
+              score: doc.data().score,
               id: doc.id,
-            }
+            });
+            setRankings(ranks);
           });
-          setRankings(ranks);
-        }
-      );
-      return () => { 
-        unsubscribe(); 
-      };
+        });
     } catch (e) {
       console.log(e);
     }
+    return () => { 
+      unsubscribe(); 
+    };
   }
   
   useEffect(() => {

@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { RiserUserInput } from "./RiserGame.model";
 import Filter from "bad-words";
 
-import Ranking from "../../features/Leaderboard/Ranking";
+import RiserLeaderboard from "../../features/Leaderboard/RiserLeaderboard";;
 import { Leaderboard } from "@mui/icons-material";
 
 const theme = createTheme({
@@ -213,7 +213,7 @@ export default function RiserGame() {
         </FormControl>
       </form>
 
-      <Leaderboard></Leaderboard>
+      <RiserLeaderboard />
     </div>
   );
 }
