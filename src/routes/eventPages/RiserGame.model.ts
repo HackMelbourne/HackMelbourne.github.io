@@ -15,7 +15,7 @@ export interface RiserUserInput {
 
 export interface RiserOutputData {
   score: number;
-  ranking: number;
+  // ranking: number;
 }
 
 export interface RankEntry {

@@ -10,7 +10,7 @@ const GameComplete = () => {
 
   const navigate = useNavigate();
 
-  const [ranking, setRanking] = useState<number>(0);
+  // const [ranking, setRanking] = useState<number>(0);
   const [score, setScore] = useState<number>(0);
   // If data is empty
   useEffect(() => {
@@ -20,14 +20,14 @@ const GameComplete = () => {
       console.log("boohoo");
     }
 
-    setRanking(data.ranking);
+    // setRanking(data.ranking);
     setScore(data.score);
   }, []);
 
   return (
     <div className="w-screen flex flex-col items-center max-w-2xl pt-32 mx-auto px-8 gap-8">
       <div className="flex flex-col text-center gap-2">
-        <p>{`#${ranking} in Ranking`}</p>
+        {/* <p>{`#${ranking} in Ranking`}</p> */}
         <h1 className="text-8xl font-bold text-center">{score}</h1>
         <p className="text-xl font-semibold">Your Highscore</p>
       </div>

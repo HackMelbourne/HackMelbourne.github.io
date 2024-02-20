@@ -9,19 +9,19 @@ import { useState, useEffect } from "react";
 import { RiserGameModel, RiserOutputData, RankEntry } from "../routes/eventPages/RiserGame.model";
 import { Leaderboard } from "@mui/icons-material";
 
-async function calculateRanking(newScore: Number) {
-  const scoresRef = collection(db, "riserData");
-  const snapshot = await getDocs(scoresRef);
-  const scores = snapshot.docs.map((doc) => doc.data().highestScore);
+// async function calculateRanking(newScore: Number) {
+//   const scoresRef = collection(db, "riserData");
+//   const snapshot = await getDocs(scoresRef);
+//   const scores = snapshot.docs.map((doc) => doc.data().highestScore);
 
-  // Include the new score in the calculation
-  scores.push(newScore);
-  scores.sort((a, b) => b - a); // Sort scores in descending order
+//   // Include the new score in the calculation
+//   scores.push(newScore);
+//   scores.sort((a, b) => b - a); // Sort scores in descending order
 
-  // Find the ranking of the new score
-  const ranking = scores.indexOf(newScore) + 1; // Convert index to ranking
-  return ranking;
-}
+//   // Find the ranking of the new score
+//   const ranking = scores.indexOf(newScore) + 1; // Convert index to ranking
+//   return ranking;
+// }
 
 export async function setRiserGameData(data: RiserGameModel): Promise<RiserOutputData> {
   await signInAnonymously(auth);
@@ -44,8 +44,8 @@ export async function setRiserGameData(data: RiserGameModel): Promise<RiserOutpu
     }
 
     // Calculate and return the ranking
-    const ranking = await calculateRanking(validHighestScore);
-    return { score: validHighestScore, ranking: ranking };
+    // const ranking = await calculateRanking(validHighestScore);
+    return { score: validHighestScore };
   } catch (e) {
     console.error("Error adding document: ", e);
     throw new Error("Failed to set Riser game data");
