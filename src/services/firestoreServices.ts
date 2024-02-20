@@ -1,4 +1,4 @@
-import { functions, db } from "../firebase";
+import { functions, db, auth } from "../firebase";
 
 import {
   addDoc,
@@ -13,6 +13,7 @@ import {
   getDocs,
 } from "firebase/firestore";
 import { httpsCallable } from "firebase/functions";
+import { signInAnonymously } from "firebase/auth";
 
 import { useState, useEffect } from "react";
 
@@ -21,6 +22,8 @@ import { RiserGameModel, RiserOutputData, RankEntry } from "../routes/eventPages
 import { Leaderboard } from "@mui/icons-material";
 
 export async function setRiserGameData(data: RiserGameModel) {
+  await signInAnonymously(auth);
+
   const setData = httpsCallable(functions, "setRiserData");
   try {
     return setData({

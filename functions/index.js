@@ -6,7 +6,8 @@
  *
  * See a full list of supported triggers at https://firebase.google.com/docs/functions
  */
-const { onCall } = require("firebase-functions/v2/https");
+const { onCall, HttpsError } = require("firebase-functions/v2/https");
+const { logger } = require("firebase-functions/v2");
 
 const { setGlobalOptions } = require("firebase-functions/v2");
 
@@ -22,14 +23,15 @@ setGlobalOptions({ maxInstances: 10 });
 // https://firebase.google.com/docs/functions/typescript
 
 exports.setRiserData = onCall(async (req) => {
-  console.log(req.data.name);
-  const result = {
-    name: req.data.name,
-    email: req.data.email,
-    studentID: req.data.studentID,
-    HMMember: req.data.HMMember,
-    gameData: req.data.gameData,
-  };
+  if (req.auth) {
+    const result = {
+      name: req.data.name,
+      email: req.data.email,
+      studentID: req.data.studentID,
+      HMMember: req.data.HMMember,
+      gameData: req.data.gameData,
+    };
+  }
 
   await getFirestore().collection("riserData").add(result);
 
