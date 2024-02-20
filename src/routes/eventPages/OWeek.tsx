@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, TextField, FormControl, Checkbox, FormControlLabel } from "@mui/material";
+import { Button, TextField, FormControl, Checkbox, FormControlLabel, Alert } from "@mui/material";
 import TitleHero from "../../features/TitleHero/TitleHero";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -9,7 +9,7 @@ import { RiserUserInput } from "./RiserGame.model";
 import Filter from "bad-words";
 
 import Ranking from "../../features/Leaderboard/Ranking";
-import { Leaderboard } from "@mui/icons-material";
+import { Info, Leaderboard, MoreHoriz, Refresh, SportsScore } from "@mui/icons-material";
 
 const theme = createTheme({
   palette: {
@@ -138,8 +138,20 @@ export default function RiserGame() {
         <TitleHero pageTitle={pageInfo.title} pageDescription={pageInfo.description}></TitleHero>
       </motion.section>
 
+      <section className="flex flex-col items-center px-16 gap-6">
+        <h2 className="font-bold text-xl">How to play</h2>
+        <SportsScore fontSize="large" />
+        <p>The goal of the game is to get as close to 2024 without going over</p>
+        <MoreHoriz fontSize="large" />
+        <p>You will get 3 tries and your best score out of those three is submitted</p>
+        <Refresh fontSize="large" />
+        <p>Press the button to start and press it again to stop</p>
+        <Info fontSize="large" />
+        <p>Note: anyone can play but only UniMelb students can win prizes</p>
+      </section>
+
       <form onSubmit={handleSubmit}>
-        <h1 className="font-bold text-3xl flex justify-center mb-8">Sign up to join</h1>
+        <h1 className="font-bold text-3xl flex justify-center mb-8">Enter your details</h1>
         <FormControl>
           <div className="border border-[#5899F5] bg-[#5899F5] bg-opacity-5 p-12 flex flex-col justify-center gap-10 rounded-md">
             <ThemeProvider theme={theme}>
