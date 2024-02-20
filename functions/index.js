@@ -31,9 +31,9 @@ exports.setRiserData = onCall(async (req) => {
       HMMember: req.data.HMMember,
       gameData: req.data.gameData,
     };
-  }
 
-  await getFirestore().collection("riserData").add(result);
+    await getFirestore().collection("riserData").add(result);
+  }
 
   return { text: "hi" };
 });
