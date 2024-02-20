@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { Outlet, useLocation } from 'react-router';
-import { FaDiscord, FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa';
+import React, { useEffect, useState } from "react";
+import { Outlet, useLocation } from "react-router";
+import { FaDiscord, FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa";
 import {
   DISCORD_LINK,
   FACEBOOK_LINK,
@@ -10,19 +10,22 @@ import {
   SECRETARY_EMAIL,
   UMSU_LINK,
   GITHUB_LINK,
-} from '../constants';
+} from "../constants";
+
+// Google Analytics
+import ReactGA from "react-ga";
 
 // Components
-import Navbar from './Navbar';
-import Footer from './Footer';
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 // Styles
-import '../styles/layout.css';
+import "../styles/layout.css";
 
 // Pathnames here will not have a navbar
-const dontShowNavbarPathnames = ['/example'];
+const dontShowNavbarPathnames = ["/example"];
 // Pathnames here will not have a footer
-const dontShowFooterPathnames = ['/example'];
+const dontShowFooterPathnames = ["/example"];
 
 const Layout = () => {
   const location = useLocation();
@@ -31,7 +34,7 @@ const Layout = () => {
 
   // Navbar conditional rendering
   useEffect(() => {
-    console.log('useEffect!');
+    console.log("useEffect!");
     const pathname = window.location.pathname;
     console.log(pathname);
     const isNavbarHidden = dontShowNavbarPathnames.some((path) => pathname.includes(path));
@@ -40,45 +43,50 @@ const Layout = () => {
     setIsShowFooter(!isFooterHidden);
   }, [location]);
 
+  // Google analytics data
+  useEffect(() => {
+    ReactGA.pageview(location.pathname + location.search);
+  }, [location]);
+
   const nav = {
-    clubname: 'HackMelbourne',
-    logo: '/img/HM_White_Transparent.png',
-    pages: ['Home', 'About Us', 'Events', 'Sponsors'],
-    links: ['/', '/about', '/events', '/sponsor'],
+    clubname: "HackMelbourne",
+    logo: "/img/HM_White_Transparent.png",
+    pages: ["Home", "About Us", "Events", "Sponsors"],
+    links: ["/", "/about", "/events", "/sponsor"],
   };
 
   const footer = {
     links: [
       {
-        title: 'Organisation',
+        title: "Organisation",
         links: [
-          { name: 'Join Committee', link: '#' },
-          { name: 'UMSU', link: UMSU_LINK },
-          { name: 'Contact Us', link: '#' },
+          { name: "Join Committee", link: "#" },
+          { name: "UMSU", link: UMSU_LINK },
+          { name: "Contact Us", link: "#" },
         ],
       },
       {
-        title: 'Legal',
+        title: "Legal",
         links: [
-          { name: 'Privacy Policy', link: '/privacy' },
-          { name: 'Terms and Conditions', link: '/terms' },
+          { name: "Privacy Policy", link: "/privacy" },
+          { name: "Terms and Conditions", link: "/terms" },
         ],
       },
       {
-        title: 'Resources',
+        title: "Resources",
         links: [
-          { name: 'Past Events', link: '#' },
-          { name: 'GitHub', link: GITHUB_LINK },
-          { name: 'Design Guidelines', link: '#' },
+          { name: "Past Events", link: "#" },
+          { name: "GitHub", link: GITHUB_LINK },
+          { name: "Design Guidelines", link: "#" },
         ],
       },
     ],
     icons: [
-      { name: 'Facebook', icon: FaFacebook, link: FACEBOOK_LINK },
-      { name: 'Instagram', icon: FaInstagram, link: INSTAGRAM_LINK },
-      { name: 'Discord', icon: FaDiscord, link: DISCORD_LINK },
-      { name: 'LinkedIn', icon: FaLinkedin, link: LINKEDIN_LINK },
-      { name: 'Email', icon: FaEnvelope, link: `mailto:${SECRETARY_EMAIL}` },
+      { name: "Facebook", icon: FaFacebook, link: FACEBOOK_LINK },
+      { name: "Instagram", icon: FaInstagram, link: INSTAGRAM_LINK },
+      { name: "Discord", icon: FaDiscord, link: DISCORD_LINK },
+      { name: "LinkedIn", icon: FaLinkedin, link: LINKEDIN_LINK },
+      { name: "Email", icon: FaEnvelope, link: `mailto:${SECRETARY_EMAIL}` },
     ],
   };
 
