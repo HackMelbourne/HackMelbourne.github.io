@@ -43,13 +43,13 @@ export async function setRiserGameData(data: RiserGameModel): Promise<RiserOutpu
 }
 
 export async function getRiserLeaderboard(): Promise<RankEntry[]> {
-  const leaderboardRef = collection(db, "testRiserData");
+  const leaderboardRef = collection(db, "riserData");
 
   let leaderboardData: RankEntry[] = [];
 
   try {
     // Add orderby time when firebase functions implements feature
-    const q = query(leaderboardRef, orderBy("score", "desc"), limit(20));
+    const q = query(leaderboardRef, orderBy("highestScore", "desc"), orderBy("submissionTime"), limit(20));
 
     const querySnapshot = await getDocs(q);
 
@@ -59,7 +59,7 @@ export async function getRiserLeaderboard(): Promise<RankEntry[]> {
       querySnapshot.forEach((doc) => {
         leaderboardData.push({
           name: doc.data().name,
-          score: doc.data().score,
+          score: doc.data().highestScore,
           id: doc.id,
         });
       });

@@ -23,7 +23,7 @@ const RiserLeaderboard = () => {
         {leaderboardList.length > 0 &&
           leaderboardList.map((entry: RankEntry, i: number) => {
             const { name, score, id } = entry;
-            return <Ranking rank={i + 1} name={name} score={score} />;
+            return <Ranking rank={i + 1} name={name} score={score} key={i} />;
           })}
       </div>
     </section>
