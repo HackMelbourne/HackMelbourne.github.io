@@ -10,7 +10,7 @@ import Filter from "bad-words";
 
 import RiserLeaderboard from "../../features/Leaderboard/RiserLeaderboard";
 import { Info, Leaderboard, MoreHoriz, Refresh, SportsScore } from "@mui/icons-material";
-import { isUniqueStudentID } from "../../services/firestoreServices";
+import { isUniqueEmail } from "../../services/firestoreServices";
 import { FaTrophy } from "react-icons/fa";
 
 const theme = createTheme({
@@ -132,19 +132,15 @@ export default function RiserGame() {
         HMMember: isMember,
       };
 
-      if (studentId != "0000000") {
-        isUniqueStudentID(validInput.studentID)
-          .then(() => {
-            navigate("/O-Week/playGame", { state: { ...validInput } });
-          })
-          .catch((e) => {
-            console.log(e);
-            navigate("/O-Week");
-            alert("Error: Student ID is already been used. If this is a mistake please contact our staff");
-          });
-      } else {
-        navigate("/O-Week/playGame", { state: { ...validInput } });
-      }
+      isUniqueEmail(validInput.email)
+        .then(() => {
+          navigate("/O-Week/playGame", { state: { ...validInput } });
+        })
+        .catch((e) => {
+          console.log(e);
+          navigate("/O-Week");
+          alert("Error: Email is already been used. If this is a mistake please contact our staff");
+        });
     }
   };
 
@@ -164,8 +160,7 @@ export default function RiserGame() {
         <p>Press the button to start and press it again to stop</p>
         <Info fontSize="large" />
         <p>
-          Note: anyone can play but only UniMelb students can win prizes. To be eligible for a prize you must enter your
-          own studentID. We will then email you the prize if you win
+          Note: anyone can play but only UniMelb students can win prizes. We will then email you the prize if you win
         </p>
       </section>
 
