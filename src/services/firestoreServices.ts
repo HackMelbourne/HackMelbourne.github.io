@@ -12,20 +12,20 @@ import { Leaderboard } from "@mui/icons-material";
 
 export async function setRiserGameData(data: RiserGameModel) {
   try {
-    // Ensure the user is anonymously signed in
-    const auth = getAuth();
-    signInAnonymously(auth)
-      .then(() => {
-        const preparedData = {...data,
-          highestScore: Math.max(...data.gameData),
-          submissionTime: new Date(),
-        };
+    const preparedData = {...data,
+      highestScore: Math.max(...data.gameData),
+      submissionTime: new Date(),
+    };
 
-        return addDoc(collection(db, "riserData"), preparedData);
-      })
-      .catch((error) => {
-        console.log(error)
-      });
+    return addDoc(collection(db, "riserData"), preparedData);
+    // // Ensure the user is anonymously signed in
+    // const auth = getAuth();
+    // signInAnonymously(auth)
+    //   .then(() => {
+    //   })
+    //   .catch((error) => {
+    //     console.log(error)
+    //   });
 
   } catch (e) {
     console.error("Error adding document: ", e);
