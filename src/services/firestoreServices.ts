@@ -44,12 +44,12 @@ export async function setRiserGameData(data: RiserGameModel): Promise<RiserOutpu
   }
 }
 
-export async function isUniqueStudentID(id: string): Promise<boolean> {
+export async function isUniqueEmail(id: string): Promise<boolean> {
   const docRef = doc(db, "riserData", `${id}`);
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
-    throw new Error("Student ID is has already been used");
+    throw new Error("Email is has already been used");
   }
 
   return true;

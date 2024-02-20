@@ -10,7 +10,8 @@ import Filter from "bad-words";
 
 import RiserLeaderboard from "../../features/Leaderboard/RiserLeaderboard";
 import { Info, Leaderboard, MoreHoriz, Refresh, SportsScore } from "@mui/icons-material";
-import { isUniqueStudentID } from "../../services/firestoreServices";
+import { isUniqueEmail } from "../../services/firestoreServices";
+import cleanEmail from "../../services/cleanEmails";
 
 const theme = createTheme({
   palette: {
@@ -123,27 +124,25 @@ export default function RiserGame() {
         "Invalid student ID, please recheck you have entered it correctly. If you don't have a studentID leave it blank",
       );
     } else {
+      const sanitisedEmail = cleanEmail(email);
+
       // Pass
       const validInput: RiserUserInput = {
         name: fullName,
-        email: email,
+        email: sanitisedEmail,
         studentID: studentId === "" ? "0000000" : studentId,
         HMMember: isMember,
       };
 
-      if (studentId != "0000000") {
-        isUniqueStudentID(validInput.studentID)
-          .then(() => {
-            navigate("/O-Week/playGame", { state: { ...validInput } });
-          })
-          .catch((e) => {
-            console.log(e);
-            navigate("/O-Week");
-            alert("Error: Student ID is already been used. If this is a mistake please contact our staff");
-          });
-      } else {
-        navigate("/O-Week/playGame", { state: { ...validInput } });
-      }
+      isUniqueEmail(validInput.email)
+        .then(() => {
+          navigate("/O-Week/playGame", { state: { ...validInput } });
+        })
+        .catch((e) => {
+          console.log(e);
+          navigate("/O-Week");
+          alert("Error: Student ID is already been used. If this is a mistake please contact our staff");
+        });
     }
   };
 
