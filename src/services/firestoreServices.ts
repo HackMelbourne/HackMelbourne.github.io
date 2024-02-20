@@ -24,6 +24,8 @@ async function calculateRanking(newScore: Number) {
 }
 
 export async function setRiserGameData(data: RiserGameModel): Promise<RiserOutputData> {
+  await signInAnonymously(auth);
+
   try {
     const highestScore = Math.max(...data.gameData);
     const validHighestScore = highestScore <= 2024 ? highestScore : 0;
