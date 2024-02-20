@@ -17,14 +17,8 @@ import { httpsCallable } from "firebase/functions";
 import { useState, useEffect } from "react";
 
 // Model imports
-import { RiserGameModel, RiserOutputData } from "../routes/eventPages/RiserGame.model";
+import { RiserGameModel, RiserOutputData, RankEntry } from "../routes/eventPages/RiserGame.model";
 import { Leaderboard } from "@mui/icons-material";
-
-interface RankEntry {
-  name: string;
-  score: number;
-  id: string;
-}
 
 export async function setRiserGameData(data: RiserGameModel) {
   const setData = httpsCallable(functions, "setRiserData");

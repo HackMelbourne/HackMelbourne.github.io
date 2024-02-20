@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Ranking from "./Ranking";
 import { getRiserLeaderboard } from "../../services/firestoreServices";
-
-interface RankEntry {
-  name: string;
-  score: number;
-  id: string;
-}
+import { RankEntry } from "../../routes/eventPages/RiserGame.model";
 
 const RiserLeaderboard = () => {
   // Will likely need to do some async stuff here

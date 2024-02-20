@@ -8,8 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { RiserUserInput } from "./RiserGame.model";
 import Filter from "bad-words";
 
-import Ranking from "../../features/Leaderboard/Ranking";
-import { Leaderboard } from "@mui/icons-material";
+import RiserLeaderboard from "../../features/Leaderboard/RiserLeaderboard";
 
 const theme = createTheme({
   palette: {
@@ -118,7 +117,9 @@ export default function RiserGame() {
     }
     // Student ID Check
     else if (!studentId.match(/^\d{7}$/) && studentId.length > 0) {
-      alert("Invalid student ID, please recheck you have entered it correctly.");
+      alert(
+        "Invalid student ID, please recheck you have entered it correctly. If you don't have a studentID leave it blank",
+      );
     }
     // Pass
     else {
@@ -213,7 +214,7 @@ export default function RiserGame() {
         </FormControl>
       </form>
 
-      <Leaderboard></Leaderboard>
+      <RiserLeaderboard></RiserLeaderboard>
     </div>
   );
 }
