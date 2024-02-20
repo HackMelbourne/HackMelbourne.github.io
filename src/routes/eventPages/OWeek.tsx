@@ -161,7 +161,7 @@ export default function RiserGame() {
                 onChange={(e) => setFirstName(e.target.value)}
                 variant="standard"
                 color="primary"
-                label="First Name"
+                label="First Name*"
                 InputLabelProps={{
                   sx: { color: "white", "&.Mui-focused": { color: "white" } },
                 }}
@@ -174,7 +174,7 @@ export default function RiserGame() {
                 onChange={(e) => setLastName(e.target.value)}
                 variant="standard"
                 color="primary"
-                label="Last Name"
+                label="Last Name*"
                 InputLabelProps={{
                   sx: { color: "white", "&.Mui-focused": { color: "white" } },
                 }}
@@ -187,7 +187,7 @@ export default function RiserGame() {
                 onChange={(e) => setEmail(e.target.value)}
                 variant="standard"
                 color="primary"
-                label="Email"
+                label="Email*"
                 InputLabelProps={{
                   sx: { color: "white", "&.Mui-focused": { color: "white" } },
                 }}
