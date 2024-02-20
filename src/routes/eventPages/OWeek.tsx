@@ -9,7 +9,7 @@ import { RiserUserInput } from "./RiserGame.model";
 import Filter from "bad-words";
 
 import Ranking from "../../features/Leaderboard/Ranking";
-import { Leaderboard } from "@mui/icons-material";
+import RiserLeaderboard from "../../features/Leaderboard/RiserLeaderboard";
 
 const theme = createTheme({
   palette: {
@@ -213,7 +213,7 @@ export default function RiserGame() {
         </FormControl>
       </form>
 
-      <Leaderboard></Leaderboard>
+      <RiserLeaderboard></RiserLeaderboard>
     </div>
   );
 }
