@@ -21,7 +21,7 @@ import OWeekGame from "./routes/eventPages/OWeekGame";
 import GameComplete from "./routes/eventPages/GameComplete";
 
 //Google Analytics
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 ReactGA.initialize("G-BCJY191MCE");
 
 const router = createBrowserRouter(

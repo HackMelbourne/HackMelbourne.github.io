@@ -17,7 +17,6 @@ const GameComplete = () => {
     console.log(data);
     if (data == null) {
       navigate("/O-Week");
-      console.log("boohoo");
     }
 
     // setRanking(data.ranking);

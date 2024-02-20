@@ -12,9 +12,6 @@ import {
   GITHUB_LINK,
 } from "../constants";
 
-// Google Analytics
-import ReactGA from "react-ga";
-
 // Components
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -41,11 +38,6 @@ const Layout = () => {
     const isFooterHidden = dontShowFooterPathnames.some((path) => pathname.includes(path));
     setIsShowNavbar(!isNavbarHidden);
     setIsShowFooter(!isFooterHidden);
-  }, [location]);
-
-  // Google analytics data
-  useEffect(() => {
-    ReactGA.pageview(location.pathname + location.search);
   }, [location]);
 
   const nav = {
