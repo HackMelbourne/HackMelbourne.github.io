@@ -112,7 +112,7 @@ export default function RiserGame() {
       alert("Please fill in all required details");
     }
     // Profanity check
-    else if (filter.isProfane(fullName) || filter.isProfane(email)) {
+    else if (filter.isProfane(fullName)) {
       alert("Profanity detected, please delete any inappropriate text.");
     }
     // Email Check
