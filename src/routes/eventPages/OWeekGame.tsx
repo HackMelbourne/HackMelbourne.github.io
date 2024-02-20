@@ -11,10 +11,10 @@ const OWeekGame = () => {
 
   // If data is empty
   useEffect(() => {
-    console.log(data);
+    window.scrollTo(0, 0);
+
     if (data == null) {
       navigate("/O-Week");
-      console.log("boohoo");
     }
   }, []);
 
