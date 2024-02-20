@@ -34,6 +34,7 @@ const OWeekGame = () => {
   const [isActive, setIsActive] = useState(false);
   const [time, setTime] = useState(0);
   const [attempts, setAttempts] = useState(0);
+  const [btnText, setBtnText] = useState("Start");
 
   // Timer Function
   useEffect(() => {
@@ -61,12 +62,14 @@ const OWeekGame = () => {
   const handleStart = () => {
     setTime(0);
     setIsActive(true);
+    setBtnText("Stop");
   };
 
   // Timer end
   const handleEnd = () => {
     setIsActive(false);
     setAttempts(attempts + 1);
+    setBtnText("Start");
 
     if (time > GAMEGOAL) {
       alert("Oops! You went over 2024! Your score is disqualified");
@@ -92,6 +95,8 @@ const OWeekGame = () => {
 
         navigate("/O-Week/complete", { state: { ...tempValue } });
       });
+
+      setBtnText("Sending...");
     }
   };
 
@@ -129,7 +134,7 @@ const OWeekGame = () => {
       <button
         onClick={btnPress}
         className="bg-yellow-500/10 border border-yellow-500 rounded-full w-48 h-48 flex content-center justify-center flex-wrap">
-        <div className=" font-bold text-4xl">START</div>
+        <div className=" font-bold text-4xl">{btnText}</div>
       </button>
       <div className="flex flex-col gap-2 items-center">
         <div className="flex flex-row gap-4">{attemptBoxes}</div>
