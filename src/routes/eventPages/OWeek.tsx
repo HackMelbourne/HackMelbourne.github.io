@@ -10,7 +10,9 @@ import Filter from "bad-words";
 
 import RiserLeaderboard from "../../features/Leaderboard/RiserLeaderboard";
 import { Info, Leaderboard, MoreHoriz, Refresh, SportsScore } from "@mui/icons-material";
-import { isUniqueStudentID } from "../../services/firestoreServices";
+import { isUniqueEmail } from "../../services/firestoreServices";
+import { FaTrophy } from "react-icons/fa";
+import cleanEmail from "../../services/cleanEmails";
 
 const theme = createTheme({
   palette: {
@@ -62,7 +64,7 @@ export default function RiserGame() {
 
   const pageInfo = {
     title: "O-Week Riser",
-    description: `Test your skill and luck at our riser game where you just need to hit the button at the right time. Win big prizes`,
+    description: `Test your skill and luck at our riser game where you just need to hit the button at the right time.`,
   };
 
   const leaderboard = [
@@ -110,7 +112,7 @@ export default function RiserGame() {
       alert("Please fill in all required details");
     }
     // Profanity check
-    else if (filter.isProfane(fullName) || filter.isProfane(email)) {
+    else if (filter.isProfane(fullName)) {
       alert("Profanity detected, please delete any inappropriate text.");
     }
     // Email Check
@@ -123,27 +125,24 @@ export default function RiserGame() {
         "Invalid student ID, please recheck you have entered it correctly. If you don't have a studentID leave it blank",
       );
     } else {
+      const sanitisedEmail: string = cleanEmail(email);
       // Pass
       const validInput: RiserUserInput = {
         name: fullName,
-        email: email,
+        email: sanitisedEmail,
         studentID: studentId === "" ? "0000000" : studentId,
         HMMember: isMember,
       };
 
-      if (studentId != "0000000") {
-        isUniqueStudentID(validInput.studentID)
-          .then(() => {
-            navigate("/O-Week/playGame", { state: { ...validInput } });
-          })
-          .catch((e) => {
-            console.log(e);
-            navigate("/O-Week");
-            alert("Error: Student ID is already been used. If this is a mistake please contact our staff");
-          });
-      } else {
-        navigate("/O-Week/playGame", { state: { ...validInput } });
-      }
+      isUniqueEmail(validInput.email)
+        .then(() => {
+          navigate("/O-Week/playGame", { state: { ...validInput } });
+        })
+        .catch((e) => {
+          console.log(e);
+          navigate("/O-Week");
+          alert("Error: Email is already been used. If this is a mistake please contact our staff");
+        });
     }
   };
 
@@ -162,7 +161,19 @@ export default function RiserGame() {
         <Refresh fontSize="large" />
         <p>Press the button to start and press it again to stop</p>
         <Info fontSize="large" />
-        <p>Note: anyone can play but only UniMelb students can win prizes</p>
+        <p>
+          Note: anyone can play but only UniMelb students can win prizes. We will then email you the prize if you win
+        </p>
+      </section>
+
+      <section className="flex flex-col items-center px-16 gap-6">
+        <FaTrophy size="3em" />
+        <h2 className="font-bold text-2xl text-yellow-500">Prizes</h2>
+
+        <p>First Place : $40</p>
+        <p>Second Place : $20</p>
+        <p>Third Place : $10</p>
+        <p>Additional Prizes : Mystery Merch</p>
       </section>
 
       <form onSubmit={handleSubmit}>
