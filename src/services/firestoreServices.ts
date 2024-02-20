@@ -30,9 +30,16 @@ export async function setRiserGameData(data: RiserGameModel): Promise<RiserOutpu
 
     const preparedData = { ...data, highestScore: validHighestScore, submissionTime: new Date() };
 
-    // Checking if the document already exists
-    await isUniqueEmail(data.email);
-    await setDoc(doc(db, "riserData", data.email), preparedData);
+    // Setting the data
+    if (data.studentID != "0000000") {
+      // Checking if the document already exists
+      const docRef = doc(db, "riserData", `${data.studentID}`);
+      await isUniqueStudentID(data.studentID);
+
+      await setDoc(doc(db, "riserData", `${data.studentID}`), preparedData);
+    } else {
+      await addDoc(collection(db, "riserData"), preparedData);
+    }
 
     // Calculate and return the ranking
     const ranking = await calculateRanking(validHighestScore);
@@ -43,7 +50,7 @@ export async function setRiserGameData(data: RiserGameModel): Promise<RiserOutpu
   }
 }
 
-export async function isUniqueEmail(id: string): Promise<boolean> {
+export async function isUniqueStudentID(id: string): Promise<boolean> {
   const docRef = doc(db, "riserData", `${id}`);
   const docSnap = await getDoc(docRef);
 
