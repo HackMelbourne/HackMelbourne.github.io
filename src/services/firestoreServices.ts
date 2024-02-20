@@ -1,7 +1,7 @@
 // Firebase imports
 import { db, auth } from "../firebase";
 import { getAuth, signInAnonymously } from "firebase/auth";
-import { collection, addDoc, getDocs, limit, orderBy, query } from 'firebase/firestore';
+import { collection, addDoc, getDocs, limit, orderBy, query } from "firebase/firestore";
 
 import { useState, useEffect } from "react";
 
@@ -12,7 +12,7 @@ import { Leaderboard } from "@mui/icons-material";
 async function calculateRanking(newScore: Number) {
   const scoresRef = collection(db, "riserData");
   const snapshot = await getDocs(scoresRef);
-  const scores = snapshot.docs.map(doc => doc.data().highestScore);
+  const scores = snapshot.docs.map((doc) => doc.data().highestScore);
 
   // Include the new score in the calculation
   scores.push(newScore);
@@ -23,30 +23,24 @@ async function calculateRanking(newScore: Number) {
   return ranking;
 }
 
-export async function setRiserGameData(data: RiserGameModel) {
+export async function setRiserGameData(data: RiserGameModel): Promise<RiserOutputData> {
   try {
     const highestScore = Math.max(...data.gameData);
     const validHighestScore = highestScore <= 2024 ? highestScore : 0;
 
-    const preparedData = {...data,
-      highestScore: validHighestScore,
-      submissionTime: new Date(),
-    };
-
+    const preparedData = { ...data, highestScore: validHighestScore, submissionTime: new Date() };
 
     const docRef = await addDoc(collection(db, "riserData"), preparedData);
     console.log("Document added with ID:", docRef.id);
 
     // Calculate and return the ranking
     const ranking = await calculateRanking(validHighestScore);
-    return { docId: docRef.id, ranking };
-
+    return { score: validHighestScore, ranking: ranking };
   } catch (e) {
     console.error("Error adding document: ", e);
     throw new Error("Failed to set Riser game data");
   }
 }
-
 
 export async function getRiserLeaderboard(): Promise<RankEntry[]> {
   const leaderboardRef = collection(db, "testRiserData");

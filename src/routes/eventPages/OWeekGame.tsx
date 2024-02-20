@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 import { setRiserGameData } from "../../services/firestoreServices";
-import { RiserGameModel, RiserUserInput } from "./RiserGame.model";
+import { RiserGameModel, RiserOutputData, RiserUserInput } from "./RiserGame.model";
 
 const OWeekGame = () => {
   const navigate = useNavigate();
@@ -85,13 +85,10 @@ const OWeekGame = () => {
 
       // Need to make sure setRiserGameData comes back before navigate
       setRiserGameData(userGameData).then((value) => {
-        console.log("posted",value);
+        console.log("posted", value);
 
         // Change this when backend returns values
-        const tempValue = {
-          score: 1986,
-          ranking: 65,
-        };
+        const tempValue: RiserOutputData = { ...value };
 
         navigate("/O-Week/complete", { state: { ...tempValue } });
       });
