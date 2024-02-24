@@ -162,20 +162,17 @@ export default function RiserGame() {
         <Refresh fontSize="large" />
         <p>Press the button to start and press it again to stop</p>
         <Info fontSize="large" />
-        <p>
-          Note: anyone can play but only UniMelb students can win prizes. We will email you your prizes after the event
-          is over
-        </p>
+        <p>Note: The event prizes are over, but feel free to play our minigame :)</p>
       </section>
 
       <section className="flex flex-col items-center px-16 gap-6">
         <FaTrophy size="3em" />
         <h2 className="font-bold text-2xl text-yellow-500">Rewards</h2>
 
-        <p>First place : $40</p>
-        <p>Second place : $20</p>
-        <p>Third place : $10</p>
-        <p>Additional placements : Mystery Merch</p>
+        <s>First place : $40</s>
+        <s>Second place : $20</s>
+        <s>Third place : $10</s>
+        <s>Additional placements : Mystery Merch</s>
       </section>
 
       <form onSubmit={handleSubmit}>
