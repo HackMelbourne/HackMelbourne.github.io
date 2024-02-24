@@ -169,10 +169,10 @@ export default function RiserGame() {
         <FaTrophy size="3em" />
         <h2 className="font-bold text-2xl text-yellow-500">Rewards</h2>
 
-        <s>First place : $40</s>
-        <s>Second place : $20</s>
-        <s>Third place : $10</s>
-        <s>Additional placements : Mystery Merch</s>
+        <s>First place : $20</s>
+        <s>Second place : $15</s>
+        <s>Third place : $15</s>
+        <s>Additional placements : Mystery Merch </s>
       </section>
 
       <form onSubmit={handleSubmit}>
