@@ -5,6 +5,7 @@ interface Event {
   title: string;
   description: string;
   image: string;
+  altImage: string;
 }
 
 interface DescriptionBoxesProps {
@@ -49,6 +50,7 @@ function DescriptionBoxes({ events }: DescriptionBoxesProps) {
       <div className="flex flex-col h-[30%] justify-center lg:flex-row lg:justify-between lg:self-start lg:gap-16">
         <img
           src={events[0].image}
+          alt={events[0].altImage}
           className="object-cover border border-gray-200 h-1/3 lg:w-1/2 lg:h-full rounded-sm"
         />
         <motion.div
@@ -83,13 +85,18 @@ function DescriptionBoxes({ events }: DescriptionBoxesProps) {
         </motion.div>
         <img
           src={events[1].image}
+          alt={events[1].altImage}
           className="object-cover order-1 lg:order-2 border h-1/3 lg:w-1/2 lg:h-full rounded-sm"
         />
       </div>
 
       {/* Third Event */}
       <div className="flex flex-col h-[30%] justify-center lg:flex-row lg:justify-between lg:w-4/5 lg:self-start lg:gap-16">
-        <img src={events[2].image} className="object-cover border h-1/3 lg:w-1/2 lg:h-full rounded-sm" />
+        <img 
+          src={events[2].image} 
+          alt={events[2].altImage} 
+          className="object-cover border h-1/3 lg:w-1/2 lg:h-full rounded-sm" 
+        />
         <motion.div
           className="min-h-3/4 lg:h-full lg:w-3/4 flex flex-col lg:gap-4 lg:justify-center justify-between align-center"
           variants={container}
