@@ -1,52 +1,45 @@
-import { Title } from '@mui/icons-material';
-import CallToAction from '../features/CallToAction/CallToAction';
-import Sponsor from '../features/SponsorsFeature/Sponsor';
-import SponsorsEmpty from '../features/SponsorsEmpty/SponsorsEmpty';
-import TitleHero from '../features/TitleHero/TitleHero';
+import { Title } from "@mui/icons-material";
+import CallToAction from "../features/CallToAction/CallToAction";
+import Sponsor from "../features/SponsorsFeature/Sponsor";
+import SponsorsEmpty from "../features/SponsorsEmpty/SponsorsEmpty";
+import TitleHero from "../features/TitleHero/TitleHero";
 
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
-import SponsorProps from '../features/SponsorsFeature/SponsorProps';
+import SponsorProps from "../features/SponsorsFeature/SponsorProps";
+
+import bitgetLogo from "../assets/logos/Sponsors/BitgetLogo.png";
+import noMossLogo from "../assets/logos/Sponsors/noMossLogo.png";
 
 const Sponsors = () => {
-  const sponsorTitles = ['Gold Supporters', 'Silver Supporters', 'Bronze Supporters'];
+  const sponsorTitles = ["Gold Supporters", "Silver Supporters", "Bronze Supporters"];
 
   const heroInfo = {
-    title: 'Sponsorships',
-    body: 'Throughout the year, HackMelbourne offers many opportunities for both complete beginners and seasoned veterans to display their teamwork, coding and leadership skills.',
+    title: "Sponsorships",
+    body: "Throughout the year, HackMelbourne offers many opportunities for both complete beginners and seasoned veterans to display their teamwork, coding and leadership skills.",
   };
 
   const goldInfo: SponsorProps[] = [
     // {
-    //   tier: 'Gold',
-    //   image:
-    //     'https://s3-alpha-sig.figma.com/img/eae3/13a4/8883a46e7a2a60ee806e73a8052191be?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QE8DL8L~Sl2RWKN0qVqamFT04EEngweh7JelISA4jHq4cn4tbZ0~4kfbaP4ny2HskXsagXV~waCFv373SI1mOyOF4SspQB3hArke5pD6Xc2ilacYu2XzqdL7sNmbHknv~jCHgGd5M95sP0nei07d~YTs9V1Q6Uur~zzLclve~s3EpttKzVU6giohnVIAN6OKg1Zfzdzc0WRUhEfZG~M3FRDJBLZ-zg94pkj98SxuNNGUXQ39PsvaBXCOeQJ6ALpfJLituHWQVOIS4bk~dTWtdlAJY0CNLYJN7S9mdyJTBufu9TAzO83azCHhwNKDwfGNlKX3jhFVhMzAihoRTdgljQ__',
-    //   sponsor: 'Burger King',
-    //   desc: 'A brief introduction. Burger king whopper woohoo i love whoppers in foot lettuce. Here is another line because 3 lines look nice.',
-    //   button: 'Visit website',
-    //   website: 'https://www.google.com/',
-    // },
-    // {
-    //   tier: 'Gold',
-    //   image:
-    //     'https://s3-alpha-sig.figma.com/img/eae3/13a4/8883a46e7a2a60ee806e73a8052191be?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QE8DL8L~Sl2RWKN0qVqamFT04EEngweh7JelISA4jHq4cn4tbZ0~4kfbaP4ny2HskXsagXV~waCFv373SI1mOyOF4SspQB3hArke5pD6Xc2ilacYu2XzqdL7sNmbHknv~jCHgGd5M95sP0nei07d~YTs9V1Q6Uur~zzLclve~s3EpttKzVU6giohnVIAN6OKg1Zfzdzc0WRUhEfZG~M3FRDJBLZ-zg94pkj98SxuNNGUXQ39PsvaBXCOeQJ6ALpfJLituHWQVOIS4bk~dTWtdlAJY0CNLYJN7S9mdyJTBufu9TAzO83azCHhwNKDwfGNlKX3jhFVhMzAihoRTdgljQ__',
-    //   sponsor: 'King 2',
-    //   desc: 'A brief introduction. Burger king whopper woohoo i love whoppers in foot lettuce. Here is another line because 3 lines look nice.',
-    //   button: 'Visit website',
-    //   website: 'https://www.google.com/',
+    //   tier: "Gold",
+    //   image: bitgetLogo,
+    //   sponsor: "BitGet",
+    //   desc: "Bitget was founded with a steadfast belief in being the last 10% who remain committed even in the face of adversity. Born in a bear market, Bitget insists on putting users first, focusing on product innovation, and advocating long-term development with the spirit of earnestness.",
+    //   button: "Visit website",
+    //   website: "https://partner.bitget.com/bg/KEHLYS_HackMelb",
     // },
   ];
 
   const silverInfo: SponsorProps[] = [
-    // {
-    //   tier: 'Silver',
-    //   image: 'https://s3-alpha-sig.figma.com/img/eae3/13a4/8883a46e7a2a60ee806e73a8052191be?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QE8DL8L~Sl2RWKN0qVqamFT04EEngweh7JelISA4jHq4cn4tbZ0~4kfbaP4ny2HskXsagXV~waCFv373SI1mOyOF4SspQB3hArke5pD6Xc2ilacYu2XzqdL7sNmbHknv~jCHgGd5M95sP0nei07d~YTs9V1Q6Uur~zzLclve~s3EpttKzVU6giohnVIAN6OKg1Zfzdzc0WRUhEfZG~M3FRDJBLZ-zg94pkj98SxuNNGUXQ39PsvaBXCOeQJ6ALpfJLituHWQVOIS4bk~dTWtdlAJY0CNLYJN7S9mdyJTBufu9TAzO83azCHhwNKDwfGNlKX3jhFVhMzAihoRTdgljQ__',
-    //   sponsor: 'Burger King',
-    //   desc: 'A brief introduction. Burger king whopper woohoo i love whoppers in foot lettuce.',
-    //   button: 'Visit website',
-    //   website: 'https://www.google.com/',
-    // },
+    {
+      tier: "Silver",
+      image: noMossLogo,
+      sponsor: "No Moss",
+      desc: "No Moss is a multi-disciplinary consultancy delivering bespoke agility transformation, purposeful product innovation, and empathy-led technology development.",
+      button: "Visit website",
+      website: "https://www.google.com/",
+    },
     // {
     //   tier: 'Silver',
     //   image: 'https://s3-alpha-sig.figma.com/img/eae3/13a4/8883a46e7a2a60ee806e73a8052191be?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QE8DL8L~Sl2RWKN0qVqamFT04EEngweh7JelISA4jHq4cn4tbZ0~4kfbaP4ny2HskXsagXV~waCFv373SI1mOyOF4SspQB3hArke5pD6Xc2ilacYu2XzqdL7sNmbHknv~jCHgGd5M95sP0nei07d~YTs9V1Q6Uur~zzLclve~s3EpttKzVU6giohnVIAN6OKg1Zfzdzc0WRUhEfZG~M3FRDJBLZ-zg94pkj98SxuNNGUXQ39PsvaBXCOeQJ6ALpfJLituHWQVOIS4bk~dTWtdlAJY0CNLYJN7S9mdyJTBufu9TAzO83azCHhwNKDwfGNlKX3jhFVhMzAihoRTdgljQ__',
@@ -93,10 +86,10 @@ const Sponsors = () => {
   // ];
 
   const sponsorCTA = {
-    title: ['Be a', 'Hack', 'Melbourne sponsor for 2024'],
-    desc: ['Join the journey: be a HackMelbourne 2024 sponsor', 'and help us spread the excitement of hackathons!'],
-    button: 'Learn More',
-    link: 'https://www.canva.com/design/DAF2GZJtvl8/8wf0MTmnjcTW_X-lIdTYQA/view?utm_content=DAF2GZJtvl8&utm_campaign=designshare&utm_medium=link&utm_source=editor',
+    title: ["Be a", "Hack", "Melbourne sponsor for 2024"],
+    desc: ["Join the journey: be a HackMelbourne 2024 sponsor", "and help us spread the excitement of hackathons!"],
+    button: "Learn More",
+    link: "https://www.canva.com/design/DAF2GZJtvl8/8wf0MTmnjcTW_X-lIdTYQA/view?utm_content=DAF2GZJtvl8&utm_campaign=designshare&utm_medium=link&utm_source=editor",
   };
 
   // Animations
@@ -104,12 +97,12 @@ const Sponsors = () => {
 
   let { scrollYProgress } = useScroll({
     target: scrollRef,
-    offset: ['start start', 'end start'],
+    offset: ["start start", "end start"],
   });
 
-  let y = useTransform(scrollYProgress, [0, 1], ['0%', '80%']);
-  let opacityValue = useTransform(scrollYProgress, [0, 0.7], ['100%', '0%']);
-  let scaleValue = useTransform(scrollYProgress, [0, 0.8], ['1', '0.9']);
+  let y = useTransform(scrollYProgress, [0, 1], ["0%", "80%"]);
+  let opacityValue = useTransform(scrollYProgress, [0, 0.7], ["100%", "0%"]);
+  let scaleValue = useTransform(scrollYProgress, [0, 0.8], ["1", "0.9"]);
 
   return (
     <div className="w-screen max-w-full">
@@ -117,12 +110,12 @@ const Sponsors = () => {
         <TitleHero pageTitle={heroInfo.title} pageDescription={heroInfo.body}></TitleHero>
       </motion.section>
 
-      {/* Platinum */}
+      {/* Gold */}
 
       <section>
         <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">{sponsorTitles[0]}</h2>
         {goldInfo.length > 0 ? (
-          <div className="grid grid-rows-1 gap-6 w-[350px] md:w-7/12 md:max-w-[800px] m-auto">
+          <div className="grid grid-rows-1 gap-6 px-4 md:w-7/12 md:max-w-[800px] m-auto">
             {goldInfo.map((gold) => (
               <Sponsor {...gold} />
             ))}
@@ -132,12 +125,12 @@ const Sponsors = () => {
         )}
       </section>
 
-      {/* Gold */}
+      {/* Silver */}
 
       <section>
         <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">{sponsorTitles[1]}</h2>
         {silverInfo.length > 0 ? (
-          <div className="grid grid-rows-1 md:grid-cols-2 gap-5 w-[350px] md:w-11/12 md:max-w-[1020px] m-auto">
+          <div className="grid grid-rows-1 auto-cols-auto justify-center gap-5 w-[350px] md:w-11/12 md:max-w-[1020px] m-auto">
             {silverInfo.map((silver) => (
               <Sponsor {...silver} />
             ))}
@@ -147,7 +140,7 @@ const Sponsors = () => {
         )}
       </section>
 
-      {/* Silver */}
+      {/* Bronze */}
       <section>
         <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">{sponsorTitles[2]}</h2>
         {bronzeInfo.length > 0 ? (
