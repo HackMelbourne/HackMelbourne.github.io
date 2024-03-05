@@ -1,30 +1,30 @@
-import HMButton from '../../components/Button/HMButton';
-import { Link } from 'react-router-dom';
-import DynamicLink from '../../components/DynamicLink/DynamicLink';
+import HMButton from "../../components/Button/HMButton";
+import { Link } from "react-router-dom";
+import DynamicLink from "../../components/DynamicLink/DynamicLink";
 
-import SponsorProps from './SponsorProps';
+import SponsorProps from "./SponsorProps";
 
 const Sponsor = ({ tier, image, sponsor, desc, button, website }: SponsorProps) => {
   switch (tier) {
-    case 'Gold':
+    case "Gold":
       return (
-        <div className="flex flex-col items-center gap-3 px-7 p-8 bg-neutral-900 border border-white rounded-xl box-border">
-          <img src={image} className="w-[400px] md:w-10/12 h-[200px] mb-2.5 rounded-xl" />
+        <div className="flex flex-col max-w-xl items-center gap-3 px-7 p-8 bg-neutral-900 border border-white rounded-xl box-border">
+          <img src={image} className="object-contain max-h-52 rounded-md" />
           <h3 className="text-5xl font-extrabold text-center">{sponsor}</h3>
-          <p className="max-w-[400px] text-center text-base font-medium">{desc}</p>
+          <p className="max-w-lg text-left text-base font-medium">{desc}</p>
           <HMButton text={button!} color="secondary" style="border" link={website}></HMButton>
         </div>
       );
-    case 'Silver':
+    case "Silver":
       return (
-        <div className="flex flex-col items-center gap-3.5 px-7 py-8 bg-black border border-white rounded-xl box-border">
-          <img src={image} className="w-[400px] h-[150px] rounded-xl" />
+        <div className="flex flex-col max-w-md items-center gap-3.5 px-7 py-8 bg-black border border-white rounded-xl box-border">
+          <img src={image} className="object-contain max-h-48 rounded-md" />
           <h3 className="text-4xl font-extrabold text-center">{sponsor}</h3>
-          <p className="max-w-[340px] h-24 text-center text-base font-medium">{desc}</p>
+          <p className="max-w-sm h-24 text-left text-base font-medium">{desc}</p>
           <HMButton text={button!} color="neutral" style="underline" link={website}></HMButton>
         </div>
       );
-    case 'Bronze':
+    case "Bronze":
       return (
         <div className="flex flex-col">
           <div className="w-[350px] h-[0.2px] bg-white"></div>
