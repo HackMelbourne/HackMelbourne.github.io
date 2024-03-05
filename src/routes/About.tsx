@@ -116,6 +116,13 @@ const About = () => {
             { url: "mailto:dhruvajayc@student.unimelb.edu.au", icon: FaEnvelope },
           ],
         },
+        {
+          name: "Claire Shou",
+          role: "Officer",
+          about: "who dares to touch my Peppa Pig 🐷",
+          imageUrl: "./img/team/2024/hm-claire-shou.jpg",
+          links: [{ url: "https://www.instagram.com/sjc1026_/", icon: FaInstagram }],
+        },
       ],
     },
     {
