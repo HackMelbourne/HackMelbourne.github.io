@@ -145,6 +145,16 @@ const About = () => {
           imageUrl: "./img/team/2024/hm-loren-wilson.jpeg",
           links: [{ url: "www.linkedin.com/in/loren-wilson003", icon: FaLinkedin }],
         },
+        {
+          name: "Victor Fan",
+          role: "Officer",
+          about: "I like cats!",
+          imageUrl: "./img/team/2024/hm-victor-fan.jpg",
+          links: [
+            { url: "https://www.instagram.com/fanvictaa/", icon: FaInstagram },
+            { url: "https://www.linkedin.com/in/victor-fan-319b622b8/", icon: FaLinkedin },
+          ],
+        },
       ],
     },
     {
