@@ -1,5 +1,14 @@
 import TeamComponent from "../features/TeamComponent/TeamComponent";
-import { FaFacebook, FaEnvelope, FaInstagram, FaLinkedin, FaTwitter, FaGlobe, FaGamepad } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaEnvelope,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+  FaGlobe,
+  FaGamepad,
+  FaLinkedinIn,
+} from "react-icons/fa";
 import TitleHero from "../features/TitleHero/TitleHero";
 
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -176,6 +185,13 @@ const About = () => {
           about: "Always striving to learn and improve... and addicted to TFT",
           imageUrl: "./img/team/2024/hm-kenneth-l.jpg",
           links: [{ url: "https://www.instagram.com/ken._lim/", icon: FaInstagram }],
+        },
+        {
+          name: "Liam Bong",
+          role: "Officer",
+          about: "Hella getting into runnings recently :))",
+          imageUrl: "./img/team/2024/hm-liam-b.jpeg",
+          links: [{ url: "https://www.linkedin.com/in/liam-bong-602997235", icon: FaLinkedinIn }],
         },
       ],
     },
