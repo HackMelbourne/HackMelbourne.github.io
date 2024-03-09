@@ -21,8 +21,8 @@ function Root() {
     year: "2024",
     button: [
       {
-        name: "O-Week",
-        link: "/O-Week",
+        name: "Hackiethon",
+        link: "",
       },
       {
         name: "Join Club",
