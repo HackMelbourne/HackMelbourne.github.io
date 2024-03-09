@@ -103,7 +103,7 @@ const About = () => {
       members: [
         {
           name: "Aye Myat Min",
-          role: "Education Director",
+          role: "Director",
           about: "Loves to cook and eat, sometimes at the same time",
           imageUrl: "./img/team/2024/hm-aye.jpg",
           links: [],
