@@ -25,8 +25,8 @@ const Sponsors = () => {
     {
       tier: "Gold",
       image: bitgetLogo,
-      sponsor: "BitGet",
-      desc: "Bitget was founded with a steadfast belief in being the last 10% who remain committed even in the face of adversity. Born in a bear market, Bitget insists on putting users first, focusing on product innovation, and advocating long-term development with the spirit of earnestness.",
+      sponsor: "Bitget",
+      desc: "Established in 2018, Bitget is a global cryptocurrency exchange and Web3 company, serving over 20 million users in 100+ countries and regions. Together with Bitget Wallet - a world-class multi-chain crypto wallet that features swap, NFTs, DApps and more. Bitget wants to inspire everyone to embrace crypto, partnering with the likes of Argentinian footballer Lionel Messi and eSports event organiser PGL.",
       button: "Visit website",
       website: "https://partner.bitget.com/bg/KEHLYS_HackMelb",
     },
