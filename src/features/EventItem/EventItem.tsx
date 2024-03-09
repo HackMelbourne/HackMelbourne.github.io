@@ -12,9 +12,11 @@ interface EventItemProps {
   bgImage: string;
   frontImage: string;
   link: string;
+  altBgImage: string;
+  altFrontImage: string;
 }
 
-const EventItem = ({ name, date, brief, description, bgImage, frontImage, link }: EventItemProps) => {
+const EventItem = ({ name, date, brief, description, bgImage, frontImage, link, altBgImage, altFrontImage }: EventItemProps) => {
   let linkText: string;
 
   if (!link) {
@@ -28,6 +30,8 @@ const EventItem = ({ name, date, brief, description, bgImage, frontImage, link }
       {/* small screen heading */}
       <h2 className="text-4xl font-bold mb-2 md:hidden block text-center">{name}</h2>
       <div
+        role="img"
+        aria-label={altBgImage}
         className="md:ml-0 ml-6 h-[30vw] bg-cover bg-center rounded-[10px]"
         style={{ backgroundImage: `url(${bgImage})` }}></div>
       <div className="flex">
@@ -35,7 +39,7 @@ const EventItem = ({ name, date, brief, description, bgImage, frontImage, link }
           <img
             className="h-[120%] relative -top-[20%] rounded-[10px] object-cover w-full"
             src={frontImage}
-            alt={name}
+            alt={altFrontImage}
           />
         </div>
         <motion.div

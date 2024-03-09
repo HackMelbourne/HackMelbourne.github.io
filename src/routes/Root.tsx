@@ -44,11 +44,13 @@ function Root() {
       description:
         "Our rookie hackathon is tailor-made for inexperienced but eager individuals! \n Unlike our main hackathon, it comes with valuable insights into the experience of competing and finding success in such events.",
       image: HackiethonImage,
+      altImage: "HackMelbourne comitteee members in a lecutre hall setting up hackathon competition.",
     },
     {
       title: "Melbourne Hack",
       description: `Our main competition, brings together students from across the state for a weekend of intense hacking. Scheduled for Semester 2, this annual event provides the opportunity to collaborate with talented peers, connect with industry-leading companies, develop strong technical skills, and win amazing prizes!`,
       image: MelbHackImage,
+      altImage: "Students in a lecture hall viewing hackathon competition being presented.",
     },
   ];
 

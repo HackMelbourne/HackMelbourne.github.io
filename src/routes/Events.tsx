@@ -28,6 +28,8 @@ const Events = () => {
         "We’re passionate about providing accessible tech education to students from all backgrounds and experiences. Our workshop style education program is tailored towards those with limited experience in software development and includes content that complements traditional Computer Science education taught at universities. With Hackiethon taking place right after the conclusion of the program, attendees will have the chance to put their new-found skills to the test! ",
       bgImage: DecodEdImage,
       frontImage: DecodEdImage2,
+      altBgImage: "Students in a classroom taking part of the DecodED workshop.",
+      altFrontImage: "Classroom with supplies table in front with several students attending DecodED workshop in the background.",
       link: "",
     },
     {
@@ -38,6 +40,8 @@ const Events = () => {
         "Our rookie hackathon is tailor-made for inexperienced but eager individuals! Unlike our main hackathon, it comes with valuable insights into the experience of competing and finding success in such events.",
       bgImage: HackiethonImage2,
       frontImage: HackiethonImage,
+      altBgImage: "HackMelbourne comitteee members in a lecutre hall setting up hackathon competition.",
+      altFrontImage: "Students in a lecture hall viewing hackathon competition being presented.",
       link: "",
     },
     {
@@ -47,6 +51,8 @@ const Events = () => {
       description: `Melbourne Hack, our main competition, brings together students from across the state for a weekend of intense hacking. Scheduled for Semester 2, this annual event provides the opportunity to collaborate with talented peers, connect with industry-leading companies, develop strong technical skills, and win amazing prizes!`,
       bgImage: MelbHackImage,
       frontImage: MelbHackImage2,
+      altBgImage: "Students sitting in a lecture hall discussing amongst themselves.",
+      altFrontImage: "Classroom with a teacher in the middle and several students coding.",
       link: "",
     },
   ];
