@@ -39,7 +39,7 @@ const Sponsors = () => {
       sponsor: "No Moss",
       desc: "No Moss is a multi-disciplinary consultancy delivering bespoke agility transformation, purposeful product innovation, and empathy-led technology development.",
       button: "Visit website",
-      website: "https://www.google.com/",
+      website: "https://nomoss.co/",
     },
     {
       tier: "Silver",
