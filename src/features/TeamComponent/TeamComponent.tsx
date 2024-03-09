@@ -39,8 +39,11 @@ const TeamComponent = ({ teamName, description, bgColor, borderColor, members }:
               // https://stackoverflow.com/a/46278350/13298307
             }}>
             <div
+              role="img"
+              aria-label={`Profile picture of ${member.name}`}
               className="top-0 left-0 w-32 h-32 rounded-[100rem] bg-cover bg-center m-4"
-              style={{ backgroundImage: `url(${member.imageUrl})` }}></div>
+              style={{ backgroundImage: `url(${member.imageUrl})` }}
+            ></div>
             <p className="text-sm">{member.role}</p>
             <h3 className="text-xl-lg md:text-sm font-semibold m-1">{member.name}</h3>
             <p className="text-sm mb-auto m-2">{member.about}</p>

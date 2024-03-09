@@ -11,6 +11,7 @@ import SponsorProps from "../features/SponsorsFeature/SponsorProps";
 
 import bitgetLogo from "../assets/logos/Sponsors/BitgetLogo.png";
 import noMossLogo from "../assets/logos/Sponsors/noMossLogo.png";
+import superNormalLogo from "../assets/logos/Sponsors/supernormalLogo.png";
 
 const Sponsors = () => {
   const sponsorTitles = ["Gold Supporters", "Silver Supporters", "Bronze Supporters"];
@@ -21,14 +22,14 @@ const Sponsors = () => {
   };
 
   const goldInfo: SponsorProps[] = [
-    // {
-    //   tier: "Gold",
-    //   image: bitgetLogo,
-    //   sponsor: "BitGet",
-    //   desc: "Bitget was founded with a steadfast belief in being the last 10% who remain committed even in the face of adversity. Born in a bear market, Bitget insists on putting users first, focusing on product innovation, and advocating long-term development with the spirit of earnestness.",
-    //   button: "Visit website",
-    //   website: "https://partner.bitget.com/bg/KEHLYS_HackMelb",
-    // },
+    {
+      tier: "Gold",
+      image: bitgetLogo,
+      sponsor: "Bitget",
+      desc: "Established in 2018, Bitget is a global cryptocurrency exchange and Web3 company, serving over 20 million users in 100+ countries and regions. Together with Bitget Wallet - a world-class multi-chain crypto wallet that features swap, NFTs, DApps and more. Bitget wants to inspire everyone to embrace crypto, partnering with the likes of Argentinian footballer Lionel Messi and eSports event organiser PGL.",
+      button: "Visit website",
+      website: "https://partner.bitget.com/bg/KEHLYS_HackMelb",
+    },
   ];
 
   const silverInfo: SponsorProps[] = [
@@ -38,16 +39,16 @@ const Sponsors = () => {
       sponsor: "No Moss",
       desc: "No Moss is a multi-disciplinary consultancy delivering bespoke agility transformation, purposeful product innovation, and empathy-led technology development.",
       button: "Visit website",
-      website: "https://www.google.com/",
+      website: "https://nomoss.co/",
     },
-    // {
-    //   tier: 'Silver',
-    //   image: 'https://s3-alpha-sig.figma.com/img/eae3/13a4/8883a46e7a2a60ee806e73a8052191be?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QE8DL8L~Sl2RWKN0qVqamFT04EEngweh7JelISA4jHq4cn4tbZ0~4kfbaP4ny2HskXsagXV~waCFv373SI1mOyOF4SspQB3hArke5pD6Xc2ilacYu2XzqdL7sNmbHknv~jCHgGd5M95sP0nei07d~YTs9V1Q6Uur~zzLclve~s3EpttKzVU6giohnVIAN6OKg1Zfzdzc0WRUhEfZG~M3FRDJBLZ-zg94pkj98SxuNNGUXQ39PsvaBXCOeQJ6ALpfJLituHWQVOIS4bk~dTWtdlAJY0CNLYJN7S9mdyJTBufu9TAzO83azCHhwNKDwfGNlKX3jhFVhMzAihoRTdgljQ__',
-    //   sponsor: 'King 2',
-    //   desc: 'A brief introduction. Burger king whopper woohoo i love whoppers in foot lettuce. Here is another line because 3 lines look nice.',
-    //   button: 'Visit website',
-    //   website: 'https://www.google.com/',
-    // },
+    {
+      tier: "Silver",
+      image: superNormalLogo,
+      sponsor: "Supernormal",
+      desc: "Cutting-edge technology woven into every fabric of your brand. Utilise our world-class application of technology, automation, and growth strategies.",
+      button: "Visit website",
+      website: "https://www.snl-labs.com/",
+    },
   ];
 
   const bronzeInfo: SponsorProps[] = [
@@ -115,7 +116,7 @@ const Sponsors = () => {
       <section>
         <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">{sponsorTitles[0]}</h2>
         {goldInfo.length > 0 ? (
-          <div className="grid grid-rows-1 gap-6 px-4 md:w-7/12 md:max-w-[800px] m-auto">
+          <div className="grid grid-rows-1 grid-cols-1 justify-items-center gap-5 px-8 md:max-w-screen-md m-auto">
             {goldInfo.map((gold) => (
               <Sponsor {...gold} />
             ))}
@@ -130,7 +131,7 @@ const Sponsors = () => {
       <section>
         <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">{sponsorTitles[1]}</h2>
         {silverInfo.length > 0 ? (
-          <div className="grid grid-rows-1 auto-cols-auto justify-center gap-5 w-[350px] md:w-11/12 md:max-w-[1020px] m-auto">
+          <div className="grid grid-rows-1 md:grid-cols-2 justify-items-center gap-5 w-[350px] md:w-11/12 md:max-w-[1020px] m-auto">
             {silverInfo.map((silver) => (
               <Sponsor {...silver} />
             ))}

@@ -45,7 +45,7 @@ function BannerStandard({ img, title, desc, button, link }: BannerInfo) {
       initial="hidden"
       whileInView="show">
       <motion.div className="md:w-[440px] md:h-[505px] shrink-0 self-stretch" variants={item} custom={1}>
-        <img src={img} />
+        <img src={img} alt={title}/>
       </motion.div>
 
       <div className="flex flex-col items-center md:items-start gap-5 self-stretch md:self-auto">

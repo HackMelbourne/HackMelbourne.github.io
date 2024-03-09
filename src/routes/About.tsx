@@ -1,5 +1,14 @@
 import TeamComponent from "../features/TeamComponent/TeamComponent";
-import { FaFacebook, FaEnvelope, FaInstagram, FaLinkedin, FaTwitter, FaGlobe, FaGamepad } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaEnvelope,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+  FaGlobe,
+  FaGamepad,
+  FaLinkedinIn,
+} from "react-icons/fa";
 import TitleHero from "../features/TitleHero/TitleHero";
 
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -94,7 +103,7 @@ const About = () => {
       members: [
         {
           name: "Aye Myat Min",
-          role: "Education Director",
+          role: "Director",
           about: "Loves to cook and eat, sometimes at the same time",
           imageUrl: "./img/team/2024/hm-aye.jpg",
           links: [],
@@ -145,6 +154,16 @@ const About = () => {
           imageUrl: "./img/team/2024/hm-loren-wilson.jpeg",
           links: [{ url: "www.linkedin.com/in/loren-wilson003", icon: FaLinkedin }],
         },
+        {
+          name: "Victor Fan",
+          role: "Officer",
+          about: "I like cats!",
+          imageUrl: "./img/team/2024/hm-victor-fan.jpg",
+          links: [
+            { url: "https://www.instagram.com/fanvictaa/", icon: FaInstagram },
+            { url: "https://www.linkedin.com/in/victor-fan-319b622b8/", icon: FaLinkedin },
+          ],
+        },
       ],
     },
     {
@@ -166,6 +185,13 @@ const About = () => {
           about: "Always striving to learn and improve... and addicted to TFT",
           imageUrl: "./img/team/2024/hm-kenneth-l.jpg",
           links: [{ url: "https://www.instagram.com/ken._lim/", icon: FaInstagram }],
+        },
+        {
+          name: "Liam Bong",
+          role: "Officer",
+          about: "Hella getting into runnings recently :))",
+          imageUrl: "./img/team/2024/hm-liam-b.jpeg",
+          links: [{ url: "https://www.linkedin.com/in/liam-bong-602997235", icon: FaLinkedinIn }],
         },
       ],
     },
