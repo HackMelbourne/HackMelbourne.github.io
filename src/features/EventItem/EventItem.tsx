@@ -32,10 +32,10 @@ const EventItem = ({ name, date, brief, description, bgImage, frontImage, link, 
       <div
         role="img"
         aria-label={altBgImage}
-        className="md:ml-0 ml-6 h-[30vw] bg-cover bg-center rounded-[10px]"
+        className="md:ml-0 ml-6 max-w-[1100px] h-[30vw] bg-cover bg-center rounded-[10px]"
         style={{ backgroundImage: `url(${bgImage})` }}></div>
       <div className="flex">
-        <div className="w-[60%] md:w-[40%] md:p-4">
+        <div className="w-[60%] md:w-[40%] max-w-[1100px] md:p-4">
           <img
             className="h-[120%] relative -top-[20%] rounded-[10px] object-cover w-full"
             src={frontImage}

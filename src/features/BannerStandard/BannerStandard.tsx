@@ -44,7 +44,7 @@ function BannerStandard({ img, title, desc, button, link }: BannerInfo) {
       viewport={{ amount: 0.8, once: true }}
       initial="hidden"
       whileInView="show">
-      <motion.div className="md:w-[440px] md:h-[505px] shrink-0 self-stretch" variants={item} custom={1}>
+      <motion.div className="max-w-[1100px] md:w-[440px] md:h-[505px] shrink-0 self-stretch" variants={item} custom={1}>
         <img src={img} alt={title}/>
       </motion.div>
 
