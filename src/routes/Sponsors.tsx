@@ -116,7 +116,7 @@ const Sponsors = () => {
       <section>
         <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">{sponsorTitles[0]}</h2>
         {goldInfo.length > 0 ? (
-          <div className="grid grid-rows-1 grid-cols-1 justify-items-center gap-5 w-[350px] md:w-11/12 md:max-w-[1020px] m-auto">
+          <div className="grid grid-rows-1 grid-cols-1 justify-items-center gap-5 px-8 md:max-w-screen-md m-auto">
             {goldInfo.map((gold) => (
               <Sponsor {...gold} />
             ))}
