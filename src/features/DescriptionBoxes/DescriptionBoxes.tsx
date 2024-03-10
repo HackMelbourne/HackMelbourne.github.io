@@ -95,7 +95,7 @@ function DescriptionBoxes({ events }: DescriptionBoxesProps) {
         <img 
           src={events[2].image} 
           alt={events[2].altImage} 
-          className="object-cover border h-1/3 max-w-[1100px] lg:w-1/2 lg:h-full rounded-sm" 
+          className="object-cover border h-1/3 lg:w-1/2 lg:h-full rounded-sm" 
         />
         <motion.div
           className="min-h-3/4 lg:h-full lg:w-3/4 flex flex-col lg:gap-4 lg:justify-center justify-between align-center"

@@ -206,7 +206,7 @@ const About = () => {
           name: "Jessica Le",
           role: "Director",
           about: "CS student who loves animated animals",
-          imageUrl: "./img/team/2024/hm-jessica-l.png",
+          imageUrl: "./img/team/2024/hm-jessica-l.jpg",
           links: [{ url: "https://www.linkedin.com/in/jessica-le-79265927b", icon: FaLinkedin }],
         },
         {
@@ -220,7 +220,7 @@ const About = () => {
           name: "Taj Dhillon",
           role: "Officer",
           about: "hi i will dye my hair every colour of the rainbow maybe",
-          imageUrl: "./img/team/2024/hm-tajvir-d.jpeg",
+          imageUrl: "./img/team/2024/hm-tajvir-d.jpg",
           links: [],
         },
       ],
