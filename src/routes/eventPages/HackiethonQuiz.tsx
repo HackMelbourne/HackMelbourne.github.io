@@ -14,7 +14,9 @@ const HackiethonQuiz = () => {
   const [showResults, setShowResults] = useState(false);
 
   const handleShowQuiz = () => {
+    setSelectedAnswers({});
     setShowQuiz(true);
+    setShowResults(false);
   }
 
   // Keeping track of each question's selection and the values associated with them
@@ -28,7 +30,7 @@ const HackiethonQuiz = () => {
   
   // Adding up the values for each question to get our context values to send to QuizResults
   const handleQuizSubmit = () => {
-    if (Object.keys(selectedAnswers).length == NUM_QUESTIONS) {
+    if (Object.keys(selectedAnswers).length == (NUM_CATEGORY * 3)) {
       let contextValue1 = 0;
       let contextValue2 = 0;
       let contextValue3 = 0;
@@ -47,7 +49,6 @@ const HackiethonQuiz = () => {
   };
   
   // Define questions and values
-  const NUM_QUESTIONS = 3;
   const questions = [
     {
       title: "How do you react when you disagree with someone?",
@@ -106,7 +107,122 @@ const HackiethonQuiz = () => {
         }
       ],
     },
+    {
+      title: "How do you react when you disagree with someone?",
+      selections: [
+        {
+          title: "Tell them your opinion",
+          value1Weight: 1,
+          value2Weight: 0,
+          value3Weight: 0,
+          question: 4
+        },
+        {
+          title: "Keep it to yourself",
+          value1Weight: -1,
+          value2Weight: 0,
+          value3Weight: 0,
+          question: 4
+        }
+      ],
+    },
+    {
+      title: "How do you like to tackle hard problems?",
+      selections: [
+        {
+          title: "Jump into it and figure it out as you go",
+          value1Weight: 0,
+          value2Weight: 0,
+          value3Weight: 1,
+          question: 5
+        },
+        {
+          title: "Consider all possibilities before starting",
+          value1Weight: 0,
+          value2Weight: 0,
+          value3Weight: -1,
+          question: 5
+        }
+      ],
+    },
+    {
+      title: "What kind of learner are you?",
+      selections: [
+        {
+          title: "Pick things up easily",
+          value1Weight: 0,
+          value2Weight: 1,
+          value3Weight: 0,
+          question: 6
+        },
+        {
+          title: "Takes you a while to get started",
+          value1Weight: 0,
+          value2Weight: -1,
+          value3Weight: 0,
+          question: 6
+        }
+      ],
+    },
+    {
+      title: "How do you react when you disagree with someone?",
+      selections: [
+        {
+          title: "Tell them your opinion",
+          value1Weight: 1,
+          value2Weight: 0,
+          value3Weight: 0,
+          question: 7
+        },
+        {
+          title: "Keep it to yourself",
+          value1Weight: -1,
+          value2Weight: 0,
+          value3Weight: 0,
+          question: 7
+        }
+      ],
+    },
+    {
+      title: "How do you like to tackle hard problems?",
+      selections: [
+        {
+          title: "Jump into it and figure it out as you go",
+          value1Weight: 0,
+          value2Weight: 0,
+          value3Weight: 1,
+          question: 8
+        },
+        {
+          title: "Consider all possibilities before starting",
+          value1Weight: 0,
+          value2Weight: 0,
+          value3Weight: -1,
+          question: 8
+        }
+      ],
+    },
+    {
+      title: "What kind of learner are you?",
+      selections: [
+        {
+          title: "Pick things up easily",
+          value1Weight: 0,
+          value2Weight: 1,
+          value3Weight: 0,
+          question: 9
+        },
+        {
+          title: "Takes you a while to get started",
+          value1Weight: 0,
+          value2Weight: -1,
+          value3Weight: 0,
+          question: 9
+        }
+      ],
+    },
   ]
+  const NUM_CATEGORY: number = questions.length / 3;
   
   return (
     <div className="w-screen max-w-full mx-auto mt-28">
@@ -128,12 +244,12 @@ const HackiethonQuiz = () => {
                   {questions.map((question) => {
                       return (<QuizQuestion {...question} sendValueChange={sendValueChange}/>)
                   })}
-                  <button onClick={handleQuizSubmit}>Get results</button>
+                  <a href='#'><button onClick={handleQuizSubmit}>Get results</button></a>
                 </div>
               )}
             </>
           ) : (
-          <QuizResults context={context}/>
+          <QuizResults context={context} numCategory={NUM_CATEGORY} handleShowQuiz={handleShowQuiz}/>
         )}
     </div>
   );

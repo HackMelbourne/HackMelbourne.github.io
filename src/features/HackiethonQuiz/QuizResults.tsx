@@ -3,9 +3,22 @@ import React from 'react';
 
 interface QuizResultsProps {
   context: { value1: number, value2: number, value3: number };
+  numCategory: number;
+  handleShowQuiz: () => void;
 }
 
-const QuizResults: React.FC<QuizResultsProps> = ({ context }) => {
+interface StatisticsProps {
+  trait: string,
+  left_width: string,
+  right_width: string,
+}
+
+const QuizResults: React.FC<QuizResultsProps> = ({ context, numCategory, handleShowQuiz }) => {
+  // Function that goes back to the quiz questions
+  const retakeQuiz = () => {
+    handleShowQuiz();
+  }
+  
   // Define all the fighter types
   const fighterTypeMappings: Record<string, {name: string, desc: string; imageSrc: string }> = {
     "ATR": {name: "RPG Shooter", desc: "Some description about the type of fighter they are and their personality it's definitely not some pseudosciency result", imageSrc: ""},
@@ -20,23 +33,38 @@ const QuizResults: React.FC<QuizResultsProps> = ({ context }) => {
 
   // Calculate the fighter type based on the context values
   let personalityTraits = "";
-  console.log(context.value1);
-  console.log(context.value2);
-  console.log(context.value3);
+  let agg_width: number = 0;
+  let pass_width: number = 0;
+  let tal_width: number = 0;
+  let hw_width: number = 0;
+  let mel_width: number = 0;
+  let ran_width: number = 0;
   if (context.value1 > 0) {
     personalityTraits += "A";
+    agg_width = context.value1 / numCategory;
+    pass_width = 1 - agg_width;
   } else if (context.value1 < 0) {
     personalityTraits += "P";
+    pass_width = Math.abs(context.value1) / numCategory;
+    agg_width = 1 - pass_width;
   }
   if (context.value2 > 0) {
     personalityTraits += "T";
+    tal_width = context.value2 / numCategory;
+    hw_width = 1 - tal_width;
   } else if (context.value2 < 0) {
     personalityTraits += "H";
+     hw_width = Math.abs(context.value2) / numCategory;
+     tal_width = 1 - hw_width;
   }
   if (context.value3 > 0) {
     personalityTraits += "M";
+     mel_width = context.value3 / numCategory;
+     ran_width = 1 - mel_width;
   } else if (context.value3 < 0) {
     personalityTraits += "R";
+     ran_width = Math.abs(context.value3) / numCategory;
+     mel_width = 1 - ran_width;
   }
 
   // 
@@ -45,11 +73,41 @@ const QuizResults: React.FC<QuizResultsProps> = ({ context }) => {
   // Display an error message if fighterType is not in the map (user must not have answered all the questions)
   if (!fighterType) {
     return (
-      <>
-        <div>Not enough info. Take the quiz again!</div>
-        <button>Take the quiz</button>
-      </>
+      <div className="flex flex-col items-center justify-center">
+        <p className="text-center">Not enough info. Take the quiz again!</p>
+        <a href='#'><button onClick={retakeQuiz}>Take quiz again</button></a>
+      </div>
     );
+  }
+
+  const statistics: StatisticsProps[] = [
+    {
+      trait: "Aggressive vs Passive",
+      left_width: (agg_width * 100).toFixed(0),
+      right_width: (pass_width * 100).toFixed(0),
+    },
+    {
+      trait: "Talented vs Hard-working",
+      left_width: (tal_width * 100).toFixed(0),
+      right_width: (hw_width * 100).toFixed(0),
+    },
+    {
+      trait: "Melee vs Range",
+      left_width: (mel_width * 100).toFixed(0),
+      right_width: (ran_width * 100).toFixed(0),
+    }
+  ]
+
+  const getBorderRadius = (percentage: string, side: string) => {
+    if (percentage == '100') {
+      return '10px';
+    }
+    if (side == 'left') {
+      return '10px 0 0 10px';
+    }
+    if (side == 'right') {
+      return '0 10px 10px 0';
+    }
   }
   
   return (
@@ -63,15 +121,26 @@ const QuizResults: React.FC<QuizResultsProps> = ({ context }) => {
       </div>
       
       <h2 className="text-2xl font-bold text-center">Statistics</h2>
-      <h3 className="text-lg font-medium text-center">Aggressive vs Passive</h3>
-      <div className="w-28 h-6 border border-white rounded-xl "></div>
-      <h3 className="text-lg font-medium text-center">Talented vs Hard-working</h3>
-      <div className="w-28 h-6 border border-white rounded-xl "></div>
-      <h3 className="text-lg font-medium text-center">Range vs Melee</h3>
-      <div className="w-28 h-6 border border-white rounded-xl "></div>
+      {statistics.map((stat) => {
+        return (
+        
+          <>
+            <h3 className="text-lg font-medium text-center">hi</h3>
+            <div className="flex">
+              <p>{stat.left_width}%</p>
+              <div className="relative w-28 h-6 border border-white rounded-xl ">
+                <div className="h-full bg-red-300 absolute top-0 left-0 " style={{width: `${stat.left_width}%`, borderRadius: getBorderRadius(stat.left_width, 'left') }}></div>
+                <div className="h-full bg-blue-300 absolute top-0 right-0 " style={{width: `${stat.right_width}%`, borderRadius: getBorderRadius(stat.right_width, 'right')}}></div>
+             </div>
+              <p>{stat.right_width}%</p>
+            </div>
+        
+          </>
+       )
+      })}
       
       <div className="flex gap-2">
-        <HMButton text="Quiz again" color="primary" link="/Hackiethon/quiz" />
+        <a href='#'><button onClick={retakeQuiz}>Take quiz again</button></a>
         <HMButton text="Back to home" color="primary" link="/" />
       </div>
     </div>

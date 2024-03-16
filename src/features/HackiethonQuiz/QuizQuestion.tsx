@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface QuizSelectionProps {
   title: string;
@@ -15,9 +16,13 @@ interface QuizQuestionProps {
 }
 
 const QuizQuestion: React.FC<QuizQuestionProps> = ({ title, selections, sendValueChange }) => {
+  const [isToggled, setIsToggled] = useState<boolean[]>([false, false])
 
-  // Sending the values for one question to the Quiz component
-  const handleSelection = (selectedValues: {value1: number, value2: number, value3: number}, qn: number) => {
+  // Changing the button styles after being clicked and sending the values for one question to the Quiz component
+  const handleSelection = (selectedValues: {value1: number, value2: number, value3: number}, qn: number, index: number) => {
+    const updatedToggles: boolean[] = [];
+    updatedToggles[index] = !updatedToggles[index];
+    setIsToggled(updatedToggles);
     sendValueChange(selectedValues, qn);
   };
 
@@ -26,11 +31,19 @@ const QuizQuestion: React.FC<QuizQuestionProps> = ({ title, selections, sendValu
       <p className="text-xl font-bold text-center">{title}</p>
 
       {/* Displaying each selection for the question at hand */}
-      {selections.map((selection) => (
+      {selections.map((selection, index) => (
         <div className="mx-auto">
-          <button className=" " onClick={() => handleSelection({value1: selection.value1Weight, value2: selection.value2Weight, value3: selection.value3Weight}, selection.question)}>
+          <motion.button
+            onClick={() => handleSelection({value1: selection.value1Weight, value2: selection.value2Weight, value3: selection.value3Weight}, selection.question, index)}
+            style={{
+              backgroundColor: isToggled[index] ? '#a0cde0' : '#de0f0d',
+              color: '#ffffff',
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
             {selection.title}
-          </button>
+          </motion.button>
         </div>
       ))}
 
