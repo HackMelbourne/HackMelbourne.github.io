@@ -20,7 +20,7 @@ import OWeek from "./routes/eventPages/OWeek";
 import OWeekGame from "./routes/eventPages/OWeekGame";
 import GameComplete from "./routes/eventPages/GameComplete";
 import HackiethonQuiz from "./routes/eventPages/HackiethonQuiz";
-import HackiethonQuizResult from "./routes/eventPages/HackiethonQuizResult";
+import QuizResults from "./features/HackiethonQuiz/QuizResults";
 
 //Google Analytics
 import ReactGA from "react-ga4";
@@ -39,7 +39,6 @@ const router = createBrowserRouter(
       <Route path="O-Week/playGame" element={<OWeekGame></OWeekGame>}></Route>
       <Route path="O-Week/complete" element={<GameComplete></GameComplete>}></Route>
       <Route path="Hackiethon/quiz" element={<HackiethonQuiz></HackiethonQuiz>}></Route>
-      <Route path="Hackiethon/quiz/result" element={<HackiethonQuizResult></HackiethonQuizResult>}></Route>
     </Route>,
   ),
 );
