@@ -39,6 +39,7 @@ const router = createBrowserRouter(
       <Route path="O-Week/playGame" element={<OWeekGame></OWeekGame>}></Route>
       <Route path="O-Week/complete" element={<GameComplete></GameComplete>}></Route>
       <Route path="Hackiethon/quiz" element={<HackiethonQuiz></HackiethonQuiz>}></Route>
+      <Route path="Hackiethon/quiz/results" element={<QuizResults></QuizResults>}></Route>
     </Route>,
   ),
 );

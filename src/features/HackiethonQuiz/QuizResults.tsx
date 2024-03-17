@@ -1,11 +1,10 @@
+import React from 'react';
+import { useLocation } from "react-router-dom";
 import HMButton from "../../components/Button/HMButton";
 import DynamicLink from "../../components/DynamicLink/DynamicLink";
-import React from 'react';
 
 interface QuizResultsProps {
-  context: { value1: number, value2: number, value3: number };
-  numCategory: number;
-  handleShowQuiz: () => void;
+  
 }
 
 interface StatisticsProps {
@@ -14,11 +13,11 @@ interface StatisticsProps {
   right_width: string,
 }
 
-const QuizResults: React.FC<QuizResultsProps> = ({ context, numCategory, handleShowQuiz }) => {
+const QuizResults: React.FC<QuizResultsProps> = () => {
   // Function that goes back to the quiz questions
-  const retakeQuiz = () => {
-    handleShowQuiz();
-  }
+  const location = useLocation();
+  const { context, numCategory }: any = location.state || {};
+  
   
   // Define all the fighter types
   const fighterTypeMappings: Record<string, {name: string, desc: string; img: string, alt: string }> = {
@@ -68,15 +67,20 @@ const QuizResults: React.FC<QuizResultsProps> = ({ context, numCategory, handleS
      mel_width = 1 - ran_width;
   }
 
+  console.log(context.value1);
+  console.log(context.value2);
+  console.log(context.value3);
+  console.log(numCategory);
+
   // 
   const fighterType = fighterTypeMappings[personalityTraits];
 
   // Display an error message if fighterType is not in the map (user must not have answered all the questions)
   if (!fighterType) {
     return (
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center mt-28">
         <p className="text-center">Not enough info. Take the quiz again!</p>
-        <button onClick={retakeQuiz}><DynamicLink link='#'>Take quiz again</DynamicLink></button>
+        <HMButton text='Take quiz again' color='primary' link='/Hackiethon/quiz'></HMButton>
       </div>
     );
   }
@@ -139,7 +143,7 @@ const QuizResults: React.FC<QuizResultsProps> = ({ context, numCategory, handleS
       })}
       
       <div className="flex gap-2">
-        <button onClick={retakeQuiz}><DynamicLink link='#'>Take quiz again</DynamicLink></button>        
+        <DynamicLink link='#'><HMButton text='Take quiz again' color='primary' link='/Hackiethon/quiz' /></DynamicLink>
         <HMButton text="Back to home" color="primary" link="/" />
       </div>
     </div>
