@@ -1,4 +1,5 @@
 import HMButton from "../../components/Button/HMButton";
+import DynamicLink from "../../components/DynamicLink/DynamicLink";
 import React from 'react';
 
 interface QuizResultsProps {
@@ -20,15 +21,15 @@ const QuizResults: React.FC<QuizResultsProps> = ({ context, numCategory, handleS
   }
   
   // Define all the fighter types
-  const fighterTypeMappings: Record<string, {name: string, desc: string; imageSrc: string }> = {
-    "ATR": {name: "RPG Shooter", desc: "Some description about the type of fighter they are and their personality it's definitely not some pseudosciency result", imageSrc: ""},
-    "AHR": {name: "Machine Gunner", desc: "dec", imageSrc: ""},
-    "ATM": {name: "Rapier Asuna", desc: "dec", imageSrc: ""},
-    "AHM": {name: "Brawler", desc: "dec", imageSrc: ""},
-    "PTR": {name: "Sniper", desc: "dec", imageSrc: ""},
-    "PTM": {name: "Assassin", desc: "dec", imageSrc: ""},
-    "PHM": {name: "Shielder", desc: "dec", imageSrc: ""},
-    "PHR": {name: "Necromancer", desc: "dec", imageSrc: ""}
+  const fighterTypeMappings: Record<string, {name: string, desc: string; img: string, alt: string }> = {
+    "ATR": {name: "RPG Shooter", desc: "Some description about the type of fighter they are and their personality it's definitely not some pseudosciency result", img: "", alt: "a cat"},
+    "AHR": {name: "Machine Gunner", desc: "dec", img: "", alt: "a cat"},
+    "ATM": {name: "Rapier Asuna", desc: "dec", img: "", alt: "a cat"},
+    "AHM": {name: "Brawler", desc: "dec", img: "", alt: "a cat"},
+    "PTR": {name: "Sniper", desc: "dec", img: "", alt: "a cat"},
+    "PTM": {name: "Assassin", desc: "dec", img: "", alt: "a cat"},
+    "PHM": {name: "Shielder", desc: "dec", img: "", alt: "a cat"},
+    "PHR": {name: "Necromancer", desc: "dec", img: "", alt: "a cat"}
   };
 
   // Calculate the fighter type based on the context values
@@ -75,7 +76,7 @@ const QuizResults: React.FC<QuizResultsProps> = ({ context, numCategory, handleS
     return (
       <div className="flex flex-col items-center justify-center">
         <p className="text-center">Not enough info. Take the quiz again!</p>
-        <a href='#'><button onClick={retakeQuiz}>Take quiz again</button></a>
+        <button onClick={retakeQuiz}><DynamicLink link='#'>Take quiz again</DynamicLink></button>
       </div>
     );
   }
@@ -115,10 +116,8 @@ const QuizResults: React.FC<QuizResultsProps> = ({ context, numCategory, handleS
       <p className="text-xl font-medium text-center w-11/12 mx-auto">You are a...</p>
       <h1 className="text-4xl font-bold text-center w-11/12 mx-auto">{fighterType.name}</h1>
       
-      <div className="flex items-center justify-center w-[300px] gap-4">
-        <p className="text-center">{fighterType.desc}</p>
-        <img src={fighterType.imageSrc} className="h-20"/>
-      </div>
+      <img src={fighterType.img} alt={fighterType.alt} className="h-20"/>
+      <p className="text-center">{fighterType.desc}</p>
       
       <h2 className="text-2xl font-bold text-center">Statistics</h2>
       {statistics.map((stat) => {
@@ -140,7 +139,7 @@ const QuizResults: React.FC<QuizResultsProps> = ({ context, numCategory, handleS
       })}
       
       <div className="flex gap-2">
-        <a href='#'><button onClick={retakeQuiz}>Take quiz again</button></a>
+        <button onClick={retakeQuiz}><DynamicLink link='#'>Take quiz again</DynamicLink></button>        
         <HMButton text="Back to home" color="primary" link="/" />
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import HMButton from "../../components/Button/HMButton";
+import DynamicLink from '../../components/DynamicLink/DynamicLink';
 import QuizQuestion from "../../features/HackiethonQuiz/QuizQuestion";
 import QuizResults from '../../features/HackiethonQuiz/QuizResults';
 
@@ -235,7 +236,7 @@ const HackiethonQuiz = () => {
                   <p className="mt-4 text-lg font-medium text-center w-10/12 mx-auto">Ever wondered what action hero you'd be if you were in a video game? Find out your fighter profile (cat version... because it's fun) through this quiz!</p>
                   <img src="https://rufusandcoco.com.au/cdn/shop/articles/shutterstock_1942906447_4225x.jpg?v=1635211494"></img>
                   <div className="flex justify-center mt-4">
-                    <button onClick={handleShowQuiz}>Play</button>
+                    <button onClick={handleShowQuiz}><DynamicLink link='#'>Play</DynamicLink></button>
                   </div>
                 </>
               ) : (
@@ -244,7 +245,7 @@ const HackiethonQuiz = () => {
                   {questions.map((question) => {
                       return (<QuizQuestion {...question} sendValueChange={sendValueChange}/>)
                   })}
-                  <a href='#'><button onClick={handleQuizSubmit}>Get results</button></a>
+                  <button onClick={handleQuizSubmit}><DynamicLink link='#'>Get results</DynamicLink></button>
                 </div>
               )}
             </>
