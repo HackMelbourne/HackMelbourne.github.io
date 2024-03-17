@@ -223,6 +223,7 @@ const HackiethonQuiz = () => {
       ],
     },
   ]
+  // NUM_CATEGORY needs to be an odd number so quiz takers can get a definite trait for each category
   const NUM_CATEGORY: number = questions.length / 3;
   
   return (
