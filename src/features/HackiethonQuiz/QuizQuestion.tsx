@@ -1,52 +1,40 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { QuizQuestionModel, QuizQuestionProps } from "../../routes/eventPages/HackiethonQuiz.model";
 
-interface QuizSelectionProps {
-  title: string;
-  value1Weight: number;
-  value2Weight: number;
-  value3Weight: number;
-  question: number;
-}
+const QuizQuestion = ({ title, selections, sendValueChange }: QuizQuestionProps) => {
+  // Callback function to update parent
+  const handleSelection1 = () => {
+    console.log("Handling selection1");
+    sendValueChange({
+      value1: selections[0].value1Weight,
+      value2: selections[0].value2Weight,
+      value3: selections[0].value3Weight,
+    });
+  };
 
-interface QuizQuestionProps {
-  title: string;
-  selections: QuizSelectionProps[];
-  sendValueChange: (selectedValues: {value1: number, value2: number, value3: number}, index: number) => void;
-}
-
-const QuizQuestion: React.FC<QuizQuestionProps> = ({ title, selections, sendValueChange }) => {
-  const [isToggled, setIsToggled] = useState<boolean[]>([false, false])
-
-  // Changing the button styles after being clicked and sending the values for one question to the Quiz component
-  const handleSelection = (selectedValues: {value1: number, value2: number, value3: number}, qn: number, index: number) => {
-    const updatedToggles: boolean[] = [];
-    updatedToggles[index] = !updatedToggles[index];
-    setIsToggled(updatedToggles);
-    sendValueChange(selectedValues, qn);
+  const handleSelection2 = () => {
+    console.log("Handling selection2");
+    sendValueChange({
+      value1: selections[1].value1Weight,
+      value2: selections[1].value2Weight,
+      value3: selections[1].value3Weight,
+    });
   };
 
   return (
-    <div className="flex flex-col mx-auto">
-      <p className="text-xl font-bold text-center">{title}</p>
+    <div className="flex flex-col mx-auto h-screen w-full max-w-screen-md px-6 gap-4">
+      <p className="text-2xl font-bold text-center">{title}</p>
+
+      <img className="w-full h-96"></img>
 
       {/* Displaying each selection for the question at hand */}
-      {selections.map((selection, index) => (
-        <div className="mx-auto">
-          <motion.button
-            onClick={() => handleSelection({value1: selection.value1Weight, value2: selection.value2Weight, value3: selection.value3Weight}, selection.question, index)}
-            style={{
-              backgroundColor: isToggled[index] ? '#a0cde0' : '#de0f0d',
-              color: '#ffffff',
-            }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            {selection.title}
-          </motion.button>
-        </div>
-      ))}
-
+      <div className="w-full p-6 rounded bg-blue-500/10 border border-blue-500" onClick={handleSelection1}>
+        Tell them blah blah
+      </div>
+      <div className="w-full p-6 rounded bg-yellow-500/10 border border-yellow-500" onClick={handleSelection2}>
+        Tell them blah blah
+      </div>
     </div>
   );
 };
