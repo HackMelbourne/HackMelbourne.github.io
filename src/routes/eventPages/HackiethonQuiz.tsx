@@ -165,28 +165,36 @@ const HackiethonQuiz = () => {
   return (
     <div className="w-screen max-w-full mx-auto mt-28">
       {!showQuiz ? (
-        <>
-          <h1 className="text-4xl font-bold text-center w-11/12 mx-auto">Cat Fighter Quiz</h1>
-          <p className="mt-4 text-lg font-medium text-center w-10/12 mx-auto">
-            Ever wondered what action hero you'd be if you were in a video game? Find out your fighter profile (cat
-            version... because it's fun) through this quiz!
+        <div className="w-full flex flex-col px-6">
+          <h1 className="text-4xl font-bold text-center w-11/12 mx-auto">Which cat fighter are you?</h1>
+          <p className="mt-4 text-lg font-medium text-center mx-auto">
+            Embark on your journey as a young cat and see where your future leads...
           </p>
           <img src="https://rufusandcoco.com.au/cdn/shop/articles/shutterstock_1942906447_4225x.jpg?v=1635211494"></img>
           <div className="flex justify-center mt-4">
-            <button onClick={handleShowQuiz}>
-              <DynamicLink link="#">Play</DynamicLink>
+            <button
+              onClick={handleShowQuiz}
+              className="px-6 w-full font-bold text-lg  py-4 rounded bg-yellow-500/10 border border-yellow-500">
+              Play
             </button>
           </div>
-        </>
+        </div>
       ) : (
-        <div className="flex flex-col gap-4 items-center justify-center mt-6">
-          <h2 className="text-3xl font-bold text-center">Questions</h2>
-          {questions.map((question) => {
-            return <QuizQuestion {...question} sendValueChange={handleQuizSelection} />;
-          })}
-          <button onClick={handleQuizSubmit}>
-            <DynamicLink link="#">Get results</DynamicLink>
-          </button>
+        <div className="w-full h-screen overflow-hidden">
+          <div className="flex flex-col items-center justify-center mt-6">
+            {questions.map((question) => {
+              return <QuizQuestion {...question} sendValueChange={handleQuizSelection} />;
+            })}
+            <div className="w-full h-screen flex flex-col gap-4 items-center pt-8 px-6">
+              <h2 className=" text-4xl font-bold">5 Years later...</h2>
+              <img className="w-full h-96"></img>
+              <button
+                onClick={handleQuizSubmit}
+                className="px-6 w-full font-bold text-lg  py-4 rounded bg-yellow-500/10 border border-yellow-500">
+                Get results
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>
