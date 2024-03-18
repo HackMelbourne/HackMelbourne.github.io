@@ -14,8 +14,9 @@
   },
   "main": "index.js",
   "dependencies": {
+    "@notionhq/client": "^2.2.14",
     "firebase-admin": "^11.8.0",
-    "firebase-functions": "^4.3.1"
+    "firebase-functions": "^4.8.0"
   },
   "devDependencies": {
     "eslint": "^8.15.0",
