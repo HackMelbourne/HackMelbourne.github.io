@@ -21,3 +21,7 @@ export interface QuizQuestionModel {
   title: string;
   selections: QuizSelection[];
 }
+
+export interface ResultsContext {
+  category: number;
+}

@@ -33,10 +33,10 @@ const QuizQuestion = ({ title, selections, sendValueChange }: QuizQuestionProps)
 
         {/* Displaying each selection for the question at hand */}
         <div className="w-full p-6 rounded bg-blue-500/10 border border-blue-500" onClick={handleSelection1}>
-          Tell them blah blah
+          {selections[0].title}
         </div>
         <div className="w-full p-6 rounded bg-yellow-500/10 border border-yellow-500" onClick={handleSelection2}>
-          Tell them blah blah
+          {selections[1].title}
         </div>
       </div>
     );

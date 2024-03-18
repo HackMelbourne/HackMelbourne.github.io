@@ -25,12 +25,12 @@ const HackiethonQuiz = () => {
     attributes.aggression += value1;
     attributes.talent += value2;
     attributes.range += value3;
-    console.log(attributes);
   };
 
   // Adding up the values for each question to get our context values to send to QuizResults
   const handleQuizSubmit = () => {
     let myCategory;
+    console.log(attributes);
 
     if (attributes.aggression >= 0) {
       if (attributes.talent >= 0) {
@@ -76,87 +76,87 @@ const HackiethonQuiz = () => {
   // Define questions and values
   const questions: QuizQuestionModel[] = [
     {
-      title: "How do you react when you disagree with someone?",
+      title: "You are a little cat and your parents just left you alone do you:",
       selections: [
         {
-          title: "Tell them your opinion",
-          value1Weight: 1,
-          value2Weight: 0,
-          value3Weight: 0,
-        },
-        {
-          title: "Keep it to yourself",
-          value1Weight: -1,
-          value2Weight: 0,
-          value3Weight: 0,
-        },
-      ],
-    },
-    {
-      title: "How do you like to tackle hard problems?",
-      selections: [
-        {
-          title: "Jump into it and figure it out as you go",
-          value1Weight: 0,
+          title: "Wait for your parents to come back",
+          value1Weight: -2,
           value2Weight: 0,
           value3Weight: 1,
         },
         {
-          title: "Consider all possibilities before starting",
-          value1Weight: 0,
-          value2Weight: 0,
-          value3Weight: -1,
+          title: "Jump into the wilderness",
+          value1Weight: 1,
+          value2Weight: 1,
+          value3Weight: -2,
         },
       ],
     },
     {
-      title: "What kind of learner are you?",
+      title: "You hear a scream in the distance do you:",
       selections: [
         {
-          title: "Pick things up easily",
+          title: "Rush towards where the sound is coming from",
+          value1Weight: 2,
+          value2Weight: -1,
+          value3Weight: -1,
+        },
+        {
+          title: "Grab a weapon and scout the surrounding",
+          value1Weight: -2,
+          value2Weight: 0,
+          value3Weight: 2,
+        },
+      ],
+    },
+    {
+      title: "You see the Hack Melbourne club president chasing after a fellow cat, do you:",
+      selections: [
+        {
+          title: "Rizz up the president",
+          value1Weight: -2,
+          value2Weight: -1,
+          value3Weight: 1,
+        },
+        {
+          title: "Fight the president",
+          value1Weight: 2,
+          value2Weight: 0,
+          value3Weight: 2,
+        },
+      ],
+    },
+    {
+      title: "Your actions are ineffective and now the president is chasing after you",
+      selections: [
+        {
+          title: "Jump in the sketchy  looking hole",
+          value1Weight: -1,
+          value2Weight: 0,
+          value3Weight: -1,
+        },
+        {
+          title: "Follow the other cat",
           value1Weight: 0,
+          value2Weight: -2,
+          value3Weight: 1,
+        },
+      ],
+    },
+    {
+      title: "You successfully ran away from the president, but you are injured",
+      selections: [
+        {
+          title: "You go to the mountains and learn about the mysteries of essential oils",
+          value1Weight: -1,
+          value2Weight: -2,
+          value3Weight: 0,
+        },
+        {
+          title: "Start a GoFundMe to cover your hospital bills (you’re American)",
+          value1Weight: 1,
           value2Weight: 1,
           value3Weight: 0,
-        },
-        {
-          title: "Takes you a while to get started",
-          value1Weight: 0,
-          value2Weight: -1,
-          value3Weight: 0,
-        },
-      ],
-    },
-    {
-      title: "How do you react when you disagree with someone?",
-      selections: [
-        {
-          title: "Tell them your opinion",
-          value1Weight: 1,
-          value2Weight: 0,
-          value3Weight: 0,
-        },
-        {
-          title: "Keep it to yourself",
-          value1Weight: -1,
-          value2Weight: 0,
-          value3Weight: 0,
-        },
-      ],
-    },
-    {
-      title: "How do you like to tackle hard problems?",
-      selections: [
-        {
-          title: "Jump into it and figure it out as you go",
-          value1Weight: 0,
-          value2Weight: 0,
-          value3Weight: 1,
-        },
-        {
-          title: "Consider all possibilities before starting",
-          value1Weight: 0,
-          value2Weight: 0,
-          value3Weight: -1,
         },
       ],
     },
@@ -165,13 +165,13 @@ const HackiethonQuiz = () => {
   return (
     <div className="w-screen max-w-full mx-auto mt-28">
       {!showQuiz ? (
-        <div className="w-full flex flex-col px-6">
+        <div className="w-full h-screen flex flex-col px-6 pt-16 gap-4">
           <h1 className="text-4xl font-bold text-center w-11/12 mx-auto">Which cat fighter are you?</h1>
           <p className="mt-4 text-lg font-medium text-center mx-auto">
             Embark on your journey as a young cat and see where your future leads...
           </p>
           <img src="https://rufusandcoco.com.au/cdn/shop/articles/shutterstock_1942906447_4225x.jpg?v=1635211494"></img>
-          <div className="flex justify-center mt-4">
+          <div className="flex justify-center">
             <button
               onClick={handleShowQuiz}
               className="px-6 w-full font-bold text-lg  py-4 rounded bg-yellow-500/10 border border-yellow-500">
