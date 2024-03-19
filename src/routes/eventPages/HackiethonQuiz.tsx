@@ -1,254 +1,217 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import HMButton from "../../components/Button/HMButton";
-import DynamicLink from '../../components/DynamicLink/DynamicLink';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import DynamicLink from "../../components/DynamicLink/DynamicLink";
 import QuizQuestion from "../../features/HackiethonQuiz/QuizQuestion";
-import QuizResults from '../../features/HackiethonQuiz/QuizResults';
+import { QuizQuestionModel, ValueChangeInput } from "./HackiethonQuiz.model";
+
+import fighting from "../../assets/HackiethonQuiz/boxingWaterfall.gif";
+import q1 from "../../assets/HackiethonQuiz/q1.gif";
+import q2 from "../../assets/HackiethonQuiz/q2.gif";
+import q3 from "../../assets/HackiethonQuiz/q3.gif";
+import q4 from "../../assets/HackiethonQuiz/q4.gif";
+import q5 from "../../assets/HackiethonQuiz/q5.gif";
+import finish from "../../assets/HackiethonQuiz/finish.gif";
 
 const HackiethonQuiz = () => {
   const navigate = useNavigate();
-  
+
+  // Setting up the three values
+  let attributes = {
+    aggression: 0,
+    talent: 0,
+    range: 0,
+  };
+
   const [showQuiz, setShowQuiz] = useState(false);
-  const [selectedAnswers, setSelectedAnswers] = useState<{ [key: number]: {value1: number, value2: number, value3: number} }>({});
-  const [context, setContext] = useState<{ value1: number; value2: number; value3: number }>({
-    value1: 0,
-    value2: 0,
-    value3: 0,
-  });
 
   const handleShowQuiz = () => {
     setShowQuiz(true);
-  }
+  };
 
   // Keeping track of each question's selection and the values associated with them
-  const sendValueChange = (selectedTraits: {value1: number, value2: number, value3: number}, question: number) => {
-    setSelectedAnswers({
-      ...selectedAnswers,
-      [question]: selectedTraits
-    });
+  const handleQuizSelection = ({ value1, value2, value3 }: ValueChangeInput) => {
+    attributes.aggression += value1;
+    attributes.talent += value2;
+    attributes.range += value3;
   };
-  
+
   // Adding up the values for each question to get our context values to send to QuizResults
   const handleQuizSubmit = () => {
-    if (Object.keys(selectedAnswers).length == (NUM_CATEGORY * 3)) {
-      let contextValue1 = 0;
-      let contextValue2 = 0;
-      let contextValue3 = 0;
-      
-      Object.values(selectedAnswers).forEach(({value1, value2, value3}) => {
-        
-        contextValue1 += value1
-        contextValue2 += value2
-        contextValue3 += value3
-      });
-      const updatedContext = { value1: contextValue1, value2: contextValue2, value3: contextValue3 }
-      setContext(updatedContext);
-      navigate('/Hackiethon/quiz/results', { state: { context: updatedContext, numCategory: NUM_CATEGORY } });
-    } else {
-        alert('Please answer all the questions!');
-    }
-  };
-  
-  // Define questions and values
-  const questions = [
-    {
-      title: "How do you react when you disagree with someone?",
-      selections: [
-        {
-          title: "Tell them your opinion",
-          value1Weight: 1,
-          value2Weight: 0,
-          value3Weight: 0,
-          question: 1
-        },
-        {
-          title: "Keep it to yourself",
-          value1Weight: -1,
-          value2Weight: 0,
-          value3Weight: 0,
-          question: 1
-        }
-      ],
-    },
-    {
-      title: "How do you like to tackle hard problems?",
-      selections: [
-        {
-          title: "Jump into it and figure it out as you go",
-          value1Weight: 0,
-          value2Weight: 0,
-          value3Weight: 1,
-          question: 2
-        },
-        {
-          title: "Consider all possibilities before starting",
-          value1Weight: 0,
-          value2Weight: 0,
-          value3Weight: -1,
-          question: 2
-        }
-      ],
-    },
-    {
-      title: "What kind of learner are you?",
-      selections: [
-        {
-          title: "Pick things up easily",
-          value1Weight: 0,
-          value2Weight: 1,
-          value3Weight: 0,
-          question: 3
-        },
-        {
-          title: "Takes you a while to get started",
-          value1Weight: 0,
-          value2Weight: -1,
-          value3Weight: 0,
-          question: 3
-        }
-      ],
-    },
-    {
-      title: "How do you react when you disagree with someone?",
-      selections: [
-        {
-          title: "Tell them your opinion",
-          value1Weight: 1,
-          value2Weight: 0,
-          value3Weight: 0,
-          question: 4
-        },
-        {
-          title: "Keep it to yourself",
-          value1Weight: -1,
-          value2Weight: 0,
-          value3Weight: 0,
-          question: 4
-        }
-      ],
-    },
-    {
-      title: "How do you like to tackle hard problems?",
-      selections: [
-        {
-          title: "Jump into it and figure it out as you go",
-          value1Weight: 0,
-          value2Weight: 0,
-          value3Weight: 1,
-          question: 5
-        },
-        {
-          title: "Consider all possibilities before starting",
-          value1Weight: 0,
-          value2Weight: 0,
-          value3Weight: -1,
-          question: 5
-        }
-      ],
-    },
-    {
-      title: "What kind of learner are you?",
-      selections: [
-        {
-          title: "Pick things up easily",
-          value1Weight: 0,
-          value2Weight: 1,
-          value3Weight: 0,
-          question: 6
-        },
-        {
-          title: "Takes you a while to get started",
-          value1Weight: 0,
-          value2Weight: -1,
-          value3Weight: 0,
-          question: 6
-        }
-      ],
-    },
-    {
-      title: "How do you react when you disagree with someone?",
-      selections: [
-        {
-          title: "Tell them your opinion",
-          value1Weight: 1,
-          value2Weight: 0,
-          value3Weight: 0,
-          question: 7
-        },
-        {
-          title: "Keep it to yourself",
-          value1Weight: -1,
-          value2Weight: 0,
-          value3Weight: 0,
-          question: 7
-        }
-      ],
-    },
-    {
-      title: "How do you like to tackle hard problems?",
-      selections: [
-        {
-          title: "Jump into it and figure it out as you go",
-          value1Weight: 0,
-          value2Weight: 0,
-          value3Weight: 1,
-          question: 8
-        },
-        {
-          title: "Consider all possibilities before starting",
-          value1Weight: 0,
-          value2Weight: 0,
-          value3Weight: -1,
-          question: 8
-        }
-      ],
-    },
-    {
-      title: "What kind of learner are you?",
-      selections: [
-        {
-          title: "Pick things up easily",
-          value1Weight: 0,
-          value2Weight: 1,
-          value3Weight: 0,
-          question: 9
-        },
-        {
-          title: "Takes you a while to get started",
-          value1Weight: 0,
-          value2Weight: -1,
-          value3Weight: 0,
-          question: 9
-        }
-      ],
-    },
-  ]
-  // NUM_CATEGORY needs to be an odd number so quiz takers can get a definite trait for each category
-  const NUM_CATEGORY: number = questions.length / 3;
-  
-  return (
-    <div className="w-screen max-w-full mx-auto mt-28">
+    let myCategory;
+    console.log(attributes);
 
-            {!showQuiz ? (
-                <>
-                  <h1 className="text-4xl font-bold text-center w-11/12 mx-auto">Cat Fighter Quiz</h1>
-                  <p className="mt-4 text-lg font-medium text-center w-10/12 mx-auto">Ever wondered what action hero you'd be if you were in a video game? Find out your fighter profile (cat version... because it's fun) through this quiz!</p>
-                  <img src="https://rufusandcoco.com.au/cdn/shop/articles/shutterstock_1942906447_4225x.jpg?v=1635211494"></img>
-                  <div className="flex justify-center mt-4">
-                    <button onClick={handleShowQuiz}><DynamicLink link='#'>Play</DynamicLink></button>
-                  </div>
-                </>
-              ) : (
-                <div className="flex flex-col gap-4 items-center justify-center mt-6">
-                  <h2 className="text-3xl font-bold text-center">Questions</h2>
-                  {questions.map((question) => {
-                      return (<QuizQuestion {...question} sendValueChange={sendValueChange}/>)
-                  })}
-                  <button onClick={handleQuizSubmit}><DynamicLink link='#'>Get results</DynamicLink></button>
-                </div>
-              )}
+    if (attributes.aggression >= 0) {
+      if (attributes.talent >= 0) {
+        if (attributes.range >= 0) {
+          // ATR
+          myCategory = 0;
+        } else {
+          // ATM
+          myCategory = 2;
+        }
+      } else {
+        if (attributes.range >= 0) {
+          // AHR
+          myCategory = 1;
+        } else {
+          // AHM
+          myCategory = 3;
+        }
+      }
+    } else {
+      if (attributes.talent >= 0) {
+        if (attributes.range >= 0) {
+          // PTR
+          myCategory = 4;
+        } else {
+          // PTM
+          myCategory = 5;
+        }
+      } else {
+        if (attributes.range >= 0) {
+          // PHR
+          myCategory = 7;
+        } else {
+          // PHM
+          myCategory = 6;
+        }
+      }
+    }
+
+    navigate("/Hackiethon/quiz/results", { state: { category: myCategory } });
+  };
+
+  // Define questions and values
+  const questions: QuizQuestionModel[] = [
+    {
+      title: "You are a little cat and your parents just left you alone do you:",
+      src: q1,
+      selections: [
+        {
+          title: "Wait for your parents to come back",
+          value1Weight: -1,
+          value2Weight: -2,
+          value3Weight: 1,
+        },
+        {
+          title: "Jump into the wilderness",
+          value1Weight: 2,
+          value2Weight: 1,
+          value3Weight: -2,
+        },
+      ],
+    },
+    {
+      title: "You hear a scream in the distance do you:",
+      src: q2,
+      selections: [
+        {
+          title: "Rush towards where the sound is coming from",
+          value1Weight: 2,
+          value2Weight: -1,
+          value3Weight: -2,
+        },
+        {
+          title: "Grab a weapon and scout the surrounding",
+          value1Weight: -2,
+          value2Weight: 1,
+          value3Weight: 2,
+        },
+      ],
+    },
+    {
+      title: "You see the Hack Melbourne club president chasing after a fellow cat, do you:",
+      src: q3,
+      selections: [
+        {
+          title: "Rizz up the president",
+          value1Weight: -2,
+          value2Weight: -1,
+          value3Weight: 1,
+        },
+        {
+          title: "Fight the president",
+          value1Weight: 2,
+          value2Weight: 1,
+          value3Weight: 2,
+        },
+      ],
+    },
+    {
+      title: "Your actions are ineffective and now the president is chasing after you",
+      src: q4,
+      selections: [
+        {
+          title: "Jump in the sketchy  looking hole",
+          value1Weight: -1,
+          value2Weight: 1,
+          value3Weight: -1,
+        },
+        {
+          title: "Follow the other cat",
+          value1Weight: 1,
+          value2Weight: -2,
+          value3Weight: 1,
+        },
+      ],
+    },
+    {
+      title: "You successfully ran away from the president, but you are injured",
+      src: q5,
+      selections: [
+        {
+          title: "You go to the mountains and learn about the mysteries of essential oils",
+          value1Weight: -1,
+          value2Weight: -1,
+          value3Weight: 0,
+        },
+        {
+          title: "Start a GoFundMe to cover your hospital bills (you’re American)",
+          value1Weight: 1,
+          value2Weight: 1,
+          value3Weight: -1,
+        },
+      ],
+    },
+  ];
+
+  return (
+    <div className="w-screen max-w-full lg:max-w-screen-lg mx-auto mt-16">
+      {!showQuiz ? (
+        <div className="w-full h-screen flex flex-col px-6 pt-16 gap-4">
+          <h1 className="text-4xl font-bold text-center w-11/12 mx-auto">Which cat fighter are you?</h1>
+          <p className="mt-4 text-lg font-medium text-center mx-auto">
+            Embark on your journey as a young cat and see where your future leads...
+          </p>
+          <img className="w-full max-w-sm mx-auto rounded" src={fighting}></img>
+          <div className="flex justify-center">
+            <button
+              onClick={handleShowQuiz}
+              className="px-6 w-full font-bold text-lg  py-4 rounded bg-yellow-500/10 border border-yellow-500">
+              Play
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className="w-full h-screen overflow-hidden">
+          <div className="flex flex-col items-center justify-center mt-16">
+            {questions.map((question) => {
+              return <QuizQuestion {...question} sendValueChange={handleQuizSelection} />;
+            })}
+            <div className="w-full h-screen flex flex-col gap-4 items-center pt-8 px-6">
+              <h2 className=" text-4xl font-bold">5 Years later...</h2>
+              <img className="w-full h-96" src={finish}></img>
+              <button
+                onClick={handleQuizSubmit}
+                className="px-6 w-full font-bold text-lg  py-4 rounded bg-yellow-500/10 border border-yellow-500">
+                Get results
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export default HackiethonQuiz;

@@ -1,54 +1,51 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import { QuizQuestionProps } from "../../routes/eventPages/HackiethonQuiz.model";
 
-interface QuizSelectionProps {
-  title: string;
-  value1Weight: number;
-  value2Weight: number;
-  value3Weight: number;
-  question: number;
-}
+const QuizQuestion = ({ title, selections, sendValueChange, src }: QuizQuestionProps) => {
+  const [visible, setVisible] = useState<Boolean>(true);
 
-interface QuizQuestionProps {
-  title: string;
-  selections: QuizSelectionProps[];
-  sendValueChange: (selectedValues: {value1: number, value2: number, value3: number}, index: number) => void;
-}
-
-const QuizQuestion: React.FC<QuizQuestionProps> = ({ title, selections, sendValueChange }) => {
-  const [isToggled, setIsToggled] = useState<boolean[]>([false, false])
-
-  // Changing the button styles after being clicked and sending the values for one question to the Quiz component
-  const handleSelection = (selectedValues: {value1: number, value2: number, value3: number}, qn: number, index: number) => {
-    const updatedToggles: boolean[] = [];
-    updatedToggles[index] = !updatedToggles[index];
-    setIsToggled(updatedToggles);
-    sendValueChange(selectedValues, qn);
+  // Callback function to update parent
+  const handleSelection1 = () => {
+    setVisible(false);
+    sendValueChange({
+      value1: selections[0].value1Weight,
+      value2: selections[0].value2Weight,
+      value3: selections[0].value3Weight,
+    });
   };
 
-  return (
-    <div className="flex flex-col mx-auto">
-      <p className="text-xl font-bold text-center">{title}</p>
+  const handleSelection2 = () => {
+    setVisible(false);
+    sendValueChange({
+      value1: selections[1].value1Weight,
+      value2: selections[1].value2Weight,
+      value3: selections[1].value3Weight,
+    });
+  };
 
-      {/* Displaying each selection for the question at hand */}
-      {selections.map((selection, index) => (
-        <div className="mx-auto">
-          <motion.button
-            onClick={() => handleSelection({value1: selection.value1Weight, value2: selection.value2Weight, value3: selection.value3Weight}, selection.question, index)}
-            style={{
-              backgroundColor: isToggled[index] ? '#a0cde0' : '#de0f0d',
-              color: '#ffffff',
-            }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            {selection.title}
-          </motion.button>
+  if (visible) {
+    return (
+      <div className="flex flex-col mx-auto h-screen w-full max-w-screen-md px-6 gap-4">
+        <img className="max-w-sm mx-auto" src={src}></img>
+
+        <p className="text-2xl font-bold text-center">{title}</p>
+
+        {/* Displaying each selection for the question at hand */}
+        <div
+          className=" cursor-pointer w-full p-6 rounded bg-blue-500/10 border border-blue-500"
+          onClick={handleSelection1}>
+          {selections[0].title}
         </div>
-      ))}
-
-    </div>
-  );
+        <div
+          className="cursor-pointer w-full p-6 rounded bg-yellow-500/10 border border-yellow-500"
+          onClick={handleSelection2}>
+          {selections[1].title}
+        </div>
+      </div>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 export default QuizQuestion;
