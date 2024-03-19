@@ -5,6 +5,13 @@ import QuizQuestion from "../../features/HackiethonQuiz/QuizQuestion";
 import { QuizQuestionModel, ValueChangeInput } from "./HackiethonQuiz.model";
 
 import fighting from "../../assets/HackiethonQuiz/boxingWaterfall.gif";
+import q1 from "../../assets/HackiethonQuiz/q1.gif";
+import q2 from "../../assets/HackiethonQuiz/q2.gif";
+import q3 from "../../assets/HackiethonQuiz/q3.gif";
+import q4 from "../../assets/HackiethonQuiz/q4.gif";
+import q5 from "../../assets/HackiethonQuiz/q5.gif";
+import finish from "../../assets/HackiethonQuiz/finish.gif";
+
 const HackiethonQuiz = () => {
   const navigate = useNavigate();
 
@@ -78,6 +85,7 @@ const HackiethonQuiz = () => {
   const questions: QuizQuestionModel[] = [
     {
       title: "You are a little cat and your parents just left you alone do you:",
+      src: q1,
       selections: [
         {
           title: "Wait for your parents to come back",
@@ -95,6 +103,7 @@ const HackiethonQuiz = () => {
     },
     {
       title: "You hear a scream in the distance do you:",
+      src: q2,
       selections: [
         {
           title: "Rush towards where the sound is coming from",
@@ -112,6 +121,7 @@ const HackiethonQuiz = () => {
     },
     {
       title: "You see the Hack Melbourne club president chasing after a fellow cat, do you:",
+      src: q3,
       selections: [
         {
           title: "Rizz up the president",
@@ -129,6 +139,7 @@ const HackiethonQuiz = () => {
     },
     {
       title: "Your actions are ineffective and now the president is chasing after you",
+      src: q4,
       selections: [
         {
           title: "Jump in the sketchy  looking hole",
@@ -146,6 +157,7 @@ const HackiethonQuiz = () => {
     },
     {
       title: "You successfully ran away from the president, but you are injured",
+      src: q5,
       selections: [
         {
           title: "You go to the mountains and learn about the mysteries of essential oils",
@@ -171,7 +183,7 @@ const HackiethonQuiz = () => {
           <p className="mt-4 text-lg font-medium text-center mx-auto">
             Embark on your journey as a young cat and see where your future leads...
           </p>
-          <img className="w-full max-w-sm mx-auto" src={fighting}></img>
+          <img className="w-full max-w-sm mx-auto rounded" src={fighting}></img>
           <div className="flex justify-center">
             <button
               onClick={handleShowQuiz}
@@ -182,13 +194,13 @@ const HackiethonQuiz = () => {
         </div>
       ) : (
         <div className="w-full h-screen overflow-hidden">
-          <div className="flex flex-col items-center justify-center mt-6">
+          <div className="flex flex-col items-center justify-center mt-16">
             {questions.map((question) => {
               return <QuizQuestion {...question} sendValueChange={handleQuizSelection} />;
             })}
             <div className="w-full h-screen flex flex-col gap-4 items-center pt-8 px-6">
               <h2 className=" text-4xl font-bold">5 Years later...</h2>
-              <img className="w-full h-96"></img>
+              <img className="w-full h-96" src={finish}></img>
               <button
                 onClick={handleQuizSubmit}
                 className="px-6 w-full font-bold text-lg  py-4 rounded bg-yellow-500/10 border border-yellow-500">

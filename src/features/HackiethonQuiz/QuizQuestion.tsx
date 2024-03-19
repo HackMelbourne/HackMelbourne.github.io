@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { QuizQuestionModel, QuizQuestionProps } from "../../routes/eventPages/HackiethonQuiz.model";
+import { useState } from "react";
+import { QuizQuestionProps } from "../../routes/eventPages/HackiethonQuiz.model";
 
-const QuizQuestion = ({ title, selections, sendValueChange }: QuizQuestionProps) => {
+const QuizQuestion = ({ title, selections, sendValueChange, src }: QuizQuestionProps) => {
   const [visible, setVisible] = useState<Boolean>(true);
 
   // Callback function to update parent
@@ -29,7 +28,7 @@ const QuizQuestion = ({ title, selections, sendValueChange }: QuizQuestionProps)
       <div className="flex flex-col mx-auto h-screen w-full max-w-screen-md px-6 gap-4">
         <p className="text-2xl font-bold text-center">{title}</p>
 
-        <img className="w-full h-96"></img>
+        <img className="max-w-sm" src={src}></img>
 
         {/* Displaying each selection for the question at hand */}
         <div

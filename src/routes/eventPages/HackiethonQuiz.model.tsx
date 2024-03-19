@@ -7,6 +7,7 @@ export interface QuizSelection {
 
 export interface QuizQuestionProps {
   title: string;
+  src: string;
   selections: QuizSelection[];
   sendValueChange: CallableFunction;
 }
@@ -19,6 +20,7 @@ export interface ValueChangeInput {
 
 export interface QuizQuestionModel {
   title: string;
+  src: string;
   selections: QuizSelection[];
 }
 
