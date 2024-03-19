@@ -26,9 +26,9 @@ const QuizQuestion = ({ title, selections, sendValueChange, src }: QuizQuestionP
   if (visible) {
     return (
       <div className="flex flex-col mx-auto h-screen w-full max-w-screen-md px-6 gap-4">
-        <p className="text-2xl font-bold text-center">{title}</p>
-
         <img className="max-w-sm mx-auto" src={src}></img>
+
+        <p className="text-2xl font-bold text-center">{title}</p>
 
         {/* Displaying each selection for the question at hand */}
         <div
