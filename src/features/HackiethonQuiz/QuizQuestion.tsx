@@ -32,10 +32,14 @@ const QuizQuestion = ({ title, selections, sendValueChange }: QuizQuestionProps)
         <img className="w-full h-96"></img>
 
         {/* Displaying each selection for the question at hand */}
-        <div className="w-full p-6 rounded bg-blue-500/10 border border-blue-500" onClick={handleSelection1}>
+        <div
+          className=" cursor-pointer w-full p-6 rounded bg-blue-500/10 border border-blue-500"
+          onClick={handleSelection1}>
           {selections[0].title}
         </div>
-        <div className="w-full p-6 rounded bg-yellow-500/10 border border-yellow-500" onClick={handleSelection2}>
+        <div
+          className="cursor-pointer w-full p-6 rounded bg-yellow-500/10 border border-yellow-500"
+          onClick={handleSelection2}>
           {selections[1].title}
         </div>
       </div>

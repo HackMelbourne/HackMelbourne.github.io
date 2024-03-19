@@ -4,6 +4,7 @@ import DynamicLink from "../../components/DynamicLink/DynamicLink";
 import QuizQuestion from "../../features/HackiethonQuiz/QuizQuestion";
 import { QuizQuestionModel, ValueChangeInput } from "./HackiethonQuiz.model";
 
+import fighting from "../../assets/HackiethonQuiz/boxingWaterfall.gif";
 const HackiethonQuiz = () => {
   const navigate = useNavigate();
 
@@ -80,13 +81,13 @@ const HackiethonQuiz = () => {
       selections: [
         {
           title: "Wait for your parents to come back",
-          value1Weight: -2,
-          value2Weight: 0,
+          value1Weight: -1,
+          value2Weight: -2,
           value3Weight: 1,
         },
         {
           title: "Jump into the wilderness",
-          value1Weight: 1,
+          value1Weight: 2,
           value2Weight: 1,
           value3Weight: -2,
         },
@@ -99,12 +100,12 @@ const HackiethonQuiz = () => {
           title: "Rush towards where the sound is coming from",
           value1Weight: 2,
           value2Weight: -1,
-          value3Weight: -1,
+          value3Weight: -2,
         },
         {
           title: "Grab a weapon and scout the surrounding",
           value1Weight: -2,
-          value2Weight: 0,
+          value2Weight: 1,
           value3Weight: 2,
         },
       ],
@@ -121,7 +122,7 @@ const HackiethonQuiz = () => {
         {
           title: "Fight the president",
           value1Weight: 2,
-          value2Weight: 0,
+          value2Weight: 1,
           value3Weight: 2,
         },
       ],
@@ -132,12 +133,12 @@ const HackiethonQuiz = () => {
         {
           title: "Jump in the sketchy  looking hole",
           value1Weight: -1,
-          value2Weight: 0,
+          value2Weight: 1,
           value3Weight: -1,
         },
         {
           title: "Follow the other cat",
-          value1Weight: 0,
+          value1Weight: 1,
           value2Weight: -2,
           value3Weight: 1,
         },
@@ -149,28 +150,28 @@ const HackiethonQuiz = () => {
         {
           title: "You go to the mountains and learn about the mysteries of essential oils",
           value1Weight: -1,
-          value2Weight: -2,
+          value2Weight: -1,
           value3Weight: 0,
         },
         {
           title: "Start a GoFundMe to cover your hospital bills (you’re American)",
           value1Weight: 1,
           value2Weight: 1,
-          value3Weight: 0,
+          value3Weight: -1,
         },
       ],
     },
   ];
 
   return (
-    <div className="w-screen max-w-full mx-auto mt-28">
+    <div className="w-screen max-w-full lg:max-w-screen-lg mx-auto mt-16">
       {!showQuiz ? (
         <div className="w-full h-screen flex flex-col px-6 pt-16 gap-4">
           <h1 className="text-4xl font-bold text-center w-11/12 mx-auto">Which cat fighter are you?</h1>
           <p className="mt-4 text-lg font-medium text-center mx-auto">
             Embark on your journey as a young cat and see where your future leads...
           </p>
-          <img src="https://rufusandcoco.com.au/cdn/shop/articles/shutterstock_1942906447_4225x.jpg?v=1635211494"></img>
+          <img className="w-full max-w-sm mx-auto" src={fighting}></img>
           <div className="flex justify-center">
             <button
               onClick={handleShowQuiz}
