@@ -13,6 +13,7 @@ const { setGlobalOptions } = require("firebase-functions/v2");
 const { initializeApp } = require("firebase-admin/app");
 const { getFirestore } = require("firebase-admin/firestore");
 
+// Notion Data
 const { Client } = require("@notionhq/client");
 const notion = new Client({ auth: process.env.NOTION_KEY });
 
@@ -23,12 +24,12 @@ setGlobalOptions({ maxInstances: 10 });
 
 exports.getEventCalendar = onCall(
   {
-    cors: ["https://hackmelbourne.netlify.app", "https://hack.melbourne"],
+    cors: ["https://hackmelbourne.netlify.app", "https://hack.melbourne", "http://localhost:5173"],
     region: "australia-southeast1",
   },
   async (req) => {
     console.log("test");
-    const databaseId = "206a6d4f4fb748fba781f545ce9fa357";
+    const databaseId = "f619a35d55c54430960cc6252308fd74";
     const response = await notion.databases.retrieve({ database_id: databaseId });
     console.log(response);
     return { text: "hi" };
