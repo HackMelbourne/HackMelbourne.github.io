@@ -25,6 +25,7 @@ import QuizResults from "./features/HackiethonQuiz/QuizResults";
 
 //Google Analytics
 import ReactGA from "react-ga4";
+
 ReactGA.initialize("G-BCJY191MCE");
 
 const router = createBrowserRouter(
@@ -42,6 +43,7 @@ const router = createBrowserRouter(
       <Route path="O-Week/complete" element={<GameComplete></GameComplete>}></Route>
       <Route path="Hackiethon/quiz" element={<HackiethonQuiz></HackiethonQuiz>}></Route>
       <Route path="Hackiethon/quiz/results" element={<QuizResults></QuizResults>}></Route>
+      <Route path="calendar" element={<Calendar></Calendar>}></Route>
     </Route>,
   ),
 );
