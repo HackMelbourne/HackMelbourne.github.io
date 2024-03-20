@@ -1,19 +1,21 @@
 import { motion } from "framer-motion";
 import DynamicLink from "../../components/DynamicLink/DynamicLink";
 
+import dateFormat from "dateformat";
+
 import { CalendarItemProps } from "./CalendarItem.model";
 
 const CalendarItem = ({ index, title, image, link, description, date }: CalendarItemProps) => {
   return (
-    <div className="flex justify-center items-center">
-      <div className="flex flex-col w-64 h-[27rem] items-center" key={index}>
+    <div className="flex justify-center h-full items-start">
+      <div className="flex flex-col w-64  items-center" key={index}>
         <img
-          className="min-h-[60%] max-h-[60%] h-[60%] border-red-600 object-cover"
+          className="border-red-600 h-64 object-cover"
           src={image}
           onClick={() => window.open(link, "_blank", "noreferrer")}
         />
         <div className="min-h-[40%] max-h-[40%] w-11/12 border px-3 py-4 flex flex-col justify-between gap-1">
-          <p className="text-xs">{date}</p>
+          <p className="text-xs">{dateFormat(date, "fullDate")}</p>
           <h4 className="text-xl font-bold">{title.toUpperCase()}</h4>
           <p className="text-xs">{description}</p>
           <DynamicLink link={link} className="mt-1">
