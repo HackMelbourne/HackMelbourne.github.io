@@ -30,9 +30,23 @@ exports.getEventCalendar = onCall(
   async (req) => {
     console.log("test");
     const databaseId = "f619a35d55c54430960cc6252308fd74";
-    const response = await notion.databases.retrieve({ database_id: databaseId });
-    console.log(response);
-    return { text: "hi" };
+    const response = await notion.databases.query({
+      database_id: databaseId,
+      filter: {
+        property: "Status",
+        select: {
+          equals: "Live",
+        },
+      },
+      sorts: [
+        {
+          property: "Date",
+          direction: "ascending",
+        },
+      ],
+    });
+    console.log(response.results);
+    return response;
   },
 );
 
