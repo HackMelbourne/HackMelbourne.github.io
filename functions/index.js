@@ -64,6 +64,7 @@ exports.getEventCalendar = onCall(
         date: props.Date.date.start,
         link: props.Link.url,
         color: props.Color.rich_text[0].plain_text,
+        venue: props.Venue.rich_text[0].plain_text,
       };
       result.push(calendarItem);
     });

@@ -7,7 +7,7 @@ import dateFormat from "dateformat";
 import { CalendarItemProps } from "./CalendarItem.model";
 import { useEffect, useRef } from "react";
 
-const CalendarItem = ({ index, title, image, link, description, date, color }: CalendarItemProps) => {
+const CalendarItem = ({ index, title, image, link, description, date, color, venue }: CalendarItemProps) => {
   const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -18,22 +18,31 @@ const CalendarItem = ({ index, title, image, link, description, date, color }: C
   }, []);
 
   return (
-    <div className="flex justify-center h-full items-start">
-      <div className="flex h-full flex-col w-64 items-center" key={index}>
+    <div className="flex justify-center h-full items-start w-full">
+      <div className="flex w-full h-full flex-col items-center" key={index}>
         <img
-          className={`rounded border border-white h-64 object-cover`}
+          className="rounded border border-white w-full aspect-square object-cover"
           src={image}
           onClick={() => window.open(link, "_blank", "noreferrer")}
         />
-        <div ref={bgRef} className="h-fill flex-grow w-11/12 border rounded border-t-0 px-3 py-4 flex flex-col gap-2">
-          <p className="text-xs">{dateFormat(date, "fullDate")}</p>
-          <h4 className="text-xl font-bold">{title.toUpperCase()}</h4>
-          <p className="text-xs mb-4">{description}</p>
+        <div
+          ref={bgRef}
+          className="h-fill flex-grow w-11/12 border rounded-t-none rounded border-t-0 p-6 flex flex-col gap-4">
+          <div className="flex flex-col gap-1">
+            <p className="text-xs">{dateFormat(date, "fullDate")}</p>
+            <h4 className="text-2xl font-bold">{title}</h4>
+            <p className="">{description}</p>
+          </div>
+
+          <div className="flex flex-col mb-4">
+            <p className="text-sm text-neutral-300">Location:</p>
+            <p>{venue}</p>
+          </div>
           <DynamicLink link={link} className="mt-auto">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex justify-center px-4 py-3 rounded-md text-xs w-fit bg-yellow-600/20 border-yellow-500 border font-semibold">
+              className="flex justify-center px-6 py-4 rounded-md w-fit bg-yellow-600/20 border-yellow-500 border font-semibold">
               Learn More
             </motion.div>
           </DynamicLink>

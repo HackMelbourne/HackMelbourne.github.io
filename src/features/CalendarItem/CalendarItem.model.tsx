@@ -6,4 +6,5 @@ export interface CalendarItemProps {
   link: string;
   title: string;
   color: string;
+  venue: string;
 }
