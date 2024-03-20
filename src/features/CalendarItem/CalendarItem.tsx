@@ -29,7 +29,7 @@ const CalendarItem = ({ index, title, image, link, description, date, color, ven
           ref={bgRef}
           className="h-fill flex-grow w-11/12 border rounded-t-none rounded border-t-0 p-6 flex flex-col gap-4">
           <div className="flex flex-col gap-1">
-            <p className="text-xs">{dateFormat(date, "fullDate")}</p>
+            <p className="text-xs">{dateFormat(date, "dddd, mmmm dS, h:MM TT")}</p>
             <h4 className="text-2xl font-bold">{title}</h4>
             <p className="">{description}</p>
           </div>
