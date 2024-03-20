@@ -14,6 +14,7 @@ import About from "./routes/About";
 import Root from "./routes/Root";
 import Privacy from "./routes/Privacy";
 import Terms from "./routes/Terms";
+import Calendar from "./routes/Calendar";
 
 //Event Pages
 import OWeek from "./routes/eventPages/OWeek";
@@ -32,6 +33,7 @@ const router = createBrowserRouter(
       <Route index element={<Root />} />
       <Route path="about" element={<About />} />
       <Route path="events" element={<Events />} />
+      <Route path="calendar" element={<Calendar />} />
       <Route path="sponsor" element={<Sponsors />} />
       <Route path="privacy" element={<Privacy />} />
       <Route path="terms" element={<Terms />} />
