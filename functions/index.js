@@ -22,10 +22,13 @@ initializeApp();
 // Set the maximum instances to 10 for all functions
 setGlobalOptions({ maxInstances: 10 });
 
+const CORSLIST = ["https://hackmelbourne.netlify.app", "https://hack.melbourne"];
+const SERVERLOCATION = "australia-southeast1";
+
 exports.getEventCalendar = onCall(
   {
-    cors: ["https://hackmelbourne.netlify.app", "https://hack.melbourne", "http://localhost:5173"],
-    region: "australia-southeast1",
+    cors: CORSLIST,
+    region: SERVERLOCATION,
   },
   async (req) => {
     const databaseId = "f619a35d55c54430960cc6252308fd74";
