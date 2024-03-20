@@ -14,6 +14,8 @@ module.exports = {
     "object-curly-spacing": ["warn", "always"],
     "@typescript-eslint/no-var-requires": 0,
     "quote-props": ["warn", "as-needed"],
+    "linebreak-style": ["warn", "windows"],
+    indent: ["error", 2],
   },
   overrides: [
     {

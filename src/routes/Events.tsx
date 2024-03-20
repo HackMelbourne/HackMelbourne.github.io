@@ -5,12 +5,12 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 // Event Image Imports
-import DecodEdImage from "../assets/images/DecodED-2022/DecodED.png";
-import DecodEdImage2 from "../assets/images/DecodED-2022/DecodED2.png";
-import HackiethonImage from "../assets/images/Hackiethon-2022/Hackiethon.png";
-import HackiethonImage2 from "../assets/images/Hackiethon-2022/Hackiethon2.png";
-import MelbHackImage from "../assets/images/MelbourneHack-2023/MelbourneHack.png";
-import MelbHackImage2 from "../assets/images/MelbourneHack-2023/MelbourneHack2.png";
+import DecodEdImage from "../assets/images/DecodED-2022/DecodED.jpg";
+import DecodEdImage2 from "../assets/images/DecodED-2022/DecodED2.jpg";
+import HackiethonImage from "../assets/images/Hackiethon-2022/Hackiethon.jpg";
+import HackiethonImage2 from "../assets/images/Hackiethon-2022/Hackiethon2.jpg";
+import MelbHackImage from "../assets/images/MelbourneHack-2023/MelbourneHack.jpg";
+import MelbHackImage2 from "../assets/images/MelbourneHack-2023/MelbourneHack2.jpg";
 
 const Events = () => {
   const pageInfo = {

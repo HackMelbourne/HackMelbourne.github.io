@@ -5,9 +5,9 @@ import BannerStandard from "../features/BannerStandard/BannerStandard";
 import CallToAction from "../features/CallToAction/CallToAction";
 
 // Event Image Imports
-import DecodEdImage from "../assets/images/DecodED-2022/DecodED.png";
-import HackiethonImage from "../assets/images/Hackiethon-2022/Hackiethon2.png";
-import MelbHackImage from "../assets/images/MelbourneHack-2023/MelbourneHack.png";
+import DecodEdImage from "../assets/images/DecodED-2022/DecodED.jpg";
+import HackiethonImage from "../assets/images/Hackiethon-2022/Hackiethon2.jpg";
+import MelbHackImage from "../assets/images/MelbourneHack-2023/MelbourneHack.jpg";
 
 // Hoodie Imports
 import HoodieBack from "../assets/images/Hoodie-2023/HM_Hoodie_Back.png";
