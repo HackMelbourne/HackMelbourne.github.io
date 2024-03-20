@@ -1,16 +1,9 @@
 import { motion } from "framer-motion";
 import DynamicLink from "../../components/DynamicLink/DynamicLink";
 
-interface EventItemProps {
-  index: number;
-  date: string;
-  description: string;
-  image: string;
-  link: string;
-  title: string;
-}
+import { CalendarItemProps } from "./CalendarItem.model";
 
-const CalendarItem = ({ index, title, image, link, description, date }: EventItemProps) => {
+const CalendarItem = ({ index, title, image, link, description, date }: CalendarItemProps) => {
   return (
     <div className="flex justify-center items-center">
       <div className="flex flex-col w-64 h-[27rem] items-center" key={index}>

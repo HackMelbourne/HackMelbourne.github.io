@@ -1,13 +1,15 @@
 import { functions } from "../firebase";
-import { httpsCallable } from "firebase/functions";
+import { HttpsCallable, HttpsCallableResult, httpsCallable } from "firebase/functions";
 
-export async function getEventCalendar() {
+import { CalendarItemProps } from "../features/CalendarItem/CalendarItem.model";
+
+export async function getEventCalendar(): Promise<CalendarItemProps[]> {
   try {
     console.log("testing");
     let result = await httpsCallable(functions, "getEventCalendar")();
-    console.log(result);
-    return result;
+    return result.data as CalendarItemProps[];
   } catch (e) {
     console.log(e);
+    return [];
   }
 }

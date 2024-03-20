@@ -25,7 +25,7 @@ import QuizResults from "./features/HackiethonQuiz/QuizResults";
 
 //Google Analytics
 import ReactGA from "react-ga4";
-import Calendar from "./routes/Calendar";
+
 ReactGA.initialize("G-BCJY191MCE");
 
 const router = createBrowserRouter(
