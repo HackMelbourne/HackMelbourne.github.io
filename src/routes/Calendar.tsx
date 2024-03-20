@@ -24,6 +24,7 @@ const Calendar = () => {
             link={eventItem.link}
             date={eventItem.date}
             index={index}
+            color={eventItem.color}
           />
         );
       })}

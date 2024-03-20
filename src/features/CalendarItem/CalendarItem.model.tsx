@@ -5,4 +5,5 @@ export interface CalendarItemProps {
   image: string;
   link: string;
   title: string;
+  color: string;
 }

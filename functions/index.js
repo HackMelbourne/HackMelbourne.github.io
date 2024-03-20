@@ -63,7 +63,7 @@ exports.getEventCalendar = onCall(
         image: props.Image.files[0].file.url,
         date: props.Date.date.start,
         link: props.Link.url,
-        colour: props.Colour.rich_text[0].plain_text,
+        color: props.Color.rich_text[0].plain_text,
       };
       result.push(calendarItem);
     });
