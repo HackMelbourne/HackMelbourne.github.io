@@ -28,8 +28,9 @@ exports.getEventCalendar = onCall(
     region: "australia-southeast1",
   },
   async (req) => {
-    console.log("test");
     const databaseId = "f619a35d55c54430960cc6252308fd74";
+
+    // Fetching Notion Data
     const response = await notion.databases.query({
       database_id: databaseId,
       filter: {
@@ -45,8 +46,26 @@ exports.getEventCalendar = onCall(
         },
       ],
     });
-    console.log(response.results);
-    return response;
+
+    // Parsing Notion Data
+    let result = [];
+
+    response.results.map((value) => {
+      const props = value.properties;
+
+      // Getting data into format required by frontend
+      let calendarItem = {
+        title: props.Title.rich_text[0].plain_text,
+        description: props.Description.rich_text[0].plain_text,
+        image: props.Image.files[0].file.url,
+        date: props.Date.date.start,
+        link: props.Link.url,
+        colour: props.Colour.rich_text[0].plain_text,
+      };
+      result.push(calendarItem);
+    });
+
+    return result;
   },
 );
 

@@ -5,6 +5,7 @@ export async function getEventCalendar() {
   try {
     console.log("testing");
     let result = await httpsCallable(functions, "getEventCalendar")();
+    console.log(result);
     return result;
   } catch (e) {
     console.log(e);
