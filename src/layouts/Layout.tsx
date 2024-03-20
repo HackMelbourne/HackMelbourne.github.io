@@ -43,8 +43,8 @@ const Layout = () => {
   const nav = {
     clubname: "HackMelbourne",
     logo: "/img/HM_White_Transparent.png",
-    pages: ["Home", "About Us", "Events", "Sponsors"],
-    links: ["/", "/about", "/events", "/sponsor"],
+    pages: ["Home", "About Us", "Calendar", "Sponsors"],
+    links: ["/", "/about", "/calendar", "/sponsor"],
   };
 
   const footer = {
@@ -52,9 +52,12 @@ const Layout = () => {
       {
         title: "Organisation",
         links: [
-          { name: "Join Committee", link: "#" },
+          {
+            name: "Join Committee",
+            link: "https://docs.google.com/forms/d/e/1FAIpQLSc_Cu4yD6Du6LWXD4itRBALJ0elsou0LN56xKPveT3HvrlBmw/viewform",
+          },
           { name: "UMSU", link: UMSU_LINK },
-          { name: "Contact Us", link: "#" },
+          { name: "Contact Us", link: "mailto:${SECRETARY_EMAIL}" },
         ],
       },
       {
@@ -67,9 +70,10 @@ const Layout = () => {
       {
         title: "Resources",
         links: [
-          { name: "Past Events", link: "#" },
+          // { name: "Past Events", link: "#" },
           { name: "GitHub", link: GITHUB_LINK },
-          { name: "Design Guidelines", link: "#" },
+          // { name: "Design Guidelines", link: "#" },
+          { name: "Major Events", link: "/events" },
         ],
       },
     ],
