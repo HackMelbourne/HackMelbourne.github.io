@@ -11,7 +11,7 @@ const { onCall } = require("firebase-functions/v2/https");
 const { setGlobalOptions } = require("firebase-functions/v2");
 
 const { initializeApp } = require("firebase-admin/app");
-const { getFirestore } = require("firebase-admin/firestore");
+// const { getFirestore } = require("firebase-admin/firestore");
 
 // Notion Data
 const { Client } = require("@notionhq/client");
@@ -22,7 +22,7 @@ initializeApp();
 // Set the maximum instances to 10 for all functions
 setGlobalOptions({ maxInstances: 10 });
 
-const CORSLIST = ["https://hackmelbourne.netlify.app", "https://hack.melbourne"];
+const CORSLIST = [/hackmelbourne\.netlify\.app$/, "https://hack.melbourne"];
 const SERVERLOCATION = "australia-southeast1";
 
 exports.getEventCalendar = onCall(
@@ -30,46 +30,50 @@ exports.getEventCalendar = onCall(
     cors: CORSLIST,
     region: SERVERLOCATION,
   },
-  async (req) => {
+  async () => {
     const databaseId = "f619a35d55c54430960cc6252308fd74";
 
-    // Fetching Notion Data
-    const response = await notion.databases.query({
-      database_id: databaseId,
-      filter: {
-        property: "Status",
-        select: {
-          equals: "Live",
+    try {
+      // Fetching Notion Data
+      const response = await notion.databases.query({
+        database_id: databaseId,
+        filter: {
+          property: "Status",
+          select: {
+            equals: "Live",
+          },
         },
-      },
-      sorts: [
-        {
-          property: "Date",
-          direction: "ascending",
-        },
-      ],
-    });
+        sorts: [
+          {
+            property: "Date",
+            direction: "ascending",
+          },
+        ],
+      });
 
-    // Parsing Notion Data
-    let result = [];
+      // Parsing Notion Data
+      const result = [];
 
-    response.results.map((value) => {
-      const props = value.properties;
+      response.results.map((value) => {
+        const props = value.properties;
 
-      // Getting data into format required by frontend
-      let calendarItem = {
-        title: props.Title.rich_text[0].plain_text,
-        description: props.Description.rich_text[0].plain_text,
-        image: props.Image.files[0].file.url,
-        date: props.Date.date.start,
-        link: props.Link.url,
-        color: props.Color.rich_text[0].plain_text,
-        venue: props.Venue.rich_text[0].plain_text,
-      };
-      result.push(calendarItem);
-    });
+        // Getting data into format required by frontend
+        const calendarItem = {
+          title: props.Title.rich_text[0].plain_text,
+          description: props.Description.rich_text[0].plain_text,
+          image: props.Image.files[0].file.url,
+          date: props.Date.date.start,
+          link: props.Link.url,
+          color: props.Color.rich_text[0].plain_text,
+          venue: props.Venue.rich_text[0].plain_text,
+        };
+        result.push(calendarItem);
+      });
 
-    return result;
+      return result;
+    } catch (e) {
+      return e;
+    }
   },
 );
 
