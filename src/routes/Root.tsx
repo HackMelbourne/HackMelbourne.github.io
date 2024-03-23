@@ -22,7 +22,7 @@ function Root() {
     button: [
       {
         name: "Hackiethon",
-        link: "",
+        link: "/hackiethon",
       },
       {
         name: "Join Club",
