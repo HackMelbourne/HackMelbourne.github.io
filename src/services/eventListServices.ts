@@ -1,5 +1,5 @@
 import { functions } from "../firebase";
-import { HttpsCallable, HttpsCallableResult, httpsCallable } from "firebase/functions";
+import { httpsCallable } from "firebase/functions";
 
 import { CalendarItemProps } from "../features/CalendarItem/CalendarItem.model";
 

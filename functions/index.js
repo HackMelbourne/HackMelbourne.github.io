@@ -77,6 +77,47 @@ exports.getEventCalendar = onCall(
   },
 );
 
+exports.getHackiethonBrackets = onCall(
+  {
+    cors: CORSLIST,
+    region: SERVERLOCATION,
+  },
+  async () => {
+    const databaseId = "12bce78ac62e42daaf6d68423f92ac1e";
+
+    try {
+      // Fetching Notion Data
+      const response = await notion.databases.query({
+        database_id: databaseId,
+        filter: {
+          property: "Live",
+          checkbox: {
+            equals: true,
+          },
+        },
+      });
+
+      // Parsing Notion Data
+      const result = [];
+
+      response.results.map((value) => {
+        const props = value.properties;
+
+        // Getting data into format required by frontend
+        const calendarItem = {
+          title: props.Name.title[0].plain_text,
+          link: props.Link.url,
+        };
+        result.push(calendarItem);
+      });
+
+      return result;
+    } catch (e) {
+      return e;
+    }
+  },
+);
+
 // exports.setRiserData = onCall(async (req) => {
 //   console.log(req.data.name);
 //   const result = {
