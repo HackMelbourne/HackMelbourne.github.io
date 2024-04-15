@@ -21,7 +21,7 @@ const Calendar = () => {
     <>
       <TitleHero pageTitle="Calendar" pageDescription="See out upcoming list of big and small events!" />
       {isLoading ? (
-        <div className="col-span-1 flex justify-center items-center">
+        <div className="col-span-1 mt-8 flex justify-center items-center">
           <CircularProgress />
         </div>
       ) : (
