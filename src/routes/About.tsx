@@ -14,7 +14,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { functions } from "../firebase";
 import { httpsCallable } from "firebase/functions";
-import { getAboutUs } from "../services/teamListServices";
+import { getAboutUs } from "../services/aboutUsServices";
 import CircularProgress from "@mui/material/CircularProgress";
 
 const About = () => {
