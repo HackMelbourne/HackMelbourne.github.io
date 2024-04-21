@@ -1,6 +1,6 @@
 import { IconType } from 'react-icons';
 
-interface TeamProps {
+export interface TeamProps {
   teamName: string;
   description: string;
   bgColor: string;
@@ -8,17 +8,19 @@ interface TeamProps {
   members: Member[];
 }
 
-interface Member {
+interface Link {
+  url: string;
+  icon: IconType;
+}
+
+export interface Member {
   name: string;
   role: string;
   about: string;
   imageUrl: string;
   links: Link[];
-}
-
-interface Link {
-  url: string;
-  icon: IconType;
+  teamName: string;
+  socialLinks: string[];
 }
 
 const TeamComponent = ({ teamName, description, bgColor, borderColor, members }: TeamProps) => {
