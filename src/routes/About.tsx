@@ -1,4 +1,4 @@
-import TeamComponent, { Member, TeamProps } from "../features/TeamComponent/TeamComponent";
+import TeamComponent, { TeamProps } from "../features/TeamComponent/TeamComponent";
 import {
   FaFacebook,
   FaEnvelope,
@@ -6,14 +6,11 @@ import {
   FaLinkedin,
   FaTwitter,
   FaGlobe,
-  FaGamepad,
-  FaLinkedinIn,
+  FaGamepad
 } from "react-icons/fa";
 import TitleHero from "../features/TitleHero/TitleHero";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { functions } from "../firebase";
-import { httpsCallable } from "firebase/functions";
 import { getAboutUs } from "../services/aboutUsServices";
 import CircularProgress from "@mui/material/CircularProgress";
 
