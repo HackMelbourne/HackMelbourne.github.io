@@ -21,12 +21,12 @@ function Root() {
     year: "2024",
     button: [
       {
-        name: "Hackiethon",
-        link: "/hackiethon",
-      },
-      {
         name: "Join Club",
         link: UMSU_LINK,
+      },
+      {
+        name: "Scuffathon",
+        link: "",
       },
     ],
   };
