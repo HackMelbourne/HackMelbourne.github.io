@@ -1,7 +1,7 @@
 import { functions } from "../firebase";
 import { httpsCallable } from "firebase/functions";
 
-import { Member } from "../features/TeamComponent/TeamComponent";
+import { Member } from "../features/TeamComponent/TeamComponent.model";
 
 export async function getAboutUs(): Promise<Member[]> {
   try {
