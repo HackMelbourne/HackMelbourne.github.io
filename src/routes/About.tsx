@@ -1,4 +1,5 @@
-import TeamComponent, { TeamProps } from "../features/TeamComponent/TeamComponent";
+import { TeamProps } from "../features/TeamComponent/TeamComponent.model";
+import TeamComponent from "../features/TeamComponent/TeamComponent";
 import {
   FaFacebook,
   FaEnvelope,
@@ -57,7 +58,7 @@ const About = () => {
       members: [],
     },
     {
-      teamName: "Student Engagment Team",
+      teamName: "Student Engagement Team",
       description:
         "These people manage the social events and are also in charge of the recruitment process so be nice to them :)",
       bgColor: "rgba(64,243,42,0.05)",
@@ -82,10 +83,23 @@ const About = () => {
        setTeamsData(teamsData.map((team) => {
          const teamMembers = result.filter(member => member.teamName === team.teamName);
          const updatedTeamMembers = teamMembers.map(member => {
-           const updatedLinks = member.socialLinks.map(link => ({url: link, icon: getIconForLink(link)}));
-           return { ...member, links: updatedLinks };
-         });
-         return { ...team, members: updatedTeamMembers };
+            // Create "Link" object with member url and assign correct icon
+            const updatedLinks = member.socialLinks.map((link: string) => ({url: link, icon: getIconForLink(link)}));
+            return { ...member, links: updatedLinks };
+         })
+         // Sort so that Directors are displayed first
+        .sort((a,b)=>{
+          if (a.role == "Director" && b.role !== "Director" || a.role == "President"){
+            return -1;
+          }
+          if (a.role !== "Director" && b.role == "Director"){
+            return 1;
+          }
+          else{
+            return 0;
+          }
+        });
+        return { ...team, members: updatedTeamMembers };
        }));
        setIsLoading(false);
     });
@@ -111,7 +125,9 @@ const About = () => {
 
       <section className="z-10 relative md:pt-12">
       {isLoading ? (
-          <CircularProgress />
+        <div className="w-full flex justify-center mt-6">
+          <CircularProgress color="inherit"/>
+        </div>
         ) : (
           <>
             {teamsData.map((team, index) => (
@@ -137,7 +153,7 @@ function getIconForLink(link: string) {
   else if (link.includes('twitter.com')) {
     return FaTwitter;
   }
-  else if (link.includes('whosthefaker.com')){
+  else if (link.includes('whosthefaker.ericlang.online')){
     return FaGamepad; // President's game
   }
   else if (link.includes('mailto:')){
