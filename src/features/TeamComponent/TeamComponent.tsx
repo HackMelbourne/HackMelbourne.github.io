@@ -1,25 +1,4 @@
-import { IconType } from 'react-icons';
-
-interface TeamProps {
-  teamName: string;
-  description: string;
-  bgColor: string;
-  borderColor: string;
-  members: Member[];
-}
-
-interface Member {
-  name: string;
-  role: string;
-  about: string;
-  imageUrl: string;
-  links: Link[];
-}
-
-interface Link {
-  url: string;
-  icon: IconType;
-}
+import { TeamProps } from "./TeamComponent.model"
 
 const TeamComponent = ({ teamName, description, bgColor, borderColor, members }: TeamProps) => {
   return (
