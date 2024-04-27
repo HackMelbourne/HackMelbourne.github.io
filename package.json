@@ -30,7 +30,6 @@
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.9.0",
     "styled-components": "^5.3.9",
-    "three": "^0.151.3",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
