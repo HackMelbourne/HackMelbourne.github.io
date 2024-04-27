@@ -1,7 +1,7 @@
 name: Firebase functions lint
 
 on:
-  push:
+  pull_request:
     branches:
       - dev
 
