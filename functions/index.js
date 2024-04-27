@@ -32,7 +32,6 @@ exports.getEventCalendar = onCall(
   },
   async () => {
     const databaseId = "f619a35d55c54430960cc6252308fd74";
-
     try {
       // Fetching Notion Data
       const response = await notion.databases.query({
@@ -109,6 +108,51 @@ exports.getHackiethonBrackets = onCall(
           link: props.Link.url,
         };
         result.push(calendarItem);
+      });
+
+      return result;
+    } catch (e) {
+      return e;
+    }
+  },
+);
+
+exports.getAboutUs = onCall(
+  {
+    cors: CORSLIST,
+    region: SERVERLOCATION,
+  },
+  async () => {
+    const databaseId = "892b8414893b4e58a387cafb0a80a58a";
+
+    try {
+      // Fetching Notion Data
+      const response = await notion.databases.query({
+        database_id: databaseId,
+        filter: {
+          property: "Live",
+          checkbox: {
+            equals: true,
+          },
+        },
+      });
+
+      // Parsing Notion Data
+      const result = [];
+
+      response.results.map((value) => {
+        const props = value.properties;
+
+        // Getting data into format required by frontend
+        const memberItem = {
+          name: props.Name.title[0].plain_text,
+          teamName: props.Team.select.name,
+          role: props.Role.select.name,
+          about: props.About.rich_text[0].plain_text,
+          imageUrl: props.Image.files[0].file.url,
+          socialLinks: props.Socials.rich_text.map((obj) => obj.plain_text),
+        };
+        result.push(memberItem);
       });
 
       return result;
