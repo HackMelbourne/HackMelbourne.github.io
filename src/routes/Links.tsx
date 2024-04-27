@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import { getLinksPage } from "../services/linksPageServices";
+
 import { LinkItemProps } from "../features/LinkComponents/LinkItemProps";
 import LinkTile from "../features/LinkComponents/LinkTile";
 import LinkIcon from "../features/LinkComponents/LinkIcon";
+
+import DynamicLink from "../components/DynamicLink/DynamicLink";
+import HM_White_Transparent from '/img/HM_White_Transparent.png';
 import { CircularProgress } from "@mui/material";
 
 const Links = () => {
@@ -17,14 +21,23 @@ const Links = () => {
     });
   }, []);
 
+  for (let i=0; i<links.length; i++) {
+    console.log(links[i].type)
+  }
+
   return (
-    <div>
+    <div className="mx-auto flex justify-center items-center mt-28 ">
       {isLoading ? (
-        <div className="mt-8 flex justify-center items-center">
-          <CircularProgress />
+        <div>
+          <CircularProgress color="inherit" />
         </div>
       ): (
-        <div>
+        <div className="flex flex-col gap-6 justify-center items-center">
+          <DynamicLink link="/">
+            <img title="HackMelbourne Logo" src={HM_White_Transparent} className=" w-20 " />
+          </DynamicLink>
+          <h1 className=" text-xl font-semibold ">@hack.melbourne</h1>
+          
           <div>
             {links.map((linkItem, index) => (
               linkItem.type == 'Icon' ? (
@@ -35,7 +48,7 @@ const Links = () => {
                   type={linkItem.type}
                 />
               ) : (
-                <></>
+                <><p>HEYY</p></>
               )   
             ))}
           </div>
@@ -50,7 +63,9 @@ const Links = () => {
                 type={linkItem.type}
               />
             ) : (
-              <></>
+              <><DynamicLink link="#">
+              <img title="HackMelbourne Logo" src={HM_White_Transparent} className=" w-20 " />
+            </DynamicLink></>
             )   
           ))}
           </div>
