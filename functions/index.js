@@ -162,6 +162,49 @@ exports.getAboutUs = onCall(
   },
 );
 
+exports.getLinkPage = onCall(
+  {
+    cors: CORSLIST,
+    region: SERVERLOCATION,
+  },
+  async () => {
+	  // This is your database ID see step 2
+    const databaseId = "fae9fb8433d540fe97cb4c4445936e41";
+
+    try {
+      // Fetching Notion Data
+      const response = await notion.databases.query({
+        database_id: databaseId,
+        filter: {
+          property: "Live",
+          checkbox: {
+            equals: true,
+          },
+        },
+      });
+
+      // Parse Notion Data to required format
+      const result = [];
+
+      response.results.map((value) => {
+        const props = value.properties;
+
+        // Getting data into format required by frontend
+        const linkItem = {
+          title: props.Title.title[0].plain_text,
+          link: props.Link.url,
+          type: props.Type.select.name,
+        };
+        result.push(linkItem);
+      });
+
+      return result;
+    } catch (e) {
+      return e;
+    }
+  },
+);
+
 // exports.setRiserData = onCall(async (req) => {
 //   console.log(req.data.name);
 //   const result = {
