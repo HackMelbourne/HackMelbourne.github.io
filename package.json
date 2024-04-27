@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "serve": "firebase emulators:start --only functions",
     "build": "tsc && vite build",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
