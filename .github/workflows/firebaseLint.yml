@@ -29,5 +29,5 @@ jobs:
 
       - name: Linting
         run: |
-          cd function
+          cd functions
           npm run lint
