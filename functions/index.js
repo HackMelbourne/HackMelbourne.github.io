@@ -187,7 +187,6 @@ exports.getLinksPage = onCall(
 
       response.results.map((value) => {
         const props = value.properties;
-        console.log(props);
 
         // Getting data into format required by frontend
         const linkItem = {

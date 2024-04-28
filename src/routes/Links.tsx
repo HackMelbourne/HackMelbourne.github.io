@@ -12,18 +12,14 @@ import { CircularProgress } from "@mui/material";
 const Links = () => {
   const [links, setLinks] = useState<LinkItemProps[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-     
+
   useEffect(() => {
     setIsLoading(true);
     getLinksPage().then((result) => {
       setLinks(result);
       setIsLoading(false);
     });
-  }, []); 
-
-  for (let i=0; i<links.length; i++) {
-    console.log(links[i].type)
-  }
+  }, []);
 
   return (
     <div className="w-screen mx-auto mt-28">
