@@ -162,13 +162,12 @@ exports.getAboutUs = onCall(
   },
 );
 
-exports.getLinkPage = onCall(
+exports.getLinksPage = onCall(
   {
     cors: CORSLIST,
     region: SERVERLOCATION,
   },
   async () => {
-	  // This is your database ID see step 2
     const databaseId = "fae9fb8433d540fe97cb4c4445936e41";
 
     try {
@@ -176,7 +175,7 @@ exports.getLinkPage = onCall(
       const response = await notion.databases.query({
         database_id: databaseId,
         filter: {
-          property: "Live",
+          property: "isLive",
           checkbox: {
             equals: true,
           },
@@ -188,6 +187,7 @@ exports.getLinkPage = onCall(
 
       response.results.map((value) => {
         const props = value.properties;
+        console.log(props);
 
         // Getting data into format required by frontend
         const linkItem = {
