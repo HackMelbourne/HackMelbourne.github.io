@@ -15,6 +15,7 @@ import Root from "./routes/Root";
 import Privacy from "./routes/Privacy";
 import Terms from "./routes/Terms";
 import Calendar from "./routes/Calendar";
+import Links from "./routes/Links";
 
 //Event Pages
 import OWeek from "./routes/eventPages/OWeek";
@@ -46,6 +47,7 @@ const router = createBrowserRouter(
       <Route path="Hackiethon/quiz" element={<HackiethonQuiz></HackiethonQuiz>}></Route>
       <Route path="Hackiethon/quiz/results" element={<QuizResults></QuizResults>}></Route>
       <Route path="calendar" element={<Calendar></Calendar>}></Route>
+      <Route path="links" element={<Links></Links>}></Route>
     </Route>,
   ),
 );
