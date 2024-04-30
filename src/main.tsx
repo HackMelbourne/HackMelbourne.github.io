@@ -23,6 +23,9 @@ import GameComplete from "./routes/eventPages/GameComplete";
 import HackiethonQuiz from "./routes/eventPages/HackiethonQuiz";
 import QuizResults from "./features/HackiethonQuiz/QuizResults";
 
+//Blog Pages
+import Blogs from "./routes/Blogs";
+
 //Google Analytics
 import ReactGA from "react-ga4";
 import Hackiethon from "./routes/eventPages/Hackiethon";
@@ -46,6 +49,7 @@ const router = createBrowserRouter(
       <Route path="Hackiethon/quiz" element={<HackiethonQuiz></HackiethonQuiz>}></Route>
       <Route path="Hackiethon/quiz/results" element={<QuizResults></QuizResults>}></Route>
       <Route path="calendar" element={<Calendar></Calendar>}></Route>
+      <Route path="blogs" element={<Blogs></Blogs>}></Route>
     </Route>,
   ),
 );
