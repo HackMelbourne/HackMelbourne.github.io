@@ -25,6 +25,7 @@ import QuizResults from "./features/HackiethonQuiz/QuizResults";
 
 //Blog Pages
 import Blogs from "./routes/Blogs";
+import { BlogInterface, BlogsData } from "./routes/blogs/BlogsData";
 
 //Google Analytics
 import ReactGA from "react-ga4";
@@ -50,6 +51,9 @@ const router = createBrowserRouter(
       <Route path="Hackiethon/quiz/results" element={<QuizResults></QuizResults>}></Route>
       <Route path="calendar" element={<Calendar></Calendar>}></Route>
       <Route path="blogs" element={<Blogs></Blogs>}></Route>
+      {BlogsData.map((blog: BlogInterface) => (
+        <Route key={blog.title} path={`blogs/${blog.url}`} element={<Blogs blogId={blog.articleId} />} />
+      ))}
     </Route>,
   ),
 );
