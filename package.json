@@ -24,10 +24,12 @@
     "dateformat": "^5.0.3",
     "firebase": "^10.11.0",
     "framer-motion": "^10.16.5",
+    "markdown-to-jsx": "^7.4.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-ga4": "^2.1.0",
     "react-icons": "^4.8.0",
+    "react-markdown": "^9.0.1",
     "react-router-dom": "^6.9.0",
     "styled-components": "^5.3.9",
     "typescript": "^5.2.2"
