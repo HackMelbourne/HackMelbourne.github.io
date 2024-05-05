@@ -10,7 +10,7 @@ import Layout from "./layouts/Layout";
 // Main Pages
 import Events from "./routes/Events";
 import Sponsors from "./routes/Sponsors";
-import About from "./routes/About";
+import MeetTheTeam from "./routes/MeetTheTeam";
 import Root from "./routes/Root";
 import Privacy from "./routes/Privacy";
 import Terms from "./routes/Terms";
@@ -37,7 +37,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Root />} />
-      <Route path="about" element={<About />} />
+      <Route path="meettheteam" element={<MeetTheTeam />} />
       <Route path="events" element={<Events />} />
       <Route path="calendar" element={<Calendar />} />
       <Route path="sponsor" element={<Sponsors />} />
