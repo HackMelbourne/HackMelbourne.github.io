@@ -22,7 +22,7 @@ const Calendar = () => {
       <TitleHero pageTitle="Calendar" pageDescription="See out upcoming list of big and small events!" />
       {isLoading ? (
         <div className="col-span-1 mt-8 flex justify-center items-center">
-          <CircularProgress />
+          <CircularProgress color="inherit"/>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-screen-xl mx-auto gap-16 md:gap-8 mt-16 px-8">
