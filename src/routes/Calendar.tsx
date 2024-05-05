@@ -2,6 +2,7 @@ import CalendarItem from "../features/CalendarItem/CalendarItem";
 
 import { useEffect, useState } from "react";
 import { getEventCalendar } from "../services/eventListServices";
+import { getWorkshopLinks } from "../services/workshopLinkServices"; // DELETE AFTER
 import { CalendarItemProps } from "../features/CalendarItem/CalendarItem.model";
 import { CircularProgress } from "@mui/material";
 import TitleHero from "../features/TitleHero/TitleHero";
@@ -13,9 +14,18 @@ const Calendar = () => {
   useEffect(() => {
     getEventCalendar().then((result) => {
       setCalendar(result);
+      console.log("calendar result:");
+      console.log(result);
       setIsLoading(false); // Set loading state to false once data is fetched
     });
   }, []);
+
+  useEffect(() => {
+    getWorkshopLinks().then((result) => {
+      console.log("workshop links result:");
+      console.log(result);
+    });
+  }, []); // DELETE AFTER
 
   return (
     <>

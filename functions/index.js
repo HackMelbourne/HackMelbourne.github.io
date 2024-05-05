@@ -118,6 +118,43 @@ exports.getHackiethonBrackets = onCall(
   },
 );
 
+exports.getWorkshopLinks = onCall(
+  {
+    cors: CORSLIST,
+    region: SERVERLOCATION,
+  },
+  async () => {
+    const databaseId = "5f97d45ca6014376b61fe7c832890c93";
+
+    try {
+      // Fetching Notion Data
+      const response = await notion.databases.query({
+        database_id: databaseId,
+      });
+
+      // Parsing Notion Data
+      const result = [];
+
+      response.results.forEach((value) => {
+        const props = value.properties;
+
+        // Getting data into format required by frontend
+        const workshopLink = {
+          title: props.Title.title[0].plain_text,
+          link: props.Link.url,
+          desc: props.Description.rich_text[0].plain_text,
+        };
+        result.push(workshopLink);
+      });
+
+      return result;
+    } catch (e) {
+      return e;
+    }
+  },
+);
+
+
 // exports.setRiserData = onCall(async (req) => {
 //   console.log(req.data.name);
 //   const result = {
