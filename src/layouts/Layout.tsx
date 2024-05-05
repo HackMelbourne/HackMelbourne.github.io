@@ -43,8 +43,8 @@ const Layout = () => {
   const nav = {
     clubname: "HackMelbourne",
     logo: "/img/HM_White_Transparent.png",
-    pages: ["Home", "About Us", "Calendar", "Sponsors"],
-    links: ["/", "/about", "/calendar", "/sponsor"],
+    pages: ["Home", "Meet The Team", "Calendar", "Sponsors"],
+    links: ["/", "/meettheteam", "/calendar", "/sponsor"],
   };
 
   const footer = {
