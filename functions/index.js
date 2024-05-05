@@ -183,7 +183,8 @@ exports.getLinksPage = onCall(
       });
 
       // Parse Notion Data to required format
-      const result = [];
+
+      const stack = [];
 
       response.results.map((value) => {
         const props = value.properties;
@@ -194,8 +195,13 @@ exports.getLinksPage = onCall(
           link: props.Link.url,
           type: props.Type.select.name,
         };
-        result.push(linkItem);
+        stack.push(linkItem);
       });
+
+      const result = [];
+      while (stack.length > 0) {
+        result.push(stack.pop());
+      } 
 
       return result;
     } catch (e) {

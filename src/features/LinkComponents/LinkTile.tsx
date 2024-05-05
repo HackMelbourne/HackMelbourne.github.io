@@ -6,7 +6,7 @@ const LinkTile = ({ title, link } : LinkItemProps) => {
   return (
     <motion.button
       whileHover={{ scale: 1.05 }}
-      className="w-screen sm:w-7/12 px-6 py-4 rounded-xl bg-[#262626] font-medium text-lg"
+      className="w-full px-4 py-4 rounded-xl bg-neutral-800 font-medium text-lg"
     >
       <DynamicLink link={link}>
         {title}

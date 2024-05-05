@@ -34,8 +34,8 @@ const Links = () => {
           </DynamicLink>
           <h1 className=" text-xl font-bold ">@hack.melbourne</h1>
           
-          {Array.isArray(links) && links.length > 0 && (
-            <div className="flex gap-4 mb-1">
+          {links.length > 0 && (
+            <div className="flex gap-6 mb-1">
               {links.map((linkItem, index) => (
                 linkItem.type === 'Icon' ? (
                   <LinkIcon 
@@ -51,8 +51,8 @@ const Links = () => {
             </div>
           )}
 
-          {Array.isArray(links) && links.length > 0 && (
-            <div className="w-screen flex flex-col justify-center items-center gap-3">
+          {links.length > 0 && (
+            <div className="w-full max-w-[900px] flex flex-col justify-center items-center gap-3 px-4 md:px-12">
               <h2 className="text-lg font-semibold mb-1">💻 Check us out!</h2>
               {links.map((linkItem, index) => (
                 linkItem.type === 'Tile' ? (
