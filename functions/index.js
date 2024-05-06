@@ -180,11 +180,17 @@ exports.getLinksPage = onCall(
             equals: true,
           },
         },
+        sorts: [
+          {
+            property: "Priority",
+            direction: "ascending",
+          },
+        ],
       });
 
       // Parse Notion Data to required format
 
-      const stack = [];
+      const result = [];
 
       response.results.map((value) => {
         const props = value.properties;
@@ -195,13 +201,8 @@ exports.getLinksPage = onCall(
           link: props.Link.url,
           type: props.Type.select.name,
         };
-        stack.push(linkItem);
+        result.push(linkItem);
       });
-
-      const result = [];
-      while (stack.length > 0) {
-        result.push(stack.pop());
-      }
 
       return result;
     } catch (e) {

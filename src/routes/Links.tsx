@@ -14,7 +14,12 @@ const Links = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    setIsLoading(true);
+    const oldResults = localStorage.getItem("links");
+    if (oldResults != null) {
+      setLinks(JSON.parse(oldResults).data);
+    } else {
+      setIsLoading(true);
+    }
     getLinksPage().then((result) => {
       setLinks(result);
       setIsLoading(false);
