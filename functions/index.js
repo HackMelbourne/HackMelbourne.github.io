@@ -117,7 +117,7 @@ exports.getHackiethonBrackets = onCall(
   },
 );
 
-exports.getAboutUs = onCall(
+exports.getMeetTheTeam = onCall(
   {
     cors: CORSLIST,
     region: SERVERLOCATION,
@@ -201,7 +201,7 @@ exports.getLinksPage = onCall(
       const result = [];
       while (stack.length > 0) {
         result.push(stack.pop());
-      } 
+      }
 
       return result;
     } catch (e) {
