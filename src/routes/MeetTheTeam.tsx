@@ -12,12 +12,12 @@ import {
 import TitleHero from "../features/TitleHero/TitleHero";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { getAboutUs } from "../services/aboutUsServices";
+import { getMeetTheTeam } from "../services/meetTeamServices";
 import CircularProgress from "@mui/material/CircularProgress";
 
-const About = () => {
+const MeetTheTeam = () => {
   const pageInfo = {
-    title: "About Us",
+    title: "Meet the Team",
     description: `Throughout the year, HackMelbourne offers many opportunities for both complete beginners and seasoned veterans to display their teamwork, coding and leadership skills.`,
   };
 
@@ -79,7 +79,7 @@ const About = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    getAboutUs().then((result) => {
+    getMeetTheTeam().then((result) => {
        setTeamsData(teamsData.map((team) => {
          const teamMembers = result.filter(member => member.teamName === team.teamName);
          const updatedTeamMembers = teamMembers.map(member => {
@@ -165,4 +165,4 @@ function getIconForLink(link: string) {
 }
  
 
-export default About;
+export default MeetTheTeam;
