@@ -1,7 +1,7 @@
 import { functions } from "../firebase";
 import { httpsCallable } from "firebase/functions";
 
-import { LinkItemProps } from "../features/LinkComponents/LinkItemProps";
+import { LinkItemProps } from "../features/LinkItem/LinkItemProps";
 
 export async function getLinksPage(): Promise<LinkItemProps[]> {
   try {
