@@ -199,7 +199,7 @@ exports.getLinksPage = onCall(
         const linkItem = {
           title: props.Title.title[0].plain_text,
           link: props.Link.url,
-          type: props.Type.select.name,
+          category: props.Type.select.name,
         };
         result.push(linkItem);
       });
