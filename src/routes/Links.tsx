@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { getLinksPage } from "../services/linksPageServices";
 
-import { LinkItemProps } from "../features/LinkComponents/LinkItemProps";
-import LinkTile from "../features/LinkComponents/LinkTile";
-import LinkIcon from "../features/LinkComponents/LinkIcon";
+import { LinkItemProps } from "../features/LinkItem/LinkItemProps";
+import LinkItem from "../features/LinkItem/LinkItem";
 
 import DynamicLink from "../components/DynamicLink/DynamicLink";
 import HM_White_Transparent from "/img/HM_White_Transparent.png";
@@ -14,12 +13,17 @@ const Links = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
+    // Getting previously stored data
     const oldResults = localStorage.getItem("links");
+
+    // If old data exists display that first, else show the loading animation
     if (oldResults != null) {
       setLinks(JSON.parse(oldResults).data);
     } else {
       setIsLoading(true);
     }
+
+    // Query the getLinksPage service
     getLinksPage().then((result) => {
       setLinks(result);
       setIsLoading(false);
@@ -27,45 +31,69 @@ const Links = () => {
   }, []);
 
   return (
-    <div className="w-screen mx-auto mt-28">
-      {isLoading ? (
-        <div className="flex justify-center items-center">
-          <CircularProgress color="inherit" />
-        </div>
-      ) : (
-        <div className="w-inherit flex flex-col gap-8 justify-center items-center">
+    <div className="w-screen max-w-screen-md px-4 mx-auto mt-28">
+      <div className="w-full flex flex-col gap-8 items-center">
+        <div className="flex flex-col gap-4 items-center">
           <DynamicLink link="/">
             <img title="HackMelbourne Logo" src={HM_White_Transparent} className=" w-20 " />
           </DynamicLink>
           <h1 className=" text-xl font-bold ">@hack.melbourne</h1>
-
-          {links.length > 0 && (
-            <div className="flex gap-6 mb-1">
-              {links.map((linkItem, index) =>
-                linkItem.type === "Icon" ? (
-                  <LinkIcon key={index} title={linkItem.title} link={linkItem.link} type={linkItem.type} />
-                ) : (
-                  <></>
-                ),
-              )}
-            </div>
-          )}
-
-          {links.length > 0 && (
-            <div className="w-full max-w-[900px] flex flex-col justify-center items-center gap-3 px-4 md:px-12">
-              <h2 className="text-lg font-semibold mb-1">💻 Check us out!</h2>
-              {links.map((linkItem, index) =>
-                linkItem.type === "Tile" ? (
-                  <LinkTile key={index} title={linkItem.title} link={linkItem.link} type={linkItem.type} />
-                ) : (
-                  <></>
-                ),
-              )}
-            </div>
-          )}
         </div>
-      )}
+
+        {isLoading ? (
+          <div className="flex justify-center items-center">
+            <CircularProgress color="inherit" />
+          </div>
+        ) : (
+          renderLinkSection(links)
+        )}
+      </div>
     </div>
+  );
+};
+
+const renderLinkSection = (links: LinkItemProps[]) => {
+  const linkMap = new Map<string, LinkItemProps[]>();
+  linkMap.set("Icon", []);
+
+  links.map((value) => {
+    const category = value.category;
+    const categoryLinks = linkMap.get(category) || [];
+    categoryLinks.push(value);
+    linkMap.set(category, categoryLinks);
+  });
+
+  console.log(linkMap);
+
+  return (
+    <>
+      {Array.from(linkMap).map(([key, value]) => {
+        if (key === "Icon") {
+          return (
+            <div key={key} className="flex flex-row items-center gap-6">
+              {renderLinkArray(value)}
+            </div>
+          );
+        } else {
+          return (
+            <div key={key} className="flex flex-col items-center gap-2 w-full mb-2">
+              <h2 className=" font-bold text-2xl">{key}</h2>
+              <div className="flex flex-col gap-3 items-center w-full">{renderLinkArray(value)}</div>
+            </div>
+          );
+        }
+      })}
+    </>
+  );
+};
+
+const renderLinkArray = (links: LinkItemProps[]) => {
+  return (
+    <>
+      {links.map((itemProps) => (
+        <LinkItem key={itemProps.link} title={itemProps.title} link={itemProps.link} category={itemProps.category} />
+      ))}
+    </>
   );
 };
 
