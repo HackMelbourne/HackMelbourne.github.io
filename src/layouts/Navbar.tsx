@@ -20,6 +20,8 @@ interface Nav {
 
 const Navbar = ({ clubname, logo, pages, links }: Nav) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(true);
+  const [activePage, setActivePage] = useState<number | null>(null); 
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -28,6 +30,26 @@ const Navbar = ({ clubname, logo, pages, links }: Nav) => {
   const handleLinkClick = () => {
     setIsMenuOpen(false);
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  };
+
+  const revealMobileNav = (index: number | null) => {
+    setActivePage(index);
+    setIsSubMenuOpen(false);
+  };
+
+  const revealMobileNavItem = () => {
+    if (activePage == null) return
+    return (
+      <Slide in={activePage !== null}>
+        <div className="flex flex-col justify-center items-start h-3/4 w-3/4 m-auto gap-3">
+          <h3 className="text-xl" onClick={()=>{
+            revealMobileNav(null);
+            setIsSubMenuOpen(true);
+          }}>Back</h3>
+          <h3 className="text-3xl font-bold bg-white bg-opacity-10 py-2 px-4 w-full rounded-md">{pages[activePage]}</h3>
+        </div>
+      </Slide>
+    );
   };
 
   return (
@@ -59,7 +81,7 @@ const Navbar = ({ clubname, logo, pages, links }: Nav) => {
 
       {/* MOBILE */}
       <Slide in={isMenuOpen}>
-        <nav id="popup" className="flex fixed w-screen h-screen p-2.5 z-50 bg-neutral-950">
+        <nav id="popup" className="flex fixed items w-screen h-screen p-2.5 z-50 bg-neutral-950">
           <div className="flex flex-col w-full mx-2.5 rounded-xl border-2 border-white">
             <div className="flex w-[100%] justify-between items-center">
               <Link to={links[0]} onClick={handleLinkClick}>
@@ -68,15 +90,25 @@ const Navbar = ({ clubname, logo, pages, links }: Nav) => {
               <button className="mr-5 mt-5" onClick={toggleMenu}>
                 <CloseIcon fontSize="large" />
               </button>
-            </div>
-
-            <div className="flex flex-col h-5/6 justify-center items-center gap-5">
-              {pages.map((page, index) => (
-                <Link key={index} to={links[index]} className="text-[32px] font-bold" onClick={handleLinkClick}>
-                  {page}
-                </Link>
-              ))}
-            </div>
+              </div>
+              {revealMobileNavItem()}
+              <Slide in={isSubMenuOpen}>
+                <div className="w-full h-full justify-center items-center">
+                  <div className="flex flex-col h-5/6 justify-center items-center gap-5">
+                    {pages.map((page, index) => (
+                      <>
+                        <div key={index} className="text-[32px] font-bold" onClick={() => revealMobileNav(index)}>{page}
+                          {/*
+                            <Link key={index} to={links[index]} className="text-[32px] font-bold" onClick={handleLinkClick}>
+                            {page}
+                          </Link>
+                          */}
+                        </div>
+                      </>
+                    ))}
+                  </div>
+                </div>
+              </Slide>
           </div>
         </nav>
       </Slide>
