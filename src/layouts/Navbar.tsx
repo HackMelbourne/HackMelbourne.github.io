@@ -60,8 +60,7 @@ const Navbar = ({ clubname, logo, pages, links }: Nav) => {
   const tempNavItem = () => {
     if (activePage == null) return
     return (
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-16 w-fit h-fit"         onMouseLeave={()=>setActivePage(null)}
-      >
+      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-16 w-fit h-fit">
         {/* Really bootleg solution, creates an invisible box to ensure hovered nav item doesnt 
         dissapear since the items are disconnected from the bar */}
         <div className="absolute -top-6 transform -translate-x-1/2 h-max w-max py-2">
@@ -74,7 +73,7 @@ const Navbar = ({ clubname, logo, pages, links }: Nav) => {
   }
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center" onMouseLeave={()=>setActivePage(null)}>
       <nav 
         className="w-screen max-w-[800px] fixed pt-8 z-40 px-8"
       >
