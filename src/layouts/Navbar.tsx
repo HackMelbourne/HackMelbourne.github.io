@@ -70,7 +70,7 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
           <div className="border-white border w-36 h-14 rounded-md bg-neutral-700"></div>
           <div className="border-white border w-36 h-14 rounded-md bg-neutral-700 mt-2"></div>
           <div className="border-white border w-36 h-14 rounded-md bg-neutral-700 mt-2"></div>
-          <div className='w-52'>
+          <div className='w-36'>
             {pills.map((pill) => (
               <NavbarPill {...pill} />
             ))}
@@ -118,35 +118,39 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
 
       {/* MOBILE */}
       <Slide in={isMenuOpen}>
-        <nav id="popup" className="flex fixed items w-screen h-screen p-2.5 z-50 bg-neutral-950">
-          <div className="flex flex-col w-full mx-2.5 rounded-xl border-2 border-white">
-            <div className="flex w-[100%] justify-between items-center">
-              <Link to={links[0]} onClick={handleLinkClick}>
-                <img src={logo} className="h-14 w-14 ml-5 mt-5" />
+        <nav id="popup" className="w-[95%] flex flex-col fixed items mt-3 p-3 z-50 rounded-xl border-2 border-white backdrop-blur">
+            <div className="flex w-[100%] justify-between items-center pt-1 px-2">
+              <Link to={links[0]} className="font-semibold" onClick={handleLinkClick}>
+                {clubname}
               </Link>
-              <button className="mr-5 mt-5" onClick={toggleMenu}>
-                <CloseIcon fontSize="large" />
+              <button onClick={toggleMenu}>
+                <CloseIcon fontSize="medium" />
               </button>
               </div>
               {revealMobileNavItem()}
               <Slide in={isSubMenuOpen}>
                 <div className="w-full h-full justify-center items-center">
-                  <div className="flex flex-col h-5/6 justify-center items-center gap-5">
+                  <div className="flex flex-col h-5/6 justify-center px-8 py-6 gap-5">
                     {pages.map((page, index) => (
-                      <>
-                        <div key={index} className="text-[32px] font-bold" onClick={() => revealMobileNav(index)}>{page}
-                          {/*
-                            <Link key={index} to={links[index]} className="text-[32px] font-bold" onClick={handleLinkClick}>
+                      <div
+                      onClick={()=>setActivePage(index)}
+                      className="relative"
+                    >
+                        <div key={index} className="text-lg font-bold" onClick={() => revealMobileNav(index)}>
+                          <Link
+                            key={index}
+                            to={links[index]}
+                            onClick={()=>setActivePage(index)}>
                             {page}
                           </Link>
-                          */}
+
+                          {activePage === index && tempNavItem(pills[index])}
                         </div>
-                      </>
+                      </div>
                     ))}
                   </div>
                 </div>
               </Slide>
-          </div>
         </nav>
       </Slide>
     </div>
