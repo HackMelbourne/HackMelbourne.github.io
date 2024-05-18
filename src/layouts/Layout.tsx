@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router";
-import { FaDiscord, FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa";
+import { FaDiscord, FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaCalendar } from "react-icons/fa";
 import {
   DISCORD_LINK,
   FACEBOOK_LINK,
@@ -14,6 +14,7 @@ import {
 
 // Components
 import Navbar from "./Navbar";
+import { NavbarPillProps } from "../features/Navbar/NavbarPillProps";
 import Footer from "./Footer";
 
 // Styles
@@ -40,11 +41,80 @@ const Layout = () => {
     setIsShowFooter(!isFooterHidden);
   }, [location]);
 
+  const homePills : NavbarPillProps[] = [
+    { 
+      title: "Calender",
+      desc: "See what's going on!",
+      Icon: FaCalendar,
+      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fphotos%2Fmulticolored-abstract-painting-f9oQZOk9vnk&psig=AOvVaw2qLkskAeDzojZ9zSdfyhWt&ust=1716084252458000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLDFvJSOloYDFQAAAAAdAAAAABAE",
+      link: "/calender"
+    },
+    { 
+      title: "Calender",
+      desc: "See what's going on!",
+      Icon: FaCalendar,
+      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fphotos%2Fmulticolored-abstract-painting-f9oQZOk9vnk&psig=AOvVaw2qLkskAeDzojZ9zSdfyhWt&ust=1716084252458000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLDFvJSOloYDFQAAAAAdAAAAABAE",
+      link: "/calender"
+    },
+  ]
+
+  const aboutPills : NavbarPillProps[] = [
+    { 
+      title: "Calender",
+      desc: "See what's going on!",
+      Icon: FaCalendar,
+      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fphotos%2Fmulticolored-abstract-painting-f9oQZOk9vnk&psig=AOvVaw2qLkskAeDzojZ9zSdfyhWt&ust=1716084252458000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLDFvJSOloYDFQAAAAAdAAAAABAE",
+      link: "/calender"
+    },
+    { 
+      title: "Calender",
+      desc: "See what's going on!",
+      Icon: FaCalendar,
+      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fphotos%2Fmulticolored-abstract-painting-f9oQZOk9vnk&psig=AOvVaw2qLkskAeDzojZ9zSdfyhWt&ust=1716084252458000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLDFvJSOloYDFQAAAAAdAAAAABAE",
+      link: "/calender"
+    },
+  ]
+
+  const calenderPills : NavbarPillProps[] = [
+    { 
+      title: "Calender",
+      desc: "See what's going on!",
+      Icon: FaCalendar,
+      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fphotos%2Fmulticolored-abstract-painting-f9oQZOk9vnk&psig=AOvVaw2qLkskAeDzojZ9zSdfyhWt&ust=1716084252458000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLDFvJSOloYDFQAAAAAdAAAAABAE",
+      link: "/calender"
+    },
+    { 
+      title: "Calender",
+      desc: "See what's going on!",
+      Icon: FaCalendar,
+      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fphotos%2Fmulticolored-abstract-painting-f9oQZOk9vnk&psig=AOvVaw2qLkskAeDzojZ9zSdfyhWt&ust=1716084252458000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLDFvJSOloYDFQAAAAAdAAAAABAE",
+      link: "/calender"
+    },
+    { 
+      title: "Calender",
+      desc: "See what's going on!",
+      Icon: FaCalendar,
+      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fphotos%2Fmulticolored-abstract-painting-f9oQZOk9vnk&psig=AOvVaw2qLkskAeDzojZ9zSdfyhWt&ust=1716084252458000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLDFvJSOloYDFQAAAAAdAAAAABAE",
+      link: "/calender"
+    },
+  ]
+
+  const sponsorPills : NavbarPillProps[] = [
+    { 
+      title: "Calender",
+      desc: "See what's going on!",
+      Icon: FaCalendar,
+      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fphotos%2Fmulticolored-abstract-painting-f9oQZOk9vnk&psig=AOvVaw2qLkskAeDzojZ9zSdfyhWt&ust=1716084252458000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLDFvJSOloYDFQAAAAAdAAAAABAE",
+      link: "/calender"
+    },
+  ]
+
   const nav = {
     clubname: "HackMelbourne",
     logo: "/img/HM_White_Transparent.png",
     pages: ["Home", "Meet The Team", "Calendar", "Sponsors"],
     links: ["/", "/meettheteam", "/calendar", "/sponsor"],
+    pills: [homePills, aboutPills, calenderPills, sponsorPills]
   };
 
   const footer = {
@@ -89,7 +159,7 @@ const Layout = () => {
   return (
     <>
       <div className="w-screen max-w-full overflow-x-clip">
-        {isShowNavbar ? <Navbar clubname={nav.clubname} logo={nav.logo} pages={nav.pages} links={nav.links} /> : null}
+        {isShowNavbar ? <Navbar clubname={nav.clubname} logo={nav.logo} pages={nav.pages} links={nav.links} pills={nav.pills} /> : null}
         <Outlet />
         {isShowFooter ? <Footer links={footer.links} icons={footer.icons} /> : null}
 

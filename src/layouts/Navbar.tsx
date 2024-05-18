@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { NavbarPillProps } from '../features/Navbar/NavbarPillProps';
 
 // Styles
 import '../styles/gradients.css';
@@ -10,15 +11,17 @@ import '../styles/gradients.css';
 import close_button from '/img/close-button.png';
 import { Link } from 'react-router-dom';
 import Slide from '@mui/material/Slide';
+import NavbarPill from '../features/Navbar/NavbarPill';
 
 interface Nav {
   clubname: string;
   logo: string;
   pages: string[];
   links: string[];
+  pills: NavbarPillProps[][];
 }
 
-const Navbar = ({ clubname, logo, pages, links }: Nav) => {
+const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(true);
   const [activePage, setActivePage] = useState<number | null>(null); 
@@ -57,7 +60,7 @@ const Navbar = ({ clubname, logo, pages, links }: Nav) => {
     );
   };
 
-  const tempNavItem = () => {
+  const tempNavItem = ( pills : NavbarPillProps[]) => {
     if (activePage == null) return
     return (
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-16 w-fit h-fit">
@@ -67,6 +70,11 @@ const Navbar = ({ clubname, logo, pages, links }: Nav) => {
           <div className="border-white border w-36 h-14 rounded-md bg-neutral-700"></div>
           <div className="border-white border w-36 h-14 rounded-md bg-neutral-700 mt-2"></div>
           <div className="border-white border w-36 h-14 rounded-md bg-neutral-700 mt-2"></div>
+          <div className='w-52'>
+            {pills.map((pill) => (
+              <NavbarPill {...pill} />
+            ))}
+          </div>
         </div>
       </div>
     )
@@ -100,7 +108,8 @@ const Navbar = ({ clubname, logo, pages, links }: Nav) => {
                     className="hover:underline hover:text-primary">
                     {page}
                   </Link>
-                  {activePage === index && tempNavItem()} 
+
+                  {activePage === index && tempNavItem(pills[index])}
                 </div>
               ))}
           </div>

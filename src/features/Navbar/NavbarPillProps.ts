@@ -5,5 +5,6 @@ export interface NavbarPillProps {
   desc: string;
   Icon: IconType;
   image: string;
+  link: string;
 }
 
