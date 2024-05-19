@@ -8,7 +8,6 @@ import '../styles/gradients.css';
 
 // Images
 // Change image to remove the bottom text
-import close_button from '/img/close-button.png';
 import { Link } from 'react-router-dom';
 import Slide from '@mui/material/Slide';
 import NavbarPill from '../features/Navbar/NavbarPill';
@@ -50,27 +49,24 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
             setIsSubMenuOpen(true);
           }}>Back</h3>
           <h3 className="text-3xl font-bold bg-white bg-opacity-10 py-2 px-4 w-full rounded-md">{pages[activePage]}</h3>
-          <div className="flex flex-col h-1/3 w-full justify-between">
-            <div className="border-white border w-full h-full rounded-md bg-neutral-700"></div>
-            <div className="border-white border w-full h-full rounded-md bg-neutral-700 mt-2"></div>
-            <div className="border-white border w-full h-full rounded-md bg-neutral-700 mt-2"></div>
+          <div className="flex flex-col h-1/3 w-full">
+            {pills[activePage].map((pill) => (
+                <NavbarPill {...pill} />
+              ))}
           </div>
         </div>
       </Slide>
     );
   };
 
-  const tempNavItem = ( pills : NavbarPillProps[]) => {
+  const navItems = ( pills : NavbarPillProps[]) => {
     if (activePage == null) return
     return (
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-16 w-fit h-fit">
         {/* Really bootleg solution, creates an invisible box to ensure hovered nav item doesnt 
         dissapear since the items are disconnected from the bar */}
         <div className="absolute -top-6 transform -translate-x-1/2 h-max w-max py-2">
-          <div className="border-white border w-36 h-14 rounded-md bg-neutral-700"></div>
-          <div className="border-white border w-36 h-14 rounded-md bg-neutral-700 mt-2"></div>
-          <div className="border-white border w-36 h-14 rounded-md bg-neutral-700 mt-2"></div>
-          <div className='w-36'>
+          <div className='w-52'>
             {pills.map((pill) => (
               <NavbarPill {...pill} />
             ))}
@@ -82,9 +78,7 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
 
   return (
     <div className="flex justify-center" onMouseLeave={()=>setActivePage(null)}>
-      <nav 
-        className="w-screen max-w-[800px] fixed pt-8 z-40 px-8"
-      >
+      <nav className="w-screen max-w-[800px] fixed pt-8 z-40 px-8">
         <div className="max-w-[800px] grow rounded-md bg-black/20 backdrop-blur-md border flex justify-between items-center px-5 py-3">
           <Link to={links[0]} className="flex items-center justify-start gap-2 font-bold" onClick={handleLinkClick}>
             <img src={logo} className="h-8 w-8"></img>
@@ -109,7 +103,7 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
                     {page}
                   </Link>
 
-                  {activePage === index && tempNavItem(pills[index])}
+                  {activePage === index && navItems(pills[index])}
                 </div>
               ))}
           </div>
@@ -118,39 +112,35 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
 
       {/* MOBILE */}
       <Slide in={isMenuOpen}>
-        <nav id="popup" className="w-[95%] flex flex-col fixed items mt-3 p-3 z-50 rounded-xl border-2 border-white backdrop-blur">
-            <div className="flex w-[100%] justify-between items-center pt-1 px-2">
-              <Link to={links[0]} className="font-semibold" onClick={handleLinkClick}>
-                {clubname}
+        <nav id="popup" className="flex fixed items w-screen h-screen p-2.5 z-50 bg-neutral-950">
+          <div className="flex flex-col w-full mx-2.5 rounded-xl border-2 border-white">
+            <div className="flex w-[100%] justify-between items-center">
+              <Link to={links[0]} onClick={handleLinkClick}>
+                <img src={logo} className="h-14 w-14 ml-5 mt-5" />
               </Link>
-              <button onClick={toggleMenu}>
-                <CloseIcon fontSize="medium" />
+              <button className="mr-5 mt-5" onClick={toggleMenu}>
+                <CloseIcon fontSize="large" />
               </button>
               </div>
               {revealMobileNavItem()}
               <Slide in={isSubMenuOpen}>
                 <div className="w-full h-full justify-center items-center">
-                  <div className="flex flex-col h-5/6 justify-center px-8 py-6 gap-5">
+                  <div className="flex flex-col h-5/6 justify-center items-center gap-5">
                     {pages.map((page, index) => (
-                      <div
-                      onClick={()=>setActivePage(index)}
-                      className="relative"
-                    >
-                        <div key={index} className="text-lg font-bold" onClick={() => revealMobileNav(index)}>
-                          <Link
-                            key={index}
-                            to={links[index]}
-                            onClick={()=>setActivePage(index)}>
+                      <>
+                        <div key={index} className="text-[32px] font-bold" onClick={() => revealMobileNav(index)}>{page}
+                          {/*
+                            <Link key={index} to={links[index]} className="text-[32px] font-bold" onClick={handleLinkClick}>
                             {page}
                           </Link>
-
-                          {activePage === index && tempNavItem(pills[index])}
+                          */}
                         </div>
-                      </div>
+                      </>
                     ))}
                   </div>
                 </div>
               </Slide>
+          </div>
         </nav>
       </Slide>
     </div>
