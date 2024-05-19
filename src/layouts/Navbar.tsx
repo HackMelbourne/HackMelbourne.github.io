@@ -39,7 +39,7 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
     setIsSubMenuOpen(false);
   };
 
-  const revealMobileNavItem = () => {
+  const revealMobileNavItems = () => {
     if (activePage == null) return
     return (
       <Slide in={activePage !== null}> 
@@ -122,7 +122,7 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
                 <CloseIcon fontSize="large" />
               </button>
               </div>
-              {revealMobileNavItem()}
+              {revealMobileNavItems()}
               <Slide in={isSubMenuOpen}>
                 <div className="w-full h-full justify-center items-center">
                   <div className="flex flex-col h-5/6 justify-center items-center gap-5">
