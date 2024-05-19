@@ -46,15 +46,15 @@ const Layout = () => {
       title: "Calender",
       desc: "See what's going on!",
       Icon: FaCalendar,
-      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fphotos%2Fmulticolored-abstract-painting-f9oQZOk9vnk&psig=AOvVaw2qLkskAeDzojZ9zSdfyhWt&ust=1716084252458000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLDFvJSOloYDFQAAAAAdAAAAABAE",
-      link: "/calender"
+      image: "/img/temp-bg.jpg",
+      link: "/calendar"
     },
     { 
       title: "Calender",
       desc: "See what's going on!",
       Icon: FaCalendar,
-      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fphotos%2Fmulticolored-abstract-painting-f9oQZOk9vnk&psig=AOvVaw2qLkskAeDzojZ9zSdfyhWt&ust=1716084252458000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLDFvJSOloYDFQAAAAAdAAAAABAE",
-      link: "/calender"
+      image: "/img/temp-bg.jpg",
+      link: "/calendar"
     },
   ]
 
@@ -63,15 +63,15 @@ const Layout = () => {
       title: "Calender",
       desc: "See what's going on!",
       Icon: FaCalendar,
-      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fphotos%2Fmulticolored-abstract-painting-f9oQZOk9vnk&psig=AOvVaw2qLkskAeDzojZ9zSdfyhWt&ust=1716084252458000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLDFvJSOloYDFQAAAAAdAAAAABAE",
-      link: "/calender"
+      image: "/img/temp-bg.jpg",
+      link: "/calendar"
     },
     { 
       title: "Calender",
       desc: "See what's going on!",
       Icon: FaCalendar,
-      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fphotos%2Fmulticolored-abstract-painting-f9oQZOk9vnk&psig=AOvVaw2qLkskAeDzojZ9zSdfyhWt&ust=1716084252458000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLDFvJSOloYDFQAAAAAdAAAAABAE",
-      link: "/calender"
+      image: "/img/temp-bg.jpg",
+      link: "/calendar"
     },
   ]
 
@@ -80,22 +80,22 @@ const Layout = () => {
       title: "Calender",
       desc: "See what's going on!",
       Icon: FaCalendar,
-      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fphotos%2Fmulticolored-abstract-painting-f9oQZOk9vnk&psig=AOvVaw2qLkskAeDzojZ9zSdfyhWt&ust=1716084252458000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLDFvJSOloYDFQAAAAAdAAAAABAE",
-      link: "/calender"
+      image: "/img/temp-bg.jpg",
+      link: "/calendar"
     },
     { 
       title: "Calender",
       desc: "See what's going on!",
       Icon: FaCalendar,
-      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fphotos%2Fmulticolored-abstract-painting-f9oQZOk9vnk&psig=AOvVaw2qLkskAeDzojZ9zSdfyhWt&ust=1716084252458000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLDFvJSOloYDFQAAAAAdAAAAABAE",
-      link: "/calender"
+      image: "/img/temp-bg.jpg",
+      link: "/calendar"
     },
     { 
       title: "Calender",
       desc: "See what's going on!",
       Icon: FaCalendar,
-      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fphotos%2Fmulticolored-abstract-painting-f9oQZOk9vnk&psig=AOvVaw2qLkskAeDzojZ9zSdfyhWt&ust=1716084252458000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLDFvJSOloYDFQAAAAAdAAAAABAE",
-      link: "/calender"
+      image: "/img/temp-bg.jpg",
+      link: "/calendar"
     },
   ]
 
@@ -104,8 +104,8 @@ const Layout = () => {
       title: "Calender",
       desc: "See what's going on!",
       Icon: FaCalendar,
-      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fphotos%2Fmulticolored-abstract-painting-f9oQZOk9vnk&psig=AOvVaw2qLkskAeDzojZ9zSdfyhWt&ust=1716084252458000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLDFvJSOloYDFQAAAAAdAAAAABAE",
-      link: "/calender"
+      image: "/img/temp-bg.jpg",
+      link: "/calendar"
     },
   ]
 
