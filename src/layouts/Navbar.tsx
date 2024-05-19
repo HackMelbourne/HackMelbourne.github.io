@@ -99,10 +99,10 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
                     key={index}
                     to={links[index]}
                     onClick={()=>setActivePage(index)}
-                    className="hover:underline hover:text-primary">
+                    className="">
                     {page}
+                    <span className={`${activePage == index ? "visible" : "hidden"} absolute left-0 -bottom-2 w-full h-1 bg-primary scale-x-100`}></span>
                   </Link>
-
                   {activePage === index && navItems(pills[index])}
                 </div>
               ))}
@@ -114,18 +114,18 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
       <Slide in={isMenuOpen}>
         <nav id="popup" className="flex fixed items w-screen h-screen p-2.5 z-50 bg-neutral-950">
           <div className="flex flex-col w-full mx-2.5 rounded-xl border-2 border-white">
-            <div className="flex w-[100%] justify-between items-center">
-              <Link to={links[0]} onClick={handleLinkClick}>
-                <img src={logo} className="h-14 w-14 ml-5 mt-5" />
+            <div className="flex w-[100%] justify-between items-center py-3">
+              <Link to={links[0]} onClick={handleLinkClick} className="ml-5 flex items-center justify-center gap-2 font-bold">
+                {clubname}
               </Link>
-              <button className="mr-5 mt-5" onClick={toggleMenu}>
+              <button className="mr-3" onClick={toggleMenu}>
                 <CloseIcon fontSize="large" />
               </button>
               </div>
               {revealMobileNavItems()}
               <Slide in={isSubMenuOpen}>
                 <div className="w-full h-full justify-center items-center">
-                  <div className="flex flex-col h-5/6 justify-center items-center gap-5">
+                  <div className="flex flex-col h-5/6 justify-center items-start w-fit m-auto gap-5">
                     {pages.map((page, index) => (
                       <>
                         <div key={index} className="text-[32px] font-bold" onClick={() => revealMobileNav(index)}>{page}
