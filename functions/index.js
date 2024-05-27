@@ -140,9 +140,10 @@ exports.getWorkshopLinks = onCall(
 
         // Getting data into format required by frontend
         const workshopLink = {
-          title: props.Title.title[0].plain_text,
           link: props.Link.url,
-          desc: props.Description.rich_text[0].plain_text,
+          title: props.Title.title[0].plain_text,
+          description: props.Description.rich_text[0].plain_text,
+          date: props.Date.date.start,
         };
         result.push(workshopLink);
       });

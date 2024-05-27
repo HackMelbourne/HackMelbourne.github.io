@@ -7,7 +7,7 @@ import { WorkshopLinkProps } from "../features/WorkshopLinks/WorkshopLinks.model
 export async function getWorkshopLinks(): Promise<WorkshopLinkProps[]> {
   try {
     console.log("testing");
-    let result = await httpsCallable(functions, "getYoutubeLinks")();
+    const result = await httpsCallable(functions, "getWorkshopLinks")();
     return result.data as WorkshopLinkProps[];
   } catch (e) {
     console.log(e);

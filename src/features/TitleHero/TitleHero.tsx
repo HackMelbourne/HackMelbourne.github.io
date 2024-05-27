@@ -40,7 +40,7 @@ const TitleHero = ({ pageTitle, pageDescription }: PageHeader) => {
             <h1>{pageTitle}</h1>
           </motion.div>
           <motion.div
-            className="md:w-2/5"
+            className="md:w-2/5 flex justify-center"
             initial={{ opacity: 0, y: -40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}>

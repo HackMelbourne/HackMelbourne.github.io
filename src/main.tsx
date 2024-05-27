@@ -22,6 +22,7 @@ import OWeekGame from "./routes/eventPages/OWeekGame";
 import GameComplete from "./routes/eventPages/GameComplete";
 import HackiethonQuiz from "./routes/eventPages/HackiethonQuiz";
 import QuizResults from "./features/HackiethonQuiz/QuizResults";
+import Workshops from "./routes/eventPages/PastWorkshops"
 
 //Google Analytics
 import ReactGA from "react-ga4";
@@ -46,6 +47,7 @@ const router = createBrowserRouter(
       <Route path="Hackiethon/quiz" element={<HackiethonQuiz></HackiethonQuiz>}></Route>
       <Route path="Hackiethon/quiz/results" element={<QuizResults></QuizResults>}></Route>
       <Route path="calendar" element={<Calendar></Calendar>}></Route>
+      <Route path="pastevents/workshops" element={<Workshops></Workshops>}></Route>
     </Route>,
   ),
 );
