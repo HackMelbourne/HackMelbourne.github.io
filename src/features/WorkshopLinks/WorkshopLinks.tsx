@@ -65,7 +65,7 @@ const WorkshopDisplay: React.FC<WorkshopDisplayProps> = ({ workshopLinks }) => {
     setExpanded(newExpanded ? panel : false);
   };
 
-  // Group workshops by year
+  // Group workshops by year using an object with key year
   const workshopsByYear = workshopLinks.reduce((acc: { [key: string]: WorkshopLinkProps[] }, workshop) => {
     const year = new Date(workshop.date).getFullYear();
     if (!acc[year]) {
