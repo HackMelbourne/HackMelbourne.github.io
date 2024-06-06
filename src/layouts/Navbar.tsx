@@ -59,14 +59,18 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
     );
   };
 
-  const navItems = ( pills : NavbarPillProps[]) => {
+  const navItems = ( pills : NavbarPillProps[], title : string) => {
     if (activePage == null) return
     return (
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-16 w-fit h-fit">
         {/* Really bootleg solution, creates an invisible box to ensure hovered nav item doesnt 
         dissapear since the items are disconnected from the bar */}
-        <div className="absolute -top-6 transform -translate-x-1/2 h-max w-max py-2">
-          <div className='w-52'>
+        <div className="absolute -top-6 transform -translate-x-1/2 h-max w-max py-4">
+          <div className="w-80 border px-8 pb-6 pt-4 rounded-md bg-black/80 backdrop-blur-md flex-col gap-1">
+            <div className="flex items-center">
+              <h2 className="font-semibold">{title}</h2>
+              <div className="ml-3 flex-grow border-primary border-t-4 rounded-md" />
+            </div>
             {pills.map((pill) => (
               <NavbarPill {...pill} />
             ))}
@@ -103,7 +107,7 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
                     {page}
                     <span className={`${activePage == index ? "visible" : "hidden"} absolute left-0 -bottom-2 w-full h-1 bg-primary scale-x-100`}></span>
                   </Link>
-                  {activePage === index && navItems(pills[index])}
+                  {activePage === index && navItems(pills[index], page)}
                 </div>
               ))}
           </div>
