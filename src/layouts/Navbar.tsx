@@ -116,35 +116,33 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
 
       {/* MOBILE */}
       <Slide in={isMenuOpen}>
-        <nav id="popup" className="flex fixed items w-screen h-screen p-2.5 z-50 bg-neutral-950">
-          <div className="flex flex-col w-full mx-2.5 rounded-xl border-2 border-white">
-            <div className="flex w-[100%] justify-between items-center py-3">
-              <Link to={links[0]} onClick={handleLinkClick} className="ml-5 flex items-center justify-center gap-2 font-bold">
+        <nav id="popup" className="w-[92%] max-h-[66%] flex flex-col fixed items mt-8 mx-5 p-3 z-50 rounded-xl border-2 border-white backdrop-blur">
+            <div className="flex w-full justify-between items-center pt-1 px-2">
+              <Link to={links[0]} onClick={handleLinkClick} className="font-semibold">
                 {clubname}
               </Link>
-              <button className="mr-3" onClick={toggleMenu}>
-                <CloseIcon fontSize="large" />
+              <button onClick={toggleMenu}>
+                <CloseIcon fontSize="medium" />
               </button>
-              </div>
+            </div>
               {revealMobileNavItems()}
               <Slide in={isSubMenuOpen}>
-                <div className="w-full h-full justify-center items-center">
-                  <div className="flex flex-col h-5/6 justify-center items-start w-fit m-auto gap-5">
+                <div className="w-full h-full justify-center items-center pt-3">
+                  <div className="flex flex-col h-fit justify-center px-8 py-6 gap-7">
                     {pages.map((page, index) => (
                       <>
-                        <div key={index} className="text-[32px] font-bold" onClick={() => revealMobileNav(index)}>{page}
+                        <div key={index} className="text-lg font-bold" onClick={() => revealMobileNav(index)}>{page}
                           {/*
                             <Link key={index} to={links[index]} className="text-[32px] font-bold" onClick={handleLinkClick}>
                             {page}
                           </Link>
-                          */}
+                    */}
                         </div>
                       </>
                     ))}
                   </div>
                 </div>
               </Slide>
-          </div>
         </nav>
       </Slide>
     </div>
