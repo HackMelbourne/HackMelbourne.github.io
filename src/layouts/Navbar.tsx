@@ -11,8 +11,8 @@ import '../styles/gradients.css';
 // Change image to remove the bottom text
 import { Link } from 'react-router-dom';
 import Slide from '@mui/material/Slide';
+import { List } from '@mui/material';
 import NavbarPill from '../features/Navbar/NavbarPill';
-import { duration } from '@mui/material';
 
 interface Nav {
   clubname: string;
@@ -151,8 +151,9 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
       {/* MOBILE */}
       <Slide in={isMenuOpen}>
         <div className="w-full pt-8 p-3 fixed z-40">
-          <nav 
-            className="w-full max-h-[66%] flex flex-col items p-3 z-50 rounded-xl border-2 border-white backdrop-blur">
+          <nav
+            className="w-full flex flex-col items p-3 z-50 rounded-xl border-2 border-white backdrop-blur">
+              <List style={{maxHeight: '66vh', overflow: 'auto'}}>
               <div className="flex w-full justify-between items-center pt-1 px-2">
                 <Link to={links[0]} onClick={handleLinkClick} className="font-semibold">
                   {clubname}
@@ -184,6 +185,7 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
                     ))}
                   </div>
                 </div>
+                </List>  
           </nav>
         </div>
       </Slide>
