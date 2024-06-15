@@ -42,7 +42,7 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
     },
     exit: {
       scaleY: 0,
-      transiton: {
+      transition: {
         duration: 0.1,
       }
     }
