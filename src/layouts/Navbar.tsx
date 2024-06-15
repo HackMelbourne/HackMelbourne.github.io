@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { NavbarPillProps } from '../features/Navbar/NavbarPillProps';
@@ -11,6 +12,7 @@ import '../styles/gradients.css';
 import { Link } from 'react-router-dom';
 import Slide from '@mui/material/Slide';
 import NavbarPill from '../features/Navbar/NavbarPill';
+import { duration } from '@mui/material';
 
 interface Nav {
   clubname: string;
@@ -26,6 +28,24 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(true);
   const [activePage, setActivePage] = useState<number | null>(null); 
   const [activeSubMenu, setActiveSubMenu] = useState<boolean[]>(new Array(pages.length).fill(false));
+
+  const menuVars = {
+    initial: {
+      scaleY: 0.
+    },
+    animate: {
+      scaleY: 1,
+      transition: {
+        duration: 0.3
+      }
+    },
+    exit: {
+      scaleY: 0,
+      transiton: {
+        duration: 0.1
+      }
+    }
+  }
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -131,7 +151,8 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
       {/* MOBILE */}
       <Slide in={isMenuOpen}>
         <div className="w-full pt-8 p-3 fixed z-40">
-          <nav id="popup" className="w-full max-h-[66%] flex flex-col items p-3 z-50 rounded-xl border-2 border-white backdrop-blur">
+          <nav 
+            className="w-full max-h-[66%] flex flex-col items p-3 z-50 rounded-xl border-2 border-white backdrop-blur">
               <div className="flex w-full justify-between items-center pt-1 px-2">
                 <Link to={links[0]} onClick={handleLinkClick} className="font-semibold">
                   {clubname}
@@ -145,13 +166,20 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
                   <div className="flex flex-col justify-center px-8 py-6 gap-7">
                     {pages.map((page, index) => (
                         <div key={index} className="text-lg font-bold" onClick={() => revealSubMenu(index)}>{page}
-                            <div>
-                              {activeSubMenu[index] ? (
-                                  pills[index].map((pill: NavbarPillProps) => (
+                            <AnimatePresence>
+                            {activeSubMenu[index] && (
+                            <motion.div variants={menuVars} 
+                              initial="initial"
+                              animate='animate'
+                              exit='exit'
+                              className='origin-top'
+                              >
+                              {pills[index].map((pill: NavbarPillProps) => (
                                     <NavbarPill {...pill} />
-                                  ))
-                              ) : null}
-                              </div>
+                                  ))}
+                            </motion.div>
+                            )}
+                            </AnimatePresence>
                         </div>                  
                     ))}
                   </div>
