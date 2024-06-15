@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { NavbarPillProps } from "./NavbarPillProps";
-import { IconType } from "react-icons";
 
 const NavbarPill = ({ title, desc, Icon, image, link } : NavbarPillProps) => {
   return (

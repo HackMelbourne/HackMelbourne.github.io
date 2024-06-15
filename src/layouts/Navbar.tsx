@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { AnimatePresence, easeOut, motion } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { ArrowDropUp, ArrowDropDown } from '@mui/icons-material';
@@ -29,6 +29,7 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(true);
   const [activePage, setActivePage] = useState<number | null>(null); 
   const [activeSubMenu, setActiveSubMenu] = useState<boolean[]>(new Array(pages.length).fill(false));
+  const mobileNavRef = useRef<HTMLDivElement>(null);
 
   const menuVars = {
     initial: {
@@ -113,6 +114,20 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
     )
   }
 
+  const handleClickOutsideNav = (e: MouseEvent) => {
+    if (mobileNavRef.current && !mobileNavRef.current.contains(e.target as Node)) {
+      toggleMenu();
+    }
+  };
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutsideNav);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutsideNav);
+    }
+  }, [isMenuOpen]);
+
   return (
     <div className="flex justify-center" onMouseLeave={()=>setActivePage(null)}>
       {isDesktopMenuOpen && (
@@ -152,7 +167,7 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
       {/* MOBILE */}
       <Slide in={isMenuOpen}>
         <div className="w-full pt-8 p-3 fixed z-40">
-          <nav className="w-full flex flex-col items p-3 z-50 rounded-xl border-2 border-white backdrop-blur">
+          <nav ref={mobileNavRef} className="w-full flex flex-col items p-3 z-50 rounded-xl border-2 border-white backdrop-blur">
             <List style={{maxHeight: '66vh', overflow: 'auto'}}>
               <div className="flex w-full justify-between items-center pt-1 px-2">
                 <Link to={links[0]} onClick={handleLinkClick} className="font-semibold">
