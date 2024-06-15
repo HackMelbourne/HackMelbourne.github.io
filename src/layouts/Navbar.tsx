@@ -121,32 +121,34 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
 
       {/* MOBILE */}
       <Slide in={isMenuOpen}>
-        <nav id="popup" className="w-[92%] max-h-[66%] flex flex-col fixed items mt-8 mx-5 p-3 z-50 rounded-xl border-2 border-white backdrop-blur">
-            <div className="flex w-full justify-between items-center pt-1 px-2">
-              <Link to={links[0]} onClick={handleLinkClick} className="font-semibold">
-                {clubname}
-              </Link>
-              <button onClick={toggleMenu}>
-                <CloseIcon fontSize="medium" />
-              </button>
-            </div>
-              {revealMobileNavItems()}
-              <Slide in={isSubMenuOpen}>
-                <div className="w-full h-full justify-center items-center pt-3">
-                  <div className="flex flex-col h-fit justify-center px-8 py-6 gap-7">
-                    {pages.map((page, index) => (
-                        <div key={index} className="text-lg font-bold" onClick={() => revealMobileNav(index)}>{page}
-                          {/*
-                            <Link key={index} to={links[index]} className="text-[32px] font-bold" onClick={handleLinkClick}>
-                            {page}
-                          </Link>
-                    */}
-                        </div>                  
-                    ))}
+        <div className="w-full pt-8 p-3 fixed z-40">
+          <nav id="popup" className="w-full max-h-[66%] flex flex-col items p-3 z-50 rounded-xl border-2 border-white backdrop-blur">
+              <div className="flex w-full justify-between items-center pt-1 px-2">
+                <Link to={links[0]} onClick={handleLinkClick} className="font-semibold">
+                  {clubname}
+                </Link>
+                <button onClick={toggleMenu}>
+                  <CloseIcon fontSize="medium" />
+                </button>
+              </div>
+                {revealMobileNavItems()}
+                <Slide in={isSubMenuOpen}>
+                  <div className="w-full h-full justify-center items-center pt-3">
+                    <div className="flex flex-col h-fit justify-center px-8 py-6 gap-7">
+                      {pages.map((page, index) => (
+                          <div key={index} className="text-lg font-bold" onClick={() => revealMobileNav(index)}>{page}
+                            {/*
+                              <Link key={index} to={links[index]} className="text-[32px] font-bold" onClick={handleLinkClick}>
+                              {page}
+                            </Link>
+                      */}
+                          </div>                  
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </Slide>
-        </nav>
+                </Slide>
+          </nav>
+        </div>
       </Slide>
     </div>
   );
