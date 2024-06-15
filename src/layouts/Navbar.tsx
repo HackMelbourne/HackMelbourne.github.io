@@ -25,6 +25,7 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(true);
   const [activePage, setActivePage] = useState<number | null>(null); 
+  const [activeSubMenu, setActiveSubMenu] = useState<boolean[]>(new Array(pages.length).fill(false));
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -60,6 +61,14 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
         </div>
       </Slide>
     );
+  };
+
+  const revealSubMenu = (index: number) => {
+    setActiveSubMenu((prev) => {
+      const newActiveSubMenu = [...prev];
+      newActiveSubMenu[index] = !newActiveSubMenu[index];
+      return newActiveSubMenu;
+    });
   };
 
   const navItems = ( pills : NavbarPillProps[], title : string) => {
@@ -131,22 +140,22 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
                   <CloseIcon fontSize="medium" />
                 </button>
               </div>
-                {revealMobileNavItems()}
-                <Slide in={isSubMenuOpen}>
-                  <div className="w-full h-full justify-center items-center pt-3">
-                    <div className="flex flex-col h-fit justify-center px-8 py-6 gap-7">
-                      {pages.map((page, index) => (
-                          <div key={index} className="text-lg font-bold" onClick={() => revealMobileNav(index)}>{page}
-                            {/*
-                              <Link key={index} to={links[index]} className="text-[32px] font-bold" onClick={handleLinkClick}>
-                              {page}
-                            </Link>
-                      */}
-                          </div>                  
-                      ))}
-                    </div>
+                {/* {revealMobileNavItems()} */}
+                <div className="w-full h-full justify-center items-center pt-3">
+                  <div className="flex flex-col justify-center px-8 py-6 gap-7">
+                    {pages.map((page, index) => (
+                        <div key={index} className="text-lg font-bold" onClick={() => revealSubMenu(index)}>{page}
+                            <div>
+                              {activeSubMenu[index] ? (
+                                  pills[index].map((pill: NavbarPillProps) => (
+                                    <NavbarPill {...pill} />
+                                  ))
+                              ) : null}
+                              </div>
+                        </div>                  
+                    ))}
                   </div>
-                </Slide>
+                </div>
           </nav>
         </div>
       </Slide>
