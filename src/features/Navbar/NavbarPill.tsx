@@ -4,7 +4,6 @@ import { IconType } from "react-icons";
 
 const NavbarPill = ({ title, desc, Icon, image, link } : NavbarPillProps) => {
   return (
-    <Link to={link}>
       <div className="relative w-full flex gap-4 items-center justify-center px-3 py-4 mt-2 rounded-md border border-white bg-center bg-cover"
          style={{ backgroundImage: `url(${image})` }}>
           <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
@@ -14,7 +13,6 @@ const NavbarPill = ({ title, desc, Icon, image, link } : NavbarPillProps) => {
             <p className="text-sm">{desc}</p>
           </div>
       </div>
-    </Link>
   )
 }
 

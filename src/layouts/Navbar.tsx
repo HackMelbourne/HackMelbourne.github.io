@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, easeOut, motion } from 'framer-motion';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { ArrowDropDown } from '@mui/icons-material';
 import { NavbarPillProps } from '../features/Navbar/NavbarPillProps';
 
 // Styles
@@ -42,7 +43,7 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
     exit: {
       scaleY: 0,
       transiton: {
-        duration: 0.1
+        duration: 0.1,
       }
     }
   }
@@ -166,25 +167,42 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
                 <div className="w-full h-full justify-center items-center pt-3">
                   <div className="flex flex-col justify-center px-8 py-6 gap-7">
                     {pages.map((page, index) => (
-                        <div key={index} className="text-lg font-bold" onClick={() => revealSubMenu(index)}>{page}
-                            <AnimatePresence>
-                            {activeSubMenu[index] && (
-                            <motion.div variants={menuVars} 
-                              initial="initial"
-                              animate='animate'
-                              exit='exit'
-                              className='origin-top'
-                              >
-                              {pills[index].map((pill: NavbarPillProps) => (
-                                    <NavbarPill {...pill} />
-                                  ))}
-                            </motion.div>
-                            )}
-                            </AnimatePresence>
-                        </div>                  
+                      <>
+                        {pills[index].length <= 0 ? (
+                          <div key={index} className="text-lg font-bold cursor-pointer">
+                            <Link to={links[index]} onClick={handleLinkClick}>
+                              {page}
+                            </Link>
+                          </div>
+                          ) : (
+                            <div key={index} className="text-lg font-bold cursor-pointer" onClick={() => revealSubMenu(index)}>
+                              {page}
+                              <ArrowDropDown />
+                              <AnimatePresence>
+                                {activeSubMenu[index] && (
+                                  <motion.div
+                                    key={index}
+                                    variants={menuVars}
+                                    initial="initial"
+                                    animate="animate"
+                                    exit="exit"
+                                    className="origin-top"
+                                  >
+                                    {pills[index].map((pill: NavbarPillProps) => (
+                                      <Link to={pill.link} onClick={handleLinkClick}>
+                                        <NavbarPill {...pill} />
+                                      </Link>
+                                    ))}
+                                  </motion.div>
+                                )}
+                              </AnimatePresence>
+                            </div>
+                          )
+                        }
+                      </>
                     ))}
+                    </div> 
                   </div>
-                </div>
                 </List>  
           </nav>
         </div>

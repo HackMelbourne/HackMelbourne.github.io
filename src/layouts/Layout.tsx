@@ -42,20 +42,6 @@ const Layout = () => {
   }, [location]);
 
   const homePills : NavbarPillProps[] = [
-    { 
-      title: "Calender",
-      desc: "See what's going on!",
-      Icon: FaCalendar,
-      image: "/img/temp-bg.jpg",
-      link: "/calendar"
-    },
-    { 
-      title: "Calender",
-      desc: "See what's going on!",
-      Icon: FaCalendar,
-      image: "/img/temp-bg.jpg",
-      link: "/calendar"
-    },
   ]
 
   const aboutPills : NavbarPillProps[] = [
@@ -100,13 +86,6 @@ const Layout = () => {
   ]
 
   const sponsorPills : NavbarPillProps[] = [
-    { 
-      title: "Calender",
-      desc: "See what's going on!",
-      Icon: FaCalendar,
-      image: "/img/temp-bg.jpg",
-      link: "/calendar"
-    },
   ]
 
   const nav = {
