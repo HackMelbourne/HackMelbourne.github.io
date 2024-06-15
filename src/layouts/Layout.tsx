@@ -43,8 +43,8 @@ const Layout = () => {
   const nav = {
     clubname: "HackMelbourne",
     logo: "/img/HM_White_Transparent.png",
-    pages: ["Home", "About Us", "Calendar", "Sponsors"],
-    links: ["/", "/about", "/calendar", "/sponsor"],
+    pages: ["Home", "Meet The Team", "Calendar", "Sponsors"],
+    links: ["/", "about/meettheteam", "upcoming/calendar", "sponsors"],
   };
 
   const footer = {
@@ -73,7 +73,7 @@ const Layout = () => {
           // { name: "Past Events", link: "#" },
           { name: "GitHub", link: GITHUB_LINK },
           // { name: "Design Guidelines", link: "#" },
-          { name: "Major Events", link: "/events" },
+          { name: "Major Events", link: "about/events" },
         ],
       },
     ],

@@ -1,14 +1,15 @@
-import { color, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import DynamicLink from "../../components/DynamicLink/DynamicLink";
 import { hexToRGBA } from "../../services/hexToRGBA";
-
+import { useState } from "react";
+import placeholderImg from "../../assets/images/placeholders/H{Logo.png"
 import dateFormat from "dateformat";
-
 import { CalendarItemProps } from "./CalendarItem.model";
 import { useEffect, useRef } from "react";
 
 const CalendarItem = ({ index, title, image, link, description, date, color, venue }: CalendarItemProps) => {
   const bgRef = useRef<HTMLDivElement>(null);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     if (bgRef.current != null) {
@@ -22,8 +23,9 @@ const CalendarItem = ({ index, title, image, link, description, date, color, ven
       <div className="flex w-full h-full flex-col items-center" key={index}>
         <img
           className="rounded border border-white w-full aspect-square object-cover"
-          src={image}
+          src={imageLoaded ? image : placeholderImg}
           onClick={() => window.open(link, "_blank", "noreferrer")}
+          onLoad={()=>setImageLoaded(true)}
         />
         <div
           ref={bgRef}
