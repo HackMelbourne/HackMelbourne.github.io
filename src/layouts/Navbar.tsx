@@ -21,16 +21,19 @@ interface Nav {
 }
 
 const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
+  const [isDesktopMenuOpen, setIsDesktopMenuOpen] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(true);
   const [activePage, setActivePage] = useState<number | null>(null); 
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    setIsDesktopMenuOpen(isMenuOpen);
   };
 
   const handleLinkClick = () => {
     setIsMenuOpen(false);
+    setIsDesktopMenuOpen(true);
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   };
 
@@ -82,6 +85,7 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
 
   return (
     <div className="flex justify-center" onMouseLeave={()=>setActivePage(null)}>
+      {isDesktopMenuOpen && (
       <nav className="w-screen max-w-[800px] fixed pt-8 z-40 px-8">
         <div className="max-w-[800px] grow rounded-md bg-black/20 backdrop-blur-md border flex justify-between items-center px-5 py-3">
           <Link to={links[0]} className="flex items-center justify-start gap-2 font-bold" onClick={handleLinkClick}>
@@ -113,6 +117,7 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
           </div>
         </div>
       </nav>
+      )}
 
       {/* MOBILE */}
       <Slide in={isMenuOpen}>
@@ -130,15 +135,13 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
                 <div className="w-full h-full justify-center items-center pt-3">
                   <div className="flex flex-col h-fit justify-center px-8 py-6 gap-7">
                     {pages.map((page, index) => (
-                      <>
                         <div key={index} className="text-lg font-bold" onClick={() => revealMobileNav(index)}>{page}
                           {/*
                             <Link key={index} to={links[index]} className="text-[32px] font-bold" onClick={handleLinkClick}>
                             {page}
                           </Link>
                     */}
-                        </div>
-                      </>
+                        </div>                  
                     ))}
                   </div>
                 </div>
