@@ -95,7 +95,7 @@ const Layout = () => {
     clubname: "HackMelbourne",
     logo: "/img/HM_White_Transparent.png",
     pages: ["Home", "About", "Upcoming", "Sponsors"],
-    links: ["/", "/meettheteam", "/calendar", "/sponsors"],
+    links: ["/", "/about/meettheteam", "/upcoming/calendar", "/sponsors"],
     pills: [homePills, aboutPills, calenderPills, sponsorPills],
   };
 
