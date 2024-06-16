@@ -41,59 +41,50 @@ const Layout = () => {
     setIsShowFooter(!isFooterHidden);
   }, [location]);
 
-  const homePills : NavbarPillProps[] = [
-  ]
+  const homePills: NavbarPillProps[] = [];
 
-  const aboutPills : NavbarPillProps[] = [
-    { 
-      title: "Calender",
-      desc: "See what's going on!",
+  const aboutPills: NavbarPillProps[] = [
+    {
+      title: "Events",
+      desc: "Our flagship Events!",
       Icon: FaCalendar,
       image: "/img/temp-bg.jpg",
-      link: "/calendar"
+      link: "/about/events",
     },
-    { 
-      title: "Calender",
-      desc: "See what's going on!",
+    {
+      title: "Meet the team",
+      desc: "See our amazing team",
       Icon: FaCalendar,
       image: "/img/temp-bg.jpg",
-      link: "/calendar"
+      link: "/about/meettheteam",
     },
-  ]
+  ];
 
-  const calenderPills : NavbarPillProps[] = [
-    { 
+  const calenderPills: NavbarPillProps[] = [
+    {
       title: "Calender",
       desc: "See what's going on!",
       Icon: FaCalendar,
       image: "/img/temp-bg.jpg",
-      link: "/calendar"
+      link: "/upcoming/calendar",
     },
-    { 
-      title: "Calender",
-      desc: "See what's going on!",
+    {
+      title: "Links",
+      desc: "Signups, events and more",
       Icon: FaCalendar,
       image: "/img/temp-bg.jpg",
-      link: "/calendar"
+      link: "/calendar",
     },
-    { 
-      title: "Calender",
-      desc: "See what's going on!",
-      Icon: FaCalendar,
-      image: "/img/temp-bg.jpg",
-      link: "/calendar"
-    },
-  ]
+  ];
 
-  const sponsorPills : NavbarPillProps[] = [
-  ]
+  const sponsorPills: NavbarPillProps[] = [];
 
   const nav = {
     clubname: "HackMelbourne",
     logo: "/img/HM_White_Transparent.png",
-    pages: ["Home", "Meet The Team", "Calendar", "Sponsors"],
-    links: ["/", "/meettheteam", "/calendar", "/sponsor"],
-    pills: [homePills, aboutPills, calenderPills, sponsorPills]
+    pages: ["Home", "About", "Upcoming", "Sponsors"],
+    links: ["/", "/meettheteam", "/calendar", "/sponsors"],
+    pills: [homePills, aboutPills, calenderPills, sponsorPills],
   };
 
   const footer = {
@@ -122,7 +113,7 @@ const Layout = () => {
           // { name: "Past Events", link: "#" },
           { name: "GitHub", link: GITHUB_LINK },
           // { name: "Design Guidelines", link: "#" },
-          { name: "Major Events", link: "/events" },
+          { name: "Major Events", link: "about/events" },
         ],
       },
     ],
@@ -138,7 +129,9 @@ const Layout = () => {
   return (
     <>
       <div className="w-screen max-w-full overflow-x-clip">
-        {isShowNavbar ? <Navbar clubname={nav.clubname} logo={nav.logo} pages={nav.pages} links={nav.links} pills={nav.pills} /> : null}
+        {isShowNavbar ? (
+          <Navbar clubname={nav.clubname} logo={nav.logo} pages={nav.pages} links={nav.links} pills={nav.pills} />
+        ) : null}
         <Outlet />
         {isShowFooter ? <Footer links={footer.links} icons={footer.icons} /> : null}
 
