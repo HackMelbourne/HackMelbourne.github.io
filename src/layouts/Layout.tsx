@@ -1,6 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router";
-import { FaDiscord, FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaCalendar } from "react-icons/fa";
+import {
+  FaDiscord,
+  FaEnvelope,
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaTiktok,
+  FaCalendar,
+  FaLink,
+  FaFlag,
+  FaPersonBooth,
+  FaUser,
+} from "react-icons/fa";
 import {
   DISCORD_LINK,
   FACEBOOK_LINK,
@@ -47,14 +59,14 @@ const Layout = () => {
     {
       title: "Events",
       desc: "Our flagship Events!",
-      Icon: FaCalendar,
+      Icon: FaFlag,
       image: "/img/temp-bg.jpg",
       link: "/about/events",
     },
     {
       title: "Meet the team",
       desc: "See our amazing team",
-      Icon: FaCalendar,
+      Icon: FaUser,
       image: "/img/temp-bg.jpg",
       link: "/about/meettheteam",
     },
@@ -71,9 +83,9 @@ const Layout = () => {
     {
       title: "Links",
       desc: "Signups, events and more",
-      Icon: FaCalendar,
+      Icon: FaLink,
       image: "/img/temp-bg.jpg",
-      link: "/calendar",
+      link: "/upcoming/links",
     },
   ];
 
