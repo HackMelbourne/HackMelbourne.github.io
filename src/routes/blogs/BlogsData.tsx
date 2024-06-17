@@ -1,47 +1,30 @@
+import TemplateBlog from "./TemplateBlog.mdx";
 import pythonImg from "../../assets/blog/images/python.png";
-import typescriptImg from "../../assets/blog/images/typescript.png";
 
-import pythonBlog from "./Intro to Python.md";
-import typescriptBlog from "./Intro to Typescript.md";
-
-interface BlogInterface {
+export interface BlogInterface {
   title: string;
   articleImage: string;
   description: string;
   time: string;
   author: string;
-  blogContent: string;
   fileName: string;
   tags: string[];
   url: string;
+  BlogComponent: React.ComponentType<{ components: any }>;
   articleId: number;
 }
 
-const BlogsData: BlogInterface[] = [
+export const BlogsData: BlogInterface[] = [
   {
-    title: "Introduction to Python Programming",
-    articleImage: pythonImg,
-    description: "A beginner's guide to Python programming language.",
-    time: "2024-05-01T12:00:00Z",
-    author: "John Doe",
-    blogContent: pythonBlog,
-    fileName: "Intro to Python.md",
-    tags: ["python", "programming", "beginner"],
-    url: "intro-to-python",
     articleId: 1,
-  },
-  {
-    title: "Getting Started with TypeScript",
-    articleImage: typescriptImg,
-    description: "Learn the basics of TypeScript language.",
-    time: "2024-04-28T10:30:00Z",
-    author: "Jane Smith",
-    blogContent: typescriptBlog,
-    fileName: "Intro to Typescript.md",
-    tags: ["typescript", "programming", "javascript"],
-    url: "javascript/intro-to-typescript",
-    articleId: 2,
+    title: "Getting Started with MDX",
+    description: "Learn how to integrate MDX into your React project and explore the components you can use to enhance your markdown content.",
+    tags: ["MDX", "React", "Components"],
+    articleImage: pythonImg,
+    time: "17 June 2024",
+    author: "Abhijeet Kumar",
+    fileName: "Blog1.mdx",
+    url: "blog-documentation",
+    BlogComponent: TemplateBlog,
   }
 ];
-export type { BlogInterface };
-export { BlogsData };

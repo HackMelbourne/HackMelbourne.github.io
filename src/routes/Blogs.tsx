@@ -1,55 +1,60 @@
-import React, {useState, useEffect} from "react";
-import Markdown from "markdown-to-jsx";
+import React from "react";
 import { BlogInterface, BlogsData } from "./blogs/BlogsData";
+import { Typography, Link, List, ListItem, ListItemText } from "@mui/material";
+
+const mdxComponents = {
+  h1: (props: any) => <Typography variant="h1" gutterBottom {...props} />,
+  h2: (props: any) => <Typography variant="h2" gutterBottom {...props} />,
+  h3: (props: any) => <Typography variant="h3" gutterBottom {...props} />,
+  h4: (props: any) => <Typography variant="h4" gutterBottom {...props} />,
+  h5: (props: any) => <Typography variant="h5" gutterBottom {...props} />,
+  h6: (props: any) => <Typography variant="h6" gutterBottom {...props} />,
+  p: (props: any) => <Typography variant="body1" paragraph {...props} />,
+  a: (props: any) => <Link {...props} />,
+  ul: (props: any) => <List {...props} />,
+  ol: (props: any) => <List component="ol" {...props} />,
+  li: (props: any) => (
+    <ListItem>
+      <ListItemText primary={props.children} />
+    </ListItem>
+  ),
+};
 
 interface BlogsProps {
   blogId?: number;
 }
 
 const Blogs: React.FC<BlogsProps> = ({ blogId }) => {
-  const [post, setPost] = useState('');
-
   const blog: BlogInterface | undefined = blogId
     ? BlogsData.find((blog: BlogInterface) => blog.articleId === blogId)
     : undefined;
 
-  useEffect(() => {
-    if (!blogId || !blog) {
-      return;
-    }
-    import(`./blogs/${blog.fileName}`)
-        .then(res => {
-            fetch(res.default)
-                .then(res => res.text())
-                .then(res => setPost(res))
-                .catch(err => console.log(err));
-        })
-        .catch(err => console.log(err));
-  }, [blogId]);
-
   if (blogId && !blog) {
+    // TODO: 404 page
     return <div>Blog not found</div>;
   }
+
   if (blogId) {
+    const BlogComponent = blog?.BlogComponent;
     return (
       <div className="w-screen px-10 mt-28">
-        <div className="w-inherit flex flex-col gap-8 justify-center items-center">
+        <div className="flex flex-col gap-8 justify-center items-center">
           <div>
-            <h2>{blog?.title}</h2>
-            <img src={blog?.articleImage} alt={blog?.title} />
-            <Markdown>{post}</Markdown>
+            <h2 className="text-3xl font-bold">{blog?.title}</h2>
+            <img src={blog?.articleImage} alt={blog?.title} className="max-w-full h-auto mt-4" />
+            {BlogComponent && <BlogComponent components={mdxComponents} />}
           </div>
         </div>
       </div>
     );
   } else {
     return (
-      <div className="w-screen mx-auto mt-28">
+      <div className="w-screen mx-auto mt-28 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 justify-center items-center">
           {BlogsData.map((blog: BlogInterface) => (
-            <div key={blog.articleId} className="flex flex-row gap-8">
-              <div className="flex-none">
-                <img src={blog.articleImage} alt={blog.title} className="w-32 h-auto" />
+            <div key={blog.articleId} className="flex flex-col md:flex-row gap-8 w-full max-w-4xl">
+              <div className="flex-none w-full md:w-1/3">
+                <img src={blog.articleImage} alt={blog.title} className="w-full h-auto" />
               </div>
               <div className="flex-grow w-full">
                 <h2 className="text-2xl font-semibold">{blog.title}</h2>
