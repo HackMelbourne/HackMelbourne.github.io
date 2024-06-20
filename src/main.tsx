@@ -1,10 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
-
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
-
 import "./index.css";
-
 import Layout from "./layouts/Layout";
 
 // Main Pages
@@ -16,23 +13,38 @@ import Privacy from "./routes/Privacy";
 import Terms from "./routes/Terms";
 import Calendar from "./routes/Calendar";
 
-//Event Pages
+// Event Pages
 import OWeek from "./routes/eventPages/OWeek";
 import OWeekGame from "./routes/eventPages/OWeekGame";
 import GameComplete from "./routes/eventPages/GameComplete";
 import HackiethonQuiz from "./routes/eventPages/HackiethonQuiz";
 import QuizResults from "./features/HackiethonQuiz/QuizResults";
 
-//Blog Pages
+// Blog Pages
 import Blogs from "./routes/Blogs";
 import { BlogInterface, BlogsData } from "./routes/blogs/BlogsData";
 
-//Google Analytics
+// Google Analytics
 import ReactGA from "react-ga4";
 import Hackiethon from "./routes/eventPages/Hackiethon";
 import Links from "./routes/Links";
 
 ReactGA.initialize("G-BCJY191MCE");
+
+// Interface for the props that the Redirect component will receive
+interface RedirectProps {
+  to: string;
+}
+
+// Redirect component using the React.FC type
+const Redirect: React.FC<RedirectProps> = ({ to }) => {
+  useEffect(() => {
+    window.location.replace(to);
+  }, [to]);
+
+  return null;
+};
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -56,6 +68,14 @@ const router = createBrowserRouter(
       {BlogsData.map((blog: BlogInterface) => (
         <Route key={blog.title} path={`blogs/${blog.url}`} element={<Blogs blogId={blog.articleId} />} />
       ))}
+      {/* Redirects */}
+      <Route path="/instagram" element={<Redirect to="https://www.instagram.com/hack.melbourne/" />} />
+      <Route path="/insta" element={<Redirect to="https://www.instagram.com/hack.melbourne/" />} />
+      <Route path="/discord" element={<Redirect to="https://discord.gg/tEQ5m6ayTV" />} />
+      <Route path="/facebook" element={<Redirect to="https://www.facebook.com/hackmelbourne/" />} />
+      <Route path="/fb" element={<Redirect to="https://www.facebook.com/hackmelbourne/" />} />
+      <Route path="/linkedin" element={<Redirect to="https://au.linkedin.com/company/hackmelbourne" />} />
+      <Route path="/tiktok" element={<Redirect to="https://www.tiktok.com/@hack.melbourne" />} />
     </Route>,
   ),
 );
