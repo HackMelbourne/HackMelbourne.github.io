@@ -72,9 +72,9 @@ const Layout = () => {
     },
   ];
 
-  const calenderPills: NavbarPillProps[] = [
+  const calendarPills: NavbarPillProps[] = [
     {
-      title: "Calender",
+      title: "Calendar",
       desc: "See what's going on!",
       Icon: FaCalendar,
       image: "/img/temp-bg.jpg",
@@ -90,13 +90,15 @@ const Layout = () => {
   ];
 
   const sponsorPills: NavbarPillProps[] = [];
+  
+  const blogPills: NavbarPillProps[] = [];
 
   const nav = {
     clubname: "HackMelbourne",
     logo: "/img/HM_White_Transparent.png",
-    pages: ["Home", "About", "Upcoming", "Sponsors"],
-    links: ["/", "/about/meettheteam", "/upcoming/calendar", "/sponsors"],
-    pills: [homePills, aboutPills, calenderPills, sponsorPills],
+    pages: ["Home", "About", "Upcoming", "Sponsors", "Blog"],
+    links: ["/", "/about/meettheteam", "/upcoming/calendar", "/sponsors", "/blogs"],
+    pills: [homePills, aboutPills, calendarPills, sponsorPills, blogPills],
   };
 
   const footer = {
