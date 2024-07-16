@@ -46,6 +46,7 @@ const router = createBrowserRouter(
       <Route path="upcoming" element={<Navigate to="./calendar" replace />} />
       <Route path="upcoming/calendar" element={<Calendar />} />
       <Route path="upcoming/links" element={<Links />}></Route>
+      <Route path="links" element={<Links />}></Route>
       <Route path="sponsors" element={<Sponsors />} />
       <Route path="past" element={<Navigate to="./halloffame" replace />} />
       <Route path="past/halloffame" element={<HallOfFame />} />
