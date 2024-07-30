@@ -67,7 +67,7 @@ function Root() {
     title: ["Join the ", "Hack", "Melbourne team for 2024"],
     desc: ["We make an impact on our future and learn some", "more skills along the way!"],
     button: "Apply Now",
-    link: "https://docs.google.com/forms/d/e/1FAIpQLSc_Cu4yD6Du6LWXD4itRBALJ0elsou0LN56xKPveT3HvrlBmw/viewform",
+    link: "",
   };
 
   return (

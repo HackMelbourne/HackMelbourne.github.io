@@ -104,10 +104,10 @@ const Layout = () => {
       {
         title: "Organisation",
         links: [
-          {
-            name: "Join Committee",
-            link: "https://docs.google.com/forms/d/e/1FAIpQLSc_Cu4yD6Du6LWXD4itRBALJ0elsou0LN56xKPveT3HvrlBmw/viewform",
-          },
+          // {
+          //  name: "Join Committee",
+          //  link: "https://docs.google.com/forms/d/e/1FAIpQLSc_Cu4yD6Du6LWXD4itRBALJ0elsou0LN56xKPveT3HvrlBmw/viewform",
+          // },
           { name: "UMSU", link: UMSU_LINK },
           { name: "Contact Us", link: "mailto:${SECRETARY_EMAIL}" },
         ],
