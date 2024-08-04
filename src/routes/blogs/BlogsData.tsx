@@ -1,4 +1,5 @@
 import TemplateBlog from "./TemplateBlog.mdx";
+import TemplateBlogPage from "./TemplateBlogPage.mdx";
 import pythonImg from "../../assets/blog/images/python.png";
 
 export interface BlogInterface {
@@ -25,6 +26,6 @@ export const BlogsData: BlogInterface[] = [
     author: "Abhijeet Kumar",
     fileName: "Blog1.mdx",
     url: "blog-documentation",
-    BlogComponent: TemplateBlog,
+    BlogComponent: TemplateBlogPage,
   }
 ];

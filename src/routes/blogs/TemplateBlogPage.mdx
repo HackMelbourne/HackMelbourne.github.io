@@ -1,0 +1,73 @@
+import React from 'react';
+import { Alert, Button, Card, CardContent, CardHeader, Typography, Link, List, ListItem, Divider, Box, Grid, Paper } from '@mui/material';
+
+<div className="max-w-screen-lg mx-auto mt-16">
+
+  <div className="flex flex-col gap-4">
+    <div className="text-2xl lg:text-3xl font-bold mt-10">Overview</div>
+    <div className="text-base font-bold">Wanna know how to create your very own blog to share with HackMelbourne members?</div>
+    
+    <div className="flex items-center">
+      <div className="text-base font-normal w-2/5">
+        This template is for blogs that will be posted on the HackMelbourne website. The template is comprised of the following sections:
+          <div>
+            <li>Title</li>
+            <li>Overview header</li>
+            <li>Hook</li>
+            <li>Description</li>
+            <li>Section headings</li>
+            <li>Content</li>
+            <li>Conclusion header</li>
+            <li>Conclusion</li>
+            <li>Related blogs</li>
+          </div>
+      </div>
+      ![Example Image](https://via.placeholder.com/150)
+    </div>
+  </div>
+
+  <div className="flex flex-col gap-4 mt-16">
+    <div className="text-2xl lg:text-3xl font-bold mt-10">Embedded links</div>
+    
+    <div className="text-base font-normal">
+      This section is here to demonstrate how 
+        <Link href="https://google.com">links</Link> 
+      will be embedded into paragraphs when needed. I am using MUI Link for this.
+    </div>
+  </div>
+
+  <div className="flex flex-col gap-4 mt-4">
+    <div className="text-2xl lg:text-3xl font-bold mt-10">Code blocks</div>
+    
+    <div className="flex justify-between">
+      <div className="text-base font-normal">
+        This section demonstrates how HTML code can be embedded into paragraphs, aka `<p>`.
+
+        You can also use Javascript:
+          ```javascript
+          console.log("Javascript x Markdwown = LOVE");
+          ```
+      </div>
+    </div>
+  </div>
+
+  <div className="flex flex-col gap-4 mt-16">
+    <div className="text-2xl lg:text-3xl font-bold mt-10">Conclusion</div>
+    
+    <div className="text-base font-normal">
+        I used mostly divs to get the desired font (not completely successful) as I don't think Markdown allows you to change it? 
+        Also I think Markdown doesn't recognise some Tailwind margin classes so the spacing is a bit weird. 
+        
+        I hope this design is not too ugly...
+    </div>
+  </div>
+
+  <div className="flex flex-col mt-8">
+    <div className="text-xl lg:text-2xl font-semibold mt-10">Related topics</div>
+    These Markdown list items look kinda of spaced out in a div
+    - [Link](https:hack.melbourne)
+    - [Link](https:hack.melbourne)
+    - [Link](https:hack.melbourne)
+  </div>
+
+</div>
