@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-import HMButton from '../../components/Button/HMButton';
+import HMButton from "../../components/Button/HMButton";
 
 interface BannerInfo {
   img: string;
@@ -45,7 +45,7 @@ function BannerStandard({ img, title, desc, button, link }: BannerInfo) {
       initial="hidden"
       whileInView="show">
       <motion.div className="md:w-[440px] md:h-[505px] shrink-0 self-stretch" variants={item} custom={1}>
-        <img src={img} alt={title}/>
+        <img src={img} alt={title} />
       </motion.div>
 
       <div className="flex flex-col items-center md:items-start gap-5 self-stretch md:self-auto">
@@ -62,7 +62,7 @@ function BannerStandard({ img, title, desc, button, link }: BannerInfo) {
         </motion.div>
 
         <motion.div variants={item} custom={-1}>
-          <HMButton text={button} color="neutral" style="border" link={link}></HMButton>
+          <HMButton text={button} color="primary" style="border" link={link}></HMButton>
         </motion.div>
       </div>
     </motion.div>
