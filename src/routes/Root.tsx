@@ -10,7 +10,7 @@ import HackiethonImage from "../assets/images/Hackiethon-2022/Hackiethon2.jpg";
 import MelbHackImage from "../assets/images/MelbourneHack-2023/MelbourneHack.jpg";
 
 // Hoodie Imports
-import HoodieBack from "../assets/images/Hoodie-2023/HM_Hoodie_Back.png";
+import HoodieBack from "../assets/images/Hoodie-2024/Hoodie-2024.png";
 
 // Constants
 import { UMSU_LINK } from "../constants";
@@ -57,10 +57,10 @@ function Root() {
 
   const hoodie = {
     img: HoodieBack,
-    title: "HackMelbourne 2023 Exclusive Hoodie",
-    desc: "Remember the amazing year of 2023 and our achievements.",
+    title: "HackMelbourne 2024 Exclusive Hoodie",
+    desc: "See a super comfy hoodie and support our efforts across 2024 for only $55!",
     button: "See details",
-    link: "",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSehAHqWj4rofplkEzLk3BYyHr3h72n_sqWz55zYqTgTTnZ6Gg/viewform",
   };
 
   const jointeam = {

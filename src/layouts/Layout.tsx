@@ -72,31 +72,35 @@ const Layout = () => {
     },
   ];
 
-  const calenderPills: NavbarPillProps[] = [
-    {
-      title: "Calender",
-      desc: "See what's going on!",
-      Icon: FaCalendar,
-      image: "/img/temp-bg.jpg",
-      link: "/upcoming/calendar",
-    },
-    {
-      title: "Links",
-      desc: "Signups, events and more",
-      Icon: FaLink,
-      image: "/img/temp-bg.jpg",
-      link: "/upcoming/links",
-    },
+  const linkPills: NavbarPillProps[] = [];
+
+  const calendarPills: NavbarPillProps[] = [
+    // {
+    //   title: "Calendar",
+    //   desc: "See what's going on!",
+    //   Icon: FaCalendar,
+    //   image: "/img/temp-bg.jpg",
+    //   link: "/upcoming/calendar",
+    // },
+    // {
+    //   title: "Links",
+    //   desc: "Signups, events and more",
+    //   Icon: FaLink,
+    //   image: "/img/temp-bg.jpg",
+    //   link: "/upcoming/links",
+    // },
   ];
 
   const sponsorPills: NavbarPillProps[] = [];
 
+  const blogPills: NavbarPillProps[] = [];
+
   const nav = {
     clubname: "HackMelbourne",
     logo: "/img/HM_White_Transparent.png",
-    pages: ["Home", "About", "Upcoming", "Sponsors"],
-    links: ["/", "/about/meettheteam", "/upcoming/calendar", "/sponsors"],
-    pills: [homePills, aboutPills, calenderPills, sponsorPills],
+    pages: ["About", "Links", "Calendar", "Sponsors", "Blog"],
+    links: ["/about/meettheteam", "upcoming/links", "/upcoming/calendar", "/sponsors", "/blogs"],
+    pills: [aboutPills, linkPills, calendarPills, sponsorPills, blogPills],
   };
 
   const footer = {
