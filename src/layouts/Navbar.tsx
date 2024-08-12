@@ -144,7 +144,6 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
             <button className="md:hidden" onClick={toggleMenu}>
               {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
             </button>
-
             {/* DESKTOP */}
             <div className="hidden md:flex justify-end gap-6 items-center">
               {pages.map((page, index) => (

@@ -72,33 +72,35 @@ const Layout = () => {
     },
   ];
 
+  const linkPills: NavbarPillProps[] = [];
+
   const calendarPills: NavbarPillProps[] = [
-    {
-      title: "Calendar",
-      desc: "See what's going on!",
-      Icon: FaCalendar,
-      image: "/img/temp-bg.jpg",
-      link: "/upcoming/calendar",
-    },
-    {
-      title: "Links",
-      desc: "Signups, events and more",
-      Icon: FaLink,
-      image: "/img/temp-bg.jpg",
-      link: "/upcoming/links",
-    },
+    // {
+    //   title: "Calendar",
+    //   desc: "See what's going on!",
+    //   Icon: FaCalendar,
+    //   image: "/img/temp-bg.jpg",
+    //   link: "/upcoming/calendar",
+    // },
+    // {
+    //   title: "Links",
+    //   desc: "Signups, events and more",
+    //   Icon: FaLink,
+    //   image: "/img/temp-bg.jpg",
+    //   link: "/upcoming/links",
+    // },
   ];
 
   const sponsorPills: NavbarPillProps[] = [];
-  
+
   const blogPills: NavbarPillProps[] = [];
 
   const nav = {
     clubname: "HackMelbourne",
     logo: "/img/HM_White_Transparent.png",
-    pages: ["Home", "About", "Upcoming", "Sponsors", "Blog"],
-    links: ["/", "/about/meettheteam", "/upcoming/calendar", "/sponsors", "/blogs"],
-    pills: [homePills, aboutPills, calendarPills, sponsorPills, blogPills],
+    pages: ["About", "Links", "Calendar", "Sponsors", "Blog"],
+    links: ["/about/meettheteam", "upcoming/links", "/upcoming/calendar", "/sponsors", "/blogs"],
+    pills: [aboutPills, linkPills, calendarPills, sponsorPills, blogPills],
   };
 
   const footer = {
@@ -106,10 +108,10 @@ const Layout = () => {
       {
         title: "Organisation",
         links: [
-          {
-            name: "Join Committee",
-            link: "https://docs.google.com/forms/d/e/1FAIpQLSc_Cu4yD6Du6LWXD4itRBALJ0elsou0LN56xKPveT3HvrlBmw/viewform",
-          },
+          // {
+          //  name: "Join Committee",
+          //  link: "https://docs.google.com/forms/d/e/1FAIpQLSc_Cu4yD6Du6LWXD4itRBALJ0elsou0LN56xKPveT3HvrlBmw/viewform",
+          // },
           { name: "UMSU", link: UMSU_LINK },
           { name: "Contact Us", link: "mailto:${SECRETARY_EMAIL}" },
         ],
