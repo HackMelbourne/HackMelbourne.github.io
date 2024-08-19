@@ -1,6 +1,7 @@
 import React from "react";
 import { BlogInterface, BlogsData } from "./blogs/BlogsData";
 import { Typography, Link, List, ListItem, ListItemText } from "@mui/material";
+import TitleHero from "../features/TitleHero/TitleHero";
 
 const mdxComponents = {
   h1: (props: any) => <Typography variant="h1" gutterBottom {...props} />,
@@ -49,24 +50,35 @@ const Blogs: React.FC<BlogsProps> = ({ blogId }) => {
     );
   } else {
     return (
-      <div className="w-screen mx-auto mt-28 px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-8 justify-center items-center">
-          {BlogsData.map((blog: BlogInterface) => (
-            <div key={blog.articleId} className="flex flex-col md:flex-row gap-8 w-full max-w-4xl">
-              <div className="flex-none w-full md:w-1/3">
-                <img src={blog.articleImage} alt={blog.title} className="w-full h-auto" />
+      <>
+        <TitleHero
+          pageTitle="Blogs"
+          pageDescription="We created HackMelbourne Blogs as a way to share our knowledge for everyone, from tips and tricks with hackathons to how to work efficiently in a team!"
+        />
+
+        <div className="max-w-screen-lg mx-auto mt-28 px-4">
+          <div className="flex flex-col gap-8 justify-center items-center">
+            {BlogsData.map((blog: BlogInterface) => (
+              <div
+                key={blog.articleId}
+                className="flex flex-col md:flex-row gap-4 sm:gap-8 w-full max-w-4xl items-center p-8 bg-white/10 rounded-md">
+                <div className="flex-none w-full md:w-1/3">
+                  <img src={blog.articleImage} alt={blog.title} className="w-full h-full bg-cover" />
+                </div>
+                <div className="flex-grow w-full flex flex-col gap-2">
+                  <h2 className="text-3xl font-bold">{blog.title}</h2>
+                  <p className="text-gray-600">{blog.description}</p>
+                  <a
+                    href={`/blogs/${blog.url}`}
+                    className="p-2 px-4 bg-primary/10 rounded w-fit border border-primary font-bold hover:scale-105 transition-all">
+                    Read more
+                  </a>
+                </div>
               </div>
-              <div className="flex-grow w-full">
-                <h2 className="text-2xl font-semibold">{blog.title}</h2>
-                <p className="text-gray-600">{blog.description}</p>
-                <a href={`/blogs/${blog.url}`} className="text-blue-500 hover:underline">
-                  Read more
-                </a>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 };
