@@ -13,6 +13,7 @@ export interface BlogInterface {
   url: string;
   BlogComponent: React.ComponentType<{ components: any }>;
   articleId: number;
+  hidden?: boolean;
 }
 
 export const BlogsData: BlogInterface[] = [
@@ -28,5 +29,6 @@ export const BlogsData: BlogInterface[] = [
     fileName: "Blog1.mdx",
     url: "blog-documentation",
     BlogComponent: TemplateBlog,
+    hidden: true,
   },
 ];
