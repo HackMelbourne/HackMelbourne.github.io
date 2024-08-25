@@ -1,6 +1,7 @@
 import pythonImg from "../../assets/blog/images/python.png";
 import gitcover from "../../assets/blog/images/git_tutorial_cover.png";
 import GitBlog from "./Gittutorial.mdx";
+import TemplateBlog from "./TemplateBlog.mdx";
 
 export interface BlogInterface {
   title: string;
