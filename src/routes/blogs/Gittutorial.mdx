@@ -2,11 +2,11 @@ import React from 'react';
 import { Alert, Button, Card, CardContent, CardHeader, Typography, Link, List, ListItem, Divider, Box, Grid, Paper } from '@mui/material';
 import gitarc from "../../assets/blog/images/git_tutorial_cover.png"
 
-##### Git Tutorial
+### Git Tutorial
 
 Note that this assumes you have python and a code editor (Eg. vscode downloaded), and a github account.
 
-###### What are Version Control Systems?
+#### What are Version Control Systems?
 
 Before we talk about Git, we need to talk about Version Control Systems (VCS).
 
@@ -14,11 +14,11 @@ They enable developers to work simultaneously on the same project, experiment wi
 
 They are much more efficient than just sending code back and forth between developers and are essential in the Computer Science World.
 
-##### Centralized vs Distributed
+#### Centralized vs Distributed
 
 There are two main types of VCS, centralized and distributed.
 
-###### Centralized VCS:
+##### Centralized VCS:
 
 -   In a centralized VCS, there's a single, central server that stores all versions of files.
 
@@ -26,7 +26,7 @@ There are two main types of VCS, centralized and distributed.
 
 -   These are pretty useful however if the central server goes down, then no one will be able to work on the project.
 
-###### Distributed VCS:
+##### Distributed VCS:
 
 -   In a distributed VCS, each developer has their own local repository, containing the complete project history.
 
@@ -34,14 +34,14 @@ There are two main types of VCS, centralized and distributed.
 
 -   They can then sync their changes manually with other repositories as needed.
 
-##### Why is Git important?
+#### Why is Git important?
 
 Git is a distributed VCS.
 It's a massively popular tool for managing projects among individuals and teams.
 
 Knowing how to use Git is an extremely important skill for any developer - and it will look great on your resume!
 
-##### Downloading Git
+#### Downloading Git
 
 First you will need to download Git onto your computer... You can do so through this [Git Download Link](https://git-scm.com/downloads)
 
@@ -53,7 +53,7 @@ git --version
 
 If everything went well, it should return the Git version that is installed on your computer.
 
-##### Configuring Git
+#### Configuring Git
 
 After installing Git onto your computer, you will need to configure it with your name and email address
 
@@ -85,7 +85,7 @@ If you want to unset your global configurations, you can use the following:
 git config --global --unset <key>
 ```
 
-##### Initializing a Git Repository
+#### Initializing a Git Repository
 
 To start version controlling your project, navigate to your project's working directory (folder) using the terminal and run:
 
@@ -97,7 +97,7 @@ This creates a new Git repository in your project directory.
 
 Make sure you are in the directory (folder) that you are planning to work in for the whole project.
 
-##### Adding files to your Repository
+#### Adding files to your Repository
 
 To add files to the staging area (the area where changes to files are prepared before they are committed), you can use:
 
@@ -111,7 +111,7 @@ Or if you want to add all of them at once, you can use:
 git add .
 ```
 
-##### Committing a change to the repository
+#### Committing a change to the repository
 
 Once you have added the files, you need to commit them to "save them',
 
@@ -121,7 +121,7 @@ git commit -m "Your commit message here"
 
 Your message should be a brief description of the changes you have made to the project since the last commit.
 
-##### Differences between Adding files and Committing changes
+#### Differences between Adding files and Committing changes
 
 When you are working on projects, there are three main areas that changes go through.
 There is the working directory (where you are actually coding), the staging area (where you prepare your changes in the next commit) and the Git Repository (where you save your changes locally).
@@ -135,7 +135,7 @@ See the diagram below:
 
 ![alt text](gitarc)
 
-##### Branches
+#### Branches
 
 Branches in Git allow you to work on different features or bug fixes without affecting the main code-base.
 To create a new branch, you can use:
@@ -152,7 +152,7 @@ git checkout new_branchname
 
 Now you can start experimenting with your code without affecting your main code-base :
 
-##### Cloning a repository
+#### Cloning a repository
 
 Cloning creates a local copy of a remote repository on your machine.
 This allows you to work on the project, make changes (without affecting the remote repository).
@@ -171,7 +171,7 @@ and then you have it, now to clone a repository you can use:
 git clone repository_url
 ```
 
-##### Forking a Repository
+#### Forking a Repository
 
 Forking involves creating a copy of a repository on your GitHub account.
 Note this is different to cloning as the copy is on your GitHub account rather than your local repository.
@@ -207,7 +207,7 @@ Eg.
 git clone https://github.com/YOUR-USERNAME/repository_name
 ```
 
-##### Pushing changes to a Remote repository
+#### Pushing changes to a Remote repository
 
 So far you have been working locally and haven't made your changes accessible to others.
 To make your changes available, you need to push them to a remote repository.
@@ -232,7 +232,7 @@ Note that if you want to push to the main branch you would make branchname main 
 And you might need to do a pull request beforehand.
 For more information, please head to Github website.
 
-##### Checking Status / logs in Git
+#### Checking Status / logs in Git
 
 Git has a command to check the status of your files, you can do so with the following:
 
