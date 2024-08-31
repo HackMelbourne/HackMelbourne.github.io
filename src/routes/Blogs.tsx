@@ -2,7 +2,6 @@ import React from "react";
 import { BlogInterface, BlogsData } from "./blogs/BlogsData";
 import { Typography, Link, List, ListItem, ListItemText, createTheme, ThemeProvider } from "@mui/material";
 import TitleHero from "../features/TitleHero/TitleHero";
-import HeroBanner from "../features/LandingHero/LandingHero";
 
 const theme = createTheme({
   typography: {
@@ -68,14 +67,14 @@ const Blogs: React.FC<BlogsProps> = ({ blogId }) => {
         <section className="max-w-screen-lg mx-auto flex flex-col gap-1 mt-8 px-4">
           <img src={blog?.articleImage} alt={blog?.title} className="w-full h-auto" />
           <div className="flex w-full justify-between font-bold">
-            <div>Liang</div>
-            <div>31st Jan</div>
+            <div>{blog?.author}</div>
+            <div>{blog?.time}</div>
           </div>
         </section>
         <ThemeProvider theme={theme}>
-          <div className="max-w-screen-lg mx-auto px-4 mt-28">
+          <div className="max-w-screen-lg mx-auto px-8 mt-28">
             <div className="flex flex-col gap-8 justify-center items-center">
-              <div>{BlogComponent && <BlogComponent components={mdxComponents} />}</div>
+              {BlogComponent && <BlogComponent components={mdxComponents} />}
             </div>
           </div>
         </ThemeProvider>
