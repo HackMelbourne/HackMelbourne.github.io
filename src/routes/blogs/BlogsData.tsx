@@ -1,5 +1,6 @@
 import pythonImg from "../../assets/blog/images/python.png";
-
+import gitcover from "../../assets/blog/images/git_tutorial_cover.png";
+import GitBlog from "./Gittutorial.mdx";
 import TemplateBlog from "./TemplateBlog.mdx";
 
 export interface BlogInterface {
@@ -30,5 +31,19 @@ export const BlogsData: BlogInterface[] = [
     url: "blog-documentation",
     BlogComponent: TemplateBlog,
     hidden: true,
+  },
+
+  {
+    articleId: 2,
+    title: "Introduction to Using Git/Github",
+    description: "A quick summary of the Basics of Using Git/Github",
+    tags: ["Git", "programming", "beginner"],
+    articleImage: gitcover,
+    time: "25 August 2024",
+    author: "Anshan Arnott-Tan",
+    fileName: "Git_Tutorial.mdx",
+    url: "Git-Tutorial",
+    BlogComponent: GitBlog,
+    hidden: false,
   },
 ];
