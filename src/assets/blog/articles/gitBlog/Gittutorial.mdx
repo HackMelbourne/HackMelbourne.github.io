@@ -1,0 +1,286 @@
+import React from 'react';
+import { Alert, Button, Card, CardContent, CardHeader, Typography, Link, List, ListItem, Divider, Box, Grid, Paper } from '@mui/material';
+import gitarc from "../../images/git_arc.png"
+
+*Please note that this assumes you have python and a code editor (Eg. vscode downloaded), and a github account.* <br/><br/>
+
+##### **What are Version Control Systems?**
+
+Before we talk about Git, we need to talk about Version Control Systems (VCS). <br/><br/>
+
+They enable developers to work simultaneously on the same project, experiment with new ideas, and easily revert to previous versions if needed. <br/><br/>
+
+They are much more efficient than just sending code back and forth between developers and are essential in the Computer Science World. <br/><br/>
+
+##### **Centralized vs Distributed**
+
+There are two main types of VCS, centralized and distributed. <br/><br/>
+
+<Grid container spacing={2} className="mt-4">
+  <Grid item xs={12} sm={6}>
+    <Paper className="p-4" style={{ backgroundColor: '#000', color: '#fff' }}>
+      <Typography variant="h6">Centralized VCS</Typography>
+      <Typography>1. There's a single, central server that stores all versions of files.</Typography>
+      <Typography>2. Developers must continuously sync their work with this central server.</Typography>
+      <Typography>3. If the central server goes down, then no one will be able to work on the project.</Typography>
+    </Paper>
+  </Grid>
+  <Grid item xs={12} sm={6}>
+    <Paper className="p-4" style={{ backgroundColor: '#000', color: '#fff' }}>
+      <Typography variant="h6">Distributed VCS</Typography>
+      <Typography>1. Each developer has their own local repository, containing the complete project history.</Typography>
+      <Typography>2. Developers can work independently and commit changes locally without affecting the main repository.</Typography>
+      <Typography>3. They can then sync their changes manually with other repositories as needed.</Typography>
+    </Paper>
+  </Grid>
+</Grid>
+
+<br/>
+##### **Why is Git important?** <br/>
+
+Git is a distributed VCS. <br/><br/>
+It's a massively popular tool for managing projects among individuals and teams. <br/><br/>
+
+Knowing how to use Git is an extremely important skill for any developer - and it will look great on your resume! <br/><br/>
+
+##### **Downloading Git**
+
+First you will need to download Git onto your computer... You can do so through this [Git Download Link](https://git-scm.com/downloads) <br/><br/>
+
+After installing it, start your terminal and type the following command to verify that Git is installed on your computer.
+```bash       
+
+git --version
+
+```
+If everything went well, it should return the Git version that is installed on your computer. <br/><br/>
+
+##### **Configuring Git** 
+
+After installing Git onto your computer, you will need to configure it with your name and email address
+
+```bash         
+
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+
+```
+This information is included in the commit metadata and helps identify who made a particular change in your project.<br/><br/>
+
+(Note this is done globally, so it will apply to all your repositories) <br/><br/>
+
+If you want to change your name within a repository (so they wont affect any other ones), 
+
+You can use the following commands to set them, unset it, and also reconfigure them:
+
+```bash      
+
+git config <key> <value>
+
+git config --unset <key>
+
+git config --unset-all <key>
+
+```
+
+*Where key is **user.name** or **user.email**.*
+
+Note that --unset all is an option if you have multiple configurations. <br/><br/>
+
+If you want to unset your global configurations, you can use the following:
+
+```bash         
+
+git config --global --unset <key>
+
+```
+
+##### **Initializing a Git Repository**
+
+To start version controlling your project, navigate to your project's working directory (folder) using the terminal and run:
+
+```bash   
+
+git init
+
+```
+
+This creates a new Git repository in your project directory. <br/><br/>
+
+Make sure you are in the directory (folder) that you are planning to work in for the whole project. <br/><br/>
+
+##### **Adding files to your Repository**
+
+To add files to the staging area (the area where changes to files are prepared before they are committed), you can use:
+
+```bash  
+
+git add filename
+
+```
+
+Or if you want to add all of them at once, you can use:
+
+```bash    
+
+git add .
+
+```
+
+##### **Committing a change to the repository**
+
+Once you have added the files, you need to commit them to "save them',
+
+```bash      
+
+git commit -m "Your commit message here"
+
+```
+
+Your message should be a brief description of the changes you have made to the project since the last commit. <br/><br/>
+
+##### **Differences between Adding files and Committing changes**
+
+When you are working on projects, there are three main areas that changes go through. <br/><br/>
+
+There is the **Working Directory** (where you are actually coding), the **Staging Area** (where you prepare your changes in the next commit) and the **Git Repository** (where you save your changes locally). <br/><br/>
+
+- **Working Directory to Staging Area:** Use **`git add`** to move changes from your working directory to the staging area, where you prepare what you want to include in the next commit. <br/><br/>
+
+- **Staging Area to Git Repository:** Once you've finalized your changes in the staging area, use **`git commit`** to save those changes as a commit in the Git repository. <br/><br/>
+
+Committing will create a snapshot of your work in the Git log which you can go back to if you ever want to. <br/><br/> 
+Please see the diagram below: <br/><br/>
+
+<img src={gitarc} alt="Git Tutorial Cover" style={{ width: "100%", height: "auto" }} />
+
+##### **Branches**
+
+Branches in Git allow you to work on different features or bug fixes without affecting the main code-base.<br/><br/>
+
+To create a new branch, you can use:
+
+```bash   
+
+git branch new_branchname
+
+```
+
+*Great, you have created a new branch,*
+
+*However you need to switch to that branch before you make any changes... to do so, use:*
+
+```bash         
+
+git checkout new_branchname
+
+```
+
+Now you can start experimenting with your code without affecting your main code-base :<br/><br/>
+
+##### **Cloning a repository**
+
+Cloning creates a local copy of a remote repository on your machine.
+
+This allows you to work on the project, make changes (without affecting the remote repository).<br/><br/>
+
+Before you get started, ensure that you are in the working directory that you want to clone the online repository to.
+
+To get the repository_url: <br/><br/>
+
+1\. Navigate to the repository you want to clone<br/><br/>
+2\. Click the code button...<br/><br/>
+3\. Copy the URL for the repository.<br/><br/>
+
+And then you have it, now to clone a repository you can use:
+
+```bash         
+
+git clone repository_url
+
+```
+
+##### **Forking a Repository**
+
+Forking involves creating a copy of a repository on your GitHub account. <br/><br/>
+
+Note this is different to cloning as the copy is on your GitHub account rather than your local repository. <br/><br/>
+
+This allows you to freely experiment with changes without affecting the original repository. <br/><br/>
+
+Here's how you can fork a repository:
+
+1. **Visit the Repository:**  
+   Go to the repository you want to fork on GitHub.
+
+2. **Fork:**  
+   Click on the "Fork" button at the top right corner of the repository page.
+
+   *Great! You have forked the repository (made a copy) onto your account. Now you need to clone it so you can make changes locally. To do so:*
+
+   1. **Navigate to the Forked Repository:**  
+      Go to the forked repository on your GitHub account.
+
+   2. **Click the "Code" Button:**  
+      Click the green "Code" button located above the list of files.
+
+   3. **Copy the Repository URL:**  
+      In the dropdown, ensure you're on the "HTTPS" tab and click the clipboard icon to copy the URL.
+
+   4. **Clone the Repository Locally:**  
+      Open your terminal and type `git clone`, then paste the URL you copied earlier. It will look like this, with your GitHub username instead of `YOUR-USERNAME`
+```bash     
+git clone https://github.com/YOUR-USERNAME/repository_name
+
+```
+
+##### **Pushing changes to a Remote repository**
+
+So far you have been working locally and haven't made your changes accessible to others. <br/><br/>
+
+To make your changes available, you need to push them to a remote repository. <br/><br/>
+
+Note you will have to get the link of the repository you want to push the changes to before you do this. <br/><br/>
+
+To push your changes, use:
+
+```bash       
+
+git remote add origin remote_repository_url 
+
+```
+
+And then, do:
+
+```bash         
+
+git push -u origin branchname
+
+```
+
+Where branchname is the branch you want to push to and origin is the name of remote repository name. <br/><br/>
+
+##### **Checking Status / logs in Git**
+
+Git has a command to check the status of your files, you can do so with the following:
+
+```bash         
+
+git status
+
+```
+
+This will show you which files are modified, which files are staged for commit, and which files are untracked.<br/><br/>
+
+If you want to check the a list of the commits that have been used, you can use:
+
+```bash    
+
+git log
+
+```
+
+For additional resources, please head to the Github (docs) website.
+[Github docs link](https://docs.github.com/en)
+
+References: Github (docs) website [Github docs link](https://docs.github.com/en)
