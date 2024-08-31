@@ -44,9 +44,6 @@ export const BlogsData: BlogInterface[] = [
     fileName: "Git_Tutorial.mdx",
     url: "Git-Tutorial",
     BlogComponent: GitBlog,
-    hidden: true,
-  }
-
-
+    hidden: false,
+  },
 ];
-
