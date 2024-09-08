@@ -39,7 +39,7 @@ export const BlogsData: BlogInterface[] = [
   {
     articleId: 2,
     title: "Introduction to Using Git/Github",
-    description: "A quick summary of the Basics of Using Git/Github",
+    description: "",
     tags: ["Git", "programming", "beginner"],
     articleImage: gitcover,
     time: "25 August 2024",
