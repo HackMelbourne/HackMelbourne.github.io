@@ -2,6 +2,9 @@ import pythonImg from "../../assets/blog/images/python.png";
 import gitcover from "../../assets/blog/images/git_tutorial_cover.png";
 import GitBlog from "./Gittutorial.mdx";
 import TemplateBlog from "./TemplateBlog.mdx";
+import DescRblog from "./IntroToStats.mdx";
+import rcover from "../../assets/blog/images/Desc_R_cover.png";
+
 
 export interface BlogInterface {
   title: string;
@@ -46,4 +49,21 @@ export const BlogsData: BlogInterface[] = [
     BlogComponent: GitBlog,
     hidden: false,
   },
+
+
+  {
+    articleId: 3,
+    title: "Introduction to Statistics in R",
+    description: "",
+    tags: ["R", "programming", "beginner"],
+    articleImage: rcover,
+    time: "8th September 2024",
+    author: "Anshan Arnott-Tan",
+    fileName: "IntroToStats.mdx",
+    url: "Intro-To-Stats",
+    BlogComponent: DescRblog,
+    hidden: false,
+  },
+
+
 ];

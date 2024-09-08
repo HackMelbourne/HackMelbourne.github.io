@@ -1,0 +1,241 @@
+import React from 'react';
+import { Alert, Button, Card, CardContent, CardHeader, Typography, Link, List, ListItem, Divider, Box, Grid, Paper } from '@mui/material';
+
+###### Installation of R and RStudio   
+
+Before we can start, you will need to download R and RStudio onto your computer.
+
+You can download R through this link [R Download Link](https://cran.ms.unimelb.edu.au/)
+
+And download RStudio through this link [RStudio Download Link](https://posit.co/download/rstudio-desktop/)
+
+###### Using R as a calculator
+
+Once you open Rstudio, it is pretty simple to use R as a calculator.
+
+You just need to navigate to the console and type in your queries. 
+
+```R
+3 + 5
+
+sqrt(25)
+```
+And R will output the results in the console. 
+
+###### Variables 
+
+Like most coding languages, R can store values in variables, to do so, use the assignment operator below.
+
+```R
+x <- 5
+
+y <- 15 
+
+z < x + y
+```
+R will store these values and you can use them later. 
+
+###### Functions 
+We can also define functions in R, the following is a basic function to subtract two numbers. 
+
+Note you can also use the variables from before as the inputs. 
+```R
+Subtract_numbers <- function(a,b) {
+    result <- a - b
+    return(result)
+}
+Subtract_numbers(10, 2)
+Subtract_numbers(y, x) 
+```
+
+###### Vectors 
+
+R can create vectors, which is a list of values of the same type, you can also access these values with indexing. 
+
+Note that R's index starts at 1 instead of 0. 
+
+```R
+names <- c("John", "Max", "Sonia")
+
+accuracy <- c(80, 20, 30)
+
+accuracy[1]
+```
+Here accuracy[1] here would output 80. 
+
+##### **Descriptive Statistics**
+
+One of R's strengths is its ability to describe and visualise datasets. It has various inbuilt functions that help us do this.
+
+The following section will explore descriptive statistics using the pre-loaded Iris dataset:
+
+Before we continue, please run the following code. 
+
+We will also need to download and load the lsr package. We will go over the installation of packages in a later tutorial.
+
+```         
+install.packages("lsr")
+```
+
+```R
+library(lsr)
+data(iris)
+head(iris)
+```
+###### Dataset Wrangling
+
+Before we can start visualise and describe data, we need to be able to access the correct rows and columns. To access specific columns we can use the \$ operator.
+
+For example:
+
+```R
+iris$Petal.Length # To get the petal lengths vector
+
+iris$Petal.Length[1] # To get the petal length of the first flower
+
+iris$Species # To get the species names vector
+```
+
+We can alter the data individually or we can alter the entire vector as a whole.
+
+For example:
+
+```R
+iris$Petal.Length <- iris$Petal.Length + 10 
+
+iris$Petal.Length
+
+iris$Petal.Length[1] <- iris$Petal.Length[1] - 100
+
+iris$Petal.Length[1]
+```
+
+Remember to alter your data back to as it was before.
+
+```R
+iris$Petal.Length[1] <- iris$Petal.Length[1] + 100
+
+iris$Petal.Length <- iris$Petal.Length - 10 
+
+iris$Petal.Length
+```
+
+We can also add columns to the table if we want to.
+
+For example:
+
+```R
+# creates a column with Trues which satisfies the condition
+iris$long.petal <- iris$Petal.Length > 5 
+
+iris$long.petal
+```
+
+And we can remove columns with the following code.
+
+```R
+iris$long.petal <- NULL
+
+head(iris)
+```
+
+Whilst manipulating datasets is a great tool, it is pretty hard to visualise the data well.
+
+Often, in communication, it is useful to describe a dataset with a single value. Statisticians have developed measures of central tendency and spread to describe datasets.
+
+#### Measures of Central Tendency
+
+There are three main measures of central tendency.
+
+###### Mean
+
+The mean is the average of the dataset. It is the most common measure. It is found by first adding up all the observations and then dividing by the total number of observations. It can be found in R with the mean function.
+
+```R
+mean(iris$Sepal.Length)
+```
+
+###### Median
+
+The median is middle observation. Half the observations are bigger than the median and half are less than it. If you have 5 sorted observations, the median is the 3rd point. If you have 8 sorted observations, the median is the average of the 4th and 5th points. The median is typically used when there are outliers in the dataset which skew the means. It can be found with the median function.
+
+```R
+median(iris$Sepal.Length)
+```
+
+###### Mode
+
+The mode is just the most common observation. Often used in nominal or ordinal data settings. it can be found with the ModeOf function in the lsr package.
+
+```R
+modeOf(iris$Sepal.Length)
+```
+
+#### Measures of Spread
+
+###### Range
+
+The range is found by subtracting the minimum value by the maximum one. R has an inbuilt function for that will give you the maximum and minimum.
+
+```R
+range(iris$Sepal.Length)
+```
+
+###### Interquartile Range
+
+The interquartile range refers to the middle 50 percent of the data, that is it starts at the 25% quantile and ends at the 75% quantile. It can be found with the IQR function. It is easily visualized with a boxplot where the box represents the IQR.
+
+```R
+IQR(iris$Sepal.Length)
+boxplot(iris$Sepal.Length)
+```
+
+###### Standard Deviation
+
+This is the most common measure of spread is the standard deviation. It measures how far each point is away from the mean. If we go roughly 2 standard deviations out from the mean, we will be encompassing 95% of the data. It is also the square root of the variance. It can be found with the sd function.
+
+```R
+sd(iris$Sepal.Length)
+```
+
+##### Graphing with Histograms
+
+###### Histograms
+
+To visualise the sepal lengths for the dataset we can use the following code.
+
+Note that we are using sepal length now
+
+```R
+hist(iris$Sepal.Length)
+```
+
+![](Histogram.jpeg)
+
+###### Customized Histogram
+
+We can customize the functions to make the graphs clearer. These are just some of the popular arguments, but there are many more to explore. Please refer to the R documentation.
+
+```R
+hist(iris$Sepal.Length, col = "blue", 
+     xlab = "Length of Sepal", main = "Frequency Table of Sepal Lengths")
+```
+
+![](CustomisedHistogram.jpeg)
+
+These are just some of the many plots R can produce. You can check the documentation for more examples.
+
+*Note that if you have missing values in your dataset, you will have to remove them with the argument na.rm = True.*
+
+###### The Summary Function:
+
+In this tutorial we have learnt how to find measures of both central tendency and spread in order to get an accurate feel for the data. Whilst we have done this using the pre-built functions, we can use the summary function instead.
+
+```R
+summary(iris$Sepal.Length)
+```
+
+References: R Documentation website [R Documentation link](https://www.r-project.org/other-docs.html)
+
+*Written up by Anshan Arnott-Tan*
+
