@@ -22,33 +22,33 @@ const Sponsors = () => {
   };
 
   const goldInfo: SponsorProps[] = [
-    {
-      tier: "Gold",
-      image: bitgetLogo,
-      sponsor: "Bitget",
-      desc: "Established in 2018, Bitget is a global cryptocurrency exchange and Web3 company, serving over 20 million users in 100+ countries and regions. Together with Bitget Wallet - a world-class multi-chain crypto wallet that features swap, NFTs, DApps and more. Bitget wants to inspire everyone to embrace crypto, partnering with the likes of Argentinian footballer Lionel Messi and eSports event organiser PGL.",
-      button: "Visit website",
-      website: "https://partner.bitget.com/bg/KEHLYS_HackMelb",
-    },
+    // {
+    //   tier: "Gold",
+    //   image: bitgetLogo,
+    //   sponsor: "Bitget",
+    //   desc: "Established in 2018, Bitget is a global cryptocurrency exchange and Web3 company, serving over 20 million users in 100+ countries and regions. Together with Bitget Wallet - a world-class multi-chain crypto wallet that features swap, NFTs, DApps and more. Bitget wants to inspire everyone to embrace crypto, partnering with the likes of Argentinian footballer Lionel Messi and eSports event organiser PGL.",
+    //   button: "Visit website",
+    //   website: "https://partner.bitget.com/bg/KEHLYS_HackMelb",
+    // },
   ];
 
   const silverInfo: SponsorProps[] = [
-    {
-      tier: "Silver",
-      image: noMossLogo,
-      sponsor: "No Moss",
-      desc: "No Moss is a multi-disciplinary consultancy delivering bespoke agility transformation, purposeful product innovation, and empathy-led technology development.",
-      button: "Visit website",
-      website: "https://nomoss.co/",
-    },
-    {
-      tier: "Silver",
-      image: superNormalLogo,
-      sponsor: "Supernormal",
-      desc: "Cutting-edge technology woven into every fabric of your brand. Utilise our world-class application of technology, automation, and growth strategies.",
-      button: "Visit website",
-      website: "https://www.snl-labs.com/",
-    },
+    // {
+    //   tier: "Silver",
+    //   image: noMossLogo,
+    //   sponsor: "No Moss",
+    //   desc: "No Moss is a multi-disciplinary consultancy delivering bespoke agility transformation, purposeful product innovation, and empathy-led technology development.",
+    //   button: "Visit website",
+    //   website: "https://nomoss.co/",
+    // },
+    // {
+    //   tier: "Silver",
+    //   image: superNormalLogo,
+    //   sponsor: "Supernormal",
+    //   desc: "Cutting-edge technology woven into every fabric of your brand. Utilise our world-class application of technology, automation, and growth strategies.",
+    //   button: "Visit website",
+    //   website: "https://www.snl-labs.com/",
+    // },
   ];
 
   const bronzeInfo: SponsorProps[] = [
@@ -128,7 +128,7 @@ const Sponsors = () => {
 
       {/* Silver */}
 
-      <section>
+      {/* <section>
         <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">{sponsorTitles[1]}</h2>
         {silverInfo.length > 0 ? (
           <div className="grid grid-rows-1 md:grid-cols-2 justify-items-center gap-5 w-[350px] md:w-11/12 md:max-w-[1020px] m-auto">
@@ -139,10 +139,10 @@ const Sponsors = () => {
         ) : (
           <SponsorsEmpty tier="silver" button="Learn more" link={sponsorCTA.link}></SponsorsEmpty>
         )}
-      </section>
+      </section> */}
 
       {/* Bronze */}
-      <section>
+      {/* <section>
         <h2 className="text-4xl text-center font-extrabold mt-28 mb-9">{sponsorTitles[2]}</h2>
         {bronzeInfo.length > 0 ? (
           <div className="grid grid-rows-3 lg:grid-rows-1 lg:grid-cols-3 w-max h-max m-auto border border-white rounded-xl overflow-hidden">
@@ -153,7 +153,7 @@ const Sponsors = () => {
         ) : (
           <SponsorsEmpty tier="bronze" button="Learn more" link={sponsorCTA.link}></SponsorsEmpty>
         )}
-      </section>
+      </section> */}
 
       {/* Community NOT USED*/}
       {/* <section>
