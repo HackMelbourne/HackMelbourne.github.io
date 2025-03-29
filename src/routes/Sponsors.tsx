@@ -90,7 +90,7 @@ const Sponsors = () => {
     title: ["Be a", "Hack", "Melbourne sponsor for 2024"],
     desc: ["Join the journey: be a HackMelbourne 2024 sponsor", "and help us spread the excitement of hackathons!"],
     button: "Learn More",
-    link: "https://www.canva.com/design/DAF2GZJtvl8/8wf0MTmnjcTW_X-lIdTYQA/view?utm_content=DAF2GZJtvl8&utm_campaign=designshare&utm_medium=link&utm_source=editor",
+    link: "mailto:sponsorship@hack.melbourne",
   };
 
   // Animations
