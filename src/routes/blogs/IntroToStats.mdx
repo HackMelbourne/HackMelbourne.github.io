@@ -1,0 +1,332 @@
+import React from 'react';
+import { Alert, Button, Card, CardContent, CardHeader, Typography, Link, List, ListItem, Divider, Box, Grid, Paper } from '@mui/material';
+
+import hist from "../../assets/blog/images/Histogram.png";
+import cust_hist from "../../assets/blog/images/CustomisedHistogram.png";
+
+
+##### **Basics of R and RStudio**
+
+###### Installation of R and RStudio
+
+Before we can start, you will need to download R and RStudio onto your computer.
+
+You can download R through this link [R Download Link](https://cran.ms.unimelb.edu.au/)
+
+And download RStudio through this link [RStudio Download Link](https://posit.co/download/rstudio-desktop/)
+
+*At the current time, We aren't able to run the code on this website, so please run it and follow along on your computer*
+
+###### Variables and Calculations in R
+
+Like most coding languages, R can store values in variables, to do so, use the assignment operator below.
+
+You can also do calculations with numbers in R, navigate to the console and try these. 
+
+```R
+x <- 5 * 12
+
+y <- 16 / sqrt(4 * 16)
+
+z < x + y
+```
+R will store these values and you can use them later. 
+
+###### Defining Functions in R
+We can also define functions in R, the following is a basic function to subtract two numbers. 
+
+Note you can also use the variables from before as the inputs. 
+```R
+subtract_numbers <- function(a, b) {
+    result <- a - b
+    return(result)
+}
+```
+###### Vectors (Lists in R)
+
+R can create vectors, which is a list of values of the same type, you can also access these values with indexing. 
+
+*Note that R's index starts at 1 instead of 0.* 
+
+```R
+names <- c("John", "Max", "Sonia")
+
+accuracy <- c(80, 20, 30)
+```
+Here ```accuracy[1]``` here would output 80. 
+
+##### **Descriptive Statistics**
+
+One of R's strengths is its ability to describe and visualise datasets. It has various inbuilt functions that help us do this.
+
+The following section will explore descriptive statistics using the pre-loaded Iris dataset:
+
+Before we continue, please run the following code. 
+
+We will also need to download and load the lsr package. We will go over the installation of packages in a later tutorial.
+
+```R
+install.packages("lsr")
+```
+
+```R
+library(lsr)
+data(iris)
+head(iris)
+```
+###### Dataset Wrangling
+
+Before we can start visualise and describe data, we need to be able to access the correct rows and columns. 
+
+To access specific columns we can use the \$ operator.
+
+For example:
+
+```R
+iris$Petal.Length # To get the petal lengths vector
+
+iris$Petal.Length[1] # To get the petal length of the first flower
+
+iris$Species # To get the species names vector
+```
+
+### PHOTO 
+
+
+If we want to, we can also alter the data individually or we can alter the entire vector as a whole.
+
+For example:
+
+```R
+iris$Petal.Length <- iris$Petal.Length + 10 
+```
+```R
+iris$Petal.Length
+```
+```R
+iris$Petal.Length[1] <- iris$Petal.Length[1] - 100
+```
+```R
+iris$Petal.Length[1]
+```
+
+Remember to alter your data back to as it was before.
+
+```R
+iris$Petal.Length[1] <- iris$Petal.Length[1] + 100
+```
+```R
+iris$Petal.Length <- iris$Petal.Length - 10 
+```
+```R
+iris$Petal.Length
+```
+
+We can also add columns to the table if we want to.  
+
+The following code will create a column with trues which satisfies the condition. 
+
+```R
+iris$long.petal <- iris$Petal.Length > 5 
+```
+
+```R 
+iris$long.petal
+```
+
+And we can remove columns with the following code.
+
+```R
+iris$long.petal <- NULL
+```
+
+```R
+head(iris)
+```
+
+#### Measures of Central Tendency
+
+Whilst manipulating datasets is a great tool, it is pretty hard to visualise the data well.
+
+Often, in communication, it is useful to describe a dataset with a single value. 
+
+Statisticians have developed measures of central tendency and spread to describe datasets.
+
+There are three main measures of central tendency.
+<Grid container spacing={3} className="mt-4">
+  <Grid item xs={12} sm={4}>
+    <Paper className="p-6" style={{ backgroundColor: '#000', color: '#fff', height: '100%' }}>
+      <Typography variant="h6" gutterBottom>Mean</Typography>
+      <Typography gutterBottom>
+        The mean is the average of the dataset. 
+      </Typography>
+      <Typography gutterBottom>
+        It is found by adding up all the observations and then dividing by the total number of observations.
+      </Typography>
+      <Typography gutterBottom>
+        It is the most common measure of central tendency.
+      </Typography>
+      <Typography gutterBottom>
+        In R, you can calculate it using:
+      </Typography>
+      <Typography component="pre" style={{ backgroundColor: '#333', padding: '8px', borderRadius: '4px', overflow: 'auto' }}>
+        {`mean(iris$Sepal.Length)`}
+      </Typography>
+    </Paper>
+  </Grid>
+
+  <Grid item xs={12} sm={4}>
+    <Paper className="p-6" style={{ backgroundColor: '#000', color: '#fff', height: '100%' }}>
+      <Typography variant="h6" gutterBottom>Median</Typography>
+      <Typography gutterBottom>
+        The median is the middle observation when the data is sorted.
+      </Typography>
+      <Typography gutterBottom>
+        Half of the observations are greater than the median and half are smaller.
+      </Typography>
+      <Typography gutterBottom>
+        It is typically used when there are outliers in the dataset that skew the mean.
+      </Typography>
+      <Typography gutterBottom>
+        In R, you can calculate it using:
+      </Typography>
+      <Typography component="pre" style={{ backgroundColor: '#333', padding: '8px', borderRadius: '4px', overflow: 'auto' }}>
+        {`median(iris$Sepal.Length)`}
+      </Typography>
+    </Paper>
+  </Grid>
+
+  <Grid item xs={12} sm={4}>
+    <Paper className="p-6" style={{ backgroundColor: '#000', color: '#fff', height: '100%' }}>
+      <Typography variant="h6" gutterBottom>Mode</Typography>
+      <Typography gutterBottom>
+        The mode is the most common observation in the dataset.
+      </Typography>
+      <Typography gutterBottom>
+        It is often used in nominal or ordinal data.
+      </Typography>
+      <Typography gutterBottom>
+        In R, you can calculate it using the ModeOf function from the <i>lsr</i> package:
+      </Typography>
+      <Typography component="pre" style={{ backgroundColor: '#333', padding: '8px', borderRadius: '4px', overflow: 'auto' }}>
+        {`modeOf(iris$Sepal.Length)`}
+      </Typography>
+    </Paper>
+  </Grid>
+</Grid>
+
+#### Measures of Spread
+
+Whilst measures of central tendency are extremely useful as a stand alone value, often, 
+
+Statisticians want to understand the distribution of the data. 
+
+Measures of spread are cruical when explaining how much the data varies. 
+
+There are three main measures of spread in statistics. 
+
+<Grid container spacing={3} className="mt-4">
+  <Grid item xs={12} sm={4}>
+    <Paper className="p-6" style={{ backgroundColor: '#000', color: '#fff', height: '100%' }}>
+      <Typography variant="h6" gutterBottom>Range</Typography>
+      <Typography gutterBottom>
+        The range is found by subtracting the minimum value from the maximum value.
+      </Typography>
+      <Typography gutterBottom>
+        In R, there is a built-in function that returns both the minimum and maximum values.
+      </Typography>
+      <Typography gutterBottom>
+        You can calculate the range in R using:
+      </Typography>
+      <Typography component="pre" style={{ backgroundColor: '#333', padding: '8px', borderRadius: '4px', overflow: 'auto' }}>
+        {`range(iris$Sepal.Length)`}
+      </Typography>
+    </Paper>
+  </Grid>
+
+  <Grid item xs={12} sm={4}>
+    <Paper className="p-6" style={{ backgroundColor: '#000', color: '#fff', height: '100%' }}>
+      <Typography variant="h6" gutterBottom>Interquartile Range (IQR)</Typography>
+      <Typography gutterBottom>
+        The interquartile range represents the middle 50% of the data, from the 25th to the 75th percentile.
+      </Typography>
+      <Typography gutterBottom>
+        It can be calculated with the IQR function and is often visualized with a boxplot.
+      </Typography>
+      <Typography gutterBottom>
+        In R, you can calculate the IQR and visualize it using:
+      </Typography>
+      <Typography component="pre" style={{ backgroundColor: '#333', padding: '8px', borderRadius: '4px', overflow: 'auto' }}>
+        {`IQR(iris$Sepal.Length)`}
+      </Typography>
+    </Paper>
+  </Grid>
+
+  <Grid item xs={12} sm={4}>
+    <Paper className="p-6" style={{ backgroundColor: '#000', color: '#fff', height: '100%' }}>
+      <Typography variant="h6" gutterBottom>Standard Deviation</Typography>
+      <Typography gutterBottom>
+        The standard deviation is the most common measure of spread.
+      </Typography>
+      <Typography gutterBottom>
+        It measures how far each point is from the mean.
+      </Typography>
+      <Typography gutterBottom>
+        About 95% of the data falls within 2 standard deviations from the mean.
+      </Typography>
+      <Typography gutterBottom>
+        It is also the square root of the variance.
+      </Typography>
+      <Typography gutterBottom>
+        In R, you can calculate it using:
+      </Typography>
+      <Typography component="pre" style={{ backgroundColor: '#333', padding: '8px', borderRadius: '4px', overflow: 'auto' }}>
+        {`sd(iris$Sepal.Length)`}
+      </Typography>
+    </Paper>
+  </Grid>
+</Grid>
+
+##### Graphing with Histograms
+
+###### Histograms
+
+To visualise the sepal lengths for the dataset we can use the following code.
+
+Note that we are using sepal length now
+
+```R
+hist(iris$Sepal.Length)
+```
+<img src={hist} alt="Histogram" style={{ width: "100%", height: "auto" }} />
+
+###### Customized Histogram
+
+We can customize the functions to make the graphs clearer. 
+
+These are just some of the popular arguments, but there are many more to explore. 
+
+```R
+hist(iris$Sepal.Length, col = "blue", 
+     xlab = "Length of Sepal", main = "Frequency Table of Sepal Lengths")
+```
+
+<img src={cust_hist} alt="Customised Histogram" style={{ width: "100%", height: "auto" }} />
+
+These are just some of the many plots R can produce. You can check the documentation for more examples.
+
+*Note that if you have missing values in your dataset, you will have to remove them with the argument na.rm = True.*
+
+###### The Summary Function:
+
+In this tutorial we have learnt how to find measures of both central tendency and spread to get a feel for the data. 
+
+Whilst we have done this using the pre-built functions, we can use the summary function instead.
+
+```R
+summary(iris$Sepal.Length)
+```
+
+### Photo
+
+References: R Documentation website [R Documentation link](https://www.r-project.org/other-docs.html)

@@ -1,0 +1,159 @@
+import React from 'react';
+import { Alert, Button, Card, CardContent, CardHeader, Typography, Link, List, ListItem, Divider, Box, Grid, Paper } from '@mui/material';
+
+# Overview
+
+This template demonstrates how to use Material-UI (MUI) components with Tailwind CSS in an MDX file. It covers various elements including headers, text styling, links, images, lists, blockquotes, code blocks, and tables. Additionally, it showcases how to incorporate MUI components like alerts, buttons, cards, and more, all styled with Tailwind CSS classes for additional customization.
+
+## Markdown Components
+
+- **Headers** (e.g., `# Header 1`, `## Header 2`)
+- **Text Styling** (e.g., **bold**, *italic*, <s>strikethrough</s>)
+- **Links** (e.g., [example](https://example.com))
+- **Images** (e.g., `![alt text](image-url)`)
+- **Lists** (ordered and unordered)
+- **Blockquotes** (e.g., `> Quote`)
+- **Code Blocks** (e.g., ```code```)
+- **Tables** (e.g., `| Header 1 | Header 2 |`)
+
+## Usage Examples with MUI Components
+
+### Headers
+
+# Welcome to My MDX Page
+
+## Text Styling
+
+This is an example of **bold** text, *italic* text, and <s>strikethrough</s>.
+
+### Links
+
+[Visit Example](https://example.com)
+
+### Images
+
+![Example Image](https://via.placeholder.com/150)
+
+### Lists
+
+#### Unordered List
+
+- Item 1
+- Item 2
+- Item 3
+
+#### Ordered List
+
+1. First item
+2. Second item
+3. Third item
+
+### Blockquotes
+
+> This is a blockquote example.
+
+## Code Blocks
+
+### Inline Code
+
+Use the `<Button>` component from MUI.
+
+### Code Block
+
+```javascript
+const greeting = "Hello, MDX!";
+console.log(greeting);
+```
+
+## Tables
+
+| Header 1 | Header 2 |
+| -------- | -------- |
+| Cell 1   | Cell 2   |
+| Cell 3   | Cell 4   |
+
+## MUI Components
+
+### Alert Component
+
+<Alert severity="warning" className="mt-4">
+  This is a warning alert from MUI.
+</Alert>
+
+### Button Component
+
+<Button variant="contained" color="primary" className="mt-4" onClick={() => alert('Button clicked!')}>
+  Click Me
+</Button>
+
+### Card Component
+
+<Card className="mt-4">
+  <CardHeader title="Card Title" />
+  <CardContent>
+    <Typography variant="body2" color="textSecondary" component="p">
+      This is a card component using MUI and styled with Tailwind CSS.
+    </Typography>
+  </CardContent>
+</Card>
+
+### Link Component
+
+<Link href="https://example.com" className="mt-4">
+  This is a MUI Link styled with Tailwind CSS
+</Link>
+
+### List Component
+
+<Box component="div" className="mt-4">
+  <List>
+    <ListItem>
+      <Typography variant="body1">List Item 1</Typography>
+    </ListItem>
+    <ListItem>
+      <Typography variant="body1">List Item 2</Typography>
+    </ListItem>
+    <ListItem>
+      <Typography variant="body1">List Item 3</Typography>
+    </ListItem>
+  </List>
+</Box>
+
+### Divider Component
+
+<Divider className="my-4" />
+
+### Box Component
+
+<Box className="p-4 bg-gray-200 mt-4">
+  This is a Box component styled with Tailwind CSS
+</Box>
+
+### Grid Component
+
+<Grid container spacing={2} className="mt-4">
+  <Grid item xs={12} sm={6}>
+    <Paper className="p-4">
+      <Typography>This is Grid Item 1</Typography>
+    </Paper>
+  </Grid>
+  <Grid item xs={12} sm={6}>
+    <Paper className="p-4">
+      <Typography>This is Grid Item 2</Typography>
+    </Paper>
+  </Grid>
+</Grid>
+
+## Conclusion
+
+Mix and match Markdown and JSX to create rich content with MDX, MUI, and Tailwind CSS!
+
+<Button variant="contained" color="secondary" className="mt-4" onClick={() => alert('Thank you for reading!')}>
+  Finish
+</Button>
+
+### Tailwind CSS Direct Usage
+
+<div className="bg-blue-500 text-white p-4 rounded mt-4">
+  This is a div styled directly with Tailwind CSS classes.
+</div>

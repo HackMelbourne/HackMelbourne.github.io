@@ -1,27 +1,10 @@
-import { IconType } from 'react-icons';
-
-interface TeamProps {
-  teamName: string;
-  description: string;
-  bgColor: string;
-  borderColor: string;
-  members: Member[];
-}
-
-interface Member {
-  name: string;
-  role: string;
-  about: string;
-  imageUrl: string;
-  links: Link[];
-}
-
-interface Link {
-  url: string;
-  icon: IconType;
-}
+import { TeamProps } from "./TeamComponent.model"
+import { useState } from "react";
+import placeholderImg from "../../assets/images/placeholders/profile.jpg"
 
 const TeamComponent = ({ teamName, description, bgColor, borderColor, members }: TeamProps) => {
+    const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <div className="mx-auto max-w-[800px] w-[80%] my-20 min-h-[200px] align-center justify-center m-20">
       <h2 className="text-4xl font-bold mb-2 text-center">Meet the {teamName}</h2>
@@ -38,12 +21,12 @@ const TeamComponent = ({ teamName, description, bgColor, borderColor, members }:
               // How to center elements on the last row in CSS Grid?
               // https://stackoverflow.com/a/46278350/13298307
             }}>
-            <div
-              role="img"
-              aria-label={`Profile picture of ${member.name}`}
-              className="top-0 left-0 w-32 h-32 rounded-[100rem] bg-cover bg-center m-4"
-              style={{ backgroundImage: `url(${member.imageUrl})` }}
-            ></div>
+            <img
+                className="top-0 left-0 w-32 h-32 rounded-[100rem] m-4 object-cover"
+                src={imageLoaded ? member.imageUrl : placeholderImg}
+                onLoad={() => setImageLoaded(true)}
+                alt={`Profile image of ${member.name}`}
+            />
             <p className="text-sm">{member.role}</p>
             <h3 className="text-xl-lg md:text-sm font-semibold m-1">{member.name}</h3>
             <p className="text-sm mb-auto m-2">{member.about}</p>
