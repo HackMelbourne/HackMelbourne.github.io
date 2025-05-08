@@ -18,15 +18,11 @@ import { UMSU_LINK } from "../constants";
 function Root() {
   const hero = {
     clubname: ["HACK", "MELB"],
-    year: "2024",
+    year: "2025",
     button: [
       {
-        name: "Join Club",
+        name: "Become a member",
         link: UMSU_LINK,
-      },
-      {
-        name: "Scuffathon",
-        link: "",
       },
     ],
   };
@@ -55,14 +51,6 @@ function Root() {
     },
   ];
 
-  const hoodie = {
-    img: HoodieBack,
-    title: "HackMelbourne 2024 Exclusive Hoodie",
-    desc: "See a super comfy hoodie and support our efforts across 2024 for only $55!",
-    button: "See details",
-    link: "https://docs.google.com/forms/d/e/1FAIpQLSehAHqWj4rofplkEzLk3BYyHr3h72n_sqWz55zYqTgTTnZ6Gg/viewform",
-  };
-
   const jointeam = {
     title: ["Join the ", "Hack", "Melbourne team for 2024"],
     desc: ["We make an impact on our future and learn some", "more skills along the way!"],
@@ -74,13 +62,6 @@ function Root() {
     <div className="w-screen max-w-full pt-28">
       <HeroBanner clubname={hero.clubname} year={hero.year} buttons={hero.button} />
       <DescriptionBoxes events={events} />
-      <BannerStandard
-        img={hoodie.img}
-        title={hoodie.title}
-        desc={hoodie.desc}
-        button={hoodie.button}
-        link={hoodie.link}
-      />
       <CallToAction title={jointeam.title} desc={jointeam.desc} button={jointeam.button} link={jointeam.link} />
     </div>
   );
