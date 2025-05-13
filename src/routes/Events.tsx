@@ -14,7 +14,7 @@ import MelbHackImage2 from "../assets/images/MelbourneHack-2023/MelbourneHack2.j
 
 const Events = () => {
   const pageInfo = {
-    title: "Events / Initiatives",
+    title: "Events",
     description: `Throughout the year, HackMelbourne offers many opportunities for both
     complete beginners and seasoned veterans to display their teamwork, coding
     and leadership skills.`,

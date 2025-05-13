@@ -64,8 +64,8 @@ const Layout = () => {
       link: "/about/events",
     },
     {
-      title: "Meet the team",
-      desc: "See our amazing team",
+      title: "About Us",
+      desc: "Learn more about us!",
       Icon: FaUser,
       image: "/img/temp-bg.jpg",
       link: "/about/meettheteam",
@@ -98,8 +98,8 @@ const Layout = () => {
   const nav = {
     clubname: "HackMelbourne",
     logo: "/img/HM_White_Transparent.png",
-    pages: ["About", "Links", "Calendar", "Sponsors", "Blog"],
-    links: ["/about/meettheteam", "upcoming/links", "/upcoming/calendar", "/sponsors", "/blogs"],
+    pages: ["About", "Blog", "Calendar", "Sponsors", "Links"],
+    links: ["/about/meettheteam", "/blogs", "/upcoming/calendar", "/sponsors", "upcoming/links"],
     pills: [aboutPills, linkPills, calendarPills, sponsorPills, blogPills],
   };
 
