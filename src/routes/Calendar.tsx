@@ -19,7 +19,7 @@ const Calendar = () => {
 
   return (
     <>
-      <TitleHero pageTitle="Calendar" pageDescription="See our upcoming list of big and small events!" />
+      <TitleHero pageTitle="Calendar" pageDescription="See our upcoming list of events!" />
       {isLoading ? (
         <div className="col-span-1 mt-8 flex justify-center items-center">
           <CircularProgress color="inherit"/>

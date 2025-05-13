@@ -17,8 +17,8 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 const MeetTheTeam = () => {
   const pageInfo = {
-    title: "Meet the Team",
-    description: `Throughout the year, HackMelbourne offers many opportunities for both complete beginners and seasoned veterans to display their teamwork, coding and leadership skills.`,
+    title: "About Us",
+    description: `HackMelbourne is a student club based in Melbourne, dedicated to bringing technology education to everyone! We run a variety of events throughout the year, including hackathons, workshops, and social events. Our goal is to create a welcoming and inclusive environment for all students, regardless of their background or experience level.`,
   };
 
   const teamsDataTemplate = [
