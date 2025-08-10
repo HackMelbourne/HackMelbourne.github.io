@@ -211,226 +211,32 @@ exports.getLinksPage = onCall(
   },
 );
 
-// Application Management Functions
-exports.getApplications = onCall(
-  {
-    cors: CORSLIST,
-    region: SERVERLOCATION,
-  },
-  async () => {
-    const databaseId = process.env.NOTION_APPLICATIONS_DATABASE_ID || "your-applications-database-id";
+// exports.setRiserData = onCall(async (req) => {
+//   console.log(req.data.name);
+//   const result = {
+//     name: req.data.name,
+//     email: req.data.email,
+//     studentID: req.data.studentID,
+//     HMMember: req.data.HMMember,
+//     gameData: req.data.gameData,
+//   };
 
-    try {
-      // Fetching Notion Data
-      const response = await notion.databases.query({
-        database_id: databaseId,
-        sorts: [
-          {
-            property: "Submission Date",
-            direction: "descending",
-          },
-        ],
-      });
+//   await getFirestore().collection("riserData").add(result);
 
-      // Parse Notion Data to required format
-      const result = [];
+//   return { text: "hi" };
+// });
 
-      response.results.map((value) => {
-        const props = value.properties;
+// exports.setRiserData = onCall(async (req) => {
+//   console.log(req.data.name);
+//   const result = {
+//     name: req.data.name,
+//     email: req.data.email,
+//     studentID: req.data.studentID,
+//     HMMember: req.data.HMMember,
+//     gameData: req.data.gameData,
+//   };
 
-        // Getting data into format required by frontend
-        const applicationItem = {
-          id: value.id,
-          name: props.Name?.title[0]?.plain_text || "",
-          email: props.Email?.email || "",
-          position: props.Position?.select?.name || "",
-          university: props.University?.select?.name || "",
-          status: props.Status?.select?.name || "Pending",
-          submissionDate: props["Submission Date"]?.date?.start || "",
-          notes: props.Notes?.rich_text[0]?.plain_text || "",
-        };
-        result.push(applicationItem);
-      });
+//   await getFirestore().collection("riserData").add(result);
 
-      return result;
-    } catch (e) {
-      console.error("Error fetching applications:", e);
-      return [];
-    }
-  },
-);
-
-exports.updateApplicationStatus = onCall(
-  {
-    cors: CORSLIST,
-    region: SERVERLOCATION,
-  },
-  async (req) => {
-    const { applicationId, status, notes } = req.data;
-    const databaseId = process.env.NOTION_APPLICATIONS_DATABASE_ID || "your-applications-database-id";
-
-    try {
-      await notion.pages.update({
-        page_id: applicationId,
-        properties: {
-          Status: {
-            select: {
-              name: status,
-            },
-          },
-          Notes: {
-            rich_text: [
-              {
-                text: {
-                  content: notes || "",
-                },
-              },
-            ],
-          },
-        },
-      });
-
-      return { success: true, message: "Application status updated successfully" };
-    } catch (e) {
-      console.error("Error updating application status:", e);
-      return { success: false, message: "Failed to update application status" };
-    }
-  },
-);
-
-// Function to sync new applications from Firestore to Notion
-// This would typically be triggered by a Firestore document creation
-exports.syncApplicationToNotion = onCall(
-  {
-    cors: CORSLIST,
-    region: SERVERLOCATION,
-  },
-  async (req) => {
-    const { applicationData } = req.data;
-    const databaseId = process.env.NOTION_APPLICATIONS_DATABASE_ID || "your-applications-database-id";
-
-    try {
-      const response = await notion.pages.create({
-        parent: {
-          database_id: databaseId,
-        },
-        properties: {
-          Name: {
-            title: [
-              {
-                text: {
-                  content: `${applicationData.firstName} ${applicationData.lastName}`,
-                },
-              },
-            ],
-          },
-          Email: {
-            email: applicationData.email,
-          },
-          Phone: {
-            phone_number: applicationData.phone,
-          },
-          "Student ID": {
-            rich_text: [
-              {
-                text: {
-                  content: applicationData.studentId || "Not provided",
-                },
-              },
-            ],
-          },
-          University: {
-            select: {
-              name: applicationData.university,
-            },
-          },
-          Degree: {
-            rich_text: [
-              {
-                text: {
-                  content: applicationData.degree,
-                },
-              },
-            ],
-          },
-          "Graduation Year": {
-            rich_text: [
-              {
-                text: {
-                  content: applicationData.graduationYear,
-                },
-              },
-            ],
-          },
-          Position: {
-            select: {
-              name: applicationData.position,
-            },
-          },
-          Motivation: {
-            rich_text: [
-              {
-                text: {
-                  content: applicationData.motivation,
-                },
-              },
-            ],
-          },
-          Experience: {
-            rich_text: [
-              {
-                text: {
-                  content: applicationData.experience,
-                },
-              },
-            ],
-          },
-          Skills: {
-            multi_select: applicationData.skills.map(skill => ({ name: skill })),
-          },
-          Availability: {
-            rich_text: [
-              {
-                text: {
-                  content: applicationData.availability,
-                },
-              },
-            ],
-          },
-          "Time Commitment": {
-            select: {
-              name: applicationData.timeCommitment,
-            },
-          },
-          Portfolio: {
-            url: applicationData.portfolio || null,
-          },
-          LinkedIn: {
-            url: applicationData.linkedin || null,
-          },
-          GitHub: {
-            url: applicationData.github || null,
-          },
-          Resume: {
-            url: applicationData.resume || null,
-          },
-          Status: {
-            select: {
-              name: "Pending",
-            },
-          },
-          "Submission Date": {
-            date: {
-              start: new Date().toISOString(),
-            },
-          },
-        },
-      });
-
-      return { success: true, notionPageId: response.id };
-    } catch (e) {
-      console.error("Error syncing application to Notion:", e);
-      return { success: false, error: e.message };
-    }
-  },
-);
+//   return { text: "hi" };
+// });
