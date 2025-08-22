@@ -53,7 +53,7 @@ const Events = () => {
       frontImage: MelbHackImage2,
       altBgImage: "Students sitting in a lecture hall discussing amongst themselves.",
       altFrontImage: "Classroom with a teacher in the middle and several students coding.",
-      link: "",
+      link: "https://events.humanitix.com/melbournehack",
     },
   ];
 
