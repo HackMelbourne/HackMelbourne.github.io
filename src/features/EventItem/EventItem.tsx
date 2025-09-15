@@ -20,9 +20,9 @@ const EventItem = ({ name, date, brief, description, bgImage, frontImage, link, 
   let linkText: string;
 
   if (!link) {
-    linkText = 'Coming soon';
+    linkText = 'Event ended';
   } else {
-    linkText = 'Learn more';
+    linkText = 'Sign up';
   }
 
   return (
@@ -56,7 +56,7 @@ const EventItem = ({ name, date, brief, description, bgImage, frontImage, link, 
             <p className="text-sm overflow-y-hidden min-h-[40%] mb-2 hidden md:block">{description}</p>
           </div>
           <div className="hidden md:block">
-            <HMButton text={linkText} color="primary" style="disabled" link={link}></HMButton>
+            <HMButton text={linkText} color="primary" link={link}></HMButton>
           </div>
         </motion.div>
       </div>

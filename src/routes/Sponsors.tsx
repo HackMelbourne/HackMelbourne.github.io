@@ -18,7 +18,7 @@ const Sponsors = () => {
 
   const heroInfo = {
     title: "Sponsorships",
-    body: "Throughout the year, HackMelbourne offers many opportunities for both complete beginners and seasoned veterans to display their teamwork, coding and leadership skills.",
+    body: "These are the amazing companies that help us make HackMelbourne happen. We are always looking for new sponsors to support us, so if you are interested, please get in touch!",
   };
 
   const goldInfo: SponsorProps[] = [
@@ -87,8 +87,8 @@ const Sponsors = () => {
   // ];
 
   const sponsorCTA = {
-    title: ["Be a", "Hack", "Melbourne sponsor for 2024"],
-    desc: ["Join the journey: be a HackMelbourne 2024 sponsor", "and help us spread the excitement of hackathons!"],
+    title: ["Be a", "Hack", "Melbourne sponsor for 2025"],
+    desc: ["Help us run our events and make a difference in the community!"],
     button: "Learn More",
     link: "mailto:sponsorship@hack.melbourne",
   };

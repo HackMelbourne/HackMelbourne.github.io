@@ -1,4 +1,4 @@
-## Getting Startsd
+## Getting Started
 
 1. Clone the repository
 2. Once you've cloned the repo, run `npm install` to install all of the node_modules
