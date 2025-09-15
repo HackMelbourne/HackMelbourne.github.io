@@ -18,7 +18,7 @@
   color: transparent;
   -webkit-text-stroke: 1px #767676;
   font-weight: 900;
-  font-size: 9rem;
+  font-size: 16rem; /* md:text-[256px] */
   white-space: nowrap;
   line-height: 1;
   margin-bottom: -100px;
@@ -27,9 +27,10 @@
   mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .hero-background {
-    font-size: 16rem; /* md:text-[256px] */
+    font-size: 8rem;
+    margin-bottom: -50px;
   }
 }
 
@@ -66,10 +67,11 @@
 .hero-description {
   max-width: 40%;
   margin-top: 2rem;
+  text-align: center;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .hero-description {
-    max-width: 100%;
+    max-width: 80%;
   }
 }
