@@ -5,7 +5,7 @@ import { LinkItemProps } from "../features/LinkItem/LinkItemProps";
 
 export async function getLinksPage(): Promise<LinkItemProps[]> {
   try {
-    let result = await httpsCallable(functions, "getLinksPage")();
+    const result = await httpsCallable(functions, "getLinksPage")();
 
     // Storing result to localStorage for faster load times for next visits
     localStorage.setItem("links", JSON.stringify(result));
