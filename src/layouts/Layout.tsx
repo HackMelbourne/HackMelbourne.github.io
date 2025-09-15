@@ -144,10 +144,10 @@ const Layout = () => {
 
   return (
     <>
-      <div className="w-screen max-w-full overflow-x-clip">
-        {isShowNavbar ? (
-          <Navbar clubname={nav.clubname} logo={nav.logo} pages={nav.pages} links={nav.links} pills={nav.pills} />
-        ) : null}
+      {isShowNavbar ? (
+        <Navbar clubname={nav.clubname} logo={nav.logo} pages={nav.pages} links={nav.links} pills={nav.pills} />
+      ) : null}
+      <div className="pt-[100px] w-screen max-w-full overflow-x-clip">
         <Outlet />
         {isShowFooter ? <Footer links={footer.links} icons={footer.icons} /> : null}
 
