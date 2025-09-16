@@ -251,9 +251,132 @@ function createPageProperties(pageData) {
   return properties;
 }
 
+// Helper function to handle API errors
+function handleApiError(error, functionName) {
+  console.error(`Error in ${functionName}:`, error);
+  return {
+    success: false,
+    error: error.message || 'An unexpected error occurred',
+    details: error
+  };
+}
 
+// POST /api/pages - Create a new page
+async function createNewPage(pageData) {
+  try {
+    // Validate the page data
+    if (!pageData.name) {
+      throw new Error('Page name is required');
+    }
+    
+    if (!pageData.email) {
+      throw new Error('Email is required');
+    }
 
+    // Email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(pageData.email)) {
+      throw new Error('Invalid email format');
+    }
+    
+    // Create the page properties
+    const properties = createPageProperties(pageData);
+    
+    // Create the page in Notion
+    const newPage = await notion.pages.create({
+      parent: { database_id: APPLICATION_DATABASE_ID },
+      properties: properties
+    });
+    
+    return {
+      success: true,
+      data: {
+        id: newPage.id,
+        url: newPage.url,
+        created_time: newPage.created_time
+      },
+      message: 'Application submitted successfully'
+    };
+  } catch (error) {
+    return handleApiError(error, 'createNewPage');
+  }
+}
 
+// GET /api/pages/:id - Get page by ID
+async function getPageByID(pageId) {
+  try {
+    if (!pageId) {
+      throw new Error('Page ID is required');
+    }
+
+    const page = await notion.pages.retrieve({
+      page_id: pageId
+    });
+
+    const props = page.properties;
+    
+    // Parse the page data
+    const pageData = {
+      id: page.id,
+      name: props.Name?.title?.[0]?.plain_text || '',
+      email: props.Email?.email || '',
+      status: props.Status?.select?.name || '',
+      submissionDate: props["Submission Date"]?.date?.start || '',
+      role: props.Role?.select?.name || null,
+      motivation: props["Why are you applying?"]?.rich_text?.[0]?.plain_text || null,
+      created_time: page.created_time,
+      last_edited_time: page.last_edited_time,
+      url: page.url
+    };
+    
+    return {
+      success: true,
+      data: pageData,
+      message: 'Page retrieved successfully'
+    };
+  } catch (error) {
+    return handleApiError(error, 'getPageByID');
+  }
+}
+
+// DELETE /api/pages/:id - Delete (archive) a page
+async function deletePage(pageId) {
+  try {
+    if (!pageId) {
+      throw new Error('Page ID is required');
+    }
+
+    // Soft delete by updating status to "Archived"
+    const updatedPage = await notion.pages.update({
+      page_id: pageId,
+      properties: {
+        Status: {
+          select: { name: "Archived" }
+        }
+      }
+    });
+    
+    return {
+      success: true,
+      data: {
+        id: updatedPage.id,
+        status: 'Archived'
+      },
+      message: 'Application archived successfully'
+    };
+  } catch (error) {
+    return handleApiError(error, 'deletePage');
+  }
+}
+
+// Export the application functions
+module.exports = {
+  createNewPage,
+  getPageByID,
+  deletePage,
+  createPageProperties,
+  handleApiError
+};
 
 // exports.setRiserData = onCall(async (req) => {
 //   console.log(req.data.name);
