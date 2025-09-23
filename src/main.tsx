@@ -15,6 +15,7 @@ import Sponsors from "./routes/Sponsors";
 import HallOfFame from "./routes/HallOfFame";
 import Privacy from "./routes/Privacy";
 import Terms from "./routes/Terms";
+import Apply from "./routes/Apply";
 
 // Event Pages
 import OWeek from "./routes/eventPages/OWeek";
@@ -60,6 +61,7 @@ const router = createBrowserRouter(
       <Route path="upcoming/calendar" element={<Calendar />} />
       <Route path="upcoming/links" element={<Links />}></Route>
       <Route path="links" element={<Links />}></Route>
+      <Route path="apply" element={<Apply />}></Route>
       <Route path="sponsors" element={<Sponsors />} />
       <Route path="past" element={<Navigate to="./halloffame" replace />} />
       <Route path="past/halloffame" element={<HallOfFame />} />
