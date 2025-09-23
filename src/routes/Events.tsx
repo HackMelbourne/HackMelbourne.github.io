@@ -46,9 +46,9 @@ const Events = () => {
     },
     {
       name: "Melbourne Hack",
-      date: "30/8 - 01/9",
+      date: "30/8 - 06/9",
       brief: "Free entry, great competition",
-      description: `Melbourne Hack, our main competition, brings together students from across the state for a weekend of intense hacking. Scheduled for Semester 2, this annual event provides the opportunity to collaborate with talented peers, connect with industry-leading companies, develop strong technical skills, and win amazing prizes!`,
+      description: `Melbourne Hack is a hackathon where participants use their entrepreneurial skills to build a product in 3 days. Given certain themes, participants will have to build something that solves a problem or meets a need. Then they will be able to pitch their product to a panel of judges!`,
       bgImage: MelbHackImage,
       frontImage: MelbHackImage2,
       altBgImage: "Students sitting in a lecture hall discussing amongst themselves.",
