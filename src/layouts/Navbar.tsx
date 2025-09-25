@@ -139,7 +139,7 @@ const Navbar = ({ clubname, logo, pages, links, pills }: Nav) => {
           <div className="max-w-[800px] grow rounded-md bg-black/20 backdrop-blur-md border flex justify-between items-center px-5 py-3">
             <Link to="/" className="flex items-center justify-start gap-2 font-bold" onClick={handleLinkClick}>
               <img src={logo} className="h-8 w-8"></img>
-              {clubname}
+              {/* {clubname} */}
             </Link>
             <button className="md:hidden" onClick={toggleMenu}>
               {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
