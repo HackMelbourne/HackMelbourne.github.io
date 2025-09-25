@@ -211,6 +211,50 @@ exports.getLinksPage = onCall(
   },
 );
 
+// Application Database ID
+const APPLICATION_DATABASE_ID = "270dc74ea0ae803e8904e40ebe203011";
+
+// Helper function to create page properties
+function createPageProperties(pageData) {
+  const properties = {
+    Name: {
+      title: [{
+        text: { content: pageData.name }
+      }]
+    },
+    Email: {
+      email: pageData.email
+    },
+    Status: {
+      select: { name: "Pending" }
+    },
+    "Submission Date": {
+      date: { start: new Date().toISOString() }
+    }
+  };
+
+  // Add optional fields if provided
+  if (pageData.role) {
+    properties.Role = {
+      select: { name: pageData.role }
+    };
+  }
+
+  if (pageData.motivation && pageData.motivation.trim()) {
+    properties["Why are you applying?"] = {
+      rich_text: [{
+        text: { content: pageData.motivation }
+      }]
+    };
+  }
+
+  return properties;
+}
+
+
+
+
+
 // exports.setRiserData = onCall(async (req) => {
 //   console.log(req.data.name);
 //   const result = {
