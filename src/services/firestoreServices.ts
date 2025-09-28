@@ -58,7 +58,7 @@ export async function isUniqueEmail(id: string): Promise<boolean> {
 export async function getRiserLeaderboard(): Promise<RankEntry[]> {
   const leaderboardRef = collection(db, "riserData");
 
-  let leaderboardData: RankEntry[] = [];
+  const leaderboardData: RankEntry[] = [];
 
   try {
     // Add orderby time when firebase functions implements feature

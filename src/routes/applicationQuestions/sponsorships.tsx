@@ -15,7 +15,6 @@ interface props {
     engagement: string
   };
   handleChange: (e: React.ChangeEvent<any>) => void;
-  toolsOptions: string[];
 }
 
 const WebsiteQuestions: React.FC<props> = ({ formData, handleChange }) => (

@@ -345,7 +345,6 @@ function WebsiteOfficerForm() {
                       <WebsiteQuestions
                         formData={formData.website}
                         handleChange={handleChange}
-                        toolsOptions={toolsOptions}
                       />
                     );
                   case "Sponsorships Officer":
@@ -353,7 +352,6 @@ function WebsiteOfficerForm() {
                       <SponsorshipsQuestions
                         formData={formData.sponsorships}
                         handleChange={handleChange}
-                        toolsOptions={toolsOptions}
                       />
                     );
                   default:
