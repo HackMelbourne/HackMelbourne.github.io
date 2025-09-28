@@ -108,14 +108,14 @@ const MeetTheTeam = () => {
   // Animations
   const scrollRef = useRef(null);
 
-  let { scrollYProgress } = useScroll({
+  const { scrollYProgress } = useScroll({
     target: scrollRef,
     offset: ["start start", "end start"],
   });
 
-  let y = useTransform(scrollYProgress, [0, 1], ["0%", "80%"]);
-  let opacityValue = useTransform(scrollYProgress, [0, 0.7], ["100%", "0%"]);
-  let scaleValue = useTransform(scrollYProgress, [0, 0.8], ["1", "0.9"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "80%"]);
+  const opacityValue = useTransform(scrollYProgress, [0, 0.7], ["100%", "0%"]);
+  const scaleValue = useTransform(scrollYProgress, [0, 0.8], ["1", "0.9"]);
 
   return (
     <div>

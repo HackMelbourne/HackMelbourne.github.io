@@ -18,7 +18,7 @@ const HMButton = ({ text, color, style, span, link }: Props) => {
     style = 'disabled';
   }
 
-  let key = {
+  const key = {
     filled: {
       primary: ['bg-yellow-500'],
       secondary: ['bg-blue-500'],

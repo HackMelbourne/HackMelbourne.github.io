@@ -6,7 +6,7 @@ import { RiserOutputData } from "./RiserGame.model";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const GameComplete = () => {
-  let data: RiserOutputData = useLocation().state;
+  const data: RiserOutputData = useLocation().state;
 
   const navigate = useNavigate();
 

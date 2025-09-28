@@ -7,7 +7,7 @@ import { RiserGameModel, RiserOutputData, RiserUserInput } from "./RiserGame.mod
 
 const OWeekGame = () => {
   const navigate = useNavigate();
-  let data: RiserUserInput = useLocation().state;
+  const data: RiserUserInput = useLocation().state;
 
   // If data is empty
   useEffect(() => {
@@ -23,7 +23,7 @@ const OWeekGame = () => {
 
   const [result, setResult] = useState<number[]>([]);
 
-  let userGameData: RiserGameModel = {
+  const userGameData: RiserGameModel = {
     name: data.name,
     email: data.email,
     studentID: data.studentID,
@@ -75,7 +75,7 @@ const OWeekGame = () => {
       alert("Oops! You went over 2024! Your score is disqualified");
       result.push(0);
     } else {
-      let tempResult = result;
+      const tempResult = result;
       tempResult.push(time);
       setResult(tempResult);
       console.log(result);

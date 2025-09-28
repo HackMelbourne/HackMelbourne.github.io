@@ -14,8 +14,7 @@ interface websiteProps {
     ideas: string,
     goodweb: string
   };
-  handleChange: (e: React.ChangeEvent<any>) => void;
-  toolsOptions: string[];
+  handleChange: (e: React.ChangeEvent<any>) => void;  
 }
 
 const WebsiteQuestions: React.FC<websiteProps> = ({ formData, handleChange }) => (
