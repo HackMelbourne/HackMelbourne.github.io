@@ -19,8 +19,11 @@ import {
   ThemeProvider,
   FormLabel,
   Stack,  
+  IconButton,
 } from '@mui/material';
 import { grey, blue } from '@mui/material/colors';
+import CloseIcon from '@mui/icons-material/Close';
+
 import TitleHero from "../features/TitleHero/TitleHero";
 
 import WebsiteQuestions from "./applicationQuestions/website";
@@ -105,6 +108,7 @@ interface FormData {
     confirm: boolean,
     gradYear: string
     role: string
+    resume?: File | undefined
   },
   website: {
     experience: string,
@@ -116,6 +120,10 @@ interface FormData {
     attract: string,
     engagement: string
   }
+}
+
+function fileSizeInMB(file?: File) {
+  return file ? (file.size / (1024 * 1024)).toFixed(0) : ''
 }
 
 function WebsiteOfficerForm() {
@@ -132,7 +140,8 @@ function WebsiteOfficerForm() {
       // Want to make this slider
       availability: '',
       confirm: false,
-      role: ''
+      role: '',
+      resume: undefined
     },
     website: {
       experience: '',
@@ -151,55 +160,54 @@ function WebsiteOfficerForm() {
     description: `Apply for HackMelbourne's officer intake for Semester 2, 2025!`,
   };
 
-  const toolsOptions = ['HTML/CSS', 'JavaScript', 'WordPress', 'Git/GitHub', 'Figma/Canva'];
+  const clearValue = (e: React.MouseEvent<HTMLElement>) => {
+    // Hardcoded at the moment
+    const section = 'common'
+    const key = 'resume'
+    setFormData((prev) => ({
+      ...prev,
+      [section]: {
+        ...prev[section],
+        [key]: undefined,
+      }
+    }));
+  }
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | SelectChangeEvent<string>
   ) => {
     const [section, key] = e.target.name.split('.') as [keyof FormData, string];
+    const target = e.target as EventTarget & { name: string; value: string; files: File[] };
 
-    // Handler specific to checkboxes
-    if ('type' in e.target && e.target.type === 'checkbox') {
-      const target = e.target as HTMLInputElement;
-  
-      // if (target.name === 'tools') {
-      //   setFormData((prev) => ({
-      //     ...prev,
-      //     tools: target.checked
-      //       ? [...prev.tools, target.value]
-      //       : prev.tools.filter((tool) => tool !== target.value),
-      //   }));
-      // } else if (target.name === 'confirm') {
-      // if (target.name === 'confirm') {
-      //   setFormData((prev) => ({
-      //     ...prev,
-      //     confirm: target.checked,
-      //   }));
-      // }
-    } else {
-      // For selects and other inputs without type or non-checkbox types:
-      const target = e.target as EventTarget & { name: string; value: string };
-      setFormData((prev) => ({
-        ...prev,
-        [section]: {
-          ...prev[section],
-          [key]: target.value,
-        }
-      }));
+    let newValue: string | File = target.value
+    if (target.files) {
+      newValue = target.files[0]
+      const sizeinMB = newValue.size / (1024 * 1024)
+
+      if (sizeinMB > 8) {
+        console.log("big")
+      }
     }
-    console.log(formData)
+
+    setFormData((prev) => ({
+      ...prev,
+      [section]: {
+        ...prev[section],
+        [key]: newValue,
+      }
+    }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!formData.common.confirm) {
-      alert("Please confirm your information before submitting.");
-      return;
-    }
-    console.log("Form submitted:", formData);
-    alert("Application submitted!");
-    // Reset form or send to backend here
-  };
+  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   if (!formData.common.confirm) {
+  //     alert("Please confirm your information before submitting.");
+  //     return;
+  //   }
+  //   console.log("Form submitted:", formData);
+  //   alert("Application submitted!");
+  //   // Reset form or send to backend here
+  // };
 
   return (
     <>
@@ -359,6 +367,58 @@ function WebsiteOfficerForm() {
                 }
               })()
             }
+            <Box display="flex" flexDirection="column" gap={1}>
+              <FormLabel required>
+                Resume/CV
+              </FormLabel>
+              <Box
+                sx={{
+                  border: '2px dashed #999',
+                  borderRadius: 1,
+                  minHeight: 50,
+                  display: 'flex',
+                  position: 'relative',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: formData.common.resume ? 'text.primary' : 'text.disabled',
+                  fontStyle: 'italic',
+                  px: 2,
+                }}
+              >
+                {formData.common.resume && (
+                  <IconButton
+                    aria-label="close"
+                    onClick={clearValue}
+                    sx={{ 
+                      position: 'absolute', 
+                      left: 0,
+                    }}
+                  >
+                    <CloseIcon />
+                  </IconButton>
+                )}
+                <div>{formData.common.resume ? formData.common.resume.name : 'No file uploaded yet'}</div>
+                <Box sx={{ 
+                  position: 'absolute', 
+                  right: 15,
+                  color: 'text.disabled', 
+                  fontStyle: 'normal',
+                }}>
+                  {fileSizeInMB(formData.common.resume) ? fileSizeInMB(formData.common.resume) + " MB" : ''}</Box>
+              </Box>
+              <Button
+                variant="contained"
+                component="label"
+              >
+                Upload File
+                <input
+                  type="file"
+                  hidden
+                  name="common.resume"
+                  onChange={handleChange}
+                />
+              </Button>
+            </Box>
           </Stack>
         </Box>
       </ThemeProvider>
