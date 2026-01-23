@@ -18,7 +18,7 @@ import { UMSU_LINK } from "../constants";
 function Root() {
   const hero = {
     clubname: ["HACK", "MELB"],
-    year: "2025",
+    year: "2026",
     button: [
       {
         name: "Become a member",
@@ -52,7 +52,7 @@ function Root() {
   ];
 
   const jointeam = {
-    title: ["Join the ", "Hack", "Melbourne team for 2025"],
+    title: ["Join the ", "Hack", "Melbourne team for 2026"],
     desc: ["We make an impact on our future and learn some", "more skills along the way!"],
     button: "Applications currently closed",
     link: "",
