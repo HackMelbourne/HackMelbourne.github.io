@@ -87,7 +87,7 @@ const Sponsors = () => {
   // ];
 
   const sponsorCTA = {
-    title: ["Be a", "Hack", "Melbourne sponsor for 2025"],
+    title: ["Be a", "Hack", "Melbourne sponsor for 2026"],
     desc: ["Help us run our events and make a difference in the community!"],
     button: "Learn More",
     link: "mailto:sponsorship@hack.melbourne",
