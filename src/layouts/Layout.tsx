@@ -116,9 +116,9 @@ const Layout = () => {
   const nav = {
     clubname: "HackMelbourne",
     logo: "/img/HM_White_Transparent.png",
-    pages: ["About", "Blog", "Calendar", "Sponsors", "Links"],
-    links: ["/about/meettheteam", "/blogs", "/upcoming/calendar", "/sponsors", "upcoming/links"],
-    pills: [aboutPills, linkPills, calendarPills, sponsorPills, blogPills],
+    pages: ["About", "Blog", "Calendar", "Links"],
+    links: ["/about/meettheteam", "/blogs", "/upcoming/calendar", "upcoming/links"],
+    pills: [aboutPills, linkPills, calendarPills, blogPills],
     // pages: ["About", "Blog", "Calendar", "Sponsors", "Links", "Join Us"],
     // links: ["/about/meettheteam", "/blogs", "/upcoming/calendar", "/sponsors", "upcoming/links", "/apply"],
     // pills: [aboutPills, linkPills, calendarPills, sponsorPills, blogPills, joinusPills],
