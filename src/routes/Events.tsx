@@ -22,7 +22,7 @@ const Events = () => {
   const eventsData = [
     {
       name: "DecodED",
-      date: "15/03 - 17/03",
+      date: "21/03",
       brief: "Free entry, educational",
       description:
         "We’re passionate about providing accessible tech education to students from all backgrounds and experiences. Our workshop style education program is tailored towards those with limited experience in software development and includes content that complements traditional Computer Science education taught at universities. With Hackiethon taking place right after the conclusion of the program, attendees will have the chance to put their new-found skills to the test! ",
@@ -34,19 +34,19 @@ const Events = () => {
     },
     {
       name: "Hackiethon",
-      date: "22/03 - 24/03",
-      brief: "Free entry, begginer friendly",
+      date: "27/03 - 02/04",
+      brief: "Free entry, beginner friendly",
       description:
         "Our rookie hackathon is tailor-made for inexperienced but eager individuals! Unlike our main hackathon, it comes with valuable insights into the experience of competing and finding success in such events.",
       bgImage: HackiethonImage2,
       frontImage: HackiethonImage,
-      altBgImage: "HackMelbourne comitteee members in a lecutre hall setting up hackathon competition.",
+      altBgImage: "HackMelbourne committee members in a lecture hall setting up hackathon competition.",
       altFrontImage: "Students in a lecture hall viewing hackathon competition being presented.",
       link: "",
     },
     {
       name: "Melbourne Hack",
-      date: "30/8 - 06/9",
+      date: "TBA",
       brief: "Free entry, great competition",
       description: `Melbourne Hack is a hackathon where participants use their entrepreneurial skills to build a product in 3 days. Given certain themes, participants will have to build something that solves a problem or meets a need. Then they will be able to pitch their product to a panel of judges!`,
       bgImage: MelbHackImage,
