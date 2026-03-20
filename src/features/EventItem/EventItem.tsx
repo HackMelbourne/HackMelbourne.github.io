@@ -20,7 +20,7 @@ const EventItem = ({ name, date, brief, description, bgImage, frontImage, link, 
   let linkText: string;
 
   if (!link) {
-    linkText = 'Event ended';
+    linkText = 'Upcoming!';
   } else {
     linkText = 'Sign up';
   }

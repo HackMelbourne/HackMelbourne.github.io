@@ -30,7 +30,7 @@ const Events = () => {
       frontImage: DecodEdImage2,
       altBgImage: "Students in a classroom taking part of the DecodED workshop.",
       altFrontImage: "Classroom with supplies table in front with several students attending DecodED workshop in the background.",
-      link: "",
+      link: "https://events.humanitix.com/decoded-2026",
     },
     {
       name: "Hackiethon",
@@ -42,7 +42,7 @@ const Events = () => {
       frontImage: HackiethonImage,
       altBgImage: "HackMelbourne committee members in a lecture hall setting up hackathon competition.",
       altFrontImage: "Students in a lecture hall viewing hackathon competition being presented.",
-      link: "",
+      link: "https://events.humanitix.com/hackiethon-2026",
     },
     {
       name: "Melbourne Hack",
