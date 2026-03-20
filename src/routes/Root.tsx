@@ -54,8 +54,8 @@ function Root() {
   const jointeam = {
     title: ["Join the ", "Hack", "Melbourne team for 2026"],
     desc: ["We make an impact on our future and learn some", "more skills along the way!"],
-    button: "Applications currently closed",
-    link: "",
+    button: "Applications open until March 27th!",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSfdjr-baFQDqfq7meThWdZ2PKPj1g58u8ai55twIBCcDmKCLg/viewform",
   };
 
   return (
