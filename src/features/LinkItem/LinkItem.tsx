@@ -28,11 +28,13 @@ const LinkItem = ({ title, link, category }: LinkItemProps) => {
     );
   } else {
     return (
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        className="w-full px-4 py-6 rounded-xl bg-black/20 border border-white backdrop-blur font-medium text-lg">
-        <DynamicLink link={link}>{title}</DynamicLink>
-      </motion.button>
+      <DynamicLink link={link} className="w-full">
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          className="w-full px-4 py-6 rounded-xl bg-black/20 border border-white backdrop-blur font-medium text-lg text-center cursor-pointer">
+          {title}
+        </motion.div>
+      </DynamicLink>
     );
   }
 };
