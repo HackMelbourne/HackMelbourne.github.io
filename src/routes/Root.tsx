@@ -52,10 +52,10 @@ function Root() {
   ];
 
   const jointeam = {
-    title: ["Join the ", "Hack", "Melbourne team for 2026"],
+    title: ["Join the ", "Hack", "Melbourne team for 2027"],
     desc: ["We make an impact on our future and learn some", "more skills along the way!"],
-    button: "Applications open until March 27th!",
-    link: "https://docs.google.com/forms/d/e/1FAIpQLSfdjr-baFQDqfq7meThWdZ2PKPj1g58u8ai55twIBCcDmKCLg/viewform",
+    button: "Applications open until October 18th!",
+    link: "https://forms.gle/sY1mJFPQbJjb9bRF6",
   };
 
   return (
