@@ -6,7 +6,7 @@ interface CallToAction {
   title: string[];
   desc: string[];
   button: string;
-  link: string;
+  link?: string;
 }
 
 const CallToAction = ({ title, desc, button, link }: CallToAction) => {
@@ -52,7 +52,13 @@ const CallToAction = ({ title, desc, button, link }: CallToAction) => {
       </motion.div>
 
       <motion.div variants={item}>
-        <HMButton text={button} color="primary" style="border" link={link}></HMButton>
+        {link ? (
+          <HMButton text={button} color="primary" style="border" link={link}></HMButton>
+        ) : (
+          <div className="px-5 py-3 rounded-lg border border-yellow-600/60 bg-yellow-600/10 text-white cursor-default select-none">
+            {button}
+          </div>
+        )}
       </motion.div>
     </motion.div>
   );

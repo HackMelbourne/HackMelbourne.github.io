@@ -149,7 +149,10 @@ exports.getMeetTheTeam = onCall(
           teamName: props.Team.select.name,
           role: props.Role.select.name,
           about: props.About.rich_text[0].plain_text,
-          imageUrl: props.Image.files[0].file.url,
+          imageUrl:
+            props.Image?.files?.[0]?.file?.url ??
+            props.Image?.files?.[0]?.external?.url ??
+            "/img/default-avatar.svg",
           socialLinks: props.Socials.rich_text.map((obj) => obj.plain_text),
         };
         result.push(memberItem);
@@ -157,6 +160,7 @@ exports.getMeetTheTeam = onCall(
 
       return result;
     } catch (e) {
+      console.error("getMeetTheTeam failed:", e);
       return e;
     }
   },
